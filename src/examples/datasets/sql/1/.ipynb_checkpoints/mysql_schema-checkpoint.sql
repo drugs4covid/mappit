@@ -14,7 +14,7 @@
 				`agency_fare_url` VARCHAR(200) DEFAULT NULL,
 				PRIMARY KEY (agency_id));
 
-				LOAD DATA LOCAL INFILE 'AGENCY.csv'
+				LOAD DATA LOCAL INFILE './datasets/sql/1/AGENCY.csv'
 				INTO TABLE AGENCY FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS
 					SET agency_phone = IF(agency_phone = '', NULL, agency_phone),
 					agency_fare_url = IF(agency_fare_url = '', NULL, agency_fare_url);
@@ -27,7 +27,7 @@
 				`exception_type` INT,
 				PRIMARY KEY (service_id,date));
 
-				LOAD DATA LOCAL INFILE 'CALENDAR_DATES.csv'
+				LOAD DATA LOCAL INFILE './datasets/sql/1/CALENDAR_DATES.csv'
 				INTO TABLE CALENDAR_DATES FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS
 					SET exception_type = IF(exception_type=2,0,exception_type);
 
@@ -46,7 +46,7 @@
 				`end_date` DATE DEFAULT NULL,
 				PRIMARY KEY (service_id));
 
-				LOAD DATA LOCAL INFILE 'CALENDAR.csv'
+				LOAD DATA LOCAL INFILE './datasets/sql/1/CALENDAR.csv'
 				INTO TABLE CALENDAR FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS
 					SET end_date = IF(end_date = NULL, NULL, end_date);
 
@@ -61,7 +61,7 @@
 				`feed_version` VARCHAR(200),
 				PRIMARY KEY (feed_publisher_name));
 
-				LOAD DATA LOCAL INFILE 'FEED_INFO.csv'
+				LOAD DATA LOCAL INFILE './datasets/sql/1/FEED_INFO.csv'
 				INTO TABLE FEED_INFO FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS
 				   SET feed_start_date = IF(feed_start_date = '', NULL, feed_start_date),
 				   feed_end_date = IF(feed_end_date = '', NULL, feed_end_date);
@@ -79,7 +79,7 @@
 				`exact_times` INT DEFAULT 0,
 				PRIMARY KEY (trip_id,start_time));
 
-				LOAD DATA LOCAL INFILE 'FREQUENCIES.csv'
+				LOAD DATA LOCAL INFILE './datasets/sql/1/FREQUENCIES.csv'
 				INTO TABLE FREQUENCIES FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS;
 
 			
@@ -95,7 +95,7 @@
 				`route_text_color` VARCHAR(200),
 				PRIMARY KEY (route_id));
 
-				LOAD DATA LOCAL INFILE 'ROUTES.csv'
+				LOAD DATA LOCAL INFILE './datasets/sql/1/ROUTES.csv'
 				INTO TABLE ROUTES FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS
 					SET route_desc = IF(route_desc = '', NULL, route_desc);
 
@@ -109,7 +109,7 @@
 				`shape_dist_traveled` DECIMAL(18,15),
 				PRIMARY KEY (shape_id,shape_pt_sequence));
 
-				LOAD DATA LOCAL INFILE 'SHAPES.csv'
+				LOAD DATA LOCAL INFILE './datasets/sql/1/SHAPES.csv'
 				INTO TABLE SHAPES FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS;
 
 
@@ -130,7 +130,7 @@
 				`wheelchair_boarding` INT,
 				PRIMARY KEY (stop_id));
 
-				LOAD DATA LOCAL INFILE 'STOPS.csv'
+				LOAD DATA LOCAL INFILE './datasets/sql/1/STOPS.csv'
 				INTO TABLE STOPS FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS
 				   SET zone_id = IF(zone_id = '', NULL, zone_id),
 				   stop_timezone = IF(stop_timezone = '', NULL, stop_timezone),
@@ -153,7 +153,7 @@
 				`shape_dist_traveled` DECIMAL(18,15),
 				PRIMARY KEY (trip_id,stop_id,arrival_time));
 
-				LOAD DATA LOCAL INFILE 'STOP_TIMES.csv' INTO TABLE STOP_TIMES FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS
+				LOAD DATA LOCAL INFILE './datasets/sql/1/STOP_TIMES.csv' INTO TABLE STOP_TIMES FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS
 				
 				   SET trip_id = IF(trip_id = '', NULL, trip_id),
 					   arrival_time = IF(arrival_time = '', NULL, arrival_time),
@@ -176,7 +176,7 @@
 				`wheelchair_accessible` INT,
 				PRIMARY KEY (trip_id));
 
-				LOAD DATA LOCAL INFILE 'TRIPS.csv'
+				LOAD DATA LOCAL INFILE './datasets/sql/1/TRIPS.csv'
 				INTO TABLE TRIPS FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS
 					SET block_id = IF(block_id = '', NULL, block_id);
 

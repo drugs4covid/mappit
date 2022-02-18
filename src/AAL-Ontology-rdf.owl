@@ -1,0 +1,1952 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre"
+     xml:base="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:aal="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre">
+        <owl:versionIRI rdf:resource="urn:absolute:1.0"/>
+        <dc:creator>Ibai Guillén</dc:creator>
+        <dc:creator>Pablo García</dc:creator>
+        <dc:description xml:lang="en">Ontology for outdoor sports activities</dc:description>
+        <dc:description xml:lang="es">Ontología para actividades deportivas al aire libre.</dc:description>
+        <terms:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</terms:hasVersion>
+        <terms:license>http://creativecommons.org/licenses/by/3.0/</terms:license>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/hasVersion -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/hasVersion"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#description -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#description"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/name"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/website -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/website"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:actividadRealizada -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:actividadRealizada">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#RealizarActividad"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Actividades"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:esIntervenidoPor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:esIntervenidoPor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#RealizarActividad"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:interviene -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:interviene">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#RealizarActividad"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:seRealizanEn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:seRealizanEn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Actividades"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Ubicacion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:seUtiliza -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:seUtiliza">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Actividades"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Recurso"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:tienePrecio -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:tienePrecio">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#RealizarActividad"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Precio"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:tieneRol -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:tieneRol">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Rol"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Target -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Target">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Permission"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Asset"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:hasAction -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:hasAction">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:PermissionLey"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:PermissionOrganizador"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:Action"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:hasPermission -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:hasPermission">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Policy"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Permission"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:hasPolicy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:hasPolicy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Asset"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Policy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:cantidadParticipantes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:cantidadParticipantes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#RealizarActividad"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <dc:description xml:lang="es">Atributo para conocer si una actividad es indivual, en parejas, tríos o multitudinária.</dc:description>
+        <dc:description xml:lang="en">Attribute to know if an activity is individual, in pairs, trios or multitudinous.</dc:description>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:descuento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:descuento">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#RealizarActividad"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="es">Atributo para conocer qué tipos de descuentos se ofrecen en la actividad: de familia numerosa, discapacidad...</rdfs:comment>
+        <rdfs:comment xml:lang="en">It designates which types of discounts are available for the activity.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:dificultad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:dificultad">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#RealizarActividad"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">Level of difficulty of the activity: Familiar, Medium or Extreme.</rdfs:comment>
+        <rdfs:description xml:lang="es">Nivel de dificultad de la actividad, que puede ser familiar, media y extrema.</rdfs:description>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:duracion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:duracion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#RealizarActividad"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="es">Duración de la actividad realizada.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Duration of the activity.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:esFederada -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:esFederada">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Actividades"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="es">La actividad está incluida en algún organismo o entidad.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The activity is included in any organization or entity.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:esPopular -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:esPopular">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Actividades"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="es">Designa la popularidad de la actividad hoy en día.</rdfs:comment>
+        <rdfs:comment xml:lang="en">It  designates the popularity of the activity nowadays.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:impactoMedioambiental -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:impactoMedioambiental">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Actividades"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="es">Designa cómo afecta una actividad al medioambiente dependiendo de la contaminación que esta implique.</rdfs:comment>
+        <rdfs:comment xml:lang="en">It designates the environment impact of the activity.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:medio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:medio">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticas"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="es">Medio en el que se realiza la actividad: Fluvial o Marítimo.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Medium in which the activity is done: fluvial or maritime.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:precioCantidad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:precioCantidad">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Precio"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="es">La cantidad monetaria requerida para la ejecución de una actividad.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Monetary quantity required for teh participation in the activity.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:precioMetrica -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:precioMetrica">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Precio"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">Monetary unit accepted in an activity.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Unidad monetaria que acepta una actividad.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:temporada -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:temporada">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Actividades"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">Season in which the activity can be executed.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Época del año en la que se realiza la actividad.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Actividades -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Actividades">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Asset"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Actividades"/>
+        <rdfs:description xml:lang="es">Deportes de agua o relacionado con ella.</rdfs:description>
+        <rdfs:description xml:lang="en">Water sports or water-related sports.</rdfs:description>
+        <rdfs:label xml:lang="es">Actividades acuáticas</rdfs:label>
+        <rdfs:label xml:lang="en">Aquatic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeInmersion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeInmersion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticas"/>
+        <rdfs:description xml:lang="es">Acción de introducir o introducirse algo en un fluido.</rdfs:description>
+        <rdfs:description xml:lang="en">The action of introducing or introducing something into a fluid.</rdfs:description>
+        <rdfs:label xml:lang="es">Actividades acuáticas de inmersión</rdfs:label>
+        <rdfs:label xml:lang="en">Immersion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeSalto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeSalto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticas"/>
+        <rdfs:description xml:lang="en">Movement that consists of rising from the ground or other surface with momentum to fall into the water.</rdfs:description>
+        <rdfs:description xml:lang="es">Movimiento que consiste en elevarse del suelo u otra superficie con impulso para caer en el agua.</rdfs:description>
+        <rdfs:label xml:lang="es">Actividades acuáticas de salto</rdfs:label>
+        <rdfs:label xml:lang="en">Jumping</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeSuperficie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeSuperficie">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticas"/>
+        <rdfs:description xml:lang="es">Activididad realizada sobre la superficie del agua.</rdfs:description>
+        <rdfs:description xml:lang="en">Activity performed on the surface of the water.</rdfs:description>
+        <rdfs:label xml:lang="es">Actividades acuáticas de superficie</rdfs:label>
+        <rdfs:label xml:lang="en">Surface</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAereasDeAscender -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAereasDeAscender">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Aereas"/>
+        <dc:description xml:lang="en">Move from bottom to top and move from one point to another.</dc:description>
+        <dc:description xml:lang="es">Moverse de abajo arriba y desplazarse de un punto a otro.</dc:description>
+        <rdfs:label xml:lang="es">Actividades aéreas de ascenso</rdfs:label>
+        <rdfs:label xml:lang="en">Ascend</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAereasDeCaer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAereasDeCaer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Aereas"/>
+        <rdfs:description xml:lang="en">Move from top to bottom.</rdfs:description>
+        <rdfs:description xml:lang="es">Moverse desde arriba hacia abajo.</rdfs:description>
+        <rdfs:label xml:lang="es">Actividades aéreas de caída</rdfs:label>
+        <rdfs:label xml:lang="en">Fall</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAereasDePlanear -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAereasDePlanear">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Aereas"/>
+        <rdfs:description xml:lang="es">Descenso sin la acción del motor y en condiciones normales.</rdfs:description>
+        <rdfs:description xml:lang="en">Descent without motor action and under normal conditions.</rdfs:description>
+        <rdfs:label xml:lang="es">Actividades aéreas de planeo</rdfs:label>
+        <rdfs:label xml:lang="en">Glide</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Terrestres"/>
+        <rdfs:label xml:lang="es">Actividades terrestres de trepar</rdfs:label>
+        <rdfs:label xml:lang="en">Climb</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeCaminar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeCaminar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Terrestres"/>
+        <rdfs:label xml:lang="es">Actividades terrestres de caminar</rdfs:label>
+        <rdfs:label xml:lang="en">Walking</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeCorrer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeCorrer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Terrestres"/>
+        <rdfs:label xml:lang="es">Actividades terrestres de correr</rdfs:label>
+        <rdfs:label xml:lang="en">Running</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeEquilibrio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeEquilibrio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Terrestres"/>
+        <rdfs:label xml:lang="es">Actividades terrestres de equilibrio</rdfs:label>
+        <rdfs:label xml:lang="en">Balance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeHielo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeHielo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeInvierno"/>
+        <dc:description xml:lang="es">Actividades realizadas sobre una superficie helada.</dc:description>
+        <dc:description xml:lang="en">Activities performed on an icy surface.</dc:description>
+        <rdfs:label xml:lang="es">Actividades sobre hielo</rdfs:label>
+        <rdfs:label xml:lang="en">Ice</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeInvierno -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeInvierno">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Terrestres"/>
+        <rdfs:label xml:lang="es">Actividades terrestres de invierno</rdfs:label>
+        <rdfs:label xml:lang="en">Winter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeNieve -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeNieve">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeInvierno"/>
+        <dc:description xml:lang="es">Actividades realizadas sobre una superficie nevada.</dc:description>
+        <dc:description xml:lang="en">Activities carried out on a snowy surface.</dc:description>
+        <rdfs:label xml:lang="es">Actividades sobre nieve</rdfs:label>
+        <rdfs:label xml:lang="en">Snow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeReptar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeReptar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Terrestres"/>
+        <rdfs:label xml:lang="es">Actividades terrestres de reptar</rdfs:label>
+        <rdfs:label xml:lang="en">Creep</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeRodar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeRodar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Terrestres"/>
+        <rdfs:description xml:lang="es">Desplazarse algo dando vueltas o girando sobre su propio eje.</rdfs:description>
+        <rdfs:description xml:lang="en">To move something by turning or rotating on its own axis.</rdfs:description>
+        <rdfs:label xml:lang="es">Actividades terrestres de rodar</rdfs:label>
+        <rdfs:label xml:lang="en">Roll</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeSaltar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeSaltar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Terrestres"/>
+        <rdfs:label xml:lang="es">Actividades terrestres de saltar</rdfs:label>
+        <rdfs:label xml:lang="en">Jump</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Aereas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Aereas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Actividades"/>
+        <rdfs:description xml:lang="es">Actividad realizada en el aire o relacionado con él.</rdfs:description>
+        <rdfs:description xml:lang="en">Activity performed in the air or related to it.</rdfs:description>
+        <rdfs:label xml:lang="es">Actividades aéreas</rdfs:label>
+        <rdfs:label xml:lang="en">Aerial</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Aeroestacion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Aeroestacion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAereasDePlanear"/>
+        <rdfs:label xml:lang="es">Aerostación</rdfs:label>
+        <rdfs:label xml:lang="en">Aerostation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#AlaDelta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#AlaDelta">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAereasDePlanear"/>
+        <rdfs:label xml:lang="es">Ala delta</rdfs:label>
+        <rdfs:label xml:lang="en">Hang gliding</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Alpinismo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Alpinismo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeNieve"/>
+        <rdfs:label xml:lang="en">Alpinism</rdfs:label>
+        <rdfs:label xml:lang="es">Alpinismo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Animal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Animal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Recurso"/>
+        <rdfs:comment xml:lang="es">Emple un animal para la ejecución de la actividad.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The activity requires of an animal for its realization.</rdfs:comment>
+        <rdfs:label xml:lang="en">Animal</rdfs:label>
+        <rdfs:label xml:lang="es">Animal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Apnea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Apnea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Submarinismo"/>
+        <rdfs:label xml:lang="es">Apnea</rdfs:label>
+        <rdfs:label xml:lang="es">Buceo libre</rdfs:label>
+        <rdfs:label xml:lang="en">Freediving</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Arborismo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Arborismo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeEquilibrio"/>
+        <rdfs:label xml:lang="en">Arborism</rdfs:label>
+        <rdfs:label xml:lang="es">Arborismo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Automovilismo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Automovilismo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeRodar"/>
+        <dc:description xml:lang="en">Sport use of vehicles in various modalities.</dc:description>
+        <dc:description xml:lang="es">Uso deportivo del vehiculo en varias modalidades.</dc:description>
+        <rdfs:label xml:lang="en">Auto sport</rdfs:label>
+        <rdfs:label xml:lang="es">Automovilismo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Barranquismo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Barranquismo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDe"/>
+        <rdfs:label xml:lang="es">Barranquismo</rdfs:label>
+        <rdfs:label xml:lang="en">Canyoning</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#BicicletaDeMontana -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#BicicletaDeMontana">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Ciclismo"/>
+        <rdfs:label xml:lang="es">Bici de montaña</rdfs:label>
+        <rdfs:label xml:lang="en">Mountain bike</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Biketrial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Biketrial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Ciclismo"/>
+        <rdfs:label xml:lang="en">Biketrial</rdfs:label>
+        <rdfs:label xml:lang="es">Trial bici</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Bodyboard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Bodyboard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeSuperficie"/>
+        <rdfs:label xml:lang="en">Bodyboard</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Buggie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Buggie">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Automovilismo"/>
+        <rdfs:label xml:lang="en">Buggie</rdfs:label>
+        <rdfs:label xml:lang="es">Buggie</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#CaidaLibre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#CaidaLibre">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Paracaidismo"/>
+        <rdfs:label xml:lang="es">Caída libre</rdfs:label>
+        <rdfs:label xml:lang="en">Freefall</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Camello -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Camello">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Montar"/>
+        <rdfs:label xml:lang="en">Camel</rdfs:label>
+        <rdfs:label xml:lang="es">Camello</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Canoa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Canoa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeSuperficie"/>
+        <rdfs:label xml:lang="en">Canoeing</rdfs:label>
+        <rdfs:label xml:lang="es">Piragüismo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Capea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Capea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Montar"/>
+        <rdfs:label xml:lang="en">Cape</rdfs:label>
+        <rdfs:label xml:lang="es">Capea</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#CarreraEnLaNaturaleza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#CarreraEnLaNaturaleza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeCorrer"/>
+        <rdfs:label xml:lang="es">Carrera en la naturaleza</rdfs:label>
+        <rdfs:label xml:lang="en">Trail running</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Ciclismo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Ciclismo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeRodar"/>
+        <dc:description xml:lang="en">Sport use of bikes in various modalities.</dc:description>
+        <dc:description xml:lang="es">Uso deportivo de la bicicleta en varias modalidades.</dc:description>
+        <rdfs:label xml:lang="es">Ciclismo</rdfs:label>
+        <rdfs:label xml:lang="en">Cycling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Cicloturismo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Cicloturismo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Ciclismo"/>
+        <rdfs:label xml:lang="es">Cicloturismo</rdfs:label>
+        <rdfs:label xml:lang="en">Cycling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Cinta_tensa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Cinta_tensa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeEquilibrio"/>
+        <rdfs:label xml:lang="es">Cinta tensa</rdfs:label>
+        <rdfs:label xml:lang="en">Slackline</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Coasteering -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Coasteering">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDe"/>
+        <rdfs:label xml:lang="en">Coasteering</rdfs:label>
+        <rdfs:label xml:lang="es">Coastering</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Cuerpo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Cuerpo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Recurso"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Enduro -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Enduro">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Motociclismo"/>
+        <rdfs:label xml:lang="en">Enduro</rdfs:label>
+        <rdfs:label xml:lang="es">Enduro</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Equipamiento -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Equipamiento">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Recurso"/>
+        <rdfs:comment xml:lang="es">Requiere de objetos materiales no motorizados para realizar la actividad.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The activity requires of material objects for its execution.</rdfs:comment>
+        <rdfs:label xml:lang="es">Equipamiento</rdfs:label>
+        <rdfs:label xml:lang="en">Equipment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Equitacion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Equitacion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Montar"/>
+        <rdfs:label xml:lang="es">Equitación</rdfs:label>
+        <rdfs:label xml:lang="en">Horse riding</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Escalada -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Escalada">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDe"/>
+        <rdfs:label xml:lang="en">Climbing</rdfs:label>
+        <rdfs:label xml:lang="es">Escalada</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#EscaladaEnHielo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#EscaladaEnHielo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeHielo"/>
+        <rdfs:label xml:lang="es">Escalada en hielo</rdfs:label>
+        <rdfs:label xml:lang="en">Ice climbing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Esferismo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Esferismo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeSaltar"/>
+        <rdfs:label xml:lang="es">Esferismo</rdfs:label>
+        <rdfs:label xml:lang="en">Zorbing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Esnorquel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Esnorquel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Submarinismo"/>
+        <rdfs:label xml:lang="es">Esnórquel</rdfs:label>
+        <rdfs:label xml:lang="en">Snorkeling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Espeleobuceo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Espeleobuceo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Submarinismo"/>
+        <rdfs:label xml:lang="en">Cave diving</rdfs:label>
+        <rdfs:label xml:lang="es">Espeleobuceo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Espeleologia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Espeleologia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeReptar"/>
+        <rdfs:label xml:lang="es">Espeleología</rdfs:label>
+        <rdfs:label xml:lang="en">Speleology</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#EsquiAlpino -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#EsquiAlpino">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeNieve"/>
+        <rdfs:label xml:lang="en">Alpine ski</rdfs:label>
+        <rdfs:label xml:lang="es">Esquí alpino</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#EsquiDescalzo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#EsquiDescalzo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeSuperficie"/>
+        <rdfs:label xml:lang="en">Barefoot waterski</rdfs:label>
+        <rdfs:label xml:lang="es">Esquí descalzo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#EsquiNautico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#EsquiNautico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeSuperficie"/>
+        <rdfs:label xml:lang="es">Esquí náutico</rdfs:label>
+        <rdfs:label xml:lang="en">Water skiing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Flowboarding -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Flowboarding">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Surf"/>
+        <rdfs:label xml:lang="en">Flowboarding</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Flyboard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Flyboard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeSuperficie"/>
+        <rdfs:label xml:lang="en">Flyboard</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#FreeSkate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#FreeSkate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Patinaje"/>
+        <rdfs:label xml:lang="en">Free skate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#GloboAerostatico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#GloboAerostatico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAereasDeAscender"/>
+        <rdfs:label xml:lang="es">Globo aerostático</rdfs:label>
+        <rdfs:label xml:lang="en">Hot air balloon</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Highline -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Highline">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeEquilibrio"/>
+        <rdfs:label xml:lang="en">Highline</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Hydrospeed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Hydrospeed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Rafting"/>
+        <rdfs:label xml:lang="en">Hydrospeed</rdfs:label>
+        <rdfs:label xml:lang="es">Hydrospeed</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Jetman -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Jetman">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAereasDePlanear"/>
+        <rdfs:label xml:lang="en">Jetman</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Kart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Kart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Automovilismo"/>
+        <rdfs:label xml:lang="en">Kart</rdfs:label>
+        <rdfs:label xml:lang="es">Kart</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Kayak -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Kayak">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeSuperficie"/>
+        <rdfs:label xml:lang="en">Kayak</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Kitefoil -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Kitefoil">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Surf"/>
+        <rdfs:label xml:lang="en">Kitefoil</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#LanchaAMotor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#LanchaAMotor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeSuperficie"/>
+        <rdfs:label xml:lang="es">Lancha a motor</rdfs:label>
+        <rdfs:label xml:lang="en">Motor boat</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Longboard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Longboard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Patinaje"/>
+        <rdfs:label xml:lang="en">Longboard</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Montanismo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Montanismo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeCaminar"/>
+        <rdfs:label xml:lang="es">Montañismo</rdfs:label>
+        <rdfs:label xml:lang="en">Mountaineering</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Montar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Montar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Terrestres"/>
+        <rdfs:label xml:lang="es">Actividades terrestres de montar</rdfs:label>
+        <rdfs:label xml:lang="en">Ride</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#MotoAcuatica -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#MotoAcuatica">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeSuperficie"/>
+        <rdfs:label xml:lang="en">Jet ski</rdfs:label>
+        <rdfs:label xml:lang="es">Moto acuática</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Motociclismo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Motociclismo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeRodar"/>
+        <dc:description xml:lang="en">Sport use of motorcycles in various modalities.</dc:description>
+        <dc:description xml:lang="es">Uso deportivo de la motocicleta en varias modalidades.</dc:description>
+        <rdfs:label xml:lang="es">Motociclismo</rdfs:label>
+        <rdfs:label xml:lang="en">Motorcycle sport</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#MotociclismoEstiloLibre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#MotociclismoEstiloLibre">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Motociclismo"/>
+        <rdfs:label xml:lang="en">FMX</rdfs:label>
+        <rdfs:label xml:lang="es">Motociclismo estilo libre</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Motocros -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Motocros">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Motociclismo"/>
+        <rdfs:label xml:lang="en">Motocross</rdfs:label>
+        <rdfs:label xml:lang="es">Motocrós</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Motonieve -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Motonieve">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeNieve"/>
+        <dc:description xml:lang="es">Motonieve</dc:description>
+        <dc:description xml:lang="en">Snowmobile</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Motor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Motor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Recurso"/>
+        <rdfs:comment xml:lang="es">La actividad emplea vehículos para su realización.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The activity uses motorized vehicles.</rdfs:comment>
+        <rdfs:label xml:lang="es">Motor</rdfs:label>
+        <rdfs:label xml:lang="en">Motorized</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Mountainboard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Mountainboard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Patinaje"/>
+        <rdfs:label xml:lang="en">Mountain board</rdfs:label>
+        <rdfs:label xml:lang="es">Tabla de montaña</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Orientacion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Orientacion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeCorrer"/>
+        <rdfs:label xml:lang="es">Orientación</rdfs:label>
+        <rdfs:label xml:lang="en">Orientation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Paracaidismo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Paracaidismo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAereasDeCaer"/>
+        <rdfs:label xml:lang="es">Paracaidismo</rdfs:label>
+        <rdfs:label xml:lang="en">Skydiving</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Parapente -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Parapente">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAereasDePlanear"/>
+        <rdfs:label xml:lang="en">Paragliding</rdfs:label>
+        <rdfs:label xml:lang="es">Parapente</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ParapenteAMotor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ParapenteAMotor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAereasDePlanear"/>
+        <rdfs:label xml:lang="en">Motorized paraglider</rdfs:label>
+        <rdfs:label xml:lang="es">Parapente a motor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Paravelismo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Paravelismo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAereasDePlanear"/>
+        <rdfs:label xml:lang="en">Parasailing</rdfs:label>
+        <rdfs:label xml:lang="es">Paravelismo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Parkour -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Parkour">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeSaltar"/>
+        <rdfs:label xml:lang="en">Parkour</rdfs:label>
+        <rdfs:label xml:lang="es">Parkour</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Patinaje -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Patinaje">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeRodar"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Patines -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Patines">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Patinaje"/>
+        <rdfs:label xml:lang="es">Patines</rdfs:label>
+        <rdfs:label xml:lang="en">Skate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Patinete -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Patinete">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeSaltar"/>
+        <rdfs:label xml:lang="es">Patinete</rdfs:label>
+        <rdfs:label xml:lang="en">Skateboard</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#PescaSubmarina -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#PescaSubmarina">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeInmersion"/>
+        <rdfs:label xml:lang="es">Pesca submarina</rdfs:label>
+        <rdfs:label xml:lang="en">Spearfishing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Precio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Precio">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">Money quanity needed for the participation in an activity.</rdfs:comment>
+        <rdfs:description xml:lang="es">Cantidad económica necesaria para realizar una actividad</rdfs:description>
+        <rdfs:label xml:lang="es">Precio</rdfs:label>
+        <rdfs:label xml:lang="en">Prize</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Puenting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Puenting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAereasDeCaer"/>
+        <rdfs:label xml:lang="en">Bungee jumping</rdfs:label>
+        <rdfs:label xml:lang="es">Puenting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Quad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Quad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Automovilismo"/>
+        <rdfs:label xml:lang="en">Quad</rdfs:label>
+        <rdfs:label xml:lang="es">Quad</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Rafting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Rafting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeSuperficie"/>
+        <rdfs:label xml:lang="es">Descenso de ríos</rdfs:label>
+        <rdfs:label xml:lang="en">Rafting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Rally -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Rally">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Automovilismo"/>
+        <rdfs:label xml:lang="en">Rally</rdfs:label>
+        <rdfs:label xml:lang="es">Rally</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Rapel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Rapel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDe"/>
+        <rdfs:label xml:lang="es">Rapel</rdfs:label>
+        <rdfs:label xml:lang="en">Rappel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Raquetas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Raquetas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeNieve"/>
+        <rdfs:label xml:lang="es">Raquetas de nieve</rdfs:label>
+        <rdfs:label xml:lang="en">Snow rackets</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#RealizarActividad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#RealizarActividad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Asset"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Recurso -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Recurso">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="es">Medios materiales utilizados para la ejecución de una actividad.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Recurses needed for the execution of an activity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Rodeo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Rodeo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Montar"/>
+        <rdfs:label xml:lang="en">Rodeo</rdfs:label>
+        <rdfs:label xml:lang="es">Rodeo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Rol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Rol">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#SaltoBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#SaltoBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Paracaidismo"/>
+        <rdfs:label xml:lang="en">B.A.S.E. Jumping</rdfs:label>
+        <rdfs:label xml:lang="es">Salto B.A.S.E.</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#SaltoDeAcantilado -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#SaltoDeAcantilado">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeSalto"/>
+        <rdfs:label xml:lang="en">Cliff jumping</rdfs:label>
+        <rdfs:label xml:lang="es">Salto de acantilado</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Sandboard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Sandboard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeSaltar"/>
+        <rdfs:label xml:lang="en">Sandboard</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Senderismo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Senderismo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeCaminar"/>
+        <rdfs:label xml:lang="es">Senderismo</rdfs:label>
+        <rdfs:label xml:lang="en">Trekking</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#SkiFreeride -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#SkiFreeride">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeNieve"/>
+        <rdfs:label xml:lang="es">Esquí freeride</rdfs:label>
+        <rdfs:label xml:lang="en">Freeride ski</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Skimboard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Skimboard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeSuperficie"/>
+        <rdfs:label xml:lang="en">Skimboard</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Snowboard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Snowboard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeNieve"/>
+        <rdfs:label xml:lang="en">Snowboard</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Snowkite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Snowkite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeNieve"/>
+        <rdfs:label xml:lang="en">Snowkite</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Speedflying -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Speedflying">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeNieve"/>
+        <rdfs:label xml:lang="en">Speed flying</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#StreetStunt -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#StreetStunt">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeSaltar"/>
+        <rdfs:label xml:lang="en">Street stunt</rdfs:label>
+        <rdfs:label xml:lang="es">Truco callejero</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Submarinismo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Submarinismo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeInmersion"/>
+        <rdfs:label xml:lang="es">Buceo</rdfs:label>
+        <rdfs:label xml:lang="es">Escafandrismo</rdfs:label>
+        <rdfs:label xml:lang="es">Submarinismo</rdfs:label>
+        <rdfs:label xml:lang="en">Underwater diving</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Surf -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Surf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeSuperficie"/>
+        <rdfs:label xml:lang="en">Surf</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#SurfAVela -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#SurfAVela">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Surf"/>
+        <rdfs:label xml:lang="es">Surf a vela</rdfs:label>
+        <rdfs:label xml:lang="en">Windsurf</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#SurfDePala -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#SurfDePala">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Surf"/>
+        <rdfs:label xml:lang="en">Paddle surf</rdfs:label>
+        <rdfs:label xml:lang="es">Surf de pala</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#SurfeoAereo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#SurfeoAereo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Paracaidismo"/>
+        <rdfs:label xml:lang="en">Skysurf</rdfs:label>
+        <rdfs:label xml:lang="es">Surfeo aéreo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Tablacometa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Tablacometa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Surf"/>
+        <rdfs:label xml:lang="en">Kitesurf</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Telemark -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Telemark">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeNieve"/>
+        <rdfs:label xml:lang="en">Telemark</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Terrestres -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Terrestres">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Actividades"/>
+        <rdfs:description xml:lang="es">Actividades realizadas sobre superficie firme.</rdfs:description>
+        <rdfs:description xml:lang="en">Activities carried out on firm surface.</rdfs:description>
+        <rdfs:label xml:lang="es">Actividades terrestres</rdfs:label>
+        <rdfs:label xml:lang="en">Ground</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Tirolina -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Tirolina">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAereasDePlanear"/>
+        <rdfs:label xml:lang="es">Tirolina</rdfs:label>
+        <rdfs:label xml:lang="en">Zip line</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#TrajeAereo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#TrajeAereo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAereasDePlanear"/>
+        <rdfs:label xml:lang="es">Traje aéreo</rdfs:label>
+        <rdfs:label xml:lang="en">Wingsuit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#TravesiaEnAguasAbiertas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#TravesiaEnAguasAbiertas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeInmersion"/>
+        <rdfs:label xml:lang="en">Open water swimming</rdfs:label>
+        <rdfs:label xml:lang="es">Travesia en aguas abiertas</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#TrepaArbol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#TrepaArbol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDe"/>
+        <rdfs:label xml:lang="en">Tree climbing</rdfs:label>
+        <rdfs:label xml:lang="es">Trepa árbol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#TrineoDeAsfalto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#TrineoDeAsfalto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Patinaje"/>
+        <rdfs:label xml:lang="en">Street luge</rdfs:label>
+        <rdfs:label xml:lang="es">Trineo de asfalto</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#TrineoDeVela -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#TrineoDeVela">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeHielo"/>
+        <rdfs:label xml:lang="en">Iceboat</rdfs:label>
+        <rdfs:label xml:lang="es">Trineo de vela</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Trineos -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Trineos">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Montar"/>
+        <rdfs:label xml:lang="en">Sled</rdfs:label>
+        <rdfs:label xml:lang="es">Trineos</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Truco -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Truco">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDeSaltar"/>
+        <rdfs:label xml:lang="en">Trick</rdfs:label>
+        <rdfs:label xml:lang="es">Truco</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Ubicacion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Ubicacion">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="es">Lugar en el que se realiza la actividad.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Place in which the activity is carried out.</rdfs:comment>
+        <rdfs:label xml:lang="es">Ubicación</rdfs:label>
+        <rdfs:label xml:lang="en">Ubication</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Ultraligero -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Ultraligero">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAereasDeAscender"/>
+        <rdfs:label xml:lang="en">Microlight</rdfs:label>
+        <rdfs:label xml:lang="es">Ultraligero</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Vela -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Vela">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeSuperficie"/>
+        <rdfs:label xml:lang="en">Sailing</rdfs:label>
+        <rdfs:label xml:lang="es">Vela</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ViaFerrata -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ViaFerrata">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesTerrestresDe"/>
+        <rdfs:label xml:lang="en">Via ferrata</rdfs:label>
+        <rdfs:label xml:lang="es">Vía ferrata</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#VueloSinMotor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#VueloSinMotor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAereasDePlanear"/>
+        <rdfs:label xml:lang="en">Gliding</rdfs:label>
+        <rdfs:label xml:lang="es">Vuelo sin motor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Wakeboard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Wakeboard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticasDeSuperficie"/>
+        <rdfs:label xml:lang="en">Wakeboard</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#4x4 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#4x4">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Automovilismo"/>
+        <rdfs:label xml:lang="en">4x4</rdfs:label>
+        <rdfs:label xml:lang="es">4x4</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:Action -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:Action">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Action"/>
+        <rdfs:comment xml:lang="es">Acción que es necesaria realizar para obtener permisos para realizar una actividad.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Required action for the participation in an activiity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:PermissionLey -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:PermissionLey">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Permission"/>
+        <rdfs:comment xml:lang="en">Mandatory requisites for the participation in an activity.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Requisitos obligatorios por ley para la participación en una actividad.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:PermissionOrganizador -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:PermissionOrganizador">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Permission"/>
+        <rdfs:comment xml:lang="es">Requisitos impuestos por el organizador para la realización de la actividad.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Rquisites established by the organization entuty needed for the participation in the activity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:PolicyDeOrganizador -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:PolicyDeOrganizador">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Policy"/>
+        <dc:description xml:lang="en">Policies of participation in an activity stablished by the organizer.</dc:description>
+        <rdfs:comment xml:lang="es">Políticas de participación en una actividad por parte del organizador.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:PolicyLey -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#aal:PolicyLey">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Policy"/>
+        <dc:description xml:lang="en">Policies of participation in an activity stablished by the law.</dc:description>
+        <rdfs:comment xml:lang="es">Políticas de participación en una actividad establecidas por ley.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Action -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Action">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Asset -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Asset">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Permission -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Permission">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label xml:lang="es">Permisos</rdfs:label>
+        <rdfs:label xml:lang="en">Permission</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Policy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#odrl:Policy">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label xml:lang="en">Policy</rdfs:label>
+        <rdfs:label xml:lang="es">Política</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">Individual or entity who is involved in the realization of an activity.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Individuo u organización que se involucra en la realización de una actividad.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geonames.org/3109204 -->
+
+    <owl:NamedIndividual rdf:about="http://www.geonames.org/3109204">
+        <rdf:type rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Ubicacion"/>
+        <rdfs:isDefinedBy>http://www.geonames.org/3109204/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="es">Río sella</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Cuerpo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Cuerpo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Recurso"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#DescensoDelSella -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#DescensoDelSella">
+        <rdf:type rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Rafting"/>
+        <aal:seRealizanEn rdf:resource="http://www.geonames.org/3109204"/>
+        <aal:seUtiliza rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Cuerpo"/>
+        <aal:seUtiliza rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Piragua"/>
+        <aal:seUtiliza rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Remo"/>
+        <aal:medio xml:lang="es">Fluvial</aal:medio>
+        <rdfs:label xml:lang="es">Descenso del sella</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Ibai -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Ibai">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <aal:interviene rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Realizar_actividad_1"/>
+        <aal:tieneRol rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Paricipante"/>
+        <foaf:name xml:lang="es">Ibai</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Monitor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Monitor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Rol"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Organizador -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Organizador">
+        <rdf:type rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Rol"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Oscar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Oscar">
+        <aal:interviene rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Realizar_actividad_1"/>
+        <aal:tieneRol rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Monitor"/>
+        <foaf:name xml:lang="es">Óscar</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Pablo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Pablo">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <aal:interviene rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Realizar_actividad_1"/>
+        <aal:tieneRol rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Paricipante"/>
+        <foaf:name xml:lang="es">Pablo</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Paricipante -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Paricipante">
+        <rdf:type rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Rol"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Piragua -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Piragua">
+        <rdf:type rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Equipamiento"/>
+        <rdfs:label xml:lang="es">Piragua</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#RanaSella -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#RanaSella">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <aal:interviene rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Realizar_actividad_1"/>
+        <aal:tieneRol rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Organizador"/>
+        <foaf:name>RanaSella</foaf:name>
+        <foaf:website>https://www.ranasella.com/</foaf:website>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Realizar_actividad_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Realizar_actividad_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#RealizarActividad"/>
+        <aal:actividadRealizada rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#DescensoDelSella"/>
+        <aal:esIntervenidoPor rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Ibai"/>
+        <aal:esIntervenidoPor rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Oscar"/>
+        <aal:esIntervenidoPor rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Pablo"/>
+        <aal:esIntervenidoPor rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#RanaSella"/>
+        <aal:tienePrecio rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#15euros"/>
+        <aal:cantidadParticipantes xml:lang="es">Parejas</aal:cantidadParticipantes>
+        <aal:descuento xml:lang="es">Un 20% en estudiantes</aal:descuento>
+        <aal:dificultad xml:lang="es">familiar</aal:dificultad>
+        <aal:duracion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</aal:duracion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Remo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Remo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Equipamiento"/>
+        <rdfs:label xml:lang="es">Remo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#15euros -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#15euros">
+        <rdf:type rdf:resource="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Precio"/>
+        <aal:precioCantidad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</aal:precioCantidad>
+        <aal:precioMetrica>euros</aal:precioMetrica>
+        <rdfs:label>15 euros</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Cuerpo">
+        <rdfs:comment xml:lang="es">Emplea el cuerpo humano como principal eje de ejecución de la actividad.</rdfs:comment>
+        <rdfs:label xml:lang="es">Cuerpo</rdfs:label>
+        <rdfs:comment xml:lang="en">The activity uses the human body for its execution.</rdfs:comment>
+        <rdfs:label xml:lang="es">Body</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#ActividadesAcuaticas"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Aereas"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/UPM/ontologies/2021/actividades-deportivas-al-aire-libre#Terrestres"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
