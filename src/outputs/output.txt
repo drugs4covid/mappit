@@ -1,0 +1,70 @@
+<AGENCY>
+         a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source: "<#DB_source>"
+                 rr:sqlVersion "SQL2008"
+                 rr:tableName: "AGENCY"
+         ];
+<CALENDAR>
+         a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source: "<#DB_source>"
+                 rr:sqlVersion "SQL2008"
+                 rr:tableName: "CALENDAR"
+         ];
+<CALENDAR_DATES>
+         a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source: "<#DB_source>"
+                 rr:sqlVersion "SQL2008"
+                 rr:tableName: "CALENDAR_DATES"
+         ];
+<FEED_INFO>
+         a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source: "<#DB_source>"
+                 rr:sqlVersion "SQL2008"
+                 rr:tableName: "FEED_INFO"
+         ];
+<FREQUENCIES>
+         a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source: "<#DB_source>"
+                 rr:sqlVersion "SQL2008"
+                 rr:tableName: "FREQUENCIES"
+         ];
+<ROUTES>
+         a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source: "<#DB_source>"
+                 rr:sqlVersion "SQL2008"
+                 rr:tableName: "ROUTES"
+         ];
+<SHAPES>
+         a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source: "<#DB_source>"
+                 rr:sqlVersion "SQL2008"
+                 rr:tableName: "SHAPES"
+         ];
+<STOPS>
+         a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source: "<#DB_source>"
+                 rr:sqlVersion "SQL2008"
+                 rr:tableName: "STOPS"
+         ];
+<STOP_TIMES>
+         a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source: "<#DB_source>"
+                 rr:sqlVersion "SQL2008"
+                 rr:tableName: "STOP_TIMES"
+         ];
+<TRIPS>
+         a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source: "<#DB_source>"
+                 rr:sqlVersion "SQL2008"
+                 rr:tableName: "TRIPS"
+         ];
