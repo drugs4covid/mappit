@@ -2,6 +2,7 @@ from RMLEntity import RMLEntity
 from DatabaseManager import DatabaseManager
 from OntologyManager import OntologyManager
 from Utils import Utilities
+from RMLParser import RMLParser
 
 def correspondenceClass(oc_classes, table):
     dis = 100
@@ -18,13 +19,13 @@ def correspondenceClass(oc_classes, table):
 def getPropertiesCorrespondence(columns, properties):
     cor_properties = []
     for x in properties:
-        dis = 100
+        dis = 0
         term = []
         for y in columns:
             term1 = str(y).replace('_', '').lower()
             term2 = x.qname.split(':').pop()
-            auxDis = Utilities.levenshteinDistanceDP(term1, term2)
-            if auxDis < dis:
+            auxDis = Utilities.jaro_distance(term1, term2)
+            if auxDis > dis:
                 dis = auxDis
                 term = [x, y]
         cor_properties.append(term)
@@ -49,14 +50,17 @@ def main():
     ontology = ontoManager.ontology
     onto_classes = ontoManager.onto_classes
     tables = dbManager.get_tables()
-    print(tables[0][0])
+    #print(tables[0][0])
 
     rmlEntities = getRMLEntities(tables, ontoManager.onto_classes, ontoManager.ontology, dbManager)
+
+    #RMLParser.RML_Transformation('gtfs', rmlEntities, ontology)
 
     for x in rmlEntities:
         print(x.table)
         print(x.onto_class)
-        print(x.onto_properties)
+        for y in x.onto_properties:
+            print(y[0].printStats())
 
 if __name__ == "__main__":
     main()

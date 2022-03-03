@@ -9,11 +9,11 @@ class DatabaseManager(object):
             self.charset = charset
             self.database = database
             try:
-                self.connection = mysql.connector.connect(host='localhost',
-                                     user='root',
-                                     password='gtfs',
-                                     database='gtfs',
-                                     charset='utf8mb4')
+                self.connection = mysql.connector.connect(host= self.host,
+                                     user=self.user,
+                                     password=self.password,
+                                     database=self.database,
+                                     charset=self.charset)
 
                 if self.connection.is_connected():
                         db_Info = self.connection.get_server_info()
