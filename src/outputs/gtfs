@@ -31,7 +31,8 @@
 @prefix void: <http://rdfs.org/ns/void#>
 @prefix xml: <http://www.w3.org/XML/1998/namespace>
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>
-<AGENCY>
+@base http://vocab.gtfs.org/terms#
+<#AGENCY>
          a rr:TriplesMap;
          rml:logicalSource [
                  rml:source: "<#DB_source>";
@@ -39,19 +40,19 @@
                  rr:tableName: "AGENCY";
          ];
          rr:subjectMap [
-                 rr:template: "http://vocab.gtfs.org/terms#Agency";
+                 rr:template: "http://vocab.gtfs.org/terms#Agency/{agency_id};
                  rr:termType: "rr:IRI";
                  rr:class: "gtfs:Agency";
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#agency";
-                 rr:objectMap: [ rr:column "agency_name"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
+                 rr:predicate: "http://vocab.gtfs.org/terms#Agency/agency";
+                 rr:objectMap: [ rr:column "agency_name"; rr:datatype xsd:string; ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#fareUrl";
-                 rr:objectMap: [ rr:column "agency_url"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
-         ];
-<CALENDAR>
+                 rr:predicate: "http://vocab.gtfs.org/terms#Agency/fareUrl";
+                 rr:objectMap: [ rr:column "agency_url"; rr:datatype xsd:string; ];
+         ].
+<#CALENDAR>
          a rr:TriplesMap;
          rml:logicalSource [
                  rml:source: "<#DB_source>";
@@ -59,11 +60,11 @@
                  rr:tableName: "CALENDAR";
          ];
          rr:subjectMap [
-                 rr:template: "http://vocab.gtfs.org/terms#CalendarRule";
+                 rr:template: "http://vocab.gtfs.org/terms#CalendarRule/{service_id};
                  rr:termType: "rr:IRI";
                  rr:class: "gtfs:CalendarRule";
-         ];
-<CALENDAR_DATES>
+         ].
+<#CALENDAR_DATES>
          a rr:TriplesMap;
          rml:logicalSource [
                  rml:source: "<#DB_source>";
@@ -71,15 +72,15 @@
                  rr:tableName: "CALENDAR_DATES";
          ];
          rr:subjectMap [
-                 rr:template: "http://vocab.gtfs.org/terms#CalendarDateRule";
+                 rr:template: "http://vocab.gtfs.org/terms#CalendarDateRule/{service_id};
                  rr:termType: "rr:IRI";
                  rr:class: "gtfs:CalendarDateRule";
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#dateAddition";
-                 rr:objectMap: [ rr:column "date"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
-         ];
-<FEED_INFO>
+                 rr:predicate: "http://vocab.gtfs.org/terms#CalendarDateRule/dateAddition";
+                 rr:objectMap: [ rr:column "date"; rr:datatype xsd:string; ];
+         ].
+<#FEED_INFO>
          a rr:TriplesMap;
          rml:logicalSource [
                  rml:source: "<#DB_source>";
@@ -87,11 +88,11 @@
                  rr:tableName: "FEED_INFO";
          ];
          rr:subjectMap [
-                 rr:template: "http://vocab.gtfs.org/terms#Feed";
+                 rr:template: "http://vocab.gtfs.org/terms#Feed/{};
                  rr:termType: "rr:IRI";
                  rr:class: "gtfs:Feed";
-         ];
-<FREQUENCIES>
+         ].
+<#FREQUENCIES>
          a rr:TriplesMap;
          rml:logicalSource [
                  rml:source: "<#DB_source>";
@@ -99,27 +100,27 @@
                  rr:tableName: "FREQUENCIES";
          ];
          rr:subjectMap [
-                 rr:template: "http://vocab.gtfs.org/terms#Frequency";
+                 rr:template: "http://vocab.gtfs.org/terms#Frequency/{trip_id};
                  rr:termType: "rr:IRI";
                  rr:class: "gtfs:Frequency";
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#endTime";
-                 rr:objectMap: [ rr:column "end_time"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
+                 rr:predicate: "http://vocab.gtfs.org/terms#Frequency/endTime";
+                 rr:objectMap: [ rr:column "end_time"; rr:datatype xsd:string; ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#headwaySeconds";
-                 rr:objectMap: [ rr:column "headway_secs"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
+                 rr:predicate: "http://vocab.gtfs.org/terms#Frequency/headwaySeconds";
+                 rr:objectMap: [ rr:column "headway_secs"; rr:datatype xsd:string; ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#startTime";
-                 rr:objectMap: [ rr:column "start_time"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
+                 rr:predicate: "http://vocab.gtfs.org/terms#Frequency/startTime";
+                 rr:objectMap: [ rr:column "start_time"; rr:datatype xsd:string; ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#usesExactTimes";
-                 rr:objectMap: [ rr:column "exact_times"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
-         ];
-<ROUTES>
+                 rr:predicate: "http://vocab.gtfs.org/terms#Frequency/usesExactTimes";
+                 rr:objectMap: [ rr:column "exact_times"; rr:datatype xsd:string; ];
+         ].
+<#ROUTES>
          a rr:TriplesMap;
          rml:logicalSource [
                  rml:source: "<#DB_source>";
@@ -127,27 +128,27 @@
                  rr:tableName: "ROUTES";
          ];
          rr:subjectMap [
-                 rr:template: "http://vocab.gtfs.org/terms#Route";
+                 rr:template: "http://vocab.gtfs.org/terms#Route/{route_id};
                  rr:termType: "rr:IRI";
                  rr:class: "gtfs:Route";
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#longName";
-                 rr:objectMap: [ rr:column "route_long_name"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
+                 rr:predicate: "http://vocab.gtfs.org/terms#Route/longName";
+                 rr:objectMap: [ rr:column "route_long_name"; rr:datatype xsd:string; ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#route";
-                 rr:objectMap: [ rr:column "route_text_color"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
+                 rr:predicate: "http://vocab.gtfs.org/terms#Route/route";
+                 rr:objectMap: [ rr:column "route_text_color"; rr:datatype xsd:string; ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#routeType";
-                 rr:objectMap: [ rr:column "route_type"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
+                 rr:predicate: "http://vocab.gtfs.org/terms#Route/routeType";
+                 rr:objectMap: [ rr:column "route_type"; rr:datatype xsd:string; ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#shortName";
-                 rr:objectMap: [ rr:column "route_short_name"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
-         ];
-<SHAPES>
+                 rr:predicate: "http://vocab.gtfs.org/terms#Route/shortName";
+                 rr:objectMap: [ rr:column "route_short_name"; rr:datatype xsd:string; ];
+         ].
+<#SHAPES>
          a rr:TriplesMap;
          rml:logicalSource [
                  rml:source: "<#DB_source>";
@@ -155,23 +156,23 @@
                  rr:tableName: "SHAPES";
          ];
          rr:subjectMap [
-                 rr:template: "http://vocab.gtfs.org/terms#Shape";
+                 rr:template: "http://vocab.gtfs.org/terms#Shape/{shape_id};
                  rr:termType: "rr:IRI";
                  rr:class: "gtfs:Shape";
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#distanceTraveled";
-                 rr:objectMap: [ rr:column "shape_dist_traveled"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
+                 rr:predicate: "http://vocab.gtfs.org/terms#Shape/distanceTraveled";
+                 rr:objectMap: [ rr:column "shape_dist_traveled"; rr:datatype xsd:string; ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#shape";
-                 rr:objectMap: [ rr:column "shape_pt_sequence"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
+                 rr:predicate: "http://vocab.gtfs.org/terms#Shape/shape";
+                 rr:objectMap: [ rr:column "shape_pt_sequence"; rr:datatype xsd:string; ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#shapePoint";
-                 rr:objectMap: [ rr:column "shape_pt_lon"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
-         ];
-<STOPS>
+                 rr:predicate: "http://vocab.gtfs.org/terms#Shape/shapePoint";
+                 rr:objectMap: [ rr:column "shape_pt_lon"; rr:datatype xsd:string; ];
+         ].
+<#STOPS>
          a rr:TriplesMap;
          rml:logicalSource [
                  rml:source: "<#DB_source>";
@@ -179,31 +180,31 @@
                  rr:tableName: "STOPS";
          ];
          rr:subjectMap [
-                 rr:template: "http://vocab.gtfs.org/terms#Stop";
+                 rr:template: "http://vocab.gtfs.org/terms#Stop/{stop_id};
                  rr:termType: "rr:IRI";
                  rr:class: "gtfs:Stop";
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#destinationStop";
-                 rr:objectMap: [ rr:column "parent_station"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
+                 rr:predicate: "http://vocab.gtfs.org/terms#Stop/destinationStop";
+                 rr:objectMap: [ rr:column "parent_station"; rr:datatype xsd:string; ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#originStop";
-                 rr:objectMap: [ rr:column "location_type"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
+                 rr:predicate: "http://vocab.gtfs.org/terms#Stop/originStop";
+                 rr:objectMap: [ rr:column "location_type"; rr:datatype xsd:string; ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#parentStation";
-                 rr:objectMap: [ rr:column "parent_station"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
+                 rr:predicate: "http://vocab.gtfs.org/terms#Stop/parentStation";
+                 rr:objectMap: [ rr:column "parent_station"; rr:datatype xsd:string; ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#stop";
-                 rr:objectMap: [ rr:column "stop_code"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
+                 rr:predicate: "http://vocab.gtfs.org/terms#Stop/stop";
+                 rr:objectMap: [ rr:column "stop_code"; rr:datatype xsd:string; ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#wheelchairAccessible";
-                 rr:objectMap: [ rr:column "wheelchair_boarding"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
-         ];
-<STOP_TIMES>
+                 rr:predicate: "http://vocab.gtfs.org/terms#Stop/wheelchairAccessible";
+                 rr:objectMap: [ rr:column "wheelchair_boarding"; rr:datatype xsd:string; ];
+         ].
+<#STOP_TIMES>
          a rr:TriplesMap;
          rml:logicalSource [
                  rml:source: "<#DB_source>";
@@ -211,27 +212,27 @@
                  rr:tableName: "STOP_TIMES";
          ];
          rr:subjectMap [
-                 rr:template: "http://vocab.gtfs.org/terms#StopTime";
+                 rr:template: "http://vocab.gtfs.org/terms#StopTime/{trip_id};
                  rr:termType: "rr:IRI";
                  rr:class: "gtfs:StopTime";
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#arrivalTime";
-                 rr:objectMap: [ rr:column "arrival_time"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
+                 rr:predicate: "http://vocab.gtfs.org/terms#StopTime/arrivalTime";
+                 rr:objectMap: [ rr:column "arrival_time"; rr:datatype xsd:string; ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#departureTime";
-                 rr:objectMap: [ rr:column "departure_time"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
+                 rr:predicate: "http://vocab.gtfs.org/terms#StopTime/departureTime";
+                 rr:objectMap: [ rr:column "departure_time"; rr:datatype xsd:string; ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#distanceTraveled";
-                 rr:objectMap: [ rr:column "shape_dist_traveled"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
+                 rr:predicate: "http://vocab.gtfs.org/terms#StopTime/distanceTraveled";
+                 rr:objectMap: [ rr:column "shape_dist_traveled"; rr:datatype xsd:string; ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#stopSequence";
-                 rr:objectMap: [ rr:column "stop_sequence"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
-         ];
-<TRIPS>
+                 rr:predicate: "http://vocab.gtfs.org/terms#StopTime/stopSequence";
+                 rr:objectMap: [ rr:column "stop_sequence"; rr:datatype xsd:string; ];
+         ].
+<#TRIPS>
          a rr:TriplesMap;
          rml:logicalSource [
                  rml:source: "<#DB_source>";
@@ -239,23 +240,23 @@
                  rr:tableName: "TRIPS";
          ];
          rr:subjectMap [
-                 rr:template: "http://vocab.gtfs.org/terms#Trip";
+                 rr:template: "http://vocab.gtfs.org/terms#Trip/{trip_id};
                  rr:termType: "rr:IRI";
                  rr:class: "gtfs:Trip";
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#block";
-                 rr:objectMap: [ rr:column "block_id"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
+                 rr:predicate: "http://vocab.gtfs.org/terms#Trip/block";
+                 rr:objectMap: [ rr:column "block_id"; rr:datatype xsd:string; ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#route";
-                 rr:objectMap: [ rr:column "route_id"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
+                 rr:predicate: "http://vocab.gtfs.org/terms#Trip/route";
+                 rr:objectMap: [ rr:column "route_id"; rr:datatype xsd:string; ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#shortName";
-                 rr:objectMap: [ rr:column "trip_short_name"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
+                 rr:predicate: "http://vocab.gtfs.org/terms#Trip/shortName";
+                 rr:objectMap: [ rr:column "trip_short_name"; rr:datatype xsd:string; ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate: "http://vocab.gtfs.org/terms#trip";
-                 rr:objectMap: [ rr:column "trip_id"; rr:datatype http://www.w3.org/1999/02/22-rdf-syntax-ns#Property; ];
-         ];
+                 rr:predicate: "http://vocab.gtfs.org/terms#Trip/trip";
+                 rr:objectMap: [ rr:column "trip_id"; rr:datatype xsd:string; ];
+         ].

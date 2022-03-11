@@ -33,6 +33,8 @@ class OntologyManager(object):
                 properties.append(properties_class)
         return properties
 
+    #def get_JoinConditions()
+
     def __init__(self, uri):
         self.onto_uri = uri
         self.ontology = OntologyManager.loadOntology(uri)
