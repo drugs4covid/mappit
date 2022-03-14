@@ -1,4 +1,8 @@
+from decimal import Decimal
+import numbers
+from unicodedata import decimal
 import numpy as numpy
+import datetime
 
 class Utilities:
     def levenshteinDistanceDP(token1, token2):
@@ -100,3 +104,26 @@ class Utilities:
                 t/=2
 
         return ((match/len1+match/len2+(match-t)/match)/3.0)
+
+    def switchType(object):
+        if(isinstance(object, str)):
+            return "xsd:string"
+        elif(isinstance(object, int)):
+            return "xsd:integer"
+        elif(isinstance(object, float)):
+            return "xsd:float"
+        elif(isinstance(object, bool)):
+            return "xsd:bool"
+        elif(isinstance(object, datetime.date)):
+            return "xsd:date"
+        elif(isinstance(object, numbers.Number)):
+            return "xsd:double"
+        else: return "xsd:string"
+
+    
+    def infereType(object):
+        try:
+            return Utilities.switchType(object)
+        except:
+            return "xsd:string"
+        

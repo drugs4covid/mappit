@@ -36,3 +36,12 @@ class DatabaseManager(object):
         # get all records
         records = self.cursor.fetchall()
         return self.cursor.column_names
+
+    def get_column_value(self, table, column):
+        sql_select_Query = "select " + column + " from " + table
+        self.cursor.execute(sql_select_Query)
+        records = self.cursor.fetchall()
+        try:
+            return records[0]
+        except:
+            return "term"

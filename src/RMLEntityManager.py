@@ -22,8 +22,9 @@ def getPropertiesCorrespondence(columns, properties):
         dis = 0
         term = []
         for y in columns:
-            term1 = str(y).replace('_', '').lower()
+            term1 = str(y).split('_', '').pop().lower()
             term2 = x.qname.split(':').pop()
+            print("Col: ", term1, "Prop: ", term2)
             auxDis = Utilities.jaro_distance(term1, term2)
             if auxDis > dis:
                 dis = auxDis
@@ -32,44 +33,51 @@ def getPropertiesCorrespondence(columns, properties):
     return cor_properties
 
 def getClassIDTerm(onto_class, columns):
-    dis = 0
+    dis = 10
     term = ""
     for x in columns:
         name = str(x).replace('_', '').lower()
-        auxDis = Utilities.jaro_distance(name, onto_class.qname.split(':').pop() + 'id')
-        if (name.endswith('id') or name.startswith('id')) and auxDis > dis:
+        auxDis = Utilities.levenshteinDistanceDP(name, onto_class.qname.split(':').pop() + 'id')
+        if (name.endswith('id') or name.startswith('id')) and auxDis < dis and auxDis < 2.0:
             dis = auxDis
             term = x
     return term
 
-def get_class_properties(columns, ontology):
+def get_class_properties(columns, ontology, ID, table, db):
         properties = []
         for col in columns:
             term = []
             dis = 0
             for prop in ontology.all_properties:
                 columnTerm = str(col).replace('_', '').lower()
+                terms = str(col).split('_')
+                terms.remove(terms[0])
+                lastTerms = ''.join(terms).lower()
                 propTerm = prop.qname.split(':').pop().lower()
-                auxDis = Utilities.jaro_distance(columnTerm, propTerm)
-                if (auxDis > dis):
-                    dis = auxDis
+                auxDis1 = Utilities.jaro_distance(columnTerm, propTerm)
+                auxDis2 = Utilities.jaro_distance(lastTerms, propTerm)
+                if (auxDis1 > dis):
+                    dis = auxDis1
                     term = prop
-            properties.append([term, col])
+                elif (auxDis2 > dis and len(lastTerms) > 3):
+                    dis = auxDis2
+                    term = prop
+            IDterm = str(ID).replace('_', '').lower()
+            if (columnTerm != IDterm):
+                columnVal = DatabaseManager.get_column_value(db, table, col)
+                properties.append([term, col, columnVal])
         return properties
-
-def get_joinconditions(tables, entities):
-    joins = []
 
 def getRMLEntities(tables, oc_classes, ontology, dbManager):
     entities = []
     for x in range(0, len(tables)):
         columns = DatabaseManager.get_table_columns(dbManager, tables[x][0])
         onto_class = correspondenceClass(oc_classes, tables[x])
-        properties = get_class_properties(columns, ontology)
-        #onto_properties = getPropertiesCorrespondence(columns, properties)
         onto_ID = getClassIDTerm(onto_class, columns)
+        properties = get_class_properties(columns, ontology, onto_ID, tables[x][0], dbManager)
+        #onto_properties = getPropertiesCorrespondence(columns, properties)
         entity = RMLEntity(tables[x], onto_class, properties, onto_ID)
-        entity.getJoinConditions(tables, dbManager)
+        entity.getJoinConditions(tables, dbManager, onto_ID)
         entities.append(entity)
     return entities
 
@@ -88,15 +96,16 @@ def main():
 
     RMLParser.RML_Transformation('gtfs.ttl', rmlEntities, ontology, 'properties.json')
 
-    for x in rmlEntities:
-        print(x.table)
-        print(x.onto_class)
-        for y in x.joinConditions:
-            print(y)
-    #        for v in y[0].domains:
-    #            print("Domain: " + y[0].qname + " " + v.qname)
-    #        for v in y[0].ranges:
-    #            print("Range: " + y[0].qname + " " + v.qname)
+    #for x in rmlEntities:
+    #    print(x.table)
+    #    print(x.onto_class)
+    #    print(x.joinConditions)
+        #for y in x.onto_properties:
+        #    print(y)
+        #    for v in y[0].domains:
+        #        print("Domain: " + y[0].qname + " " + v.qname)
+        #    for v in y[0].ranges:
+        #        print("Range: " + y[0].qname + " " + v.qname)
 
 
 if __name__ == "__main__":
