@@ -105,25 +105,43 @@ class Utilities:
 
         return ((match/len1+match/len2+(match-t)/match)/3.0)
 
-    def switchType(object):
-        if(isinstance(object, str)):
-            return "xsd:string"
-        elif(isinstance(object, int)):
-            return "xsd:integer"
-        elif(isinstance(object, float)):
-            return "xsd:float"
-        elif(isinstance(object, bool)):
+    def isBoolean(column):
+        val = []
+        i = 0
+        while(len(val) < 3 and i < len(column)):
+            if(len(val) < 2):
+                val.append(column[i])
+            else:
+                same = True
+                j = 0
+                while (same == True and j < len(val)):
+                    if(val[j] != column[i]):
+                        val.append(column[i])
+                        same = False
+                    else:
+                        j+=1
+            i+=1
+        return (len(val) == 2 and i == len(column))
+
+    def switchType(column):
+        if(len(column) > 0 and Utilities.isBoolean(column)):
             return "xsd:bool"
-        elif(isinstance(object, datetime.date)):
+        elif(isinstance(column[0], int)):
+            return "xsd:integer"
+        elif(isinstance(column[0], float)):
+            return "xsd:float"
+        elif(isinstance(column[0], str)):
+            return "xsd:string"
+        elif(isinstance(column[0], datetime.date)):
             return "xsd:date"
-        elif(isinstance(object, numbers.Number)):
+        elif(isinstance(column[0], numbers.Number)):
             return "xsd:double"
         else: return "xsd:string"
 
     
-    def infereType(object):
+    def infereType(column):
         try:
-            return Utilities.switchType(object)
+            return Utilities.switchType(column)
         except:
             return "xsd:string"
         
