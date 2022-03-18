@@ -25,18 +25,7 @@
 		"URI": "http://vocab.gtfs.org/terms#"
 	},
 	"ontologies" : [
-		{
-			"URI": "http://xmlns.com/foaf/0.1/"
-		},
-		{
-			"URI": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-		},
-		{
-			"URI": "http://www.w3.org/2003/01/geo/wgs84_pos#"
-		},
-		{
-			"URI": "http://vocab.gtfs.org/terms#"
-		}
+
 	],
 	"classes" : [
 		{

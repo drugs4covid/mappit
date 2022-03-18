@@ -5,15 +5,18 @@ from DatabaseManager import DatabaseManager
 
 class RMLParser(object):
 
-    def writeProperties(output, data, properties):
+    #Writes all prefixes given the ontology and the additional prefixes declared in the json data file
+    def writePrefixes(output, data, properties):
         for x in data['list_prefixes']:
             print("@prefix " + x['prefix'] + ": <" + x['URI'] + "> .")
         for x in properties:
             print("@prefix " + x[0] + ": <" + x[1] + "> .")
-            
+    
+    # Returns tha base uri declared in the json data file
     def getBase(properties):
         return properties['base']['URI']
     
+
     def TripleMap(entity, base):
         last = (len(entity.onto_properties) == 0 and len(entity.joinConditions) == 0)
         level = 8
@@ -99,7 +102,7 @@ class RMLParser(object):
         with open(ROOT_DIR + "/outputs/" + output, 'w') as fw:
             original_stdout = sys.stdout
             sys.stdout = fw
-            RMLParser.writeProperties(ROOT_DIR + "/outputs/" + output, data, ontology.namespaces)
+            RMLParser.writePrefixes(ROOT_DIR + "/outputs/" + output, data, ontology.namespaces)
             print ('@base <' + base + "> .")
             for x in rmlEntities:
                 RMLParser.TripleMap(x, base)

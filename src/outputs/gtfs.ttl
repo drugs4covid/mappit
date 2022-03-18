@@ -32,7 +32,7 @@
          rr:predicateObjectMap [
                  rr:predicateMap [
                          a rr:PredicateMap;
-                         rr:constant foaf:name;
+                         rr:constant gtfs:agency;
                  ];
                  rr:objectMap [ rr:column "agency_name"; rr:datatype xsd:string];
          ];
@@ -60,7 +60,7 @@
          rr:predicateObjectMap [
                  rr:predicateMap [
                          a rr:PredicateMap;
-                         rr:constant foaf:phone;
+                         rr:constant gtfs:zone;
                  ];
                  rr:objectMap [ rr:column "agency_phone"; rr:datatype xsd:string];
          ];
@@ -140,14 +140,14 @@
          rr:predicateObjectMap [
                  rr:predicateMap [
                          a rr:PredicateMap;
-                         rr:constant schema:startDate;
+                         rr:constant gtfs:saturday;
                  ];
                  rr:objectMap [ rr:column "start_date"; rr:datatype xsd:date];
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [
                          a rr:PredicateMap;
-                         rr:constant schema:endDate;
+                         rr:constant gtfs:wednesday;
                  ];
                  rr:objectMap [ rr:column "end_date"; rr:datatype xsd:date];
          ].
@@ -195,14 +195,14 @@
          rr:predicateObjectMap [
                  rr:predicateMap [
                          a rr:PredicateMap;
-                         rr:constant dct:publisher;
+                         rr:constant gtfs:shortName;
                  ];
                  rr:objectMap [ rr:column "feed_publisher_name"; rr:datatype xsd:string];
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [
                          a rr:PredicateMap;
-                         rr:constant dct:publisher;
+                         rr:constant gtfs:fareUrl;
                  ];
                  rr:objectMap [ rr:column "feed_publisher_url"; rr:datatype xsd:string];
          ];
@@ -216,21 +216,21 @@
          rr:predicateObjectMap [
                  rr:predicateMap [
                          a rr:PredicateMap;
-                         rr:constant schema:startDate;
+                         rr:constant gtfs:transferType;
                  ];
                  rr:objectMap [ rr:column "feed_start_date"; rr:datatype xsd:string];
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [
                          a rr:PredicateMap;
-                         rr:constant schema:endDate;
+                         rr:constant gtfs:code;
                  ];
                  rr:objectMap [ rr:column "feed_end_date"; rr:datatype xsd:string];
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [
                          a rr:PredicateMap;
-                         rr:constant schema:version;
+                         rr:constant gtfs:headsign;
                  ];
                  rr:objectMap [ rr:column "feed_version"; rr:datatype xsd:string];
          ].
@@ -417,7 +417,7 @@
          rr:predicateObjectMap [
                  rr:predicateMap [
                          a rr:PredicateMap;
-                         rr:constant foaf:name;
+                         rr:constant gtfs:shortName;
                  ];
                  rr:objectMap [ rr:column "stop_name"; rr:datatype xsd:string];
          ];
@@ -480,7 +480,7 @@
          rr:predicateObjectMap [
                  rr:predicateMap [
                          a rr:PredicateMap;
-                         rr:constant dct:publisher;
+                         rr:constant gtfs:shapePoint;
                  ];
                  rr:objectMap [ rr:column "wheelchair_boarding"; rr:datatype xsd:integer];
          ].

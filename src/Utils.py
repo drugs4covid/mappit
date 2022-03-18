@@ -144,4 +144,5 @@ class Utilities:
             return Utilities.switchType(column)
         except:
             return "xsd:string"
+
         
