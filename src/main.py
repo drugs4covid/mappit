@@ -45,12 +45,10 @@ def getTypeManager(data):
 def main():
     
     ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-    data = loadProperties(ROOT_DIR + '/properties/' + sys.argv[1])
+    data = loadProperties(ROOT_DIR + '/properties/properties.json')
 
     ontoManager = OntologyManager(data['main_ontology'])
     dataManager = getTypeManager(data['Data'])
-
-    ontology = ontoManager.ontology
 
     loadAdditionalOntologies(data, ontoManager.ontology)
     appendAdditionalProperties(data, ontoManager.onto_classes)

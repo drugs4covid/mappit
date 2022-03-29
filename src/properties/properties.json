@@ -29,7 +29,7 @@
 	],
 	"classes" : [
 		{
-			"name" : "schema:example"
+			"name" : "gtfs:calendar"
 		}
 	],
 	"properties" : [

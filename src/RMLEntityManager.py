@@ -10,7 +10,7 @@ def getRMLEntities(tables, ontoManager, dbManager):
         columns = DatabaseManager.get_table_columns(dbManager, tables[x])
         entity = RMLEntity(tables[x], columns, dbManager, ontoManager)
         #After creating the entity, it is checked if it has any joinConditions given the prooperties assigned to  the entity
-        entity.getJoinConditions(tables, dbManager)
+#        entity.getJoinConditions(tables, dbManager)
         entities.append(entity)
     return entities
 

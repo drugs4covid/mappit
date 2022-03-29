@@ -20,8 +20,9 @@ class RMLEntity(object):
         self.columns = db.get_table_columns(self.table)
         self.onto_class = RMLEntity.correspondenceClass(self, ontoManager.onto_classes)
         self.ID =  RMLEntity.getClassIDTerm(self.onto_class, columns)
-        self.onto_properties = RMLEntity.get_class_properties(self, ontoManager.ontology, db)
         self.joinConditions = []
+        self.onto_properties = RMLEntity.get_class_properties(self, ontoManager.ontology, db)
+
     
     #Method that eliminates all the separators from the given term. 
     def replace (s):
@@ -67,6 +68,24 @@ class RMLEntity(object):
                 term = x
         return term
 
+    def rangesToItself(self, prop):
+        i = 0
+        foundByRange = False
+        try:
+            ranges = prop.ranges
+        except:
+            ranges = []
+
+        while(foundByRange == False and i < len(ranges)):
+            range = ranges[i]
+            if(Utilities.levenshteinDistanceDP(range.qname.split(':').pop().lower(), self.table.lower()) < 2.0):
+                foundByRange = True
+            else:
+                foundByRange = False
+            i+=1
+
+        return foundByRange
+
     #Given the ontology, it retrieves an array of objects:
     #   - Property Name
     #   - Column Name
@@ -100,17 +119,23 @@ class RMLEntity(object):
                 # First, it is prefered the complete column name, if it isn't similar, the terms obtained from the column name are
                 # checked and the property is selected in case that the important terms are long enough to be reliable (small terms like 'id' might
                 # bring a lot of confusion when compared)
-                if (auxDis1 > dis):
+                rangesToItself = RMLEntity.rangesToItself(self, prop)
+                if (auxDis1 > dis and rangesToItself == False):
                     dis = auxDis1
                     term = prop
-                elif (auxDis2 > dis and len(lastTerms) > 2):
+                elif (auxDis2 > dis and len(lastTerms) > 2 and rangesToItself == False):
                     dis = auxDis2
                     term = prop
             #ID columns are ignored and the property is appended to the list
             IDterm = RMLEntity.replace(self.ID)
             if (columnTerm != IDterm):
-                columnVal = db.get_column_values(self.table, col)
-                properties.append([term, col, columnVal])
+                tables = db.get_tables()
+                t, colCor = RMLEntity.checkJoinCondition(self, term, tables, db)
+                if (colCor != ""):
+                    self.joinConditions.append([[term, col], t, colCor])
+                else:
+                    columnVal = db.get_column_values(self.table, col)
+                    properties.append([term, col, columnVal])
         return properties
 
     # For each property assigned to the entity (class), it is checked if any table has a column that is referred by the property.
@@ -164,19 +189,19 @@ class RMLEntity(object):
         t = []
         col = ""
         try:
-            ranges = prop[0].ranges
+            ranges = prop.ranges
         except:
             ranges = []
         # Given the range of the property, it is checked if any of the classes refer to any table to see if there is any join condition
         while(foundByRange == False and i < len(ranges)):
-            t, foundByRange = RMLEntity.getTableByRange(tables, ranges[i].qname.split(':').pop().lower())
+            range = ranges[i]
+            t, foundByRange = RMLEntity.getTableByRange(tables, range.qname.split(':').pop().lower())
 
             #In case the range of the property corresponds to any table of the database and it isn't their own class, the column is found and
             # assigned
             if(foundByRange and t != self.table):
-                name = prop[0].qname.split(':').pop().lower()
+                name = prop.qname.split(':').pop().lower()
                 col = RMLEntity.getTableColumnCorrespondence(t, name, db)
-
             else:
                 foundByRange = False
             i+=1

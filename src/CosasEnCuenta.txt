@@ -13,3 +13,5 @@ no todas están declaradas en la ontología o no aparecen.
 - Object properties: join condition
 - Data Properties: normales
 - Comprobar que empieza o termina por id
+- No se pone el id salvo que coincida con el nombre de la tabla
+- Archivo properties: Se indica la base de datos, url de la ontología, output y clases, propiedades y ontologías adicionales.
