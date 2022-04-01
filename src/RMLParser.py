@@ -17,11 +17,11 @@ class RMLParser(object):
         return properties['base']['URI']
     
 
-    def TripleMap(entity, base):
+    def TripleMap(entity, base, format):
         last = (len(entity.onto_properties) == 0 and len(entity.joinConditions) == 0)
         level = 8
         print ("<#" + entity.table + "> a rr:TriplesMap;")
-        RMLParser.LogicalSource(entity.table)
+        RMLParser.LogicalSource(entity.table, format)
         RMLParser.SubjectMap(entity.onto_class, entity.ID, base, last)
         v = 0
         for y in entity.onto_properties:
@@ -34,11 +34,19 @@ class RMLParser(object):
             RMLParser.JoinCondition(j, last)
             v += 1
         
-    def LogicalSource(table):
+    def LogicalSource(table, format):
         level = 8
         print (" "*level, "rml:logicalSource [")
-        print (" "*(2*level), "rml:source " + '"' + "<#DB_source>" + '";')
-        print (" "*(2*level), "rr:tableName " + '"' + table + '";')
+        if (format == 'database'):
+            print (" "*(2*level), "rml:source " + '"' + "<#DB_source>" + '";')
+            print (" "*(2*level), "rr:tableName " + '"' + table + '";')
+        elif (format == 'csv'):
+             print (" "*(2*level), "rml:source " + '"' + table + '.csv" ;')
+             print (" "*(2*level), "rml:referenceFormulation ql:CSV")
+        elif (format == 'json'):
+            print (" "*(2*level), "rml:source " + '"' + table + '.json" ;')
+            print (" "*(2*level), "rml:referenceFormulation ql:JSONPath ;")
+            print (" "*(2*level), "rml:iterator " + '"$.venue[*]"')
         print (" "*level, "];")
         
     def SubjectMap(onto_class, onto_id, base, last):
@@ -65,7 +73,7 @@ class RMLParser(object):
         except:
             print (" "*(3*level), "rr:constant " + property + ";")
         print (" "*(2*level), "];")
-        print (" "*(2*level), "rr:objectMap " + '[ rr:column ' + '"' + column + '"; ' + "rr:datatype " + Utilities.infereType(values[0]) + "];")
+        print (" "*(2*level), "rr:objectMap " + '[ rr:column ' + '"' + column + '"; ' + "rr:datatype " + Utilities.infereType(values) + "];")
         endpoint = ";"
         if (last == True):
             endpoint = "."
@@ -105,6 +113,6 @@ class RMLParser(object):
             RMLParser.writePrefixes(ROOT_DIR + "/outputs/" + output, data, ontology.namespaces)
             print ('@base <' + base + "> .")
             for x in rmlEntities:
-                RMLParser.TripleMap(x, base)
+                RMLParser.TripleMap(x, base, data['Data']['format'])
             sys.stdout = original_stdout
             fw.close()

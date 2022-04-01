@@ -124,19 +124,44 @@ class Utilities:
         return (len(val) == 2 and i == len(column))
 
     def switchType(column):
-        if(len(column) > 0 and Utilities.isBoolean(column)):
-            return "xsd:bool"
-        elif(isinstance(column[0], int)):
-            return "xsd:integer"
-        elif(isinstance(column[0], float)):
-            return "xsd:float"
-        elif(isinstance(column[0], str)):
-            return "xsd:string"
-        elif(isinstance(column[0], datetime.date)):
-            return "xsd:date"
-        elif(isinstance(column[0], numbers.Number)):
-            return "xsd:double"
-        else: return "xsd:string"
+        field_type = {
+            'DECIMAL' : "xsd:decimal" ,
+            'TINY' : "xsd:double",
+            'SHORT' : "xsd:short",
+            'LONG' : "xsd:long",
+            'FLOAT' : "xsd:float",
+            'FLOAT64' : "xsd:float",
+            'DOUBLE' : "xsd:double",
+            'NULL' : "xsd:string",
+            'TIMESTAMP' : "xsd:datetime",
+            'LONGLONG' : "xsd:long",
+            'INT24' : "xsd:integer",
+            'INT64' : "xsd:integer",
+            'DATE' : "xsd:date",
+            'TIME' : "xsd:time",
+            'DATETIME' : "xsd:datetime",
+            'YEAR' : "xsd:year",
+            'NEWDATE' : "xsd:date",
+            'VARCHAR' : "xsd:string",
+            'BIT' : "xsd:string", 
+            'NEWDECIMAL' : "xsd:decimal",
+            'INTERVAL' : "xsd:duration",
+            'SET' : "xsd:string",
+            'TINY_BLOB' : "xsd:double",
+            'MEDIUM_BLOB' : "xsd:string",
+            'LONG_BLOB' : "xsd:string",
+            'BLOB' : "xsd:string",
+            'VAR_STRING' : "xsd:string",
+            'STRING' : "xsd:string",
+            'OBJECT' : "xsd:string",
+            'GEOMETRY' : "xsd:string",
+            'BOOL' : "xsd:bool",
+            'object' : "xsd:string",
+            'int64' : "xsd:integer",
+            'float64' : "xsd:float",
+            'bool' : "xsd:bool",
+            'datetime64' : "xsd:date"}
+        return field_type[column]
 
     
     def infereType(column):

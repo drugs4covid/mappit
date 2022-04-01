@@ -1,4 +1,5 @@
 import mysql.connector
+from mysql.connector import FieldType
 from DataManagement import DataManagement
 
 
@@ -31,7 +32,7 @@ class DatabaseManager(DataManagement):
             if self.connection.is_connected():
                 db_Info = self.connection.get_server_info()
                 print("Connected to MySQL Server version ", db_Info)
-                self.cursor = self.connection.cursor()
+                self.cursor = self.connection.cursor(buffered=True)
                 self.cursor.execute("select database();")
                 record = self.cursor.fetchone()
                 print("You're connected to database: ", record)
@@ -50,20 +51,18 @@ class DatabaseManager(DataManagement):
                     #For each column in  the table, it is saves a dictionary of columns, whith their respective name and a list of a maximum of 20 values
                     # from the column. In case that there isn't any values in the column, the sample value assigned is a string: ["term"]
                     for c in columnNames:
-                        sql_select_Query = "select " + c + " from " + t[0] + " LIMIT 20"
-                        self.cursor.execute(sql_select_Query)
-                        values = self.cursor.fetchall()
-                        if(len(values) > 0):
-                            columnDict.update({c : values})
-                        else:
-                            columnDict.update({c : ["term"]})
+                        #sql_select_Query = "select " + c + " from " + t[0] + "WHERE emp_no = %s", (123,)
+                        self.cursor.execute("select " + c + " from " + t[0])
+                        desc = self.cursor.description
+                        val = FieldType.get_info(desc[0][1])
+                        columnDict.update({c : val})
                             
                     self.tables.update({t[0] : columnDict})
                 self.cursor.close()
                 self.connection.close()
                     
-        except:
-            print("Error while connecting to MySQL")
+        except mysql.connector.Error as err:
+             print("Something went wrong: {}".format(err))
 
     # Returns all the tables from the databse
     def get_tables(self):
@@ -73,4 +72,4 @@ class DatabaseManager(DataManagement):
         return list(self.tables[table].keys())
     # Returns all the values of the given column of a given table
     def get_column_values(self, table, column):
-        return list(self.tables[table][column])
+        return self.tables[table][column]

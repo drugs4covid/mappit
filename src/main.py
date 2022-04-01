@@ -1,5 +1,5 @@
-from DatabaseManager import DatabaseManager
 from OntologyManager import OntologyManager
+from DataManager import DataManager
 import RMLEntityManager
 import json
 import os
@@ -31,24 +31,17 @@ def loadAdditionalOntologies(data, ontology):
         for p in addOnto.ontology.all_properties:
             ontology.all_properties.append(p)
 
-#In the future it will manage different types of data. Still in progress.
-def getTypeManager(data):
-    manager = []
-    try:
-        manager = DatabaseManager(data)
-    except:
-        print("Error with Data on properties file")
-    return manager
 
 #The properties, ontology and database are loaded. Then, all the information is given to the RMLEntityManager to create the entities
 # and parse the data into the document.
 def main():
     
     ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-    data = loadProperties(ROOT_DIR + '/properties/properties.json')
+    data = loadProperties(ROOT_DIR + '/properties/properties_json.json')
 
     ontoManager = OntologyManager(data['main_ontology'])
-    dataManager = getTypeManager(data['Data'])
+    dataManager = DataManager()
+    dataManager.serialize(data['Data'])
 
     loadAdditionalOntologies(data, ontoManager.ontology)
     appendAdditionalProperties(data, ontoManager.onto_classes)

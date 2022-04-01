@@ -34,62 +34,85 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @base <http://vocab.gtfs.org/terms#> .
-<#AGENCY> a rr:TriplesMap;
+<#routes> a rr:TriplesMap;
          rml:logicalSource [
-                 rml:source "<#DB_source>";
-                 rr:tableName "AGENCY";
+                 rml:source "routes.json" ;
+                 rml:referenceFormulation ql:JSONPath ;
+                 rml:iterator "$.venue[*]"
          ];
          rr:subjectMap [
-                 rr:template "http://vocab.gtfs.org/terms#Agency/{agency_id}";
+                 rr:template "http://vocab.gtfs.org/terms#Route/{route_id}";
                  rr:termType rr:IRI;
-                 rr:class gtfs:Agency;
+                 rr:class gtfs:Route;
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [
                          a rr:PredicateMap;
-                         rr:constant gtfs:longName;
+                         rr:constant gtfs:shortName;
                  ];
-                 rr:objectMap [ rr:column "agency_name"; rr:datatype xsd:string];
+                 rr:objectMap [ rr:column "route_short_name"; rr:datatype xsd:string];
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [
                          a rr:PredicateMap;
-                         rr:constant gtfs:fareUrl;
+                         rr:constant gtfs:shortName;
                  ];
-                 rr:objectMap [ rr:column "agency_url"; rr:datatype xsd:string];
+                 rr:objectMap [ rr:column "route_long_name"; rr:datatype xsd:string];
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [
                          a rr:PredicateMap;
-                         rr:constant gtfs:timeZone;
+                         rr:constant gtfs:code;
                  ];
-                 rr:objectMap [ rr:column "agency_timezone"; rr:datatype xsd:string];
+                 rr:objectMap [ rr:column "route_desc"; rr:datatype xsd:string];
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [
                          a rr:PredicateMap;
-                         rr:constant gtfs:distanceTraveled;
+                         rr:constant gtfs:routeType;
                  ];
-                 rr:objectMap [ rr:column "agency_lang"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:zone;
-                 ];
-                 rr:objectMap [ rr:column "agency_phone"; rr:datatype xsd:string];
+                 rr:objectMap [ rr:column "route_type"; rr:datatype xsd:integer];
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [
                          a rr:PredicateMap;
                          rr:constant gtfs:fareUrl;
                  ];
-                 rr:objectMap [ rr:column "agency_fare_url"; rr:datatype xsd:string];
+                 rr:objectMap [ rr:column "route_url"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:color;
+                 ];
+                 rr:objectMap [ rr:column "route_color"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:textColor;
+                 ];
+                 rr:objectMap [ rr:column "route_text_color"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:agency;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#agency>;
+                         rr:joinCondition [
+                                 rr:child "agency_id";
+                                 rr:parent "agency_id";
+                         ];
+                 ];
          ].
-<#CALENDAR> a rr:TriplesMap;
+<#calendar> a rr:TriplesMap;
          rml:logicalSource [
-                 rml:source "<#DB_source>";
-                 rr:tableName "CALENDAR";
+                 rml:source "calendar.json" ;
+                 rml:referenceFormulation ql:JSONPath ;
+                 rml:iterator "$.venue[*]"
          ];
          rr:subjectMap [
                  rr:template "http://vocab.gtfs.org/terms#CalendarRule/{}";
@@ -101,7 +124,7 @@
                          a rr:PredicateMap;
                          rr:constant gtfs:service;
                  ];
-                 rr:objectMap [ rr:column "service_id"; rr:datatype xsd:string];
+                 rr:objectMap [ rr:column "service_id"; rr:datatype xsd:integer];
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [
@@ -157,439 +180,20 @@
                          a rr:PredicateMap;
                          rr:constant gtfs:saturday;
                  ];
-                 rr:objectMap [ rr:column "start_date"; rr:datatype xsd:date];
+                 rr:objectMap [ rr:column "start_date"; rr:datatype xsd:string];
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [
                          a rr:PredicateMap;
                          rr:constant gtfs:wednesday;
                  ];
-                 rr:objectMap [ rr:column "end_date"; rr:datatype xsd:date];
+                 rr:objectMap [ rr:column "end_date"; rr:datatype xsd:string];
          ].
-<#CALENDAR_DATES> a rr:TriplesMap;
+<#trips> a rr:TriplesMap;
          rml:logicalSource [
-                 rml:source "<#DB_source>";
-                 rr:tableName "CALENDAR_DATES";
-         ];
-         rr:subjectMap [
-                 rr:template "http://vocab.gtfs.org/terms#CalendarRule/{}";
-                 rr:termType rr:IRI;
-                 rr:class gtfs:CalendarRule;
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:service;
-                 ];
-                 rr:objectMap [ rr:column "service_id"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:dateAddition;
-                 ];
-                 rr:objectMap [ rr:column "date"; rr:datatype xsd:date];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:direction;
-                 ];
-                 rr:objectMap [ rr:column "exception_type"; rr:datatype xsd:integer];
-         ].
-<#FEED_INFO> a rr:TriplesMap;
-         rml:logicalSource [
-                 rml:source "<#DB_source>";
-                 rr:tableName "FEED_INFO";
-         ];
-         rr:subjectMap [
-                 rr:template "http://vocab.gtfs.org/terms#Feed/{}";
-                 rr:termType rr:IRI;
-                 rr:class gtfs:Feed;
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:shortName;
-                 ];
-                 rr:objectMap [ rr:column "feed_publisher_name"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:fareUrl;
-                 ];
-                 rr:objectMap [ rr:column "feed_publisher_url"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:headsign;
-                 ];
-                 rr:objectMap [ rr:column "feed_lang"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:transferType;
-                 ];
-                 rr:objectMap [ rr:column "feed_start_date"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:code;
-                 ];
-                 rr:objectMap [ rr:column "feed_end_date"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:headsign;
-                 ];
-                 rr:objectMap [ rr:column "feed_version"; rr:datatype xsd:string];
-         ].
-<#FREQUENCIES> a rr:TriplesMap;
-         rml:logicalSource [
-                 rml:source "<#DB_source>";
-                 rr:tableName "FREQUENCIES";
-         ];
-         rr:subjectMap [
-                 rr:template "http://vocab.gtfs.org/terms#Frequency/{}";
-                 rr:termType rr:IRI;
-                 rr:class gtfs:Frequency;
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:startTime;
-                 ];
-                 rr:objectMap [ rr:column "start_time"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:endTime;
-                 ];
-                 rr:objectMap [ rr:column "end_time"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:headwaySeconds;
-                 ];
-                 rr:objectMap [ rr:column "headway_secs"; rr:datatype xsd:integer];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:usesExactTimes;
-                 ];
-                 rr:objectMap [ rr:column "exact_times"; rr:datatype xsd:integer];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:trip;
-                 ];
-                 rr:objectMap [
-                         a rr:RefObjectMap;
-                         rr:parentTriplesMap <#TRIPS>;
-                         rr:joinCondition [
-                                 rr:child "trip_id";
-                                 rr:parent "trip_id";
-                         ];
-                 ];
-         ].
-<#ROUTES> a rr:TriplesMap;
-         rml:logicalSource [
-                 rml:source "<#DB_source>";
-                 rr:tableName "ROUTES";
-         ];
-         rr:subjectMap [
-                 rr:template "http://vocab.gtfs.org/terms#Route/{route_id}";
-                 rr:termType rr:IRI;
-                 rr:class gtfs:Route;
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:shortName;
-                 ];
-                 rr:objectMap [ rr:column "route_short_name"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:shortName;
-                 ];
-                 rr:objectMap [ rr:column "route_long_name"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:code;
-                 ];
-                 rr:objectMap [ rr:column "route_desc"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:routeType;
-                 ];
-                 rr:objectMap [ rr:column "route_type"; rr:datatype xsd:integer];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:fareUrl;
-                 ];
-                 rr:objectMap [ rr:column "route_url"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:color;
-                 ];
-                 rr:objectMap [ rr:column "route_color"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:textColor;
-                 ];
-                 rr:objectMap [ rr:column "route_text_color"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:agency;
-                 ];
-                 rr:objectMap [
-                         a rr:RefObjectMap;
-                         rr:parentTriplesMap <#AGENCY>;
-                         rr:joinCondition [
-                                 rr:child "agency_id";
-                                 rr:parent "agency_id";
-                         ];
-                 ];
-         ].
-<#SHAPES> a rr:TriplesMap;
-         rml:logicalSource [
-                 rml:source "<#DB_source>";
-                 rr:tableName "SHAPES";
-         ];
-         rr:subjectMap [
-                 rr:template "http://vocab.gtfs.org/terms#Shape/{shape_id}";
-                 rr:termType rr:IRI;
-                 rr:class gtfs:Shape;
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:shapePoint;
-                 ];
-                 rr:objectMap [ rr:column "shape_pt_lat"; rr:datatype xsd:double];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:shapePoint;
-                 ];
-                 rr:objectMap [ rr:column "shape_pt_lon"; rr:datatype xsd:double];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:stopSequence;
-                 ];
-                 rr:objectMap [ rr:column "shape_pt_sequence"; rr:datatype xsd:integer];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:distanceTraveled;
-                 ];
-                 rr:objectMap [ rr:column "shape_dist_traveled"; rr:datatype xsd:double];
-         ].
-<#STOPS> a rr:TriplesMap;
-         rml:logicalSource [
-                 rml:source "<#DB_source>";
-                 rr:tableName "STOPS";
-         ];
-         rr:subjectMap [
-                 rr:template "http://vocab.gtfs.org/terms#Stop/{stop_id}";
-                 rr:termType rr:IRI;
-                 rr:class gtfs:Stop;
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:code;
-                 ];
-                 rr:objectMap [ rr:column "stop_code"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:shortName;
-                 ];
-                 rr:objectMap [ rr:column "stop_name"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:stopSequence;
-                 ];
-                 rr:objectMap [ rr:column "stop_desc"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:stopSequence;
-                 ];
-                 rr:objectMap [ rr:column "stop_lat"; rr:datatype xsd:double];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:stopSequence;
-                 ];
-                 rr:objectMap [ rr:column "stop_lon"; rr:datatype xsd:double];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:zone;
-                 ];
-                 rr:objectMap [ rr:column "zone_id"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:stopSequence;
-                 ];
-                 rr:objectMap [ rr:column "stop_url"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:shapePoint;
-                 ];
-                 rr:objectMap [ rr:column "location_type"; rr:datatype xsd:integer];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:parentStation;
-                 ];
-                 rr:objectMap [ rr:column "parent_station"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:timeZone;
-                 ];
-                 rr:objectMap [ rr:column "stop_timezone"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:shapePoint;
-                 ];
-                 rr:objectMap [ rr:column "wheelchair_boarding"; rr:datatype xsd:integer];
-         ].
-<#STOP_TIMES> a rr:TriplesMap;
-         rml:logicalSource [
-                 rml:source "<#DB_source>";
-                 rr:tableName "STOP_TIMES";
-         ];
-         rr:subjectMap [
-                 rr:template "http://vocab.gtfs.org/terms#StopTime/{}";
-                 rr:termType rr:IRI;
-                 rr:class gtfs:StopTime;
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:arrivalTime;
-                 ];
-                 rr:objectMap [ rr:column "arrival_time"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:departureTime;
-                 ];
-                 rr:objectMap [ rr:column "departure_time"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:stopSequence;
-                 ];
-                 rr:objectMap [ rr:column "stop_sequence"; rr:datatype xsd:integer];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:headsign;
-                 ];
-                 rr:objectMap [ rr:column "stop_headsign"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:pickupType;
-                 ];
-                 rr:objectMap [ rr:column "pickup_type"; rr:datatype xsd:integer];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:dropOffType;
-                 ];
-                 rr:objectMap [ rr:column "drop_off_type"; rr:datatype xsd:integer];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:distanceTraveled;
-                 ];
-                 rr:objectMap [ rr:column "shape_dist_traveled"; rr:datatype xsd:double];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:trip;
-                 ];
-                 rr:objectMap [
-                         a rr:RefObjectMap;
-                         rr:parentTriplesMap <#TRIPS>;
-                         rr:joinCondition [
-                                 rr:child "trip_id";
-                                 rr:parent "trip_id";
-                         ];
-                 ];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:stop;
-                 ];
-                 rr:objectMap [
-                         a rr:RefObjectMap;
-                         rr:parentTriplesMap <#STOPS>;
-                         rr:joinCondition [
-                                 rr:child "stop_id";
-                                 rr:parent "stop_id";
-                         ];
-                 ];
-         ].
-<#TRIPS> a rr:TriplesMap;
-         rml:logicalSource [
-                 rml:source "<#DB_source>";
-                 rr:tableName "TRIPS";
+                 rml:source "trips.json" ;
+                 rml:referenceFormulation ql:JSONPath ;
+                 rml:iterator "$.venue[*]"
          ];
          rr:subjectMap [
                  rr:template "http://vocab.gtfs.org/terms#Trip/{trip_id}";
@@ -601,7 +205,7 @@
                          a rr:PredicateMap;
                          rr:constant gtfs:service;
                  ];
-                 rr:objectMap [ rr:column "service_id"; rr:datatype xsd:string];
+                 rr:objectMap [ rr:column "service_id"; rr:datatype xsd:integer];
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [
@@ -645,7 +249,7 @@
                  ];
                  rr:objectMap [
                          a rr:RefObjectMap;
-                         rr:parentTriplesMap <#ROUTES>;
+                         rr:parentTriplesMap <#routes>;
                          rr:joinCondition [
                                  rr:child "route_id";
                                  rr:parent "route_id";
@@ -659,10 +263,416 @@
                  ];
                  rr:objectMap [
                          a rr:RefObjectMap;
-                         rr:parentTriplesMap <#SHAPES>;
+                         rr:parentTriplesMap <#shapes>;
                          rr:joinCondition [
                                  rr:child "shape_id";
                                  rr:parent "shape_id";
                          ];
                  ];
+         ].
+<#stop_times> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "stop_times.json" ;
+                 rml:referenceFormulation ql:JSONPath ;
+                 rml:iterator "$.venue[*]"
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#StopTime/{}";
+                 rr:termType rr:IRI;
+                 rr:class gtfs:StopTime;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:arrivalTime;
+                 ];
+                 rr:objectMap [ rr:column "arrival_time"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:departureTime;
+                 ];
+                 rr:objectMap [ rr:column "departure_time"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:stopSequence;
+                 ];
+                 rr:objectMap [ rr:column "stop_sequence"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:headsign;
+                 ];
+                 rr:objectMap [ rr:column "stop_headsign"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:pickupType;
+                 ];
+                 rr:objectMap [ rr:column "pickup_type"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:dropOffType;
+                 ];
+                 rr:objectMap [ rr:column "drop_off_type"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:distanceTraveled;
+                 ];
+                 rr:objectMap [ rr:column "shape_dist_traveled"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:trip;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#trips>;
+                         rr:joinCondition [
+                                 rr:child "trip_id";
+                                 rr:parent "trip_id";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:stop;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#stops>;
+                         rr:joinCondition [
+                                 rr:child "stop_id";
+                                 rr:parent "stop_id";
+                         ];
+                 ];
+         ].
+<#shapes> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "shapes.json" ;
+                 rml:referenceFormulation ql:JSONPath ;
+                 rml:iterator "$.venue[*]"
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Shape/{shape_id}";
+                 rr:termType rr:IRI;
+                 rr:class gtfs:Shape;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:shapePoint;
+                 ];
+                 rr:objectMap [ rr:column "shape_pt_lat"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:shapePoint;
+                 ];
+                 rr:objectMap [ rr:column "shape_pt_lon"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:stopSequence;
+                 ];
+                 rr:objectMap [ rr:column "shape_pt_sequence"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:distanceTraveled;
+                 ];
+                 rr:objectMap [ rr:column "shape_dist_traveled"; rr:datatype xsd:integer];
+         ].
+<#agency> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "agency.json" ;
+                 rml:referenceFormulation ql:JSONPath ;
+                 rml:iterator "$.venue[*]"
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Agency/{agency_id}";
+                 rr:termType rr:IRI;
+                 rr:class gtfs:Agency;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:longName;
+                 ];
+                 rr:objectMap [ rr:column "agency_name"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:fareUrl;
+                 ];
+                 rr:objectMap [ rr:column "agency_url"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:timeZone;
+                 ];
+                 rr:objectMap [ rr:column "agency_timezone"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:distanceTraveled;
+                 ];
+                 rr:objectMap [ rr:column "agency_lang"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:zone;
+                 ];
+                 rr:objectMap [ rr:column "agency_phone"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:fareUrl;
+                 ];
+                 rr:objectMap [ rr:column "agency_fare_url"; rr:datatype xsd:string];
+         ].
+<#stops> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "stops.json" ;
+                 rml:referenceFormulation ql:JSONPath ;
+                 rml:iterator "$.venue[*]"
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Stop/{stop_id}";
+                 rr:termType rr:IRI;
+                 rr:class gtfs:Stop;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:code;
+                 ];
+                 rr:objectMap [ rr:column "stop_code"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:shortName;
+                 ];
+                 rr:objectMap [ rr:column "stop_name"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:stopSequence;
+                 ];
+                 rr:objectMap [ rr:column "stop_desc"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:stopSequence;
+                 ];
+                 rr:objectMap [ rr:column "stop_lat"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:stopSequence;
+                 ];
+                 rr:objectMap [ rr:column "stop_lon"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:zone;
+                 ];
+                 rr:objectMap [ rr:column "zone_id"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:stopSequence;
+                 ];
+                 rr:objectMap [ rr:column "stop_url"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:shapePoint;
+                 ];
+                 rr:objectMap [ rr:column "location_type"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:parentStation;
+                 ];
+                 rr:objectMap [ rr:column "parent_station"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:timeZone;
+                 ];
+                 rr:objectMap [ rr:column "stop_timezone"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:shapePoint;
+                 ];
+                 rr:objectMap [ rr:column "wheelchair_boarding"; rr:datatype xsd:integer];
+         ].
+<#frequencies> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "frequencies.json" ;
+                 rml:referenceFormulation ql:JSONPath ;
+                 rml:iterator "$.venue[*]"
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Frequency/{}";
+                 rr:termType rr:IRI;
+                 rr:class gtfs:Frequency;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:startTime;
+                 ];
+                 rr:objectMap [ rr:column "start_time"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:endTime;
+                 ];
+                 rr:objectMap [ rr:column "end_time"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:headwaySeconds;
+                 ];
+                 rr:objectMap [ rr:column "headway_secs"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:usesExactTimes;
+                 ];
+                 rr:objectMap [ rr:column "exact_times"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:trip;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#trips>;
+                         rr:joinCondition [
+                                 rr:child "trip_id";
+                                 rr:parent "trip_id";
+                         ];
+                 ];
+         ].
+<#feed_info> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "feed_info.json" ;
+                 rml:referenceFormulation ql:JSONPath ;
+                 rml:iterator "$.venue[*]"
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Feed/{}";
+                 rr:termType rr:IRI;
+                 rr:class gtfs:Feed;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:shortName;
+                 ];
+                 rr:objectMap [ rr:column "feed_publisher_name"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:fareUrl;
+                 ];
+                 rr:objectMap [ rr:column "feed_publisher_url"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:headsign;
+                 ];
+                 rr:objectMap [ rr:column "feed_lang"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:transferType;
+                 ];
+                 rr:objectMap [ rr:column "feed_start_date"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:code;
+                 ];
+                 rr:objectMap [ rr:column "feed_end_date"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:headsign;
+                 ];
+                 rr:objectMap [ rr:column "feed_version"; rr:datatype xsd:integer];
+         ].
+<#calendar_dates> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "calendar_dates.json" ;
+                 rml:referenceFormulation ql:JSONPath ;
+                 rml:iterator "$.venue[*]"
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#CalendarRule/{}";
+                 rr:termType rr:IRI;
+                 rr:class gtfs:CalendarRule;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:service;
+                 ];
+                 rr:objectMap [ rr:column "service_id"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:dateAddition;
+                 ];
+                 rr:objectMap [ rr:column "date"; rr:datatype xsd:datetime];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant gtfs:direction;
+                 ];
+                 rr:objectMap [ rr:column "exception_type"; rr:datatype xsd:integer];
          ].

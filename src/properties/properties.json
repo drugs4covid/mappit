@@ -1,7 +1,7 @@
 {
 	"main_ontology" : "http://vocab.gtfs.org/terms#",
-
 	"Data" : {
+		"format" : "database",
 		"database" : "gtfs",
 		"user" : "root",
 		"password" : "gtfs",
