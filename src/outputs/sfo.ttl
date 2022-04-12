@@ -1,0 +1,688 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix : <http://openanzo.org/ontologies/2008/07/Anzo#> .
+@prefix anzoowl: <http://openanzo.org/ontologies/2009/05/AnzoOwl#> .
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix default1: <http://purl.org/dc/terms/> .
+@prefix default2: <http://openanzo.org/ontologies/Storage#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@base <http://data.sfgov.org/ontology#> .
+<#ActivityPeriod> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_activity_period_summary.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#ActivityPeriod/{}";
+                 rr:termType rr:IRI;
+                 rr:class ActivityPeriod;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasActivityPeriodValue;
+                 ];
+                 rr:objectMap [ rr:column "has_activity_period_value"; rr:datatype xsd:string];
+         ].
+<#Aircraft> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#Aircraft/{}";
+                 rr:termType rr:IRI;
+                 rr:class Aircraft;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasAircraftId;
+                 ];
+                 rr:objectMap [ rr:column "aircraft_id"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasCreationDate;
+                 ];
+                 rr:objectMap [ rr:column "creation_date"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasModificationDate;
+                 ];
+                 rr:objectMap [ rr:column "modification_date"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasTailNumber;
+                 ];
+                 rr:objectMap [ rr:column "tail_number"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#isActive;
+                 ];
+                 rr:objectMap [ rr:column "creation_date"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasAircraftModelVersion;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#AircraftModelVersion>;
+                         rr:joinCondition [
+                                 rr:child "aircraft_model";
+                                 rr:parent "aircraft_model";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#owningAirline;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#Airline>;
+                         rr:joinCondition [
+                                 rr:child "airline";
+                                 rr:parent "airline";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#p_has_Aircraft_Model;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#AircraftModel>;
+                         rr:joinCondition [
+                                 rr:child "aircraft_model";
+                                 rr:parent "aircraft_model";
+                         ];
+                 ];
+         ].
+<#AircraftBody> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#AircraftBody/{}";
+                 rr:termType rr:IRI;
+                 rr:class AircraftBody;
+         ].
+<#AircraftConfiguration> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#AircraftConfiguration/{}";
+                 rr:termType rr:IRI;
+                 rr:class AircraftConfiguration;
+         ].
+<#AircraftManufacturer> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#AircraftManufacturer/{}";
+                 rr:termType rr:IRI;
+                 rr:class AircraftManufacturer;
+         ].
+<#AircraftModel> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_air_traffic_landing_statistics.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#AircraftModel/{}";
+                 rr:termType rr:IRI;
+                 rr:class AircraftModel;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasModelName;
+                 ];
+                 rr:objectMap [ rr:column "aircraft_model"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasManufacturer;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#AircraftManufacturer>;
+                         rr:joinCondition [
+                                 rr:child "aircraft_manufacturer";
+                                 rr:parent "aircraft_manufacturer";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasVersion;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#AircraftModelVersion>;
+                         rr:joinCondition [
+                                 rr:child "aircraft_version";
+                                 rr:parent "aircraft_version";
+                         ];
+                 ];
+         ].
+<#AircraftModelVersion> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_air_traffic_landing_statistics.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#AircraftModelVersion/{}";
+                 rr:termType rr:IRI;
+                 rr:class AircraftModelVersion;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasModelVersion;
+                 ];
+                 rr:objectMap [ rr:column "aircraft_version"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#isVersionOf;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#AircraftModel>;
+                         rr:joinCondition [
+                                 rr:child "aircraft_version";
+                                 rr:parent "aircraft_version";
+                         ];
+                 ];
+         ].
+<#Airline> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_air_traffic_landing_statistics.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#Airline/{}";
+                 rr:termType rr:IRI;
+                 rr:class Airline;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasIAirlineATA2DigitCode;
+                 ];
+                 rr:objectMap [ rr:column "operating_airline_iata_code"; rr:datatype xsd:string];
+         ].
+<#Airport> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_air_traffic_landing_statistics.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#Airport/{}";
+                 rr:termType rr:IRI;
+                 rr:class Airport;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasAirportIATA2DigitCode;
+                 ];
+                 rr:objectMap [ rr:column "operating_airline_iata_code"; rr:datatype xsd:string];
+         ].
+<#AirportActivity> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_air_traffic_landing_statistics.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#AirportActivity/{}";
+                 rr:termType rr:IRI;
+                 rr:class AirportActivity;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasActivityPeriod;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#ActivityPeriod>;
+                         rr:joinCondition [
+                                 rr:child "activity_period";
+                                 rr:parent "activity_period";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasGeoRegion;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#GeoRegion>;
+                         rr:joinCondition [
+                                 rr:child "geo_region";
+                                 rr:parent "geo_region";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasOperatingAirline;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#Airline>;
+                         rr:joinCondition [
+                                 rr:child "operating_airline";
+                                 rr:parent "operating_airline";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasPublishedAirline;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#Airline>;
+                         rr:joinCondition [
+                                 rr:child "published_airline";
+                                 rr:parent "published_airline";
+                         ];
+                 ];
+         ].
+<#AirportTerminal> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_air_traffic_passenger_statistics.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#AirportTerminal/{}";
+                 rr:termType rr:IRI;
+                 rr:class AirportTerminal;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#p_hasAirportName;
+                 ];
+                 rr:objectMap [ rr:column "operating_airline"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasTerminalAirport;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#Airport>;
+                         rr:joinCondition [
+                                 rr:child "terminal";
+                                 rr:parent "terminal";
+                         ];
+                 ];
+         ].
+<#BoardingArea> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_air_traffic_passenger_statistics.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#BoardingArea/{}";
+                 rr:termType rr:IRI;
+                 rr:class BoardingArea;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasTerminalAreaName;
+                 ];
+                 rr:objectMap [ rr:column "terminal"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasBoardingAreaTerminal;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#AirportTerminal>;
+                         rr:joinCondition [
+                                 rr:child "boarding_area";
+                                 rr:parent "boarding_area";
+                         ];
+                 ];
+         ].
+<#CombiAircraft> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#CombiAircraft/{}";
+                 rr:termType rr:IRI;
+                 rr:class CombiAircraft;
+         ].
+<#Company> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_air_traffic_landing_statistics.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#Company/{}";
+                 rr:termType rr:IRI;
+                 rr:class Company;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasCompanyName;
+                 ];
+                 rr:objectMap [ rr:column "geo_summary"; rr:datatype xsd:string];
+         ].
+<#FreighterAircraft> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#FreighterAircraft/{}";
+                 rr:termType rr:IRI;
+                 rr:class FreighterAircraft;
+         ].
+<#GeoRegion> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_air_traffic_landing_statistics.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#GeoRegion/{}";
+                 rr:termType rr:IRI;
+                 rr:class GeoRegion;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasRegionName;
+                 ];
+                 rr:objectMap [ rr:column "geo_region"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasregionSummary;
+                 ];
+                 rr:objectMap [ rr:column "geo_summary"; rr:datatype xsd:string];
+         ].
+<#LandingActivity> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_air_traffic_landing_statistics.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#LandingActivity/{}";
+                 rr:termType rr:IRI;
+                 rr:class LandingActivity;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasLandingCount;
+                 ];
+                 rr:objectMap [ rr:column "landing_count"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasTotalLandedWeight;
+                 ];
+                 rr:objectMap [ rr:column "total_landed_weight"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasAircraftManufacturer;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#AircraftManufacturer>;
+                         rr:joinCondition [
+                                 rr:child "aircraft_manufacturer";
+                                 rr:parent "aircraft_manufacturer";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasAircraftModel;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#AircraftModel>;
+                         rr:joinCondition [
+                                 rr:child "aircraft_model";
+                                 rr:parent "aircraft_model";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasAircroftModelVersion;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#AircraftModelVersion>;
+                         rr:joinCondition [
+                                 rr:child "aircraft_version";
+                                 rr:parent "aircraft_version";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasLAndingAirport;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#Airport>;
+                         rr:joinCondition [
+                                 rr:child "landing_count";
+                                 rr:parent "landing_count";
+                         ];
+                 ];
+         ].
+<#NarrowBody> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#NarrowBody/{}";
+                 rr:termType rr:IRI;
+                 rr:class NarrowBody;
+         ].
+<#PassengerActivity> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_air_traffic_passenger_statistics.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#PassengerActivity/{}";
+                 rr:termType rr:IRI;
+                 rr:class PassengerActivity;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasPassengerCount;
+                 ];
+                 rr:objectMap [ rr:column "passenger_count"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant http://data.sfgov.org/ontology#hasPassengerBoardingArea;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#BoardingArea>;
+                         rr:joinCondition [
+                                 rr:child "boarding_area";
+                                 rr:parent "boarding_area";
+                         ];
+                 ];
+         ].
+<#PassengerAircraft> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#PassengerAircraft/{}";
+                 rr:termType rr:IRI;
+                 rr:class PassengerAircraft;
+         ].
+<#PassengerDeplaned> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#PassengerDeplaned/{}";
+                 rr:termType rr:IRI;
+                 rr:class PassengerDeplaned;
+         ].
+<#PassengerEnplaned> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#PassengerEnplaned/{}";
+                 rr:termType rr:IRI;
+                 rr:class PassengerEnplaned;
+         ].
+<#PassengerTransit> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#PassengerTransit/{}";
+                 rr:termType rr:IRI;
+                 rr:class PassengerTransit;
+         ].
+<#RegionalJet> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#RegionalJet/{}";
+                 rr:termType rr:IRI;
+                 rr:class RegionalJet;
+         ].
+<#Turbo_Prop> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#Turbo_Prop/{}";
+                 rr:termType rr:IRI;
+                 rr:class Turbo_Prop;
+         ].
+<#WideBody> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#WideBody/{}";
+                 rr:termType rr:IRI;
+                 rr:class WideBody;
+         ].
+<#AircraftBody> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#AircraftBody/{}";
+                 rr:termType rr:IRI;
+                 rr:class AircraftBody;
+         ].
+<#AircraftConfiguration> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#AircraftConfiguration/{}";
+                 rr:termType rr:IRI;
+                 rr:class AircraftConfiguration;
+         ].
+<#CombiAircraft> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#CombiAircraft/{}";
+                 rr:termType rr:IRI;
+                 rr:class CombiAircraft;
+         ].

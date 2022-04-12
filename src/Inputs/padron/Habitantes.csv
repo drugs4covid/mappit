@@ -1,0 +1,731 @@
+﻿"Any","Codi_Districte","Nom_Districte","Codi_Barri","Nom_Barri","Sexe","Any_alta_padro","Nombre"
+2021,1,"Ciutat Vella",1,"el Raval","Dones","Menys d'1 any",2112
+2021,1,"Ciutat Vella",2,"el Barri Gòtic","Dones","Menys d'1 any",1215
+2021,1,"Ciutat Vella",3,"la Barceloneta","Dones","Menys d'1 any",763
+2021,1,"Ciutat Vella",4,"Sant Pere, Santa Caterina i la Ribera","Dones","Menys d'1 any",1137
+2021,2,"Eixample",5,"el Fort Pienc","Dones","Menys d'1 any",1116
+2021,2,"Eixample",6,"la Sagrada Família","Dones","Menys d'1 any",1749
+2021,2,"Eixample",7,"la Dreta de l'Eixample","Dones","Menys d'1 any",1721
+2021,2,"Eixample",8,"l'Antiga Esquerra de l'Eixample","Dones","Menys d'1 any",1516
+2021,2,"Eixample",9,"la Nova Esquerra de l'Eixample","Dones","Menys d'1 any",1722
+2021,2,"Eixample",10,"Sant Antoni","Dones","Menys d'1 any",1169
+2021,3,"Sants-Montjuïc",11,"el Poble Sec","Dones","Menys d'1 any",1434
+2021,3,"Sants-Montjuïc",12,"la Marina del Prat Vermell","Dones","Menys d'1 any",23
+2021,3,"Sants-Montjuïc",13,"la Marina de Port","Dones","Menys d'1 any",656
+2021,3,"Sants-Montjuïc",14,"la Font de la Guatlla","Dones","Menys d'1 any",276
+2021,3,"Sants-Montjuïc",15,"Hostafrancs","Dones","Menys d'1 any",545
+2021,3,"Sants-Montjuïc",16,"la Bordeta","Dones","Menys d'1 any",454
+2021,3,"Sants-Montjuïc",17,"Sants - Badal","Dones","Menys d'1 any",743
+2021,3,"Sants-Montjuïc",18,"Sants","Dones","Menys d'1 any",1435
+2021,4,"Les Corts",19,"les Corts","Dones","Menys d'1 any",1003
+2021,4,"Les Corts",20,"la Maternitat i Sant Ramon","Dones","Menys d'1 any",604
+2021,4,"Les Corts",21,"Pedralbes","Dones","Menys d'1 any",321
+2021,5,"Sarrià-Sant Gervasi",22,"Vallvidrera, el Tibidabo i les Planes","Dones","Menys d'1 any",98
+2021,5,"Sarrià-Sant Gervasi",23,"Sarrià","Dones","Menys d'1 any",578
+2021,5,"Sarrià-Sant Gervasi",24,"les Tres Torres","Dones","Menys d'1 any",351
+2021,5,"Sarrià-Sant Gervasi",25,"Sant Gervasi - la Bonanova","Dones","Menys d'1 any",639
+2021,5,"Sarrià-Sant Gervasi",26,"Sant Gervasi - Galvany","Dones","Menys d'1 any",1191
+2021,5,"Sarrià-Sant Gervasi",27,"el Putxet i el Farró","Dones","Menys d'1 any",742
+2021,6,"Gràcia",28,"Vallcarca i els Penitents","Dones","Menys d'1 any",435
+2021,6,"Gràcia",29,"el Coll","Dones","Menys d'1 any",192
+2021,6,"Gràcia",30,"la Salut","Dones","Menys d'1 any",323
+2021,6,"Gràcia",31,"la Vila de Gràcia","Dones","Menys d'1 any",1739
+2021,6,"Gràcia",32,"el Camp d'en Grassot i Gràcia Nova","Dones","Menys d'1 any",1004
+2021,7,"Horta-Guinardó",33,"el Baix Guinardó","Dones","Menys d'1 any",621
+2021,7,"Horta-Guinardó",34,"Can Baró","Dones","Menys d'1 any",219
+2021,7,"Horta-Guinardó",35,"el Guinardó","Dones","Menys d'1 any",884
+2021,7,"Horta-Guinardó",36,"la Font d'en Fargues","Dones","Menys d'1 any",132
+2021,7,"Horta-Guinardó",37,"el Carmel","Dones","Menys d'1 any",791
+2021,7,"Horta-Guinardó",38,"la Teixonera","Dones","Menys d'1 any",308
+2021,7,"Horta-Guinardó",39,"Sant Genís dels Agudells","Dones","Menys d'1 any",175
+2021,7,"Horta-Guinardó",40,"Montbau","Dones","Menys d'1 any",144
+2021,7,"Horta-Guinardó",41,"la Vall d'Hebron","Dones","Menys d'1 any",97
+2021,7,"Horta-Guinardó",42,"la Clota","Dones","Menys d'1 any",10
+2021,7,"Horta-Guinardó",43,"Horta","Dones","Menys d'1 any",690
+2021,8,"Nou Barris",44,"Vilapicina i la Torre Llobeta","Dones","Menys d'1 any",563
+2021,8,"Nou Barris",45,"Porta","Dones","Menys d'1 any",800
+2021,8,"Nou Barris",46,"el Turó de la Peira","Dones","Menys d'1 any",442
+2021,8,"Nou Barris",47,"Can Peguera","Dones","Menys d'1 any",19
+2021,8,"Nou Barris",48,"la Guineueta","Dones","Menys d'1 any",242
+2021,8,"Nou Barris",49,"Canyelles","Dones","Menys d'1 any",74
+2021,8,"Nou Barris",50,"les Roquetes","Dones","Menys d'1 any",466
+2021,8,"Nou Barris",51,"Verdun","Dones","Menys d'1 any",375
+2021,8,"Nou Barris",52,"la Prosperitat","Dones","Menys d'1 any",568
+2021,8,"Nou Barris",53,"la Trinitat Nova","Dones","Menys d'1 any",184
+2021,8,"Nou Barris",54,"Torre Baró","Dones","Menys d'1 any",69
+2021,8,"Nou Barris",55,"Ciutat Meridiana","Dones","Menys d'1 any",333
+2021,8,"Nou Barris",56,"Vallbona","Dones","Menys d'1 any",31
+2021,9,"Sant Andreu",57,"la Trinitat Vella","Dones","Menys d'1 any",301
+2021,9,"Sant Andreu",58,"Baró de Viver","Dones","Menys d'1 any",51
+2021,9,"Sant Andreu",59,"el Bon Pastor","Dones","Menys d'1 any",423
+2021,9,"Sant Andreu",60,"Sant Andreu","Dones","Menys d'1 any",1010
+2021,9,"Sant Andreu",61,"la Sagrera","Dones","Menys d'1 any",677
+2021,9,"Sant Andreu",62,"el Congrés i els Indians","Dones","Menys d'1 any",319
+2021,9,"Sant Andreu",63,"Navas","Dones","Menys d'1 any",503
+2021,10,"Sant Martí",64,"el Camp de l'Arpa del Clot","Dones","Menys d'1 any",1061
+2021,10,"Sant Martí",65,"el Clot","Dones","Menys d'1 any",615
+2021,10,"Sant Martí",66,"el Parc i la Llacuna del Poblenou","Dones","Menys d'1 any",433
+2021,10,"Sant Martí",67,"la Vila Olímpica del Poblenou","Dones","Menys d'1 any",212
+2021,10,"Sant Martí",68,"el Poblenou","Dones","Menys d'1 any",909
+2021,10,"Sant Martí",69,"Diagonal Mar i el Front Marítim del Poblenou","Dones","Menys d'1 any",347
+2021,10,"Sant Martí",70,"el Besòs i el Maresme","Dones","Menys d'1 any",873
+2021,10,"Sant Martí",71,"Provençals del Poblenou","Dones","Menys d'1 any",466
+2021,10,"Sant Martí",72,"Sant Martí de Provençals","Dones","Menys d'1 any",556
+2021,10,"Sant Martí",73,"la Verneda i la Pau","Dones","Menys d'1 any",610
+2021,1,"Ciutat Vella",1,"el Raval","Dones","D'1 a 5 anys",8210
+2021,1,"Ciutat Vella",2,"el Barri Gòtic","Dones","D'1 a 5 anys",3879
+2021,1,"Ciutat Vella",3,"la Barceloneta","Dones","D'1 a 5 anys",2647
+2021,1,"Ciutat Vella",4,"Sant Pere, Santa Caterina i la Ribera","Dones","D'1 a 5 anys",4295
+2021,2,"Eixample",5,"el Fort Pienc","Dones","D'1 a 5 anys",4476
+2021,2,"Eixample",6,"la Sagrada Família","Dones","D'1 a 5 anys",6966
+2021,2,"Eixample",7,"la Dreta de l'Eixample","Dones","D'1 a 5 anys",6218
+2021,2,"Eixample",8,"l'Antiga Esquerra de l'Eixample","Dones","D'1 a 5 anys",6047
+2021,2,"Eixample",9,"la Nova Esquerra de l'Eixample","Dones","D'1 a 5 anys",7341
+2021,2,"Eixample",10,"Sant Antoni","Dones","D'1 a 5 anys",5020
+2021,3,"Sants-Montjuïc",11,"el Poble Sec","Dones","D'1 a 5 anys",5641
+2021,3,"Sants-Montjuïc",12,"la Marina del Prat Vermell","Dones","D'1 a 5 anys",136
+2021,3,"Sants-Montjuïc",13,"la Marina de Port","Dones","D'1 a 5 anys",3072
+2021,3,"Sants-Montjuïc",14,"la Font de la Guatlla","Dones","D'1 a 5 anys",1184
+2021,3,"Sants-Montjuïc",15,"Hostafrancs","Dones","D'1 a 5 anys",2261
+2021,3,"Sants-Montjuïc",16,"la Bordeta","Dones","D'1 a 5 anys",2067
+2021,3,"Sants-Montjuïc",17,"Sants - Badal","Dones","D'1 a 5 anys",3117
+2021,3,"Sants-Montjuïc",18,"Sants","Dones","D'1 a 5 anys",5549
+2021,4,"Les Corts",19,"les Corts","Dones","D'1 a 5 anys",4819
+2021,4,"Les Corts",20,"la Maternitat i Sant Ramon","Dones","D'1 a 5 anys",2593
+2021,4,"Les Corts",21,"Pedralbes","Dones","D'1 a 5 anys",1404
+2021,5,"Sarrià-Sant Gervasi",22,"Vallvidrera, el Tibidabo i les Planes","Dones","D'1 a 5 anys",489
+2021,5,"Sarrià-Sant Gervasi",23,"Sarrià","Dones","D'1 a 5 anys",2789
+2021,5,"Sarrià-Sant Gervasi",24,"les Tres Torres","Dones","D'1 a 5 anys",1652
+2021,5,"Sarrià-Sant Gervasi",25,"Sant Gervasi - la Bonanova","Dones","D'1 a 5 anys",2924
+2021,5,"Sarrià-Sant Gervasi",26,"Sant Gervasi - Galvany","Dones","D'1 a 5 anys",5609
+2021,5,"Sarrià-Sant Gervasi",27,"el Putxet i el Farró","Dones","D'1 a 5 anys",3577
+2021,6,"Gràcia",28,"Vallcarca i els Penitents","Dones","D'1 a 5 anys",1796
+2021,6,"Gràcia",29,"el Coll","Dones","D'1 a 5 anys",879
+2021,6,"Gràcia",30,"la Salut","Dones","D'1 a 5 anys",1388
+2021,6,"Gràcia",31,"la Vila de Gràcia","Dones","D'1 a 5 anys",7397
+2021,6,"Gràcia",32,"el Camp d'en Grassot i Gràcia Nova","Dones","D'1 a 5 anys",4160
+2021,7,"Horta-Guinardó",33,"el Baix Guinardó","Dones","D'1 a 5 anys",2762
+2021,7,"Horta-Guinardó",34,"Can Baró","Dones","D'1 a 5 anys",1058
+2021,7,"Horta-Guinardó",35,"el Guinardó","Dones","D'1 a 5 anys",4093
+2021,7,"Horta-Guinardó",36,"la Font d'en Fargues","Dones","D'1 a 5 anys",761
+2021,7,"Horta-Guinardó",37,"el Carmel","Dones","D'1 a 5 anys",3369
+2021,7,"Horta-Guinardó",38,"la Teixonera","Dones","D'1 a 5 anys",1289
+2021,7,"Horta-Guinardó",39,"Sant Genís dels Agudells","Dones","D'1 a 5 anys",872
+2021,7,"Horta-Guinardó",40,"Montbau","Dones","D'1 a 5 anys",594
+2021,7,"Horta-Guinardó",41,"la Vall d'Hebron","Dones","D'1 a 5 anys",538
+2021,7,"Horta-Guinardó",42,"la Clota","Dones","D'1 a 5 anys",77
+2021,7,"Horta-Guinardó",43,"Horta","Dones","D'1 a 5 anys",2822
+2021,8,"Nou Barris",44,"Vilapicina i la Torre Llobeta","Dones","D'1 a 5 anys",2502
+2021,8,"Nou Barris",45,"Porta","Dones","D'1 a 5 anys",3509
+2021,8,"Nou Barris",46,"el Turó de la Peira","Dones","D'1 a 5 anys",2033
+2021,8,"Nou Barris",47,"Can Peguera","Dones","D'1 a 5 anys",162
+2021,8,"Nou Barris",48,"la Guineueta","Dones","D'1 a 5 anys",1231
+2021,8,"Nou Barris",49,"Canyelles","Dones","D'1 a 5 anys",409
+2021,8,"Nou Barris",50,"les Roquetes","Dones","D'1 a 5 anys",2097
+2021,8,"Nou Barris",51,"Verdun","Dones","D'1 a 5 anys",1541
+2021,8,"Nou Barris",52,"la Prosperitat","Dones","D'1 a 5 anys",2719
+2021,8,"Nou Barris",53,"la Trinitat Nova","Dones","D'1 a 5 anys",935
+2021,8,"Nou Barris",54,"Torre Baró","Dones","D'1 a 5 anys",271
+2021,8,"Nou Barris",55,"Ciutat Meridiana","Dones","D'1 a 5 anys",1593
+2021,8,"Nou Barris",56,"Vallbona","Dones","D'1 a 5 anys",158
+2021,9,"Sant Andreu",57,"la Trinitat Vella","Dones","D'1 a 5 anys",1317
+2021,9,"Sant Andreu",58,"Baró de Viver","Dones","D'1 a 5 anys",276
+2021,9,"Sant Andreu",59,"el Bon Pastor","Dones","D'1 a 5 anys",1523
+2021,9,"Sant Andreu",60,"Sant Andreu","Dones","D'1 a 5 anys",4710
+2021,9,"Sant Andreu",61,"la Sagrera","Dones","D'1 a 5 anys",2929
+2021,9,"Sant Andreu",62,"el Congrés i els Indians","Dones","D'1 a 5 anys",1474
+2021,9,"Sant Andreu",63,"Navas","Dones","D'1 a 5 anys",2215
+2021,10,"Sant Martí",64,"el Camp de l'Arpa del Clot","Dones","D'1 a 5 anys",4575
+2021,10,"Sant Martí",65,"el Clot","Dones","D'1 a 5 anys",2660
+2021,10,"Sant Martí",66,"el Parc i la Llacuna del Poblenou","Dones","D'1 a 5 anys",1898
+2021,10,"Sant Martí",67,"la Vila Olímpica del Poblenou","Dones","D'1 a 5 anys",981
+2021,10,"Sant Martí",68,"el Poblenou","Dones","D'1 a 5 anys",3863
+2021,10,"Sant Martí",69,"Diagonal Mar i el Front Marítim del Poblenou","Dones","D'1 a 5 anys",1540
+2021,10,"Sant Martí",70,"el Besòs i el Maresme","Dones","D'1 a 5 anys",3411
+2021,10,"Sant Martí",71,"Provençals del Poblenou","Dones","D'1 a 5 anys",2175
+2021,10,"Sant Martí",72,"Sant Martí de Provençals","Dones","D'1 a 5 anys",2415
+2021,10,"Sant Martí",73,"la Verneda i la Pau","Dones","D'1 a 5 anys",2613
+2021,1,"Ciutat Vella",1,"el Raval","Dones","De 6 a 15 anys",5703
+2021,1,"Ciutat Vella",2,"el Barri Gòtic","Dones","De 6 a 15 anys",1457
+2021,1,"Ciutat Vella",3,"la Barceloneta","Dones","De 6 a 15 anys",1243
+2021,1,"Ciutat Vella",4,"Sant Pere, Santa Caterina i la Ribera","Dones","De 6 a 15 anys",2243
+2021,2,"Eixample",5,"el Fort Pienc","Dones","De 6 a 15 anys",3389
+2021,2,"Eixample",6,"la Sagrada Família","Dones","De 6 a 15 anys",5178
+2021,2,"Eixample",7,"la Dreta de l'Eixample","Dones","De 6 a 15 anys",4479
+2021,2,"Eixample",8,"l'Antiga Esquerra de l'Eixample","Dones","De 6 a 15 anys",4412
+2021,2,"Eixample",9,"la Nova Esquerra de l'Eixample","Dones","De 6 a 15 anys",5796
+2021,2,"Eixample",10,"Sant Antoni","Dones","De 6 a 15 anys",4027
+2021,3,"Sants-Montjuïc",11,"el Poble Sec","Dones","De 6 a 15 anys",4735
+2021,3,"Sants-Montjuïc",12,"la Marina del Prat Vermell","Dones","De 6 a 15 anys",144
+2021,3,"Sants-Montjuïc",13,"la Marina de Port","Dones","De 6 a 15 anys",3337
+2021,3,"Sants-Montjuïc",14,"la Font de la Guatlla","Dones","De 6 a 15 anys",1072
+2021,3,"Sants-Montjuïc",15,"Hostafrancs","Dones","De 6 a 15 anys",1748
+2021,3,"Sants-Montjuïc",16,"la Bordeta","Dones","De 6 a 15 anys",2017
+2021,3,"Sants-Montjuïc",17,"Sants - Badal","Dones","De 6 a 15 anys",2705
+2021,3,"Sants-Montjuïc",18,"Sants","Dones","De 6 a 15 anys",4622
+2021,4,"Les Corts",19,"les Corts","Dones","De 6 a 15 anys",4679
+2021,4,"Les Corts",20,"la Maternitat i Sant Ramon","Dones","De 6 a 15 anys",2459
+2021,4,"Les Corts",21,"Pedralbes","Dones","De 6 a 15 anys",1432
+2021,5,"Sarrià-Sant Gervasi",22,"Vallvidrera, el Tibidabo i les Planes","Dones","De 6 a 15 anys",582
+2021,5,"Sarrià-Sant Gervasi",23,"Sarrià","Dones","De 6 a 15 anys",2989
+2021,5,"Sarrià-Sant Gervasi",24,"les Tres Torres","Dones","De 6 a 15 anys",1895
+2021,5,"Sarrià-Sant Gervasi",25,"Sant Gervasi - la Bonanova","Dones","De 6 a 15 anys",2975
+2021,5,"Sarrià-Sant Gervasi",26,"Sant Gervasi - Galvany","Dones","De 6 a 15 anys",5444
+2021,5,"Sarrià-Sant Gervasi",27,"el Putxet i el Farró","Dones","De 6 a 15 anys",3382
+2021,6,"Gràcia",28,"Vallcarca i els Penitents","Dones","De 6 a 15 anys",1767
+2021,6,"Gràcia",29,"el Coll","Dones","De 6 a 15 anys",826
+2021,6,"Gràcia",30,"la Salut","Dones","De 6 a 15 anys",1405
+2021,6,"Gràcia",31,"la Vila de Gràcia","Dones","De 6 a 15 anys",5518
+2021,6,"Gràcia",32,"el Camp d'en Grassot i Gràcia Nova","Dones","De 6 a 15 anys",3412
+2021,7,"Horta-Guinardó",33,"el Baix Guinardó","Dones","De 6 a 15 anys",2594
+2021,7,"Horta-Guinardó",34,"Can Baró","Dones","De 6 a 15 anys",949
+2021,7,"Horta-Guinardó",35,"el Guinardó","Dones","De 6 a 15 anys",4072
+2021,7,"Horta-Guinardó",36,"la Font d'en Fargues","Dones","De 6 a 15 anys",854
+2021,7,"Horta-Guinardó",37,"el Carmel","Dones","De 6 a 15 anys",3467
+2021,7,"Horta-Guinardó",38,"la Teixonera","Dones","De 6 a 15 anys",1157
+2021,7,"Horta-Guinardó",39,"Sant Genís dels Agudells","Dones","De 6 a 15 anys",730
+2021,7,"Horta-Guinardó",40,"Montbau","Dones","De 6 a 15 anys",441
+2021,7,"Horta-Guinardó",41,"la Vall d'Hebron","Dones","De 6 a 15 anys",536
+2021,7,"Horta-Guinardó",42,"la Clota","Dones","De 6 a 15 anys",67
+2021,7,"Horta-Guinardó",43,"Horta","Dones","De 6 a 15 anys",2682
+2021,8,"Nou Barris",44,"Vilapicina i la Torre Llobeta","Dones","De 6 a 15 anys",2664
+2021,8,"Nou Barris",45,"Porta","Dones","De 6 a 15 anys",2893
+2021,8,"Nou Barris",46,"el Turó de la Peira","Dones","De 6 a 15 anys",2057
+2021,8,"Nou Barris",47,"Can Peguera","Dones","De 6 a 15 anys",241
+2021,8,"Nou Barris",48,"la Guineueta","Dones","De 6 a 15 anys",1508
+2021,8,"Nou Barris",49,"Canyelles","Dones","De 6 a 15 anys",560
+2021,8,"Nou Barris",50,"les Roquetes","Dones","De 6 a 15 anys",1911
+2021,8,"Nou Barris",51,"Verdun","Dones","De 6 a 15 anys",1482
+2021,8,"Nou Barris",52,"la Prosperitat","Dones","De 6 a 15 anys",2791
+2021,8,"Nou Barris",53,"la Trinitat Nova","Dones","De 6 a 15 anys",902
+2021,8,"Nou Barris",54,"Torre Baró","Dones","De 6 a 15 anys",450
+2021,8,"Nou Barris",55,"Ciutat Meridiana","Dones","De 6 a 15 anys",1507
+2021,8,"Nou Barris",56,"Vallbona","Dones","De 6 a 15 anys",213
+2021,9,"Sant Andreu",57,"la Trinitat Vella","Dones","De 6 a 15 anys",1376
+2021,9,"Sant Andreu",58,"Baró de Viver","Dones","De 6 a 15 anys",313
+2021,9,"Sant Andreu",59,"el Bon Pastor","Dones","De 6 a 15 anys",1479
+2021,9,"Sant Andreu",60,"Sant Andreu","Dones","De 6 a 15 anys",5989
+2021,9,"Sant Andreu",61,"la Sagrera","Dones","De 6 a 15 anys",3150
+2021,9,"Sant Andreu",62,"el Congrés i els Indians","Dones","De 6 a 15 anys",1591
+2021,9,"Sant Andreu",63,"Navas","Dones","De 6 a 15 anys",2321
+2021,10,"Sant Martí",64,"el Camp de l'Arpa del Clot","Dones","De 6 a 15 anys",3981
+2021,10,"Sant Martí",65,"el Clot","Dones","De 6 a 15 anys",2629
+2021,10,"Sant Martí",66,"el Parc i la Llacuna del Poblenou","Dones","De 6 a 15 anys",1713
+2021,10,"Sant Martí",67,"la Vila Olímpica del Poblenou","Dones","De 6 a 15 anys",963
+2021,10,"Sant Martí",68,"el Poblenou","Dones","De 6 a 15 anys",4008
+2021,10,"Sant Martí",69,"Diagonal Mar i el Front Marítim del Poblenou","Dones","De 6 a 15 anys",1673
+2021,10,"Sant Martí",70,"el Besòs i el Maresme","Dones","De 6 a 15 anys",2641
+2021,10,"Sant Martí",71,"Provençals del Poblenou","Dones","De 6 a 15 anys",2334
+2021,10,"Sant Martí",72,"Sant Martí de Provençals","Dones","De 6 a 15 anys",2704
+2021,10,"Sant Martí",73,"la Verneda i la Pau","Dones","De 6 a 15 anys",2801
+2021,1,"Ciutat Vella",1,"el Raval","Dones","Més de 15 anys",6429
+2021,1,"Ciutat Vella",2,"el Barri Gòtic","Dones","Més de 15 anys",2284
+2021,1,"Ciutat Vella",3,"la Barceloneta","Dones","Més de 15 anys",2992
+2021,1,"Ciutat Vella",4,"Sant Pere, Santa Caterina i la Ribera","Dones","Més de 15 anys",3741
+2021,2,"Eixample",5,"el Fort Pienc","Dones","Més de 15 anys",8453
+2021,2,"Eixample",6,"la Sagrada Família","Dones","Més de 15 anys",14209
+2021,2,"Eixample",7,"la Dreta de l'Eixample","Dones","Més de 15 anys",11000
+2021,2,"Eixample",8,"l'Antiga Esquerra de l'Eixample","Dones","Més de 15 anys",10703
+2021,2,"Eixample",9,"la Nova Esquerra de l'Eixample","Dones","Més de 15 anys",15965
+2021,2,"Eixample",10,"Sant Antoni","Dones","Més de 15 anys",10024
+2021,3,"Sants-Montjuïc",11,"el Poble Sec","Dones","Més de 15 anys",8603
+2021,3,"Sants-Montjuïc",12,"la Marina del Prat Vermell","Dones","Més de 15 anys",354
+2021,3,"Sants-Montjuïc",13,"la Marina de Port","Dones","Més de 15 anys",9067
+2021,3,"Sants-Montjuïc",14,"la Font de la Guatlla","Dones","Més de 15 anys",2844
+2021,3,"Sants-Montjuïc",15,"Hostafrancs","Dones","Més de 15 anys",3818
+2021,3,"Sants-Montjuïc",16,"la Bordeta","Dones","Més de 15 anys",5625
+2021,3,"Sants-Montjuïc",17,"Sants - Badal","Dones","Més de 15 anys",6670
+2021,3,"Sants-Montjuïc",18,"Sants","Dones","Més de 15 anys",10980
+2021,4,"Les Corts",19,"les Corts","Dones","Més de 15 anys",14180
+2021,4,"Les Corts",20,"la Maternitat i Sant Ramon","Dones","Més de 15 anys",7063
+2021,4,"Les Corts",21,"Pedralbes","Dones","Més de 15 anys",3142
+2021,5,"Sarrià-Sant Gervasi",22,"Vallvidrera, el Tibidabo i les Planes","Dones","Més de 15 anys",1235
+2021,5,"Sarrià-Sant Gervasi",23,"Sarrià","Dones","Més de 15 anys",6872
+2021,5,"Sarrià-Sant Gervasi",24,"les Tres Torres","Dones","Més de 15 anys",4812
+2021,5,"Sarrià-Sant Gervasi",25,"Sant Gervasi - la Bonanova","Dones","Més de 15 anys",7455
+2021,5,"Sarrià-Sant Gervasi",26,"Sant Gervasi - Galvany","Dones","Més de 15 anys",13775
+2021,5,"Sarrià-Sant Gervasi",27,"el Putxet i el Farró","Dones","Més de 15 anys",8538
+2021,6,"Gràcia",28,"Vallcarca i els Penitents","Dones","Més de 15 anys",4716
+2021,6,"Gràcia",29,"el Coll","Dones","Més de 15 anys",2198
+2021,6,"Gràcia",30,"la Salut","Dones","Més de 15 anys",4095
+2021,6,"Gràcia",31,"la Vila de Gràcia","Dones","Més de 15 anys",12719
+2021,6,"Gràcia",32,"el Camp d'en Grassot i Gràcia Nova","Dones","Més de 15 anys",10536
+2021,7,"Horta-Guinardó",33,"el Baix Guinardó","Dones","Més de 15 anys",7892
+2021,7,"Horta-Guinardó",34,"Can Baró","Dones","Més de 15 anys",2689
+2021,7,"Horta-Guinardó",35,"el Guinardó","Dones","Més de 15 anys",10810
+2021,7,"Horta-Guinardó",36,"la Font d'en Fargues","Dones","Més de 15 anys",3230
+2021,7,"Horta-Guinardó",37,"el Carmel","Dones","Més de 15 anys",9535
+2021,7,"Horta-Guinardó",38,"la Teixonera","Dones","Més de 15 anys",3490
+2021,7,"Horta-Guinardó",39,"Sant Genís dels Agudells","Dones","Més de 15 anys",2116
+2021,7,"Horta-Guinardó",40,"Montbau","Dones","Més de 15 anys",1633
+2021,7,"Horta-Guinardó",41,"la Vall d'Hebron","Dones","Més de 15 anys",1997
+2021,7,"Horta-Guinardó",42,"la Clota","Dones","Més de 15 anys",181
+2021,7,"Horta-Guinardó",43,"Horta","Dones","Més de 15 anys",8718
+2021,8,"Nou Barris",44,"Vilapicina i la Torre Llobeta","Dones","Més de 15 anys",8264
+2021,8,"Nou Barris",45,"Porta","Dones","Més de 15 anys",7523
+2021,8,"Nou Barris",46,"el Turó de la Peira","Dones","Més de 15 anys",4073
+2021,8,"Nou Barris",47,"Can Peguera","Dones","Més de 15 anys",759
+2021,8,"Nou Barris",48,"la Guineueta","Dones","Més de 15 anys",5232
+2021,8,"Nou Barris",49,"Canyelles","Dones","Més de 15 anys",2540
+2021,8,"Nou Barris",50,"les Roquetes","Dones","Més de 15 anys",4098
+2021,8,"Nou Barris",51,"Verdun","Dones","Més de 15 anys",3478
+2021,8,"Nou Barris",52,"la Prosperitat","Dones","Més de 15 anys",8202
+2021,8,"Nou Barris",53,"la Trinitat Nova","Dones","Més de 15 anys",1943
+2021,8,"Nou Barris",54,"Torre Baró","Dones","Més de 15 anys",672
+2021,8,"Nou Barris",55,"Ciutat Meridiana","Dones","Més de 15 anys",2255
+2021,8,"Nou Barris",56,"Vallbona","Dones","Més de 15 anys",314
+2021,9,"Sant Andreu",57,"la Trinitat Vella","Dones","Més de 15 anys",2168
+2021,9,"Sant Andreu",58,"Baró de Viver","Dones","Més de 15 anys",715
+2021,9,"Sant Andreu",59,"el Bon Pastor","Dones","Més de 15 anys",3445
+2021,9,"Sant Andreu",60,"Sant Andreu","Dones","Més de 15 anys",19011
+2021,9,"Sant Andreu",61,"la Sagrera","Dones","Més de 15 anys",8962
+2021,9,"Sant Andreu",62,"el Congrés i els Indians","Dones","Més de 15 anys",4361
+2021,9,"Sant Andreu",63,"Navas","Dones","Més de 15 anys",6841
+2021,10,"Sant Martí",64,"el Camp de l'Arpa del Clot","Dones","Més de 15 anys",10990
+2021,10,"Sant Martí",65,"el Clot","Dones","Més de 15 anys",8045
+2021,10,"Sant Martí",66,"el Parc i la Llacuna del Poblenou","Dones","Més de 15 anys",4170
+2021,10,"Sant Martí",67,"la Vila Olímpica del Poblenou","Dones","Més de 15 anys",2619
+2021,10,"Sant Martí",68,"el Poblenou","Dones","Més de 15 anys",8879
+2021,10,"Sant Martí",69,"Diagonal Mar i el Front Marítim del Poblenou","Dones","Més de 15 anys",3374
+2021,10,"Sant Martí",70,"el Besòs i el Maresme","Dones","Més de 15 anys",5511
+2021,10,"Sant Martí",71,"Provençals del Poblenou","Dones","Més de 15 anys",6058
+2021,10,"Sant Martí",72,"Sant Martí de Provençals","Dones","Més de 15 anys",8279
+2021,10,"Sant Martí",73,"la Verneda i la Pau","Dones","Més de 15 anys",9133
+2021,1,"Ciutat Vella",1,"el Raval","Dones","No consta",12
+2021,1,"Ciutat Vella",2,"el Barri Gòtic","Dones","No consta",8
+2021,1,"Ciutat Vella",3,"la Barceloneta","Dones","No consta",2
+2021,1,"Ciutat Vella",4,"Sant Pere, Santa Caterina i la Ribera","Dones","No consta",15
+2021,2,"Eixample",5,"el Fort Pienc","Dones","No consta",9
+2021,2,"Eixample",6,"la Sagrada Família","Dones","No consta",16
+2021,2,"Eixample",7,"la Dreta de l'Eixample","Dones","No consta",13
+2021,2,"Eixample",8,"l'Antiga Esquerra de l'Eixample","Dones","No consta",7
+2021,2,"Eixample",9,"la Nova Esquerra de l'Eixample","Dones","No consta",19
+2021,2,"Eixample",10,"Sant Antoni","Dones","No consta",13
+2021,3,"Sants-Montjuïc",11,"el Poble Sec","Dones","No consta",16
+2021,3,"Sants-Montjuïc",12,"la Marina del Prat Vermell","Dones","No consta",0
+2021,3,"Sants-Montjuïc",13,"la Marina de Port","Dones","No consta",9
+2021,3,"Sants-Montjuïc",14,"la Font de la Guatlla","Dones","No consta",1
+2021,3,"Sants-Montjuïc",15,"Hostafrancs","Dones","No consta",6
+2021,3,"Sants-Montjuïc",16,"la Bordeta","Dones","No consta",6
+2021,3,"Sants-Montjuïc",17,"Sants - Badal","Dones","No consta",4
+2021,3,"Sants-Montjuïc",18,"Sants","Dones","No consta",14
+2021,4,"Les Corts",19,"les Corts","Dones","No consta",5
+2021,4,"Les Corts",20,"la Maternitat i Sant Ramon","Dones","No consta",3
+2021,4,"Les Corts",21,"Pedralbes","Dones","No consta",7
+2021,5,"Sarrià-Sant Gervasi",22,"Vallvidrera, el Tibidabo i les Planes","Dones","No consta",1
+2021,5,"Sarrià-Sant Gervasi",23,"Sarrià","Dones","No consta",15
+2021,5,"Sarrià-Sant Gervasi",24,"les Tres Torres","Dones","No consta",2
+2021,5,"Sarrià-Sant Gervasi",25,"Sant Gervasi - la Bonanova","Dones","No consta",10
+2021,5,"Sarrià-Sant Gervasi",26,"Sant Gervasi - Galvany","Dones","No consta",17
+2021,5,"Sarrià-Sant Gervasi",27,"el Putxet i el Farró","Dones","No consta",15
+2021,6,"Gràcia",28,"Vallcarca i els Penitents","Dones","No consta",5
+2021,6,"Gràcia",29,"el Coll","Dones","No consta",3
+2021,6,"Gràcia",30,"la Salut","Dones","No consta",1
+2021,6,"Gràcia",31,"la Vila de Gràcia","Dones","No consta",15
+2021,6,"Gràcia",32,"el Camp d'en Grassot i Gràcia Nova","Dones","No consta",9
+2021,7,"Horta-Guinardó",33,"el Baix Guinardó","Dones","No consta",8
+2021,7,"Horta-Guinardó",34,"Can Baró","Dones","No consta",4
+2021,7,"Horta-Guinardó",35,"el Guinardó","Dones","No consta",6
+2021,7,"Horta-Guinardó",36,"la Font d'en Fargues","Dones","No consta",1
+2021,7,"Horta-Guinardó",37,"el Carmel","Dones","No consta",4
+2021,7,"Horta-Guinardó",38,"la Teixonera","Dones","No consta",4
+2021,7,"Horta-Guinardó",39,"Sant Genís dels Agudells","Dones","No consta",3
+2021,7,"Horta-Guinardó",40,"Montbau","Dones","No consta",0
+2021,7,"Horta-Guinardó",41,"la Vall d'Hebron","Dones","No consta",1
+2021,7,"Horta-Guinardó",42,"la Clota","Dones","No consta",0
+2021,7,"Horta-Guinardó",43,"Horta","Dones","No consta",6
+2021,8,"Nou Barris",44,"Vilapicina i la Torre Llobeta","Dones","No consta",6
+2021,8,"Nou Barris",45,"Porta","Dones","No consta",6
+2021,8,"Nou Barris",46,"el Turó de la Peira","Dones","No consta",4
+2021,8,"Nou Barris",47,"Can Peguera","Dones","No consta",0
+2021,8,"Nou Barris",48,"la Guineueta","Dones","No consta",0
+2021,8,"Nou Barris",49,"Canyelles","Dones","No consta",1
+2021,8,"Nou Barris",50,"les Roquetes","Dones","No consta",4
+2021,8,"Nou Barris",51,"Verdun","Dones","No consta",4
+2021,8,"Nou Barris",52,"la Prosperitat","Dones","No consta",2
+2021,8,"Nou Barris",53,"la Trinitat Nova","Dones","No consta",2
+2021,8,"Nou Barris",54,"Torre Baró","Dones","No consta",0
+2021,8,"Nou Barris",55,"Ciutat Meridiana","Dones","No consta",0
+2021,8,"Nou Barris",56,"Vallbona","Dones","No consta",0
+2021,9,"Sant Andreu",57,"la Trinitat Vella","Dones","No consta",0
+2021,9,"Sant Andreu",58,"Baró de Viver","Dones","No consta",0
+2021,9,"Sant Andreu",59,"el Bon Pastor","Dones","No consta",0
+2021,9,"Sant Andreu",60,"Sant Andreu","Dones","No consta",7
+2021,9,"Sant Andreu",61,"la Sagrera","Dones","No consta",5
+2021,9,"Sant Andreu",62,"el Congrés i els Indians","Dones","No consta",1
+2021,9,"Sant Andreu",63,"Navas","Dones","No consta",8
+2021,10,"Sant Martí",64,"el Camp de l'Arpa del Clot","Dones","No consta",14
+2021,10,"Sant Martí",65,"el Clot","Dones","No consta",7
+2021,10,"Sant Martí",66,"el Parc i la Llacuna del Poblenou","Dones","No consta",5
+2021,10,"Sant Martí",67,"la Vila Olímpica del Poblenou","Dones","No consta",5
+2021,10,"Sant Martí",68,"el Poblenou","Dones","No consta",16
+2021,10,"Sant Martí",69,"Diagonal Mar i el Front Marítim del Poblenou","Dones","No consta",4
+2021,10,"Sant Martí",70,"el Besòs i el Maresme","Dones","No consta",4
+2021,10,"Sant Martí",71,"Provençals del Poblenou","Dones","No consta",3
+2021,10,"Sant Martí",72,"Sant Martí de Provençals","Dones","No consta",4
+2021,10,"Sant Martí",73,"la Verneda i la Pau","Dones","No consta",3
+2021,1,"Ciutat Vella",1,"el Raval","Homes","Menys d'1 any",2991
+2021,1,"Ciutat Vella",2,"el Barri Gòtic","Homes","Menys d'1 any",2127
+2021,1,"Ciutat Vella",3,"la Barceloneta","Homes","Menys d'1 any",799
+2021,1,"Ciutat Vella",4,"Sant Pere, Santa Caterina i la Ribera","Homes","Menys d'1 any",1240
+2021,2,"Eixample",5,"el Fort Pienc","Homes","Menys d'1 any",1181
+2021,2,"Eixample",6,"la Sagrada Família","Homes","Menys d'1 any",1696
+2021,2,"Eixample",7,"la Dreta de l'Eixample","Homes","Menys d'1 any",1775
+2021,2,"Eixample",8,"l'Antiga Esquerra de l'Eixample","Homes","Menys d'1 any",1662
+2021,2,"Eixample",9,"la Nova Esquerra de l'Eixample","Homes","Menys d'1 any",1862
+2021,2,"Eixample",10,"Sant Antoni","Homes","Menys d'1 any",1256
+2021,3,"Sants-Montjuïc",11,"el Poble Sec","Homes","Menys d'1 any",1553
+2021,3,"Sants-Montjuïc",12,"la Marina del Prat Vermell","Homes","Menys d'1 any",23
+2021,3,"Sants-Montjuïc",13,"la Marina de Port","Homes","Menys d'1 any",691
+2021,3,"Sants-Montjuïc",14,"la Font de la Guatlla","Homes","Menys d'1 any",314
+2021,3,"Sants-Montjuïc",15,"Hostafrancs","Homes","Menys d'1 any",569
+2021,3,"Sants-Montjuïc",16,"la Bordeta","Homes","Menys d'1 any",533
+2021,3,"Sants-Montjuïc",17,"Sants - Badal","Homes","Menys d'1 any",794
+2021,3,"Sants-Montjuïc",18,"Sants","Homes","Menys d'1 any",1638
+2021,4,"Les Corts",19,"les Corts","Homes","Menys d'1 any",1006
+2021,4,"Les Corts",20,"la Maternitat i Sant Ramon","Homes","Menys d'1 any",653
+2021,4,"Les Corts",21,"Pedralbes","Homes","Menys d'1 any",319
+2021,5,"Sarrià-Sant Gervasi",22,"Vallvidrera, el Tibidabo i les Planes","Homes","Menys d'1 any",97
+2021,5,"Sarrià-Sant Gervasi",23,"Sarrià","Homes","Menys d'1 any",545
+2021,5,"Sarrià-Sant Gervasi",24,"les Tres Torres","Homes","Menys d'1 any",340
+2021,5,"Sarrià-Sant Gervasi",25,"Sant Gervasi - la Bonanova","Homes","Menys d'1 any",557
+2021,5,"Sarrià-Sant Gervasi",26,"Sant Gervasi - Galvany","Homes","Menys d'1 any",1059
+2021,5,"Sarrià-Sant Gervasi",27,"el Putxet i el Farró","Homes","Menys d'1 any",677
+2021,6,"Gràcia",28,"Vallcarca i els Penitents","Homes","Menys d'1 any",382
+2021,6,"Gràcia",29,"el Coll","Homes","Menys d'1 any",210
+2021,6,"Gràcia",30,"la Salut","Homes","Menys d'1 any",347
+2021,6,"Gràcia",31,"la Vila de Gràcia","Homes","Menys d'1 any",1644
+2021,6,"Gràcia",32,"el Camp d'en Grassot i Gràcia Nova","Homes","Menys d'1 any",964
+2021,7,"Horta-Guinardó",33,"el Baix Guinardó","Homes","Menys d'1 any",611
+2021,7,"Horta-Guinardó",34,"Can Baró","Homes","Menys d'1 any",205
+2021,7,"Horta-Guinardó",35,"el Guinardó","Homes","Menys d'1 any",817
+2021,7,"Horta-Guinardó",36,"la Font d'en Fargues","Homes","Menys d'1 any",137
+2021,7,"Horta-Guinardó",37,"el Carmel","Homes","Menys d'1 any",845
+2021,7,"Horta-Guinardó",38,"la Teixonera","Homes","Menys d'1 any",313
+2021,7,"Horta-Guinardó",39,"Sant Genís dels Agudells","Homes","Menys d'1 any",205
+2021,7,"Horta-Guinardó",40,"Montbau","Homes","Menys d'1 any",135
+2021,7,"Horta-Guinardó",41,"la Vall d'Hebron","Homes","Menys d'1 any",108
+2021,7,"Horta-Guinardó",42,"la Clota","Homes","Menys d'1 any",19
+2021,7,"Horta-Guinardó",43,"Horta","Homes","Menys d'1 any",647
+2021,8,"Nou Barris",44,"Vilapicina i la Torre Llobeta","Homes","Menys d'1 any",569
+2021,8,"Nou Barris",45,"Porta","Homes","Menys d'1 any",869
+2021,8,"Nou Barris",46,"el Turó de la Peira","Homes","Menys d'1 any",462
+2021,8,"Nou Barris",47,"Can Peguera","Homes","Menys d'1 any",24
+2021,8,"Nou Barris",48,"la Guineueta","Homes","Menys d'1 any",232
+2021,8,"Nou Barris",49,"Canyelles","Homes","Menys d'1 any",80
+2021,8,"Nou Barris",50,"les Roquetes","Homes","Menys d'1 any",517
+2021,8,"Nou Barris",51,"Verdun","Homes","Menys d'1 any",373
+2021,8,"Nou Barris",52,"la Prosperitat","Homes","Menys d'1 any",579
+2021,8,"Nou Barris",53,"la Trinitat Nova","Homes","Menys d'1 any",237
+2021,8,"Nou Barris",54,"Torre Baró","Homes","Menys d'1 any",71
+2021,8,"Nou Barris",55,"Ciutat Meridiana","Homes","Menys d'1 any",403
+2021,8,"Nou Barris",56,"Vallbona","Homes","Menys d'1 any",34
+2021,9,"Sant Andreu",57,"la Trinitat Vella","Homes","Menys d'1 any",379
+2021,9,"Sant Andreu",58,"Baró de Viver","Homes","Menys d'1 any",59
+2021,9,"Sant Andreu",59,"el Bon Pastor","Homes","Menys d'1 any",487
+2021,9,"Sant Andreu",60,"Sant Andreu","Homes","Menys d'1 any",999
+2021,9,"Sant Andreu",61,"la Sagrera","Homes","Menys d'1 any",665
+2021,9,"Sant Andreu",62,"el Congrés i els Indians","Homes","Menys d'1 any",305
+2021,9,"Sant Andreu",63,"Navas","Homes","Menys d'1 any",482
+2021,10,"Sant Martí",64,"el Camp de l'Arpa del Clot","Homes","Menys d'1 any",1086
+2021,10,"Sant Martí",65,"el Clot","Homes","Menys d'1 any",647
+2021,10,"Sant Martí",66,"el Parc i la Llacuna del Poblenou","Homes","Menys d'1 any",458
+2021,10,"Sant Martí",67,"la Vila Olímpica del Poblenou","Homes","Menys d'1 any",220
+2021,10,"Sant Martí",68,"el Poblenou","Homes","Menys d'1 any",953
+2021,10,"Sant Martí",69,"Diagonal Mar i el Front Marítim del Poblenou","Homes","Menys d'1 any",380
+2021,10,"Sant Martí",70,"el Besòs i el Maresme","Homes","Menys d'1 any",1323
+2021,10,"Sant Martí",71,"Provençals del Poblenou","Homes","Menys d'1 any",526
+2021,10,"Sant Martí",72,"Sant Martí de Provençals","Homes","Menys d'1 any",565
+2021,10,"Sant Martí",73,"la Verneda i la Pau","Homes","Menys d'1 any",570
+2021,1,"Ciutat Vella",1,"el Raval","Homes","D'1 a 5 anys",10579
+2021,1,"Ciutat Vella",2,"el Barri Gòtic","Homes","D'1 a 5 anys",7985
+2021,1,"Ciutat Vella",3,"la Barceloneta","Homes","D'1 a 5 anys",2846
+2021,1,"Ciutat Vella",4,"Sant Pere, Santa Caterina i la Ribera","Homes","D'1 a 5 anys",4632
+2021,2,"Eixample",5,"el Fort Pienc","Homes","D'1 a 5 anys",4592
+2021,2,"Eixample",6,"la Sagrada Família","Homes","D'1 a 5 anys",6436
+2021,2,"Eixample",7,"la Dreta de l'Eixample","Homes","D'1 a 5 anys",5791
+2021,2,"Eixample",8,"l'Antiga Esquerra de l'Eixample","Homes","D'1 a 5 anys",6065
+2021,2,"Eixample",9,"la Nova Esquerra de l'Eixample","Homes","D'1 a 5 anys",7003
+2021,2,"Eixample",10,"Sant Antoni","Homes","D'1 a 5 anys",5131
+2021,3,"Sants-Montjuïc",11,"el Poble Sec","Homes","D'1 a 5 anys",6197
+2021,3,"Sants-Montjuïc",12,"la Marina del Prat Vermell","Homes","D'1 a 5 anys",160
+2021,3,"Sants-Montjuïc",13,"la Marina de Port","Homes","D'1 a 5 anys",3154
+2021,3,"Sants-Montjuïc",14,"la Font de la Guatlla","Homes","D'1 a 5 anys",1234
+2021,3,"Sants-Montjuïc",15,"Hostafrancs","Homes","D'1 a 5 anys",2223
+2021,3,"Sants-Montjuïc",16,"la Bordeta","Homes","D'1 a 5 anys",2078
+2021,3,"Sants-Montjuïc",17,"Sants - Badal","Homes","D'1 a 5 anys",2998
+2021,3,"Sants-Montjuïc",18,"Sants","Homes","D'1 a 5 anys",6188
+2021,4,"Les Corts",19,"les Corts","Homes","D'1 a 5 anys",4609
+2021,4,"Les Corts",20,"la Maternitat i Sant Ramon","Homes","D'1 a 5 anys",2498
+2021,4,"Les Corts",21,"Pedralbes","Homes","D'1 a 5 anys",1410
+2021,5,"Sarrià-Sant Gervasi",22,"Vallvidrera, el Tibidabo i les Planes","Homes","D'1 a 5 anys",481
+2021,5,"Sarrià-Sant Gervasi",23,"Sarrià","Homes","D'1 a 5 anys",2614
+2021,5,"Sarrià-Sant Gervasi",24,"les Tres Torres","Homes","D'1 a 5 anys",1577
+2021,5,"Sarrià-Sant Gervasi",25,"Sant Gervasi - la Bonanova","Homes","D'1 a 5 anys",2736
+2021,5,"Sarrià-Sant Gervasi",26,"Sant Gervasi - Galvany","Homes","D'1 a 5 anys",4652
+2021,5,"Sarrià-Sant Gervasi",27,"el Putxet i el Farró","Homes","D'1 a 5 anys",3246
+2021,6,"Gràcia",28,"Vallcarca i els Penitents","Homes","D'1 a 5 anys",1699
+2021,6,"Gràcia",29,"el Coll","Homes","D'1 a 5 anys",815
+2021,6,"Gràcia",30,"la Salut","Homes","D'1 a 5 anys",1381
+2021,6,"Gràcia",31,"la Vila de Gràcia","Homes","D'1 a 5 anys",6533
+2021,6,"Gràcia",32,"el Camp d'en Grassot i Gràcia Nova","Homes","D'1 a 5 anys",3758
+2021,7,"Horta-Guinardó",33,"el Baix Guinardó","Homes","D'1 a 5 anys",2614
+2021,7,"Horta-Guinardó",34,"Can Baró","Homes","D'1 a 5 anys",1037
+2021,7,"Horta-Guinardó",35,"el Guinardó","Homes","D'1 a 5 anys",3947
+2021,7,"Horta-Guinardó",36,"la Font d'en Fargues","Homes","D'1 a 5 anys",714
+2021,7,"Horta-Guinardó",37,"el Carmel","Homes","D'1 a 5 anys",3385
+2021,7,"Horta-Guinardó",38,"la Teixonera","Homes","D'1 a 5 anys",1228
+2021,7,"Horta-Guinardó",39,"Sant Genís dels Agudells","Homes","D'1 a 5 anys",885
+2021,7,"Horta-Guinardó",40,"Montbau","Homes","D'1 a 5 anys",514
+2021,7,"Horta-Guinardó",41,"la Vall d'Hebron","Homes","D'1 a 5 anys",486
+2021,7,"Horta-Guinardó",42,"la Clota","Homes","D'1 a 5 anys",88
+2021,7,"Horta-Guinardó",43,"Horta","Homes","D'1 a 5 anys",2829
+2021,8,"Nou Barris",44,"Vilapicina i la Torre Llobeta","Homes","D'1 a 5 anys",2359
+2021,8,"Nou Barris",45,"Porta","Homes","D'1 a 5 anys",3424
+2021,8,"Nou Barris",46,"el Turó de la Peira","Homes","D'1 a 5 anys",2030
+2021,8,"Nou Barris",47,"Can Peguera","Homes","D'1 a 5 anys",153
+2021,8,"Nou Barris",48,"la Guineueta","Homes","D'1 a 5 anys",1151
+2021,8,"Nou Barris",49,"Canyelles","Homes","D'1 a 5 anys",438
+2021,8,"Nou Barris",50,"les Roquetes","Homes","D'1 a 5 anys",2034
+2021,8,"Nou Barris",51,"Verdun","Homes","D'1 a 5 anys",1456
+2021,8,"Nou Barris",52,"la Prosperitat","Homes","D'1 a 5 anys",2605
+2021,8,"Nou Barris",53,"la Trinitat Nova","Homes","D'1 a 5 anys",949
+2021,8,"Nou Barris",54,"Torre Baró","Homes","D'1 a 5 anys",328
+2021,8,"Nou Barris",55,"Ciutat Meridiana","Homes","D'1 a 5 anys",1639
+2021,8,"Nou Barris",56,"Vallbona","Homes","D'1 a 5 anys",140
+2021,9,"Sant Andreu",57,"la Trinitat Vella","Homes","D'1 a 5 anys",1534
+2021,9,"Sant Andreu",58,"Baró de Viver","Homes","D'1 a 5 anys",292
+2021,9,"Sant Andreu",59,"el Bon Pastor","Homes","D'1 a 5 anys",1722
+2021,9,"Sant Andreu",60,"Sant Andreu","Homes","D'1 a 5 anys",4743
+2021,9,"Sant Andreu",61,"la Sagrera","Homes","D'1 a 5 anys",2870
+2021,9,"Sant Andreu",62,"el Congrés i els Indians","Homes","D'1 a 5 anys",1477
+2021,9,"Sant Andreu",63,"Navas","Homes","D'1 a 5 anys",2185
+2021,10,"Sant Martí",64,"el Camp de l'Arpa del Clot","Homes","D'1 a 5 anys",4404
+2021,10,"Sant Martí",65,"el Clot","Homes","D'1 a 5 anys",2655
+2021,10,"Sant Martí",66,"el Parc i la Llacuna del Poblenou","Homes","D'1 a 5 anys",2029
+2021,10,"Sant Martí",67,"la Vila Olímpica del Poblenou","Homes","D'1 a 5 anys",1002
+2021,10,"Sant Martí",68,"el Poblenou","Homes","D'1 a 5 anys",4019
+2021,10,"Sant Martí",69,"Diagonal Mar i el Front Marítim del Poblenou","Homes","D'1 a 5 anys",1579
+2021,10,"Sant Martí",70,"el Besòs i el Maresme","Homes","D'1 a 5 anys",4683
+2021,10,"Sant Martí",71,"Provençals del Poblenou","Homes","D'1 a 5 anys",2235
+2021,10,"Sant Martí",72,"Sant Martí de Provençals","Homes","D'1 a 5 anys",2345
+2021,10,"Sant Martí",73,"la Verneda i la Pau","Homes","D'1 a 5 anys",2607
+2021,1,"Ciutat Vella",1,"el Raval","Homes","De 6 a 15 anys",7039
+2021,1,"Ciutat Vella",2,"el Barri Gòtic","Homes","De 6 a 15 anys",1920
+2021,1,"Ciutat Vella",3,"la Barceloneta","Homes","De 6 a 15 anys",1373
+2021,1,"Ciutat Vella",4,"Sant Pere, Santa Caterina i la Ribera","Homes","De 6 a 15 anys",2530
+2021,2,"Eixample",5,"el Fort Pienc","Homes","De 6 a 15 anys",3426
+2021,2,"Eixample",6,"la Sagrada Família","Homes","De 6 a 15 anys",4814
+2021,2,"Eixample",7,"la Dreta de l'Eixample","Homes","De 6 a 15 anys",4344
+2021,2,"Eixample",8,"l'Antiga Esquerra de l'Eixample","Homes","De 6 a 15 anys",4284
+2021,2,"Eixample",9,"la Nova Esquerra de l'Eixample","Homes","De 6 a 15 anys",5660
+2021,2,"Eixample",10,"Sant Antoni","Homes","De 6 a 15 anys",4197
+2021,3,"Sants-Montjuïc",11,"el Poble Sec","Homes","De 6 a 15 anys",4882
+2021,3,"Sants-Montjuïc",12,"la Marina del Prat Vermell","Homes","De 6 a 15 anys",170
+2021,3,"Sants-Montjuïc",13,"la Marina de Port","Homes","De 6 a 15 anys",3253
+2021,3,"Sants-Montjuïc",14,"la Font de la Guatlla","Homes","De 6 a 15 anys",1033
+2021,3,"Sants-Montjuïc",15,"Hostafrancs","Homes","De 6 a 15 anys",1719
+2021,3,"Sants-Montjuïc",16,"la Bordeta","Homes","De 6 a 15 anys",1930
+2021,3,"Sants-Montjuïc",17,"Sants - Badal","Homes","De 6 a 15 anys",2501
+2021,3,"Sants-Montjuïc",18,"Sants","Homes","De 6 a 15 anys",4411
+2021,4,"Les Corts",19,"les Corts","Homes","De 6 a 15 anys",4215
+2021,4,"Les Corts",20,"la Maternitat i Sant Ramon","Homes","De 6 a 15 anys",2185
+2021,4,"Les Corts",21,"Pedralbes","Homes","De 6 a 15 anys",1216
+2021,5,"Sarrià-Sant Gervasi",22,"Vallvidrera, el Tibidabo i les Planes","Homes","De 6 a 15 anys",614
+2021,5,"Sarrià-Sant Gervasi",23,"Sarrià","Homes","De 6 a 15 anys",2809
+2021,5,"Sarrià-Sant Gervasi",24,"les Tres Torres","Homes","De 6 a 15 anys",1845
+2021,5,"Sarrià-Sant Gervasi",25,"Sant Gervasi - la Bonanova","Homes","De 6 a 15 anys",2718
+2021,5,"Sarrià-Sant Gervasi",26,"Sant Gervasi - Galvany","Homes","De 6 a 15 anys",4780
+2021,5,"Sarrià-Sant Gervasi",27,"el Putxet i el Farró","Homes","De 6 a 15 anys",3053
+2021,6,"Gràcia",28,"Vallcarca i els Penitents","Homes","De 6 a 15 anys",1735
+2021,6,"Gràcia",29,"el Coll","Homes","De 6 a 15 anys",775
+2021,6,"Gràcia",30,"la Salut","Homes","De 6 a 15 anys",1292
+2021,6,"Gràcia",31,"la Vila de Gràcia","Homes","De 6 a 15 anys",5077
+2021,6,"Gràcia",32,"el Camp d'en Grassot i Gràcia Nova","Homes","De 6 a 15 anys",3317
+2021,7,"Horta-Guinardó",33,"el Baix Guinardó","Homes","De 6 a 15 anys",2454
+2021,7,"Horta-Guinardó",34,"Can Baró","Homes","De 6 a 15 anys",893
+2021,7,"Horta-Guinardó",35,"el Guinardó","Homes","De 6 a 15 anys",3761
+2021,7,"Horta-Guinardó",36,"la Font d'en Fargues","Homes","De 6 a 15 anys",898
+2021,7,"Horta-Guinardó",37,"el Carmel","Homes","De 6 a 15 anys",3196
+2021,7,"Horta-Guinardó",38,"la Teixonera","Homes","De 6 a 15 anys",1145
+2021,7,"Horta-Guinardó",39,"Sant Genís dels Agudells","Homes","De 6 a 15 anys",692
+2021,7,"Horta-Guinardó",40,"Montbau","Homes","De 6 a 15 anys",443
+2021,7,"Horta-Guinardó",41,"la Vall d'Hebron","Homes","De 6 a 15 anys",503
+2021,7,"Horta-Guinardó",42,"la Clota","Homes","De 6 a 15 anys",88
+2021,7,"Horta-Guinardó",43,"Horta","Homes","De 6 a 15 anys",2515
+2021,8,"Nou Barris",44,"Vilapicina i la Torre Llobeta","Homes","De 6 a 15 anys",2503
+2021,8,"Nou Barris",45,"Porta","Homes","De 6 a 15 anys",2666
+2021,8,"Nou Barris",46,"el Turó de la Peira","Homes","De 6 a 15 anys",1791
+2021,8,"Nou Barris",47,"Can Peguera","Homes","De 6 a 15 anys",251
+2021,8,"Nou Barris",48,"la Guineueta","Homes","De 6 a 15 anys",1389
+2021,8,"Nou Barris",49,"Canyelles","Homes","De 6 a 15 anys",568
+2021,8,"Nou Barris",50,"les Roquetes","Homes","De 6 a 15 anys",1766
+2021,8,"Nou Barris",51,"Verdun","Homes","De 6 a 15 anys",1360
+2021,8,"Nou Barris",52,"la Prosperitat","Homes","De 6 a 15 anys",2630
+2021,8,"Nou Barris",53,"la Trinitat Nova","Homes","De 6 a 15 anys",838
+2021,8,"Nou Barris",54,"Torre Baró","Homes","De 6 a 15 anys",413
+2021,8,"Nou Barris",55,"Ciutat Meridiana","Homes","De 6 a 15 anys",1438
+2021,8,"Nou Barris",56,"Vallbona","Homes","De 6 a 15 anys",224
+2021,9,"Sant Andreu",57,"la Trinitat Vella","Homes","De 6 a 15 anys",1428
+2021,9,"Sant Andreu",58,"Baró de Viver","Homes","De 6 a 15 anys",321
+2021,9,"Sant Andreu",59,"el Bon Pastor","Homes","De 6 a 15 anys",1578
+2021,9,"Sant Andreu",60,"Sant Andreu","Homes","De 6 a 15 anys",5655
+2021,9,"Sant Andreu",61,"la Sagrera","Homes","De 6 a 15 anys",2929
+2021,9,"Sant Andreu",62,"el Congrés i els Indians","Homes","De 6 a 15 anys",1526
+2021,9,"Sant Andreu",63,"Navas","Homes","De 6 a 15 anys",2190
+2021,10,"Sant Martí",64,"el Camp de l'Arpa del Clot","Homes","De 6 a 15 anys",3745
+2021,10,"Sant Martí",65,"el Clot","Homes","De 6 a 15 anys",2635
+2021,10,"Sant Martí",66,"el Parc i la Llacuna del Poblenou","Homes","De 6 a 15 anys",1733
+2021,10,"Sant Martí",67,"la Vila Olímpica del Poblenou","Homes","De 6 a 15 anys",1033
+2021,10,"Sant Martí",68,"el Poblenou","Homes","De 6 a 15 anys",4070
+2021,10,"Sant Martí",69,"Diagonal Mar i el Front Marítim del Poblenou","Homes","De 6 a 15 anys",1699
+2021,10,"Sant Martí",70,"el Besòs i el Maresme","Homes","De 6 a 15 anys",2959
+2021,10,"Sant Martí",71,"Provençals del Poblenou","Homes","De 6 a 15 anys",2236
+2021,10,"Sant Martí",72,"Sant Martí de Provençals","Homes","De 6 a 15 anys",2644
+2021,10,"Sant Martí",73,"la Verneda i la Pau","Homes","De 6 a 15 anys",2769
+2021,1,"Ciutat Vella",1,"el Raval","Homes","Més de 15 anys",5597
+2021,1,"Ciutat Vella",2,"el Barri Gòtic","Homes","Més de 15 anys",1964
+2021,1,"Ciutat Vella",3,"la Barceloneta","Homes","Més de 15 anys",2455
+2021,1,"Ciutat Vella",4,"Sant Pere, Santa Caterina i la Ribera","Homes","Més de 15 anys",3164
+2021,2,"Eixample",5,"el Fort Pienc","Homes","Més de 15 anys",6798
+2021,2,"Eixample",6,"la Sagrada Família","Homes","Més de 15 anys",11089
+2021,2,"Eixample",7,"la Dreta de l'Eixample","Homes","Més de 15 anys",8730
+2021,2,"Eixample",8,"l'Antiga Esquerra de l'Eixample","Homes","Més de 15 anys",8343
+2021,2,"Eixample",9,"la Nova Esquerra de l'Eixample","Homes","Més de 15 anys",12513
+2021,2,"Eixample",10,"Sant Antoni","Homes","Més de 15 anys",7848
+2021,3,"Sants-Montjuïc",11,"el Poble Sec","Homes","Més de 15 anys",7133
+2021,3,"Sants-Montjuïc",12,"la Marina del Prat Vermell","Homes","Més de 15 anys",346
+2021,3,"Sants-Montjuïc",13,"la Marina de Port","Homes","Més de 15 anys",7848
+2021,3,"Sants-Montjuïc",14,"la Font de la Guatlla","Homes","Més de 15 anys",2278
+2021,3,"Sants-Montjuïc",15,"Hostafrancs","Homes","Més de 15 anys",3208
+2021,3,"Sants-Montjuïc",16,"la Bordeta","Homes","Més de 15 anys",4738
+2021,3,"Sants-Montjuïc",17,"Sants - Badal","Homes","Més de 15 anys",5365
+2021,3,"Sants-Montjuïc",18,"Sants","Homes","Més de 15 anys",8834
+2021,4,"Les Corts",19,"les Corts","Homes","Més de 15 anys",11418
+2021,4,"Les Corts",20,"la Maternitat i Sant Ramon","Homes","Més de 15 anys",5762
+2021,4,"Les Corts",21,"Pedralbes","Homes","Més de 15 anys",2547
+2021,5,"Sarrià-Sant Gervasi",22,"Vallvidrera, el Tibidabo i les Planes","Homes","Més de 15 anys",1157
+2021,5,"Sarrià-Sant Gervasi",23,"Sarrià","Homes","Més de 15 anys",5546
+2021,5,"Sarrià-Sant Gervasi",24,"les Tres Torres","Homes","Més de 15 anys",3879
+2021,5,"Sarrià-Sant Gervasi",25,"Sant Gervasi - la Bonanova","Homes","Més de 15 anys",5967
+2021,5,"Sarrià-Sant Gervasi",26,"Sant Gervasi - Galvany","Homes","Més de 15 anys",10802
+2021,5,"Sarrià-Sant Gervasi",27,"el Putxet i el Farró","Homes","Més de 15 anys",6744
+2021,6,"Gràcia",28,"Vallcarca i els Penitents","Homes","Més de 15 anys",3786
+2021,6,"Gràcia",29,"el Coll","Homes","Més de 15 anys",1789
+2021,6,"Gràcia",30,"la Salut","Homes","Més de 15 anys",3218
+2021,6,"Gràcia",31,"la Vila de Gràcia","Homes","Més de 15 anys",9798
+2021,6,"Gràcia",32,"el Camp d'en Grassot i Gràcia Nova","Homes","Més de 15 anys",8181
+2021,7,"Horta-Guinardó",33,"el Baix Guinardó","Homes","Més de 15 anys",6283
+2021,7,"Horta-Guinardó",34,"Can Baró","Homes","Més de 15 anys",2262
+2021,7,"Horta-Guinardó",35,"el Guinardó","Homes","Més de 15 anys",8928
+2021,7,"Horta-Guinardó",36,"la Font d'en Fargues","Homes","Més de 15 anys",2778
+2021,7,"Horta-Guinardó",37,"el Carmel","Homes","Més de 15 anys",8126
+2021,7,"Horta-Guinardó",38,"la Teixonera","Homes","Més de 15 anys",3105
+2021,7,"Horta-Guinardó",39,"Sant Genís dels Agudells","Homes","Més de 15 anys",1704
+2021,7,"Horta-Guinardó",40,"Montbau","Homes","Més de 15 anys",1208
+2021,7,"Horta-Guinardó",41,"la Vall d'Hebron","Homes","Més de 15 anys",1665
+2021,7,"Horta-Guinardó",42,"la Clota","Homes","Més de 15 anys",168
+2021,7,"Horta-Guinardó",43,"Horta","Homes","Més de 15 anys",7139
+2021,8,"Nou Barris",44,"Vilapicina i la Torre Llobeta","Homes","Més de 15 anys",6442
+2021,8,"Nou Barris",45,"Porta","Homes","Més de 15 anys",6099
+2021,8,"Nou Barris",46,"el Turó de la Peira","Homes","Més de 15 anys",3290
+2021,8,"Nou Barris",47,"Can Peguera","Homes","Més de 15 anys",605
+2021,8,"Nou Barris",48,"la Guineueta","Homes","Més de 15 anys",4282
+2021,8,"Nou Barris",49,"Canyelles","Homes","Més de 15 anys",2143
+2021,8,"Nou Barris",50,"les Roquetes","Homes","Més de 15 anys",3666
+2021,8,"Nou Barris",51,"Verdun","Homes","Més de 15 anys",2794
+2021,8,"Nou Barris",52,"la Prosperitat","Homes","Més de 15 anys",6771
+2021,8,"Nou Barris",53,"la Trinitat Nova","Homes","Més de 15 anys",1638
+2021,8,"Nou Barris",54,"Torre Baró","Homes","Més de 15 anys",649
+2021,8,"Nou Barris",55,"Ciutat Meridiana","Homes","Més de 15 anys",1983
+2021,8,"Nou Barris",56,"Vallbona","Homes","Més de 15 anys",287
+2021,9,"Sant Andreu",57,"la Trinitat Vella","Homes","Més de 15 anys",2010
+2021,9,"Sant Andreu",58,"Baró de Viver","Homes","Més de 15 anys",626
+2021,9,"Sant Andreu",59,"el Bon Pastor","Homes","Més de 15 anys",3071
+2021,9,"Sant Andreu",60,"Sant Andreu","Homes","Més de 15 anys",16095
+2021,9,"Sant Andreu",61,"la Sagrera","Homes","Més de 15 anys",7373
+2021,9,"Sant Andreu",62,"el Congrés i els Indians","Homes","Més de 15 anys",3491
+2021,9,"Sant Andreu",63,"Navas","Homes","Més de 15 anys",5550
+2021,10,"Sant Martí",64,"el Camp de l'Arpa del Clot","Homes","Més de 15 anys",8972
+2021,10,"Sant Martí",65,"el Clot","Homes","Més de 15 anys",6862
+2021,10,"Sant Martí",66,"el Parc i la Llacuna del Poblenou","Homes","Més de 15 anys",3470
+2021,10,"Sant Martí",67,"la Vila Olímpica del Poblenou","Homes","Més de 15 anys",2357
+2021,10,"Sant Martí",68,"el Poblenou","Homes","Més de 15 anys",7686
+2021,10,"Sant Martí",69,"Diagonal Mar i el Front Marítim del Poblenou","Homes","Més de 15 anys",2937
+2021,10,"Sant Martí",70,"el Besòs i el Maresme","Homes","Més de 15 anys",4704
+2021,10,"Sant Martí",71,"Provençals del Poblenou","Homes","Més de 15 anys",5149
+2021,10,"Sant Martí",72,"Sant Martí de Provençals","Homes","Més de 15 anys",6706
+2021,10,"Sant Martí",73,"la Verneda i la Pau","Homes","Més de 15 anys",7689
+2021,1,"Ciutat Vella",1,"el Raval","Homes","No consta",16
+2021,1,"Ciutat Vella",2,"el Barri Gòtic","Homes","No consta",11
+2021,1,"Ciutat Vella",3,"la Barceloneta","Homes","No consta",5
+2021,1,"Ciutat Vella",4,"Sant Pere, Santa Caterina i la Ribera","Homes","No consta",12
+2021,2,"Eixample",5,"el Fort Pienc","Homes","No consta",5
+2021,2,"Eixample",6,"la Sagrada Família","Homes","No consta",11
+2021,2,"Eixample",7,"la Dreta de l'Eixample","Homes","No consta",17
+2021,2,"Eixample",8,"l'Antiga Esquerra de l'Eixample","Homes","No consta",7
+2021,2,"Eixample",9,"la Nova Esquerra de l'Eixample","Homes","No consta",25
+2021,2,"Eixample",10,"Sant Antoni","Homes","No consta",15
+2021,3,"Sants-Montjuïc",11,"el Poble Sec","Homes","No consta",10
+2021,3,"Sants-Montjuïc",12,"la Marina del Prat Vermell","Homes","No consta",0
+2021,3,"Sants-Montjuïc",13,"la Marina de Port","Homes","No consta",5
+2021,3,"Sants-Montjuïc",14,"la Font de la Guatlla","Homes","No consta",3
+2021,3,"Sants-Montjuïc",15,"Hostafrancs","Homes","No consta",5
+2021,3,"Sants-Montjuïc",16,"la Bordeta","Homes","No consta",3
+2021,3,"Sants-Montjuïc",17,"Sants - Badal","Homes","No consta",6
+2021,3,"Sants-Montjuïc",18,"Sants","Homes","No consta",8
+2021,4,"Les Corts",19,"les Corts","Homes","No consta",9
+2021,4,"Les Corts",20,"la Maternitat i Sant Ramon","Homes","No consta",5
+2021,4,"Les Corts",21,"Pedralbes","Homes","No consta",10
+2021,5,"Sarrià-Sant Gervasi",22,"Vallvidrera, el Tibidabo i les Planes","Homes","No consta",6
+2021,5,"Sarrià-Sant Gervasi",23,"Sarrià","Homes","No consta",12
+2021,5,"Sarrià-Sant Gervasi",24,"les Tres Torres","Homes","No consta",3
+2021,5,"Sarrià-Sant Gervasi",25,"Sant Gervasi - la Bonanova","Homes","No consta",3
+2021,5,"Sarrià-Sant Gervasi",26,"Sant Gervasi - Galvany","Homes","No consta",17
+2021,5,"Sarrià-Sant Gervasi",27,"el Putxet i el Farró","Homes","No consta",12
+2021,6,"Gràcia",28,"Vallcarca i els Penitents","Homes","No consta",4
+2021,6,"Gràcia",29,"el Coll","Homes","No consta",1
+2021,6,"Gràcia",30,"la Salut","Homes","No consta",5
+2021,6,"Gràcia",31,"la Vila de Gràcia","Homes","No consta",16
+2021,6,"Gràcia",32,"el Camp d'en Grassot i Gràcia Nova","Homes","No consta",11
+2021,7,"Horta-Guinardó",33,"el Baix Guinardó","Homes","No consta",3
+2021,7,"Horta-Guinardó",34,"Can Baró","Homes","No consta",4
+2021,7,"Horta-Guinardó",35,"el Guinardó","Homes","No consta",7
+2021,7,"Horta-Guinardó",36,"la Font d'en Fargues","Homes","No consta",0
+2021,7,"Horta-Guinardó",37,"el Carmel","Homes","No consta",6
+2021,7,"Horta-Guinardó",38,"la Teixonera","Homes","No consta",5
+2021,7,"Horta-Guinardó",39,"Sant Genís dels Agudells","Homes","No consta",3
+2021,7,"Horta-Guinardó",40,"Montbau","Homes","No consta",2
+2021,7,"Horta-Guinardó",41,"la Vall d'Hebron","Homes","No consta",1
+2021,7,"Horta-Guinardó",42,"la Clota","Homes","No consta",0
+2021,7,"Horta-Guinardó",43,"Horta","Homes","No consta",7
+2021,8,"Nou Barris",44,"Vilapicina i la Torre Llobeta","Homes","No consta",3
+2021,8,"Nou Barris",45,"Porta","Homes","No consta",7
+2021,8,"Nou Barris",46,"el Turó de la Peira","Homes","No consta",4
+2021,8,"Nou Barris",47,"Can Peguera","Homes","No consta",1
+2021,8,"Nou Barris",48,"la Guineueta","Homes","No consta",0
+2021,8,"Nou Barris",49,"Canyelles","Homes","No consta",0
+2021,8,"Nou Barris",50,"les Roquetes","Homes","No consta",4
+2021,8,"Nou Barris",51,"Verdun","Homes","No consta",2
+2021,8,"Nou Barris",52,"la Prosperitat","Homes","No consta",1
+2021,8,"Nou Barris",53,"la Trinitat Nova","Homes","No consta",0
+2021,8,"Nou Barris",54,"Torre Baró","Homes","No consta",0
+2021,8,"Nou Barris",55,"Ciutat Meridiana","Homes","No consta",1
+2021,8,"Nou Barris",56,"Vallbona","Homes","No consta",0
+2021,9,"Sant Andreu",57,"la Trinitat Vella","Homes","No consta",0
+2021,9,"Sant Andreu",58,"Baró de Viver","Homes","No consta",0
+2021,9,"Sant Andreu",59,"el Bon Pastor","Homes","No consta",2
+2021,9,"Sant Andreu",60,"Sant Andreu","Homes","No consta",6
+2021,9,"Sant Andreu",61,"la Sagrera","Homes","No consta",8
+2021,9,"Sant Andreu",62,"el Congrés i els Indians","Homes","No consta",4
+2021,9,"Sant Andreu",63,"Navas","Homes","No consta",4
+2021,10,"Sant Martí",64,"el Camp de l'Arpa del Clot","Homes","No consta",10
+2021,10,"Sant Martí",65,"el Clot","Homes","No consta",4
+2021,10,"Sant Martí",66,"el Parc i la Llacuna del Poblenou","Homes","No consta",5
+2021,10,"Sant Martí",67,"la Vila Olímpica del Poblenou","Homes","No consta",3
+2021,10,"Sant Martí",68,"el Poblenou","Homes","No consta",8
+2021,10,"Sant Martí",69,"Diagonal Mar i el Front Marítim del Poblenou","Homes","No consta",3
+2021,10,"Sant Martí",70,"el Besòs i el Maresme","Homes","No consta",7
+2021,10,"Sant Martí",71,"Provençals del Poblenou","Homes","No consta",3
+2021,10,"Sant Martí",72,"Sant Martí de Provençals","Homes","No consta",11
+2021,10,"Sant Martí",73,"la Verneda i la Pau","Homes","No consta",3

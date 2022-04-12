@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:void="http://rdfs.org/ns/void#"
+	xmlns:ns4="http://bio2rdf.org/bio2rdf_vocabulary:" >
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex.crigid_vocabulary:Resource">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex.crigid resource [irefindex.crigid_vocabulary:Resource]</rdfs:label>
+    <rdfs:label>irefindex.crigid resource [irefindex.crigid_vocabulary:Resource]</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex.icrogid_vocabulary:Resource">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex.icrogid resource [irefindex.icrogid_vocabulary:Resource]</rdfs:label>
+    <rdfs:label>irefindex.icrogid resource [irefindex.icrogid_vocabulary:Resource]</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex.irigid_vocabulary:Resource">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex.irigid resource [irefindex.irigid_vocabulary:Resource]</rdfs:label>
+    <rdfs:label>irefindex.irigid resource [irefindex.irigid_vocabulary:Resource]</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex.irogid_vocabulary:Resource">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex.irogid resource [irefindex.irogid_vocabulary:Resource]</rdfs:label>
+    <rdfs:label>irefindex.irogid resource [irefindex.irogid_vocabulary:Resource]</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex.rogid_vocabulary:Resource">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource" />
+    <rdfs:label>irefindex.rogid resource [irefindex.rogid_vocabulary:Resource]</rdfs:label>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex.rogid resource [irefindex.rogid_vocabulary:Resource]</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:Multimeric-Complex">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Multimeric Complex [irefindex_vocabulary:Multimeric-Complex]</rdfs:label>
+    <rdfs:label xml:lang="en">Multimeric Complex [irefindex_vocabulary:Multimeric-Complex]</rdfs:label>
+    <dcterms:title xml:lang="en">Multimeric Complex</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:Multimeric-Complex</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Multimeric-Complex</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:Multimeric-Complex</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:Pairwise-Interaction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pairwise Interaction [irefindex_vocabulary:Pairwise-Interaction]</rdfs:label>
+    <rdfs:label xml:lang="en">Pairwise Interaction [irefindex_vocabulary:Pairwise-Interaction]</rdfs:label>
+    <dcterms:title xml:lang="en">Pairwise Interaction</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:Pairwise-Interaction</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pairwise-Interaction</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:Pairwise-Interaction</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:Resource">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource" />
+    <rdfs:label>irefindex_vocabulary resource [irefindex_vocabulary:Resource]</rdfs:label>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary resource [irefindex_vocabulary:Resource]</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:Taxon-Sequence-Identical-Group">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Taxon + Sequence Identical Group [irefindex_vocabulary:Taxon-Sequence-Identical-Group]</rdfs:label>
+    <rdfs:label xml:lang="en">Taxon + Sequence Identical Group [irefindex_vocabulary:Taxon-Sequence-Identical-Group]</rdfs:label>
+    <dcterms:title xml:lang="en">Taxon + Sequence Identical Group</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:Taxon-Sequence-Identical-Group</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Taxon-Sequence-Identical-Group</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:Taxon-Sequence-Identical-Group</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:Taxon-Sequence-Similar-Group">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdfs:label xml:lang="en">Taxon + Sequence Similar Group [irefindex_vocabulary:Taxon-Sequence-Similar-Group]</rdfs:label>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Taxon + Sequence Similar Group [irefindex_vocabulary:Taxon-Sequence-Similar-Group]</rdfs:label>
+    <dcterms:title xml:lang="en">Taxon + Sequence Similar Group</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:Taxon-Sequence-Similar-Group</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Taxon-Sequence-Similar-Group</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:Taxon-Sequence-Similar-Group</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:article">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">article [irefindex_vocabulary:article]</rdfs:label>
+    <rdfs:label xml:lang="en">article [irefindex_vocabulary:article]</rdfs:label>
+    <dcterms:title xml:lang="en">article</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:article</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">article</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:article</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:expansion-method">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">expansion method [irefindex_vocabulary:expansion-method]</rdfs:label>
+    <rdfs:label xml:lang="en">expansion method [irefindex_vocabulary:expansion-method]</rdfs:label>
+    <dcterms:title xml:lang="en">expansion method</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:expansion-method</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">expansion-method</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:expansion-method</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:interactor_a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdfs:label xml:lang="en">interactor_a [irefindex_vocabulary:interactor_a]</rdfs:label>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interactor_a [irefindex_vocabulary:interactor_a]</rdfs:label>
+    <dcterms:title xml:lang="en">interactor_a</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:interactor_a</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interactor_a</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:interactor_a</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:interactor_a_experimental_role">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdfs:label xml:lang="en">interactor_a_experimental_role [irefindex_vocabulary:interactor_a_experimental_role]</rdfs:label>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interactor_a_experimental_role [irefindex_vocabulary:interactor_a_experimental_role]</rdfs:label>
+    <dcterms:title xml:lang="en">interactor_a_experimental_role</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:interactor_a_experimental_role</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interactor_a_experimental_role</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:interactor_a_experimental_role</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:interactor_b">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdfs:label xml:lang="en">interactor_b [irefindex_vocabulary:interactor_b]</rdfs:label>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interactor_b [irefindex_vocabulary:interactor_b]</rdfs:label>
+    <dcterms:title xml:lang="en">interactor_b</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:interactor_b</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interactor_b</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:interactor_b</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:interactor_b_experimental_role">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interactor_b_experimental_role [irefindex_vocabulary:interactor_b_experimental_role]</rdfs:label>
+    <rdfs:label xml:lang="en">interactor_b_experimental_role [irefindex_vocabulary:interactor_b_experimental_role]</rdfs:label>
+    <dcterms:title xml:lang="en">interactor_b_experimental_role</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:interactor_b_experimental_role</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interactor_b_experimental_role</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:interactor_b_experimental_role</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:maximum-number-interactions-reported">
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="en">maximum number interactions reported [irefindex_vocabulary:maximum-number-interactions-reported]</rdfs:label>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">maximum number interactions reported [irefindex_vocabulary:maximum-number-interactions-reported]</rdfs:label>
+    <dcterms:title xml:lang="en">maximum number interactions reported</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:maximum-number-interactions-reported</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">maximum-number-interactions-reported</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:maximum-number-interactions-reported</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:method">
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">method [irefindex_vocabulary:method]</rdfs:label>
+    <rdfs:label xml:lang="en">method [irefindex_vocabulary:method]</rdfs:label>
+    <dcterms:title xml:lang="en">method</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:method</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">method</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:method</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:minimum-number-interactions-reported">
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="en">minimum number interactions reported [irefindex_vocabulary:minimum-number-interactions-reported]</rdfs:label>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minimum number interactions reported [irefindex_vocabulary:minimum-number-interactions-reported]</rdfs:label>
+    <dcterms:title xml:lang="en">minimum number interactions reported</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:minimum-number-interactions-reported</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minimum-number-interactions-reported</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:minimum-number-interactions-reported</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:number-supporting-articles">
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">number supporting articles [irefindex_vocabulary:number-supporting-articles]</rdfs:label>
+    <rdfs:label xml:lang="en">number supporting articles [irefindex_vocabulary:number-supporting-articles]</rdfs:label>
+    <dcterms:title xml:lang="en">number supporting articles</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:number-supporting-articles</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">number-supporting-articles</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:number-supporting-articles</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:source">
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">source [irefindex_vocabulary:source]</rdfs:label>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">source [irefindex_vocabulary:source]</rdfs:label>
+    <dcterms:title xml:lang="en">source</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:source</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">source</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:source</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:taxon-sequence-identical-group">
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">taxon sequence identical group [irefindex_vocabulary:taxon-sequence-identical-group]</rdfs:label>
+    <rdfs:label xml:lang="en">taxon sequence identical group [irefindex_vocabulary:taxon-sequence-identical-group]</rdfs:label>
+    <dcterms:title xml:lang="en">taxon sequence identical group</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:taxon-sequence-identical-group</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">taxon-sequence-identical-group</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:taxon-sequence-identical-group</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:taxon-sequence-identical-interaction-group">
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">taxon sequence identical interaction group [irefindex_vocabulary:taxon-sequence-identical-interaction-group]</rdfs:label>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">taxon sequence identical interaction group [irefindex_vocabulary:taxon-sequence-identical-interaction-group]</rdfs:label>
+    <dcterms:title xml:lang="en">taxon sequence identical interaction group</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:taxon-sequence-identical-interaction-group</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">taxon-sequence-identical-interaction-group</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:taxon-sequence-identical-interaction-group</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:taxon-sequence-similar-group">
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">taxon sequence similar group [irefindex_vocabulary:taxon-sequence-similar-group]</rdfs:label>
+    <rdfs:label xml:lang="en">taxon sequence similar group [irefindex_vocabulary:taxon-sequence-similar-group]</rdfs:label>
+    <dcterms:title xml:lang="en">taxon sequence similar group</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:taxon-sequence-similar-group</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">taxon-sequence-similar-group</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:taxon-sequence-similar-group</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:taxon-sequence-similar-interaction-group">
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">taxon sequence similar interaction group [irefindex_vocabulary:taxon-sequence-similar-interaction-group]</rdfs:label>
+    <rdfs:label xml:lang="en">taxon sequence similar interaction group [irefindex_vocabulary:taxon-sequence-similar-interaction-group]</rdfs:label>
+    <dcterms:title xml:lang="en">taxon sequence similar interaction group</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:taxon-sequence-similar-interaction-group</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">taxon-sequence-similar-interaction-group</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:taxon-sequence-similar-interaction-group</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:x-taxonomy">
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">x taxonomy [irefindex_vocabulary:x-taxonomy]</rdfs:label>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x taxonomy [irefindex_vocabulary:x-taxonomy]</rdfs:label>
+    <dcterms:title xml:lang="en">x taxonomy</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:x-taxonomy</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x-taxonomy</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:x-taxonomy</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:host-organism">
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">host organism [irefindex_vocabulary:host-organism]</rdfs:label>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">host organism [irefindex_vocabulary:host-organism]</rdfs:label>
+    <dcterms:title xml:lang="en">host organism</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:host-organism</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">host-organism</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:host-organism</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:interactor_a_biological_role">
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">interactor_a_biological_role [irefindex_vocabulary:interactor_a_biological_role]</rdfs:label>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interactor_a_biological_role [irefindex_vocabulary:interactor_a_biological_role]</rdfs:label>
+    <dcterms:title xml:lang="en">interactor_a_biological_role</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:interactor_a_biological_role</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interactor_a_biological_role</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:interactor_a_biological_role</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:interactor_b_biological_role">
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">interactor_b_biological_role [irefindex_vocabulary:interactor_b_biological_role]</rdfs:label>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interactor_b_biological_role [irefindex_vocabulary:interactor_b_biological_role]</rdfs:label>
+    <dcterms:title xml:lang="en">interactor_b_biological_role</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:interactor_b_biological_role</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interactor_b_biological_role</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:interactor_b_biological_role</ns4:uri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/irefindex_vocabulary:Homopolymeric-Complex">
+    <rdf:type rdf:resource="http://bio2rdf.org/irefindex_vocabulary:Resource" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homopolymeric Complex [irefindex_vocabulary:Homopolymeric-Complex]</rdfs:label>
+    <rdfs:label xml:lang="en">Homopolymeric Complex [irefindex_vocabulary:Homopolymeric-Complex]</rdfs:label>
+    <dcterms:title xml:lang="en">Homopolymeric Complex</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary:Homopolymeric-Complex</dcterms:identifier>
+    <void:inDataset rdf:resource="http://bio2rdf.org/irefindex_resource:bio2rdf.dataset.irefindex.R3" />
+    <ns4:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homopolymeric-Complex</ns4:identifier>
+    <ns4:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irefindex_vocabulary</ns4:namespace>
+    <ns4:uri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bio2rdf.org/irefindex_vocabulary:Homopolymeric-Complex</ns4:uri>
+  </rdf:Description>
+</rdf:RDF>

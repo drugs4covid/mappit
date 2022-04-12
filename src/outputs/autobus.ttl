@@ -1,0 +1,289 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix : <http://vocab.ciudadesabiertas.es/def/transporte/autobus#> .
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix direccion-postal: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix escjr: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#> .
+@prefix estraf: <http://vocab.ciudadesabiertas.es/def/transporte/trafico#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geocore: <https://datos.ign.es/def/geo_core#> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix schema1: <http://schema.org/> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa1: <http://w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix tmcommons: <http://w3id.org/transmodel/commons#> .
+@prefix tmjourney: <http://w3id.org/transmodel/journeys#> .
+@prefix tmkoscommons: <http://w3id.org/transmodel/kos/commons/> .
+@prefix tmkosjourney: <http://w3id.org/transmodel/kos/journeys/> .
+@prefix tmorg: <http://w3id.org/transmodel/organisations#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vcard: <http://www.w3.org/2006/vcard#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@base <http://vocab.gtfs.org/terms#> .
+<#tripsreducido> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Incidencia/{}";
+                 rr:termType rr:IRI;
+                 rr:class Incidencia;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant tmjourney:definedBy;
+                 ];
+                 rr:objectMap [ rr:column "line_id"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant estraf:numSentidos;
+                 ];
+                 rr:objectMap [ rr:column "route_id"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant tmorg:operating;
+                 ];
+                 rr:objectMap [ rr:column "trip_headsign"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant tmcommons:shortName;
+                 ];
+                 rr:objectMap [ rr:column "trip_short_name"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant dc:description;
+                 ];
+                 rr:objectMap [ rr:column "direction_id"; rr:datatype xsd:integer];
+         ].
+<#stopsnuestro> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "stopsnuestro.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Geometry/{}";
+                 rr:termType rr:IRI;
+                 rr:class Geometry;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant tmjourney:firstDepartureTime;
+                 ];
+                 rr:objectMap [ rr:column "stop_id"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant schema1:datePosted;
+                 ];
+                 rr:objectMap [ rr:column "stop_code"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant schema1:name;
+                 ];
+                 rr:objectMap [ rr:column "stop_name"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant tmjourney:stopUse;
+                 ];
+                 rr:objectMap [ rr:column "stop_desc"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant geo:lat;
+                 ];
+                 rr:objectMap [ rr:column "stop_lat"; rr:datatype xsd:float];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant autobus:zona;
+                 ];
+                 rr:objectMap [ rr:column "stop_lon"; rr:datatype xsd:float];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant tmjourney:definedBy;
+                 ];
+                 rr:objectMap [ rr:column "zone_id"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant schema1:url;
+                 ];
+                 rr:objectMap [ rr:column "stop_url"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant schema1:contactPoint;
+                 ];
+                 rr:objectMap [ rr:column "location_type"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant tmorg:operating;
+                 ];
+                 rr:objectMap [ rr:column "parent_station"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant tmjourney:stopUse;
+                 ];
+                 rr:objectMap [ rr:column "stop_timezone"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant tmjourney:forBoarding;
+                 ];
+                 rr:objectMap [ rr:column "wheelchair_boarding"; rr:datatype xsd:integer];
+         ].
+<#stoptimesreducido> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "stoptimesreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#StopArea/{}";
+                 rr:termType rr:IRI;
+                 rr:class StopArea;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant tmjourney:firstDepartureTime;
+                 ];
+                 rr:objectMap [ rr:column "trip_id"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant estraf:numSentidos;
+                 ];
+                 rr:objectMap [ rr:column "route_id"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant tmjourney:firstDepartureTime;
+                 ];
+                 rr:objectMap [ rr:column "stop_id"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant dcterms:created;
+                 ];
+                 rr:objectMap [ rr:column "id_parada"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant tmjourney:stopUse;
+                 ];
+                 rr:objectMap [ rr:column "stop_sequence"; rr:datatype xsd:integer];
+         ].
+<#routes> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "routes.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Route/{}";
+                 rr:termType rr:IRI;
+                 rr:class Route;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant tmjourney:definedBy;
+                 ];
+                 rr:objectMap [ rr:column "agency_id"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant tmcommons:shortName;
+                 ];
+                 rr:objectMap [ rr:column "route_short_name"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant tmcommons:shortName;
+                 ];
+                 rr:objectMap [ rr:column "route_long_name"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant tmjourney:stopUse;
+                 ];
+                 rr:objectMap [ rr:column "route_desc"; rr:datatype xsd:float];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant dc:source;
+                 ];
+                 rr:objectMap [ rr:column "route_uri"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant dc:creator;
+                 ];
+                 rr:objectMap [ rr:column "route_color"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant tmcommons:textColour;
+                 ];
+                 rr:objectMap [ rr:column "route_text_color"; rr:datatype xsd:string];
+         ].

@@ -123,6 +123,15 @@ class Utilities:
             i+=1
         return (len(val) == 2 and i == len(column))
 
+    #Method that eliminates all the separators from the given term. 
+    def replace (s):
+        name = str(s)
+        #Different characters that are replaced from the columns and tables from the database
+        charsToReplace = ['-', '_', '*', '|', '^', '+', '`']
+        for c in charsToReplace:
+            name = name.replace(c, '')
+        return name.lower()
+
     def switchType(column):
         field_type = {
             'DECIMAL' : "xsd:decimal" ,
@@ -169,5 +178,9 @@ class Utilities:
             return Utilities.switchType(column)
         except:
             return "xsd:string"
+
+    def getKeyByValue(dict, value):
+        # one-liner
+        return (list(dict.keys())[list(dict.values()).index(value)])
 
         

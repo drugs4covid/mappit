@@ -86,7 +86,6 @@ def loadDF(files, data):
         columnDict = dict()
         i = 0
         for c in df.columns:
-            print(df[c].dtype)
             val = ""
             if (df[c].dtype == 'object'):
                 val = "STRING"

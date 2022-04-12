@@ -38,12 +38,12 @@
          rml:logicalSource [
                  rml:source "routes.json" ;
                  rml:referenceFormulation ql:JSONPath ;
-                 rml:iterator "$.venue[*]"
+                 rml:iterator "$.routes[*]"
          ];
          rr:subjectMap [
                  rr:template "http://vocab.gtfs.org/terms#Route/{route_id}";
                  rr:termType rr:IRI;
-                 rr:class gtfs:Route;
+                 rr:class Route;
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [
@@ -112,12 +112,12 @@
          rml:logicalSource [
                  rml:source "calendar.json" ;
                  rml:referenceFormulation ql:JSONPath ;
-                 rml:iterator "$.venue[*]"
+                 rml:iterator "$.calendar[*]"
          ];
          rr:subjectMap [
                  rr:template "http://vocab.gtfs.org/terms#CalendarRule/{}";
                  rr:termType rr:IRI;
-                 rr:class gtfs:CalendarRule;
+                 rr:class CalendarRule;
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [
@@ -185,7 +185,7 @@
          rr:predicateObjectMap [
                  rr:predicateMap [
                          a rr:PredicateMap;
-                         rr:constant gtfs:wednesday;
+                         rr:constant gtfs:calendar;
                  ];
                  rr:objectMap [ rr:column "end_date"; rr:datatype xsd:string];
          ].
@@ -193,12 +193,12 @@
          rml:logicalSource [
                  rml:source "trips.json" ;
                  rml:referenceFormulation ql:JSONPath ;
-                 rml:iterator "$.venue[*]"
+                 rml:iterator "$.trips[*]"
          ];
          rr:subjectMap [
                  rr:template "http://vocab.gtfs.org/terms#Trip/{trip_id}";
                  rr:termType rr:IRI;
-                 rr:class gtfs:Trip;
+                 rr:class Trip;
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [
@@ -274,12 +274,12 @@
          rml:logicalSource [
                  rml:source "stop_times.json" ;
                  rml:referenceFormulation ql:JSONPath ;
-                 rml:iterator "$.venue[*]"
+                 rml:iterator "$.stop_times[*]"
          ];
          rr:subjectMap [
                  rr:template "http://vocab.gtfs.org/terms#StopTime/{}";
                  rr:termType rr:IRI;
-                 rr:class gtfs:StopTime;
+                 rr:class StopTime;
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [
@@ -362,12 +362,12 @@
          rml:logicalSource [
                  rml:source "shapes.json" ;
                  rml:referenceFormulation ql:JSONPath ;
-                 rml:iterator "$.venue[*]"
+                 rml:iterator "$.shapes[*]"
          ];
          rr:subjectMap [
                  rr:template "http://vocab.gtfs.org/terms#Shape/{shape_id}";
                  rr:termType rr:IRI;
-                 rr:class gtfs:Shape;
+                 rr:class Shape;
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [
@@ -401,12 +401,12 @@
          rml:logicalSource [
                  rml:source "agency.json" ;
                  rml:referenceFormulation ql:JSONPath ;
-                 rml:iterator "$.venue[*]"
+                 rml:iterator "$.agency[*]"
          ];
          rr:subjectMap [
                  rr:template "http://vocab.gtfs.org/terms#Agency/{agency_id}";
                  rr:termType rr:IRI;
-                 rr:class gtfs:Agency;
+                 rr:class Agency;
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [
@@ -432,7 +432,7 @@
          rr:predicateObjectMap [
                  rr:predicateMap [
                          a rr:PredicateMap;
-                         rr:constant gtfs:distanceTraveled;
+                         rr:constant gtfs:calendar;
                  ];
                  rr:objectMap [ rr:column "agency_lang"; rr:datatype xsd:integer];
          ];
@@ -454,12 +454,12 @@
          rml:logicalSource [
                  rml:source "stops.json" ;
                  rml:referenceFormulation ql:JSONPath ;
-                 rml:iterator "$.venue[*]"
+                 rml:iterator "$.stops[*]"
          ];
          rr:subjectMap [
                  rr:template "http://vocab.gtfs.org/terms#Stop/{stop_id}";
                  rr:termType rr:IRI;
-                 rr:class gtfs:Stop;
+                 rr:class Stop;
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [
@@ -542,12 +542,12 @@
          rml:logicalSource [
                  rml:source "frequencies.json" ;
                  rml:referenceFormulation ql:JSONPath ;
-                 rml:iterator "$.venue[*]"
+                 rml:iterator "$.frequencies[*]"
          ];
          rr:subjectMap [
                  rr:template "http://vocab.gtfs.org/terms#Frequency/{}";
                  rr:termType rr:IRI;
-                 rr:class gtfs:Frequency;
+                 rr:class Frequency;
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [
@@ -595,12 +595,12 @@
          rml:logicalSource [
                  rml:source "feed_info.json" ;
                  rml:referenceFormulation ql:JSONPath ;
-                 rml:iterator "$.venue[*]"
+                 rml:iterator "$.feed_info[*]"
          ];
          rr:subjectMap [
                  rr:template "http://vocab.gtfs.org/terms#Feed/{}";
                  rr:termType rr:IRI;
-                 rr:class gtfs:Feed;
+                 rr:class Feed;
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [
@@ -633,7 +633,7 @@
          rr:predicateObjectMap [
                  rr:predicateMap [
                          a rr:PredicateMap;
-                         rr:constant gtfs:code;
+                         rr:constant gtfs:calendar;
                  ];
                  rr:objectMap [ rr:column "feed_end_date"; rr:datatype xsd:string];
          ];
@@ -648,12 +648,12 @@
          rml:logicalSource [
                  rml:source "calendar_dates.json" ;
                  rml:referenceFormulation ql:JSONPath ;
-                 rml:iterator "$.venue[*]"
+                 rml:iterator "$.calendar_dates[*]"
          ];
          rr:subjectMap [
                  rr:template "http://vocab.gtfs.org/terms#CalendarRule/{}";
                  rr:termType rr:IRI;
-                 rr:class gtfs:CalendarRule;
+                 rr:class CalendarRule;
          ];
          rr:predicateObjectMap [
                  rr:predicateMap [

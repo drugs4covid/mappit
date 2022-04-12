@@ -1,0 +1,44 @@
+{
+	"main_ontology" : "arthur-sfo-airport-data/original/AirportOntology.owl",
+	"Data" : {
+		"format" : "csv",
+		"folder" : "arthur-sfo-airport-data/data/",
+		"separator" : ","
+	},
+	
+	"tables" : [
+		{
+			"name" : "Aircraft"
+		},
+		{
+			"name" : "Landing"
+		},
+		{
+			"name" : "Passenger"
+		}
+	],
+	"output" : "sfo.ttl",
+
+	"list_prefixes": [
+		{
+			"prefix": "rr",
+			"URI": "http://www.w3.org/ns/r2rml#"
+		},
+		{
+			"prefix": "rml",
+			"URI": "http://semweb.mmlab.be/ns/rml#"
+		}
+	],
+	"base" : {
+		"prefix": "sfgov",
+		"URI": "http://data.sfgov.org/ontology#"
+	},
+	"ontologies" : [
+
+	],
+	"classes" : [
+	],
+	"properties" : [
+		
+	]
+}

@@ -37,9 +37,10 @@ def loadAdditionalOntologies(data, ontology):
 def main():
     
     ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-    data = loadProperties(ROOT_DIR + '/properties/properties_json.json')
+    data = loadProperties(ROOT_DIR + '/properties/properties_sfo.json')
 
-    ontoManager = OntologyManager(data['main_ontology'])
+    ontoManager = OntologyManager(ROOT_DIR, data['main_ontology'])
+
     dataManager = DataManager()
     dataManager.serialize(data['Data'])
 

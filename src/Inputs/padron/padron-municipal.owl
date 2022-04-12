@@ -1,0 +1,1211 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#"
+     xml:base="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:esadm="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#"
+     xmlns:escjr="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#"
+     xmlns:esdir="http://vocab.linkeddata.es/datosabiertos/def/commons/direccion-postal#"
+     xmlns:espad="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#"
+     xmlns:schema="http://schema.org/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:skos-espad="http://vocab.linkeddata.es/datosabiertos/kos/demografia/padron-municipal/">
+    <owl:Ontology rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal">
+        <dc:contributor>Antonio Bermejo Aguña - Ayuntamiento de Madrid</dc:contributor>
+        <dc:contributor>Francisco Javier Catalina Celaya - Ayuntamiento de Madrid</dc:contributor>
+        <dc:contributor>Honorio Enrique Crespo Díaz-Alejo - Ayuntamiento de Madrid</dc:contributor>
+        <dc:contributor>María Carmen Ruiz Moreno - Ayuntamiento de Madrid</dc:contributor>
+        <dc:contributor>María Jesús Fernández Ruiz  - Ayuntamiento de Zaragoza</dc:contributor>
+        <dc:contributor>María Jesús Gallego San Miguel - Ayuntamiento de Madrid</dc:contributor>
+        <dc:contributor>María del Mar Arribas de Andrés - Ayuntamiento de Madrid</dc:contributor>
+        <dc:contributor>Red.es</dc:contributor>
+        <dc:contributor>Sergio Valdivielso Pardos - Departamento de Geografía y Ordenación del Territorio - Universidad de Zaragoza</dc:contributor>
+        <dc:contributor>Servicio de Informática - Ayuntamiento de Santiago de Compostela</dc:contributor>
+        <dc:contributor>Servicio de Innovación y Desarrollo Tecnológico - Ayuntamiento de A Coruña</dc:contributor>
+        <dc:contributor>Víctor Morlán Plo - Ayuntamiento de Zaragoza</dc:contributor>
+        <dc:contributor>Ángel Pueyo Campos - Departamento de Geografía y Ordenación del Territorio - Universidad de Zaragoza</dc:contributor>
+        <dc:creator>Oscar Corcho (Ontology Engineering Group - Universidad Politécnica de Madrid, LocaliData)</dc:creator>
+        <dc:creator>Paola Espinoza Arias (Ontology Engineering Group - Universidad Politécnica de Madrid)</dc:creator>
+        <dc:rights>Creative Commons Attribution 4.0 International (CC BY 4.0)</dc:rights>
+        <dcterms:created>2019-04-29</dcterms:created>
+        <dcterms:hasFormat rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal.owl"/>
+        <dcterms:issued>2020-02-04</dcterms:issued>
+        <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0"/>
+        <dcterms:title xml:lang="es">Vocabulario para la representación de datos sobre el padrón de habitantes</dcterms:title>
+        <dcterms:title xml:lang="en">Vocabulary for the representation of the census of inhabitants.</dcterms:title>
+        <vann:preferredNamespacePrefix>espad</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#"/>
+        <owl:versionInfo>1.0.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/identifier -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/identifier"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/rights -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/hasFormat -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/hasFormat"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/hasVersion -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/hasVersion"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/address -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/address">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/commons/direccion-postal#DireccionPostal"/>
+        <rdfs:isDefinedBy rdf:resource="http://schema.org"/>
+        <rdfs:label xml:lang="en">Address</rdfs:label>
+        <rdfs:label xml:lang="es">Dirección</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.org/birthPlace -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/birthPlace"/>
+    
+
+
+    <!-- http://schema.org/gender -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/gender">
+        <rdfs:isDefinedBy rdf:resource="http://schema.org"/>
+        <rdfs:label xml:lang="en">Gender</rdfs:label>
+        <rdfs:label xml:lang="es">Género</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.org/nationality -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/nationality">
+        <rdfs:isDefinedBy rdf:resource="https://schema.org"/>
+        <rdfs:label xml:lang="es">Nacionalidad</rdfs:label>
+        <rdfs:label xml:lang="en">Nationality</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#consuladoDestino -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#consuladoDestino">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range rdf:resource="http://schema.org/Embassy"/>
+        <rdfs:comment xml:lang="es">Enlace entre el habitante y el consulado de destino. Cuando la variación del Padrón sea por una baja puede especificarse, en caso de así precisarlo, el consulado de destino del habitante.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Link from an inhabitant and the embassy of destination. When the variation is defined by an unregister the new embassy of residence can be especified.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="es">Consulado de destino</rdfs:label>
+        <rdfs:label xml:lang="en">Embassy of destination</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#consuladoProcedencia -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#consuladoProcedencia">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range rdf:resource="http://schema.org/Embassy"/>
+        <rdfs:comment xml:lang="es">Enlace entre el habitante y el consulado de procedencia. Cuando la variación del Padrón sea por un alta puede especificarse, en caso de así precisarlo, el consulado de procedencia del habitante.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Link from an inhabitant and the embassy of origin. When the variation is defined by a register the previous embassy of residence can be especified.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="es">Consulado de procedencia</rdfs:label>
+        <rdfs:label xml:lang="en">Embassy of origin</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#diseminadoResidencia -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#diseminadoResidencia">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Diseminado"/>
+        <rdfs:comment xml:lang="es">Enlace entre el habitante y el diseminado donde reside.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Link from an inhabitant and the disseminated where resides.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="es">Diseminado de residencia</rdfs:label>
+        <rdfs:label xml:lang="en">Disseminated of residence</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#distritoResidencia -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#distritoResidencia">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Distrito"/>
+        <rdfs:comment xml:lang="es">Enlace entre el habitante y el distrito donde reside.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Link from an inhabitant and the district where resides.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="en">District of residence</rdfs:label>
+        <rdfs:label xml:lang="es">Distrito de residencia</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#entidadColectivaResidencia -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#entidadColectivaResidencia">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadColectiva"/>
+        <rdfs:comment xml:lang="es">Enlace entre el habitante y la Entidad Colectiva donde reside.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Link from an inhabitant and the Collective Entity where resides.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="en">Collective Entity of residence</rdfs:label>
+        <rdfs:label xml:lang="es">Entidad Colectiva de residencia</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#entidadSingularResidencia -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#entidadSingularResidencia">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadSingular"/>
+        <rdfs:comment xml:lang="es">Enlace entre el habitante y la Entidad Singular donde reside.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Link from an inhabitant and the Singular Entity where resides.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="es">Entidad Singular de residencia</rdfs:label>
+        <rdfs:label xml:lang="en">Singular Entity of residence</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#modificaHabitante -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#modificaHabitante">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#VariacionHabitante"/>
+        <rdfs:range rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:comment xml:lang="es">Enlaza el nuevo registro de variación con la versión previa del habitante. Esta propiedad se representa solo en el caso de que el habitante haya sido registrado previamente en el municipio.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Link the new variation record with the previous version of the inhabitant. This property is represented only in the case that the inhabitant has been previously registered in the municipality.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="es">Modifica habitante</rdfs:label>
+        <rdfs:label xml:lang="en">Modify inhabitant</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#municipioDestino -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#municipioDestino">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"/>
+        <rdfs:comment xml:lang="es">Enlace entre el habitante y el municipio de procedencia. Cuando la variación del Padrón sea por una baja puede especificarse el nuevo municipio de residencia del habitante.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Link from an inhabitant and the municipality of destination. When the variation is defined by an unregister the new municipality of residence can be especified.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="en">Municipality of destination</rdfs:label>
+        <rdfs:label xml:lang="es">Municipio de destino</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#municipioNacimiento -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#municipioNacimiento">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/birthPlace"/>
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"/>
+        <rdfs:comment xml:lang="en">Municipality where the inhabitant was born.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Municipio en el que nació el habitante.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="en">Municipality of birth</rdfs:label>
+        <rdfs:label xml:lang="es">Municipio de nacimiento</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#municipioProcedencia -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#municipioProcedencia">
+        <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#municipioResidencia -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#municipioResidencia">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"/>
+        <rdfs:comment xml:lang="es">Enlace entre el habitante y el municipio donde reside.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Link from the inhabitant to the municipality where resides.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="en">Municipality of residence</rdfs:label>
+        <rdfs:label xml:lang="es">Municipio de residencia</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#nivelEstudios -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#nivelEstudios">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+                        <owl:hasValue rdf:resource="http://vocab.linkeddata.es/datosabiertos/kos/demografia/padron-municipal/tipo-nivel-estudio"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="es">El nivel de estudios del habitante, que puede ser: sin estudios, bachiller elemental, bachiller superior, etc. Estos niveles de estudio se representan en la lista de conceptos: http://vocab.linkeddata.es/datosabieros/kos/demografia/padron-municipal/tipo-nivel-estudio</rdfs:comment>
+        <rdfs:comment xml:lang="en">The educational level of an inhabitant, which can be: without studies, elementary bachelor, high school, etc. These levels are represented by the concept list: http://vocab.linkeddata.es/datosabieros/kos/demografia/padron-municipal/tipo-nivel-estudio</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="en">Educational level</rdfs:label>
+        <rdfs:label xml:lang="es">Nivel de estudios</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#nucleoResidencia -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#nucleoResidencia">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#NucleoPoblacion"/>
+        <rdfs:comment xml:lang="es">Enlace entre el habitante y núcleo de población donde reside.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Link from the inhabitant and the population nucleus where resides.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="es">Núcleo de población de residencia</rdfs:label>
+        <rdfs:label xml:lang="en">Population nucleus of residence</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#paisDestino -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#paisDestino">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Pais"/>
+        <rdfs:comment xml:lang="es">Enlace entre el habitante y el país de destino. Cuando la variación del Padrón sea por una baja puede especificarse el país en el que residirá el habitante.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Link from an inhabitant and the country of destination. When the variation is defined by an unregister the new country of residence can be especified.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="en">Country of destination</rdfs:label>
+        <rdfs:label xml:lang="es">País de destino</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#paisNacimiento -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#paisNacimiento">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/birthPlace"/>
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Pais"/>
+        <rdfs:comment xml:lang="en">Country where the inhabitant was born.</rdfs:comment>
+        <rdfs:comment xml:lang="es">País en el que nació el habitante.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="en">Country of birth</rdfs:label>
+        <rdfs:label xml:lang="es">País de nacimiento</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#paisProcedencia -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#paisProcedencia">
+        <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Pais"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#provinciaDestino -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#provinciaDestino">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia"/>
+        <rdfs:comment xml:lang="es">Enlace entre el habitante y la provincia de destino. Cuando la variación del Padrón sea por una baja puede especificarse la nueva provincia de residencia del habitante.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Link from an inhabitant and the province of destination. When the variation is defined by an unregister the new province of residence can be especified.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="en">Province of destination</rdfs:label>
+        <rdfs:label xml:lang="es">Provincia de destino</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#provinciaNacimiento -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#provinciaNacimiento">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/birthPlace"/>
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia"/>
+        <rdfs:comment xml:lang="en">Province where the inhabitant was born.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Provincia en la que nació el habitante.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="en">Province of birth</rdfs:label>
+        <rdfs:label xml:lang="es">Provincia de nacimiento</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#provinciaProcedencia -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#provinciaProcedencia">
+        <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#provinciaResidencia -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#provinciaResidencia">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia"/>
+        <rdfs:comment xml:lang="es">Enlace entre el habitante y la provincia donde reside.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Link from an inhabitant to the province where resides.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="en">Province of residence</rdfs:label>
+        <rdfs:label xml:lang="es">Provincia de residencia</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#registraHabitante -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#registraHabitante">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#VariacionHabitante"/>
+        <rdfs:range rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:comment xml:lang="es">Enlaze entre el registro de variación con el habitante.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Link from the variation record to the inhabitant.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="en">Register inhabitant</rdfs:label>
+        <rdfs:label xml:lang="es">Registra habitante</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#seccionResidencia -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#seccionResidencia">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#SeccionCensal"/>
+        <rdfs:comment xml:lang="es">Enlace entre el habitante y la sección censal donde reside.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Link from an inhabitant to the census section where resides.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="en">Census section of residence</rdfs:label>
+        <rdfs:label xml:lang="es">Sección censal de residencia</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#tipoDocumentoIdentidad -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#tipoDocumentoIdentidad">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+                        <owl:hasValue rdf:resource="http://vocab.linkeddata.es/datosabiertos/kos/demografia/padron-municipal/tipo-documento-identidad"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="es">El tipo de documento de identidad del habitante, por ejemplo: pasaporte, DNI, etc.  Estos tipos de documentos se representan en la lista de conceptos: http://vocab.linkeddata.es/datosabieros/kos/demografia/padron-municipal/tipo-documento-identidad</rdfs:comment>
+        <rdfs:comment xml:lang="en">Type of the inhabitant identity document, which can be: passport, DNI, etc.
+These levels are represented by the concept list: http://vocab.linkeddata.es/datosabieros/kos/demografia/padron-municipal/tipo-documento-identidad</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="es">Tipo de documento de identidad</rdfs:label>
+        <rdfs:label xml:lang="en">Type of identity document</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#tipoLocalResidencia -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#tipoLocalResidencia">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+                        <owl:hasValue rdf:resource="http://vocab.linkeddata.es/datosabiertos/kos/demografia/padron-municipal/tipo-local-residencia"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="es">El habitante reside en un determinado tipo de local que puede ser vivienda o alojamiento, o establecimiento colectivo. Estos tipos de locales se representan en la lista de conceptos: http://vocab.linkeddata.es/datosabiertos/kos/demografia/padron-municipal/tipo-local-residencia</rdfs:comment>
+        <rdfs:comment xml:lang="en">The inhabitant resides in a certain type of premise, which can be: dwelling or accommodation, or collective premise. These types are represented by a list of URI concepts  http://vocab.linkeddata.es/datosabiertos/kos/demografia/padron-municipal/tipo-local-residencia</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="es">Tipo del local de residencia</rdfs:label>
+        <rdfs:label xml:lang="en">Type of residence premise</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#tipoVariacion -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#tipoVariacion">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#VariacionHabitante"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+                        <owl:hasValue rdf:resource="http://vocab.linkeddata.es/datosabiertos/kos/demografia/padron-municipal/tipo-variacion"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="es">Representa el tipo de variación que se ha hecho en el padrón que puede ser: alta, baja, modificación, etc. Adicionalmente cada variación viene especificada por una causa concreta que la justifica, por ejemplo: alta por nacimiento, alta por cambio de residencia, etc. Estos tipos de variación se representan en la lista de conceptos: http://vocab.linkeddata.es/datosabiertos/kos/demografia/padron-municipal/tipo-variacion</rdfs:comment>
+        <rdfs:comment xml:lang="en">The type of variation in the census, which can be register, modification, or unregister. In addition, each type of variation is associated with a reason which justifies it, for example, register by birth, register by a change of residence, etc. These types of variation are represented by the concept list: http://vocab.linkeddata.es/datosabiertos/kos/demografia/padron-municipal/tipo-variacion</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="es">Tipo de variación</rdfs:label>
+        <rdfs:label xml:lang="en">Type of variation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#inScheme -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#inScheme"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/identifier">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms"/>
+        <rdfs:label xml:lang="es">Identificador</rdfs:label>
+        <rdfs:label xml:lang="en">Identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/birthDate -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/birthDate">
+        <rdfs:isDefinedBy rdf:resource="http://schema.org"/>
+        <rdfs:label xml:lang="en">Birth date</rdfs:label>
+        <rdfs:label xml:lang="es">Fecha de nacimiento</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#activo -->
+
+    <owl:DatatypeProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#activo">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="es">El estado de un habitante.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The state of the inhabitant state.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="en">active</rdfs:label>
+        <rdfs:label xml:lang="es">activo</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#fechaVariacion -->
+
+    <owl:DatatypeProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#fechaVariacion">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#VariacionHabitante"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment xml:lang="en">Date when the variation must cause effects.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Fecha desde la que administrativamente la variación debe causar efectos.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="es">Fecha de variación</rdfs:label>
+        <rdfs:label xml:lang="en">Variation date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#numeroHojaPadronal -->
+
+    <owl:DatatypeProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#numeroHojaPadronal">
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#VariacionHabitante"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="es">El número de hoja padronal (NHOP) es asignado por los Ayuntamientos y permite identificar unívocamente cada vivienda en la que existan habitantes dentro del municipio.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The census sheet number is assigned by the city hall. It allows to identify each dwelling in which there are inhabitants within the municipality.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="en">Census sheet number</rdfs:label>
+        <rdfs:label xml:lang="es">Número de hoja padronal</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#numeroIdentificacionAyuntamiento -->
+
+    <owl:DatatypeProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#numeroIdentificacionAyuntamiento">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/identifier"/>
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Number assigned by city hall in order to identify the inhabitant. The unique restriction is that an old number can not be assigned to a different person.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Número asignado por el Ayuntamiento que identifica sin ambigüedades al habitante con la única premisa de no reasignar un número antiguo a una persona diferente.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="es">http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">City hall identifier number</rdfs:label>
+        <rdfs:label xml:lang="es">Número de identificación del ayuntamiento</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#numeroIdentificacionElectoral -->
+
+    <owl:DatatypeProperty rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#numeroIdentificacionElectoral">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/identifier"/>
+        <rdfs:domain rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Number that unambiguously identifies the inhabitant for an electoral process.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Número que identifica sin ambigüedades al habitante para un proceso electoral.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="en">Electoral identification number</rdfs:label>
+        <rdfs:label xml:lang="es">Número de identificación electoral</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/linked-data/cube#DimensionProperty -->
+
+    <owl:Class rdf:about="http://purl.org/linked-data/cube#DimensionProperty"/>
+    
+
+
+    <!-- http://schema.org/Embassy -->
+
+    <owl:Class rdf:about="http://schema.org/Embassy">
+        <rdfs:isDefinedBy rdf:resource="http://schema.org"/>
+        <rdfs:label xml:lang="es">Embajada</rdfs:label>
+        <rdfs:label xml:lang="en">Embassy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Person -->
+
+    <owl:Class rdf:about="http://schema.org/Person"/>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante -->
+
+    <owl:Class rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#nivelEstudios"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#tipoDocumentoIdentidad"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#tipoLocalResidencia"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#consuladoDestino"/>
+                <owl:allValuesFrom rdf:resource="http://schema.org/Embassy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#consuladoProcedencia"/>
+                <owl:allValuesFrom rdf:resource="http://schema.org/Embassy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#diseminadoResidencia"/>
+                <owl:allValuesFrom rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Diseminado"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#distritoResidencia"/>
+                <owl:allValuesFrom rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Distrito"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#entidadColectivaResidencia"/>
+                <owl:allValuesFrom rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadColectiva"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#entidadSingularResidencia"/>
+                <owl:allValuesFrom rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadSingular"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#municipioDestino"/>
+                <owl:allValuesFrom rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#municipioNacimiento"/>
+                <owl:allValuesFrom rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#municipioProcedencia"/>
+                <owl:allValuesFrom rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#nucleoResidencia"/>
+                <owl:allValuesFrom rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#NucleoPoblacion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#paisDestino"/>
+                <owl:allValuesFrom rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Pais"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#paisNacimiento"/>
+                <owl:allValuesFrom rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Pais"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#paisProcedencia"/>
+                <owl:allValuesFrom rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Pais"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#provinciaDestino"/>
+                <owl:allValuesFrom rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#provinciaNacimiento"/>
+                <owl:allValuesFrom rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#provinciaProcedencia"/>
+                <owl:allValuesFrom rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#seccionResidencia"/>
+                <owl:allValuesFrom rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#SeccionCensal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#municipioResidencia"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#provinciaResidencia"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#consuladoDestino"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#consuladoProcedencia"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://schema.org/Embassy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#municipioDestino"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#municipioProcedencia"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#paisDestino"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Pais"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#paisProcedencia"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Pais"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#provinciaDestino"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#provinciaProcedencia"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#numeroIdentificacionElectoral"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#numeroIdentificacionAyuntamiento"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#numeroIdentificacionElectoral"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="es">Cada persona que constituye parte de la población de un barrio, ciudad, provincia o nación.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Each person who constitute part of the population of a neighborhood, city, province, or a nation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="es">Habitante</rdfs:label>
+        <rdfs:label xml:lang="en">Inhabitant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#VariacionHabitante -->
+
+    <owl:Class rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#VariacionHabitante">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#tipoVariacion"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#modificaHabitante"/>
+                <owl:allValuesFrom rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#registraHabitante"/>
+                <owl:allValuesFrom rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#registraHabitante"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#modificaHabitante"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#Habitante"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#fechaVariacion"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#numeroHojaPadronal"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Record in which the variations produced in the census with respect to a specific inhabitant are detailed and sent to the National Statistics Institute in the monthly exchange files (HppmmmAI.maa).</rdfs:comment>
+        <rdfs:comment xml:lang="es">Registro en el que se detallan las variaciones producidas en el padrón con respecto a un determinado habitante y que es remitido al Instituto Nacional de Estadística en los ficheros de intercambio mensuales (HppmmmAI.maa).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:label xml:lang="en">Inhabitant variation</rdfs:label>
+        <rdfs:label xml:lang="es">Variación de habitante</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/commons/direccion-postal#DireccionPostal -->
+
+    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/commons/direccion-postal#DireccionPostal">
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/commons/direccion-postal"/>
+        <rdfs:label xml:lang="es">Dirección Postal</rdfs:label>
+        <rdfs:label xml:lang="en">Postal address</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Diseminado -->
+
+    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Diseminado">
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
+        <rdfs:label xml:lang="es">Diseminado</rdfs:label>
+        <rdfs:label xml:lang="en">Disseminated</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Distrito -->
+
+    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Distrito">
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
+        <rdfs:label xml:lang="en">District</rdfs:label>
+        <rdfs:label xml:lang="es">Distrito</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadColectiva -->
+
+    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadColectiva">
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
+        <rdfs:label xml:lang="en">Collective Entity</rdfs:label>
+        <rdfs:label xml:lang="es">Entidad Colectiva</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadSingular -->
+
+    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#EntidadSingular">
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
+        <rdfs:label xml:lang="es">Entidad Singular</rdfs:label>
+        <rdfs:label xml:lang="en">Singular entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio -->
+
+    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio">
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
+        <rdfs:label xml:lang="en">Municipality</rdfs:label>
+        <rdfs:label xml:lang="es">Municipio</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#NucleoPoblacion -->
+
+    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#NucleoPoblacion">
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
+        <rdfs:label xml:lang="es">Nucleo de Población</rdfs:label>
+        <rdfs:label xml:lang="en">Population nucleus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Pais -->
+
+    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Pais">
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
+        <rdfs:label xml:lang="en">Country</rdfs:label>
+        <rdfs:label xml:lang="es">País</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia -->
+
+    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia">
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
+        <rdfs:label xml:lang="en">Province</rdfs:label>
+        <rdfs:label xml:lang="es">Provincia</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#SeccionCensal -->
+
+    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#SeccionCensal">
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
+        <rdfs:label xml:lang="en">Census Section</rdfs:label>
+        <rdfs:label xml:lang="es">Sección Censal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#ConceptScheme -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#municipioProcedencia -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#municipioProcedencia">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#paisProcedencia -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#paisProcedencia">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#provinciaProcedencia -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#provinciaProcedencia">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/kos/demografia/padron-municipal/tipo-documento-identidad -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/demografia/padron-municipal/tipo-documento-identidad">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/kos/demografia/padron-municipal/tipo-local-residencia -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/demografia/padron-municipal/tipo-local-residencia">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/kos/demografia/padron-municipal/tipo-nivel-estudio -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/demografia/padron-municipal/tipo-nivel-estudio">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/kos/demografia/padron-municipal/tipo-variacion -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/demografia/padron-municipal/tipo-variacion">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#municipioProcedencia">
+        <rdfs:label xml:lang="es">Municipio de procedencia</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+        <rdfs:comment xml:lang="es">Enlace entre el habitante y el municipio de procedencia. Cuando la variación del Padrón sea por un alta puede especificarse el municipio anterior de residencia del habitante.</rdfs:comment>
+        <rdfs:label xml:lang="en">Municipality of origin</rdfs:label>
+        <rdfs:comment xml:lang="en">Link from an inhabitant and the municipality of origin. When the variation is defined by a register the previous municipality of residence can be especified.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#paisProcedencia">
+        <rdfs:comment xml:lang="es">Enlace entre el habitante y el país de procedencia. Cuando la variación del Padrón sea por un alta puede especificarse el país de donde viene el habitante.</rdfs:comment>
+        <rdfs:label xml:lang="es">País de procedencia</rdfs:label>
+        <rdfs:comment xml:lang="en">Link from an inhabitant and the country of origin. When the variation is defined by a register the previous country of residence can be especified.</rdfs:comment>
+        <rdfs:label xml:lang="en">Country of origin</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal#provinciaProcedencia">
+        <rdfs:label xml:lang="es">Provincia de procedencia</rdfs:label>
+        <rdfs:comment xml:lang="es">Enlace entre el habitante y la provincia de procedencia. Cuando la variación del Padrón sea por un alta puede especificarse la provincia anterior de residencia del habitante.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Link from an inhabitant and the province of origin. When the variation is defined by a register the previous province of residence can be especified.</rdfs:comment>
+        <rdfs:label xml:lang="en">Province of origin</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.ciudadesabiertas.es/def/demografia/padron-municipal"/>
+    </rdf:Description>
+</rdf:RDF>

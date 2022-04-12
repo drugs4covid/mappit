@@ -20,7 +20,7 @@ class RMLParser(object):
     def TripleMap(entity, base, format):
         last = (len(entity.onto_properties) == 0 and len(entity.joinConditions) == 0)
         level = 8
-        print ("<#" + entity.table + "> a rr:TriplesMap;")
+        print ("<#" + entity.onto_class.locale + "> a rr:TriplesMap;")
         RMLParser.LogicalSource(entity.table, format)
         RMLParser.SubjectMap(entity.onto_class, entity.ID, base, last)
         v = 0
@@ -46,13 +46,13 @@ class RMLParser(object):
         elif (format == 'json'):
             print (" "*(2*level), "rml:source " + '"' + table + '.json" ;')
             print (" "*(2*level), "rml:referenceFormulation ql:JSONPath ;")
-            print (" "*(2*level), "rml:iterator " + '"$.venue[*]"')
+            print (" "*(2*level), "rml:iterator " + '"$.' + table + '[*]"')
         print (" "*level, "];")
         
     def SubjectMap(onto_class, onto_id, base, last):
         level = 8
         try:
-            name = onto_class.qname
+            name = onto_class.locale
         except: name = onto_class
         print (" "*level, "rr:subjectMap [")
         print (" "*(2*level), "rr:template " + '"' + base + name.split(':').pop() + '/{' + onto_id +'}' + '";')
