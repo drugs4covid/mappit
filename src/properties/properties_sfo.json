@@ -1,5 +1,7 @@
 {
 	"main_ontology" : "arthur-sfo-airport-data/original/AirportOntology.owl",
+	"distance_method": "levehnstein",
+	"compare_system": "ontology",
 	"Data" : {
 		"format" : "csv",
 		"folder" : "arthur-sfo-airport-data/data/",
@@ -32,13 +34,5 @@
 	"base" : {
 		"prefix": "sfgov",
 		"URI": "http://data.sfgov.org/ontology#"
-	},
-	"ontologies" : [
-
-	],
-	"classes" : [
-	],
-	"properties" : [
-		
-	]
+	}
 }

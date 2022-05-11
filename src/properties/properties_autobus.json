@@ -1,5 +1,7 @@
 {
-	"main_ontology" : "Autobus/autobus.owl",
+	"main_ontology" : "http://vocab.gtfs.org/terms#",
+	"distance_method": "levehnstein",
+	"compare_system": "ontology",
 	"Data" : {
 		"format" : "csv",
 		"folder" : "Autobus",
@@ -21,36 +23,5 @@
 	"base" : {
 		"prefix": "gtfs",
 		"URI": "http://vocab.gtfs.org/terms#"
-	},
-	"ontologies" : [
-
-	],
-	"classes" : [
-		{
-			"name" : "gtfs:calendar"
-		}
-	],
-	"properties" : [
-		{
-			"name": "schema:startDate"
-		},
-		{
-			"name": "schema:endDate"
-		},
-		{
-			"name": "dct:language"
-		},
-		{
-			"name": "dct:publisher"
-		},
-		{
-			"name": "schema:version"
-		},
-		{
-			"name": "foaf:phone"
-		},
-		{
-			"name": "foaf:name"
-		}
-	]
+	}
 }

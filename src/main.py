@@ -44,10 +44,6 @@ def main():
     dataManager = DataManager()
     dataManager.serialize(data['Data'])
 
-    loadAdditionalOntologies(data, ontoManager.ontology)
-    appendAdditionalProperties(data, ontoManager.onto_classes)
-    appendAdditionalClasses(data, ontoManager.onto_properties)
-
     RMLEntityManager.run(ROOT_DIR, data, ontoManager, dataManager)
 
 if __name__ == "__main__":

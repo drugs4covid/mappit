@@ -34,14 +34,14 @@ class RMLEntityFromDB(object):
         dis = 10
         term = ""
         for x in columns:
-            name = RMLEntityFromDB.replace(x)
+            name = Utilities.replace(x)
             try:
                 onto_name = onto_class.locale
             except:
                 onto_name = onto_class
             #The name of the class in the ontology is compared to the column. 'id' is added to the class name in order to get the
             #id in the columsn more efficiently
-            auxDis = Utilities.levenshteinDistanceDP(name, onto_name.split(':').pop() + 'id')
+            auxDis = Utilities.distance(name, onto_name.split(':').pop() + 'id')
             #The column is checked in order to see if it is actually an id and the distance is checked to be lower than 2.0, which means
             #that only two replacements must be done in order to have both strings to be the same. This is done in order to see that the column is 
             #actually the class id and not a reference to another table
@@ -55,12 +55,12 @@ class RMLEntityFromDB(object):
         dis = 100
         term = ""
         for x in oc_classes:
-            term1 = RMLEntityFromDB.replace(table)
+            term1 = Utilities.replace(table)
             try:
                 term2 = x.locale.split(':').pop()
             except:
                 term2 = x.split(':').pop()
-            auxDis = Utilities.levenshteinDistanceDP(term1, term2)
+            auxDis = Utilities.distance(term1, term2)
             if auxDis < dis:
                 dis = auxDis
                 term = x
@@ -76,7 +76,7 @@ class RMLEntityFromDB(object):
 
         while(foundByRange == False and i < len(ranges)):
             range = ranges[i]
-            if(Utilities.levenshteinDistanceDP(range.locale.split(':').pop().lower(), table.lower()) < 2.0):
+            if(Utilities.distance(range.locale.split(':').pop().lower(), table.lower()) < 2.0):
                 foundByRange = True
             else:
                 foundByRange = False
@@ -99,7 +99,7 @@ class RMLEntityFromDB(object):
             for prop in ontoManager.onto_properties:
                 
                 #Column Name
-                columnTerm = RMLEntityFromDB.replace(col)
+                columnTerm = Utilities.replace(col)
                 terms = str(col).split('_')
                 terms.remove(terms[0])
 
@@ -112,8 +112,8 @@ class RMLEntityFromDB(object):
                     propTerm = prop.split(':').pop().lower()
 
                 #Both terms are compared, the column name and the important terms that have been separated
-                auxDis1 = Utilities.jaro_distance(columnTerm, propTerm)
-                auxDis2 = Utilities.jaro_distance(lastTerms, propTerm)
+                auxDis1 = Utilities.distance(columnTerm, propTerm, "jaro")
+                auxDis2 = Utilities.distance(lastTerms, propTerm, "jaro")
 
                 # First, it is prefered the complete column name, if it isn't similar, the terms obtained from the column name are
                 # checked and the property is selected in case that the important terms are long enough to be reliable (small terms like 'id' might
@@ -150,7 +150,7 @@ class RMLEntityFromDB(object):
         found = False
         table = []
         while(found == False and i < len(tables)):
-            dis = Utilities.levenshteinDistanceDP(range, str(tables[i].lower()))
+            dis = Utilities.distance(range, str(tables[i].lower()))
             if (dis <= 1.0):
                 table = tables[i]
                 found = True
@@ -165,11 +165,11 @@ class RMLEntityFromDB(object):
     def getTableColumnCorrespondence(table, prop_name, db):
         try:
             tableColumns = db.get_table_columns(table)
-            dis = 0
+            dis = 5
             correspondenceCol = ""
             for col in tableColumns:
-                auxDis = Utilities.jaro_distance(prop_name, col)
-                if auxDis > dis:
+                auxDis = Utilities.distance(prop_name, col)
+                if auxDis < dis:
                     dis = auxDis
                     correspondenceCol = col
             return correspondenceCol
@@ -184,6 +184,7 @@ class RMLEntityFromDB(object):
     def checkJoinCondition(prop, tables, table, db):
         t = []
         col = ""
+        name = ""
         i = 0
         foundByRange = False
 
@@ -204,7 +205,7 @@ class RMLEntityFromDB(object):
             else:
                 foundByRange = False
             i+=1
-        return t, col
+        return name, col
 
 
 

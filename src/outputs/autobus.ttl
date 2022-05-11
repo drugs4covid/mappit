@@ -1,21 +1,17 @@
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 @prefix rml: <http://semweb.mmlab.be/ns/rml#> .
-@prefix : <http://vocab.ciudadesabiertas.es/def/transporte/autobus#> .
 @prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix cc: <http://creativecommons.org/ns#> .
 @prefix csvw: <http://www.w3.org/ns/csvw#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcam: <http://purl.org/dc/dcam/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix direccion-postal: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
-@prefix escjr: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#> .
-@prefix estraf: <http://vocab.ciudadesabiertas.es/def/transporte/trafico#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
-@prefix geocore: <https://datos.ign.es/def/geo_core#> .
-@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@prefix gtfs: <http://vocab.gtfs.org/terms#> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -26,264 +22,567 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix schema1: <http://schema.org/> .
-@prefix sf: <http://www.opengis.net/ont/sf#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix sosa1: <http://w3.org/ns/sosa/> .
 @prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix status: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix time: <http://www.w3.org/2006/time#> .
-@prefix tmcommons: <http://w3id.org/transmodel/commons#> .
-@prefix tmjourney: <http://w3id.org/transmodel/journeys#> .
-@prefix tmkoscommons: <http://w3id.org/transmodel/kos/commons/> .
-@prefix tmkosjourney: <http://w3id.org/transmodel/kos/journeys/> .
-@prefix tmorg: <http://w3id.org/transmodel/organisations#> .
+@prefix transit: <http://vocab.org/transit/terms/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix vcard: <http://www.w3.org/2006/vcard#> .
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @base <http://vocab.gtfs.org/terms#> .
-<#tripsreducido> a rr:TriplesMap;
+<#Dataset> a rr:TriplesMap;
          rml:logicalSource [
                  rml:source "tripsreducido.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://vocab.gtfs.org/terms#Incidencia/{}";
+                 rr:template "http://vocab.gtfs.org/terms#Dataset/{routes}";
                  rr:termType rr:IRI;
-                 rr:class Incidencia;
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant tmjourney:definedBy;
-                 ];
-                 rr:objectMap [ rr:column "line_id"; rr:datatype xsd:integer];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant estraf:numSentidos;
-                 ];
-                 rr:objectMap [ rr:column "route_id"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant tmorg:operating;
-                 ];
-                 rr:objectMap [ rr:column "trip_headsign"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant tmcommons:shortName;
-                 ];
-                 rr:objectMap [ rr:column "trip_short_name"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant dc:description;
-                 ];
-                 rr:objectMap [ rr:column "direction_id"; rr:datatype xsd:integer];
+                 rr:class Dataset;
          ].
-<#stopsnuestro> a rr:TriplesMap;
+<#Agent> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Agent/{line_id}";
+                 rr:termType rr:IRI;
+                 rr:class Agent;
+         ].
+<#Agency> a rr:TriplesMap;
          rml:logicalSource [
                  rml:source "stopsnuestro.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://vocab.gtfs.org/terms#Geometry/{}";
+                 rr:template "http://vocab.gtfs.org/terms#Agency/{agency_id}";
                  rr:termType rr:IRI;
-                 rr:class Geometry;
+                 rr:class Agency;
          ];
          rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant tmjourney:firstDepartureTime;
-                 ];
-                 rr:objectMap [ rr:column "stop_id"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant schema1:datePosted;
-                 ];
-                 rr:objectMap [ rr:column "stop_code"; rr:datatype xsd:integer];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant schema1:name;
-                 ];
-                 rr:objectMap [ rr:column "stop_name"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant tmjourney:stopUse;
-                 ];
-                 rr:objectMap [ rr:column "stop_desc"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant geo:lat;
-                 ];
-                 rr:objectMap [ rr:column "stop_lat"; rr:datatype xsd:float];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant autobus:zona;
-                 ];
-                 rr:objectMap [ rr:column "stop_lon"; rr:datatype xsd:float];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant tmjourney:definedBy;
-                 ];
-                 rr:objectMap [ rr:column "zone_id"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant schema1:url;
-                 ];
-                 rr:objectMap [ rr:column "stop_url"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant schema1:contactPoint;
-                 ];
-                 rr:objectMap [ rr:column "location_type"; rr:datatype xsd:integer];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant tmorg:operating;
-                 ];
-                 rr:objectMap [ rr:column "parent_station"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant tmjourney:stopUse;
-                 ];
-                 rr:objectMap [ rr:column "stop_timezone"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant tmjourney:forBoarding;
-                 ];
-                 rr:objectMap [ rr:column "wheelchair_boarding"; rr:datatype xsd:integer];
+                 rr:predicate gtfs:fareUrl;
+                 rr:objectMap [ rr:reference "stop_url"; rr:datatype xsd:string];
          ].
-<#stoptimesreducido> a rr:TriplesMap;
+<#CalendarDateRule> a rr:TriplesMap;
          rml:logicalSource [
-                 rml:source "stoptimesreducido.csv" ;
+                 rml:source "tripsreducido.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://vocab.gtfs.org/terms#StopArea/{}";
+                 rr:template "http://vocab.gtfs.org/terms#CalendarDateRule/{parent_station}";
                  rr:termType rr:IRI;
-                 rr:class StopArea;
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant tmjourney:firstDepartureTime;
-                 ];
-                 rr:objectMap [ rr:column "trip_id"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant estraf:numSentidos;
-                 ];
-                 rr:objectMap [ rr:column "route_id"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant tmjourney:firstDepartureTime;
-                 ];
-                 rr:objectMap [ rr:column "stop_id"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant dcterms:created;
-                 ];
-                 rr:objectMap [ rr:column "id_parada"; rr:datatype xsd:integer];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant tmjourney:stopUse;
-                 ];
-                 rr:objectMap [ rr:column "stop_sequence"; rr:datatype xsd:integer];
+                 rr:class CalendarDateRule;
          ].
-<#routes> a rr:TriplesMap;
+<#CalendarRule> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#CalendarRule/{stop_name}";
+                 rr:termType rr:IRI;
+                 rr:class CalendarRule;
+         ].
+<#DropOffType> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#DropOffType/{stop_code}";
+                 rr:termType rr:IRI;
+                 rr:class DropOffType;
+         ].
+<#FareClass> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#FareClass/{stop_lat}";
+                 rr:termType rr:IRI;
+                 rr:class FareClass;
+         ].
+<#FareRule> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#FareRule/{zone_id}";
+                 rr:termType rr:IRI;
+                 rr:class FareRule;
+         ].
+<#Feed> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Feed/{line_id}";
+                 rr:termType rr:IRI;
+                 rr:class Feed;
+         ].
+<#Frequency> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "stopsnuestro.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Frequency/{route_id}";
+                 rr:termType rr:IRI;
+                 rr:class Frequency;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate gtfs:endTime;
+                 rr:objectMap [ rr:reference "stop_name"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate gtfs:startTime;
+                 rr:objectMap [ rr:reference "parent_station"; rr:datatype xsd:string];
+         ].
+<#PaymentMethod> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#PaymentMethod/{parent_station}";
+                 rr:termType rr:IRI;
+                 rr:class PaymentMethod;
+         ].
+<#PickupType> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#PickupType/{stop_id}";
+                 rr:termType rr:IRI;
+                 rr:class PickupType;
+         ].
+<#Route> a rr:TriplesMap;
          rml:logicalSource [
                  rml:source "routes.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://vocab.gtfs.org/terms#Route/{}";
+                 rr:template "http://vocab.gtfs.org/terms#Route/{route_id}";
                  rr:termType rr:IRI;
                  rr:class Route;
          ];
          rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant tmjourney:definedBy;
-                 ];
-                 rr:objectMap [ rr:column "agency_id"; rr:datatype xsd:string];
+                 rr:predicate gtfs:longName;
+                 rr:objectMap [ rr:reference "route_long_name"; rr:datatype xsd:string];
          ];
          rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant tmcommons:shortName;
-                 ];
-                 rr:objectMap [ rr:column "route_short_name"; rr:datatype xsd:string];
+                 rr:predicate gtfs:routeType;
+                 rr:objectMap [ rr:reference "route_desc"; rr:datatype xsd:float];
          ];
          rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant tmcommons:shortName;
-                 ];
-                 rr:objectMap [ rr:column "route_long_name"; rr:datatype xsd:string];
+                 rr:predicate gtfs:shortName;
+                 rr:objectMap [ rr:reference "route_short_name"; rr:datatype xsd:string];
+         ].
+<#RouteType> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#RouteType/{zone_id}";
+                 rr:termType rr:IRI;
+                 rr:class RouteType;
+         ].
+<#Service> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Service/{stop_id}";
+                 rr:termType rr:IRI;
+                 rr:class Service;
+         ].
+<#ServiceRule> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#ServiceRule/{route_uri}";
+                 rr:termType rr:IRI;
+                 rr:class ServiceRule;
+         ].
+<#Shape> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Shape/{stop_id}";
+                 rr:termType rr:IRI;
+                 rr:class Shape;
+         ].
+<#ShapePoint> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#ShapePoint/{stop_lon}";
+                 rr:termType rr:IRI;
+                 rr:class ShapePoint;
+         ].
+<#Station> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Station/{stop_lon}";
+                 rr:termType rr:IRI;
+                 rr:class Station;
+         ].
+<#Stop> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "stopsnuestro.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Stop/{stop_id}";
+                 rr:termType rr:IRI;
+                 rr:class Stop;
          ];
          rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant tmjourney:stopUse;
-                 ];
-                 rr:objectMap [ rr:column "route_desc"; rr:datatype xsd:float];
+                 rr:predicate gtfs:parentStation;
+                 rr:objectMap [ rr:reference "parent_station"; rr:datatype xsd:string];
+         ].
+<#StopTime> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "stoptimesreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#StopTime/{stop_name}";
+                 rr:termType rr:IRI;
+                 rr:class StopTime;
          ];
          rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant dc:source;
-                 ];
-                 rr:objectMap [ rr:column "route_uri"; rr:datatype xsd:string];
+                 rr:predicate gtfs:stopSequence;
+                 rr:objectMap [ rr:reference "stop_sequence"; rr:datatype xsd:integer];
+         ].
+<#Transfer> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Transfer/{trip_id}";
+                 rr:termType rr:IRI;
+                 rr:class Transfer;
+         ].
+<#TransferRule> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#TransferRule/{tripsreducido}";
+                 rr:termType rr:IRI;
+                 rr:class TransferRule;
+         ].
+<#TransferType> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "stopsnuestro.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#TransferType/{location_type}";
+                 rr:termType rr:IRI;
+                 rr:class TransferType;
+         ].
+<#TransfersAllowedType> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "stopsnuestro.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#TransfersAllowedType/{route_short_name}";
+                 rr:termType rr:IRI;
+                 rr:class TransfersAllowedType;
+         ].
+<#Trip> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "routes.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Trip/{trip_id}";
+                 rr:termType rr:IRI;
+                 rr:class Trip;
          ];
          rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant dc:creator;
-                 ];
-                 rr:objectMap [ rr:column "route_color"; rr:datatype xsd:string];
+                 rr:predicate gtfs:block;
+                 rr:objectMap [ rr:reference "route_desc"; rr:datatype xsd:float];
          ];
          rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant tmcommons:textColour;
-                 ];
-                 rr:objectMap [ rr:column "route_text_color"; rr:datatype xsd:string];
+                 rr:predicate gtfs:route;
+                 rr:objectMap [ rr:reference "route_uri"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate gtfs:shortName;
+                 rr:objectMap [ rr:reference "route_short_name"; rr:datatype xsd:string];
+         ].
+<#WheelchairBoardingStatus> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#WheelchairBoardingStatus/{wheelchair_boarding}";
+                 rr:termType rr:IRI;
+                 rr:class WheelchairBoardingStatus;
+         ].
+<#Zone> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Zone/{zone_id}";
+                 rr:termType rr:IRI;
+                 rr:class Zone;
+         ].
+<#PriceSpecification> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "stopsnuestro.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#PriceSpecification/{route_color}";
+                 rr:termType rr:IRI;
+                 rr:class PriceSpecification;
+         ].
+<#CalendarRule> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#CalendarRule/{stop_url}";
+                 rr:termType rr:IRI;
+                 rr:class CalendarRule;
+         ].
+<#Agent> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Agent/{stop_desc}";
+                 rr:termType rr:IRI;
+                 rr:class Agent;
+         ].
+<#FareRule> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "stopsnuestro.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#FareRule/{stop_url}";
+                 rr:termType rr:IRI;
+                 rr:class FareRule;
+         ].
+<#CalendarDateRule> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#CalendarDateRule/{route_uri}";
+                 rr:termType rr:IRI;
+                 rr:class CalendarDateRule;
+         ].
+<#Frequency> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "stopsnuestro.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Frequency/{stop_sequence}";
+                 rr:termType rr:IRI;
+                 rr:class Frequency;
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate gtfs:endTime;
+                 rr:objectMap [ rr:reference "stop_name"; rr:datatype xsd:string];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate gtfs:startTime;
+                 rr:objectMap [ rr:reference "parent_station"; rr:datatype xsd:string];
+         ].
+<#PickupType> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#PickupType/{stop_code}";
+                 rr:termType rr:IRI;
+                 rr:class PickupType;
+         ].
+<#Service> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Service/{stop_code}";
+                 rr:termType rr:IRI;
+                 rr:class Service;
+         ].
+<#DropOffType> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "stopsnuestro.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#DropOffType/{stopsnuestro}";
+                 rr:termType rr:IRI;
+                 rr:class DropOffType;
+         ].
+<#ShapePoint> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "stoptimesreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#ShapePoint/{id_parada}";
+                 rr:termType rr:IRI;
+                 rr:class ShapePoint;
+         ].
+<#Shape> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "stopsnuestro.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Shape/{stop_desc}";
+                 rr:termType rr:IRI;
+                 rr:class Shape;
+         ].
+<#RouteType> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#RouteType/{location_type}";
+                 rr:termType rr:IRI;
+                 rr:class RouteType;
+         ].
+<#Transfer> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "stoptimesreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Transfer/{id_parada}";
+                 rr:termType rr:IRI;
+                 rr:class Transfer;
+         ].
+<#TransfersAllowedType> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "stoptimesreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#TransfersAllowedType/{route_short_name}";
+                 rr:termType rr:IRI;
+                 rr:class TransfersAllowedType;
+         ].
+<#ServiceRule> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "stopsnuestro.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#ServiceRule/{route_uri}";
+                 rr:termType rr:IRI;
+                 rr:class ServiceRule;
+         ].
+<#CalendarRule> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#CalendarRule/{direction_id}";
+                 rr:termType rr:IRI;
+                 rr:class CalendarRule;
+         ].
+<#PickupType> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#PickupType/{direction_id}";
+                 rr:termType rr:IRI;
+                 rr:class PickupType;
+         ].
+<#Agent> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "stoptimesreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Agent/{stoptimesreducido}";
+                 rr:termType rr:IRI;
+                 rr:class Agent;
+         ].
+<#CalendarDateRule> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#CalendarDateRule/{trip_short_name}";
+                 rr:termType rr:IRI;
+                 rr:class CalendarDateRule;
+         ].
+<#TransfersAllowedType> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "routes.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#TransfersAllowedType/{route_short_name}";
+                 rr:termType rr:IRI;
+                 rr:class TransfersAllowedType;
+         ].
+<#CalendarRule> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "tripsreducido.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#CalendarRule/{trip_headsign}";
+                 rr:termType rr:IRI;
+                 rr:class CalendarRule;
+         ].
+<#TransfersAllowedType> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "routes.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#TransfersAllowedType/{route_short_name}";
+                 rr:termType rr:IRI;
+                 rr:class TransfersAllowedType;
          ].

@@ -34,69 +34,143 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @base <http://vocab.gtfs.org/terms#> .
-<#habitantes> a rr:TriplesMap;
+<#Diseminado> a rr:TriplesMap;
          rml:logicalSource [
                  rml:source "habitantes.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://vocab.gtfs.org/terms#Habitante/{}";
+                 rr:template "http://vocab.gtfs.org/terms#Diseminado/{habitantes}";
                  rr:termType rr:IRI;
-                 rr:class Habitante;
+                 rr:class Diseminado;
+         ].
+<#Distrito> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "habitantes.csv" ;
+                 rml:referenceFormulation ql:CSV
          ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:calendar;
-                 ];
-                 rr:objectMap [ rr:column "Any"; rr:datatype xsd:integer];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Distrito/{Nom_Districte}";
+                 rr:termType rr:IRI;
+                 rr:class Distrito;
+         ].
+<#Municipio> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "habitantes.csv" ;
+                 rml:referenceFormulation ql:CSV
          ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant padron-municipal:provinciaDestino;
-                 ];
-                 rr:objectMap [ rr:column "Codi_Districte"; rr:datatype xsd:integer];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Municipio/{Any}";
+                 rr:termType rr:IRI;
+                 rr:class Municipio;
+         ].
+<#NucleoPoblacion> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "habitantes.csv" ;
+                 rml:referenceFormulation ql:CSV
          ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant padron-municipal:provinciaDestino;
-                 ];
-                 rr:objectMap [ rr:column "Nom_Districte"; rr:datatype xsd:string];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#NucleoPoblacion/{Nom_Barri}";
+                 rr:termType rr:IRI;
+                 rr:class NucleoPoblacion;
+         ].
+<#Pais> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "habitantes.csv" ;
+                 rml:referenceFormulation ql:CSV
          ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant padron-municipal:provinciaDestino;
-                 ];
-                 rr:objectMap [ rr:column "Codi_Barri"; rr:datatype xsd:integer];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Pais/{Any}";
+                 rr:termType rr:IRI;
+                 rr:class Pais;
+         ].
+<#Provincia> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "habitantes.csv" ;
+                 rml:referenceFormulation ql:CSV
          ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant dc:contributor;
-                 ];
-                 rr:objectMap [ rr:column "Nom_Barri"; rr:datatype xsd:string];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Provincia/{Nombre}";
+                 rr:termType rr:IRI;
+                 rr:class Provincia;
+         ].
+<#DimensionProperty> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "habitantes.csv" ;
+                 rml:referenceFormulation ql:CSV
          ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant dcterms:hasVersion;
-                 ];
-                 rr:objectMap [ rr:column "Sexe"; rr:datatype xsd:string];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#DimensionProperty/{Codi_Districte}";
+                 rr:termType rr:IRI;
+                 rr:class DimensionProperty;
+         ].
+<#Embassy> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "habitantes.csv" ;
+                 rml:referenceFormulation ql:CSV
          ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant gtfs:calendar;
-                 ];
-                 rr:objectMap [ rr:column "Any_alta_padro"; rr:datatype xsd:string];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Embassy/{Nombre}";
+                 rr:termType rr:IRI;
+                 rr:class Embassy;
+         ].
+<#Person> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "habitantes.csv" ;
+                 rml:referenceFormulation ql:CSV
          ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant padron-municipal:diseminadoResidencia;
-                 ];
-                 rr:objectMap [ rr:column "Nombre"; rr:datatype xsd:integer];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Person/{Sexe}";
+                 rr:termType rr:IRI;
+                 rr:class Person;
+         ].
+<#Concept> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "habitantes.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#Concept/{Codi_Barri}";
+                 rr:termType rr:IRI;
+                 rr:class Concept;
+         ].
+<#DimensionProperty> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "habitantes.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#DimensionProperty/{Codi_Districte}";
+                 rr:termType rr:IRI;
+                 rr:class DimensionProperty;
+         ].
+<#NucleoPoblacion> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "habitantes.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#NucleoPoblacion/{Nom_Barri}";
+                 rr:termType rr:IRI;
+                 rr:class NucleoPoblacion;
+         ].
+<#DimensionProperty> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "habitantes.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#DimensionProperty/{Codi_Districte}";
+                 rr:termType rr:IRI;
+                 rr:class DimensionProperty;
+         ].
+<#NucleoPoblacion> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "habitantes.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://vocab.gtfs.org/terms#NucleoPoblacion/{Any_alta_padro}";
+                 rr:termType rr:IRI;
+                 rr:class NucleoPoblacion;
          ].

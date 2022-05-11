@@ -20,10 +20,13 @@ class DatabaseManager(DataManagement):
         self.password = data['password']
         self.charset = 'utf8mb4'
         self.database = data['database']
+        self.port = data['port']
         self.tables = dict()
 
         try:
-            self.connection = mysql.connector.connect(host= self.host,
+            self.connection = mysql.connector.connect(
+                                    port=self.port,
+                                    host= self.host,
                                     user=self.user,
                                     password=self.password,
                                     database=self.database,

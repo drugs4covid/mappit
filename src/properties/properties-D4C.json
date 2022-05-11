@@ -1,0 +1,31 @@
+{
+	"main_ontology" : "DISNET/SEM-DISNET_20-04.owl",
+	"distance_method" : "levehnstein",
+	"compare_system": "ontology",
+	"Data" : {
+		"format" : "database",
+		"file" : "/home/pablo/Descargas/disnet_dump_20220505.sql",
+		"database" : "DISNET",
+		"user" : "disnet_external",
+		"password" : "ZErXcMz8Cs8G",
+		"host" : "ares.ctb.upm.es",
+		"port" : 30602
+	},
+
+	"output" : "D4C.ttl",
+
+	"list_prefixes": [
+		{
+			"prefix": "rr",
+			"URI": "http://www.w3.org/ns/r2rml#"
+		},
+		{
+			"prefix": "rml",
+			"URI": "http://semweb.mmlab.be/ns/rml#"
+		}
+	],
+	"base" : {
+		"prefix": "disnet",
+		"URI": "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#"
+	}
+}
