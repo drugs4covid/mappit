@@ -1,4 +1,0 @@
-descripcion,codigoisin,importe,fechaemision,numerotitulos,nominal,tipointeres,interes,referencia,cuponanual,fechapago,precioemision,precioamortizacion,fechaamortizacion,fechacapitalvivo,capitalvivo,duracion
-Obligaciones 4.35% - JUN21        (15 años),ES0201001130,200000000.00,2006-06-16,2000,100000.00,fijo,4.35%,,4350.00,--06-16,99.57,A la par,2021-06-16,2020-06-30,200000000.00,P15Y
-Obligaciones 4.55% - JUN36        (30 años),ES0201001148,300000000.00,2006-06-16,3000,100000.00,fijo,4.35%,,4550.00,--06-16,99.81,A la par,2036-06-16,2020-06-30,300000000.00,P30Y
-Obligaciones Tipo Variable - OCT22   (15 años ),ES0201001163,200000000.00,2007-10-10,2000,100000.00,variable, ,Euribor 6 meses,,--04-10,99.79,A la par,2022-10-10,2020-06-30,200000000.00,P15Y

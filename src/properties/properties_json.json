@@ -1,56 +1,15 @@
 {
 	"main_ontology" : "http://vocab.gtfs.org/terms#",
+	"distance_method": "levehnstein",
+	"compare_system": "database",
 	"Data" : {
 		"format" : "json",
-		"folder" : "gtfs_json",
+		"folder" : "gtfs_json/",
 		"separator" : ","
 	},
-
 	"output" : "gtfs.ttl",
-
-	"list_prefixes": [
-		{
-			"prefix": "rr",
-			"URI": "http://www.w3.org/ns/r2rml#"
-		},
-		{
-			"prefix": "rml",
-			"URI": "http://semweb.mmlab.be/ns/rml#"
-		}
-	],
 	"base" : {
 		"prefix": "gtfs",
 		"URI": "http://vocab.gtfs.org/terms#"
-	},
-	"ontologies" : [
-
-	],
-	"classes" : [
-		{
-			"name" : "gtfs:calendar"
-		}
-	],
-	"properties" : [
-		{
-			"name": "schema:startDate"
-		},
-		{
-			"name": "schema:endDate"
-		},
-		{
-			"name": "dct:language"
-		},
-		{
-			"name": "dct:publisher"
-		},
-		{
-			"name": "schema:version"
-		},
-		{
-			"name": "foaf:phone"
-		},
-		{
-			"name": "foaf:name"
-		}
-	]
+	}
 }

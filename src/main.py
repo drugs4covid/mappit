@@ -3,7 +3,6 @@ from DataManager import DataManager
 import RMLEntityManager
 import json
 import os
-import sys
 
 #Loads the properties file
 def loadProperties(propertiesFile):
@@ -31,20 +30,35 @@ def loadAdditionalOntologies(data, ontology):
         for p in addOnto.ontology.all_properties:
             ontology.all_properties.append(p)
 
+def loadEquivalences(data):
+    equivalenceDict = dict()
+    try:
+        for x in data['list_equivalence']:
+            equivalenceDict.update({x['entity'] : x['equivalence']})
+    except: pass
+    return equivalenceDict
+
+
 
 #The properties, ontology and database are loaded. Then, all the information is given to the RMLEntityManager to create the entities
 # and parse the data into the document.
 def main():
     
     ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-    data = loadProperties(ROOT_DIR + '/properties/properties_sfo.json')
+    data = loadProperties(ROOT_DIR + '/properties/properties-D4C.json')
 
     ontoManager = OntologyManager(ROOT_DIR, data['main_ontology'])
+
+    for x in ontoManager.onto_properties:
+        print(x.bestLabel())
+
+    equivalences = loadEquivalences(data)
 
     dataManager = DataManager()
     dataManager.serialize(data['Data'])
 
-    RMLEntityManager.run(ROOT_DIR, data, ontoManager, dataManager)
+
+    RMLEntityManager.run(ROOT_DIR, data, ontoManager, dataManager, equivalences)
 
 if __name__ == "__main__":
     main()

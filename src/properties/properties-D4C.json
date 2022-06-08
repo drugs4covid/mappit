@@ -2,30 +2,56 @@
 	"main_ontology" : "DISNET/SEM-DISNET_20-04.owl",
 	"distance_method" : "levehnstein",
 	"compare_system": "ontology",
+	"MapLanguage" : "R2RML",
 	"Data" : {
+		"type" : "mysql",
 		"format" : "database",
 		"file" : "/home/pablo/Descargas/disnet_dump_20220505.sql",
-		"database" : "DISNET",
+		"database" : "disnet_biolayer",
 		"user" : "disnet_external",
 		"password" : "ZErXcMz8Cs8G",
-		"host" : "ares.ctb.upm.es",
-		"port" : 30602
+		"host" : "138.4.130.153",
+		"port" : 10000
 	},
 
-	"output" : "D4C.ttl",
+	"output" : "D4C_Disease.ttl",
 
-	"list_prefixes": [
+	"list_equivalence": [
 		{
-			"prefix": "rr",
-			"URI": "http://www.w3.org/ns/r2rml#"
+			"entity": "Target",
+			"equivalence": "organism"
 		},
 		{
-			"prefix": "rml",
-			"URI": "http://semweb.mmlab.be/ns/rml#"
+			"entity": "Disease For Disease-ncRNA Association",
+			"equivalence": "disease_rna"
+		},
+		{
+			"entity": "Disease For Gene-Disease Association",
+			"equivalence": "disease_gene"
+		},
+		{
+			"entity": "Disease For Disease-Variant Association",
+			"equivalence": "disease_variant"
+		},
+		{
+			"entity": "term-source-enum",
+			"equivalence": "source"
+		},
+		{
+			"entity": "Untranslated RNA",
+			"equivalence": "rna"
+		},
+		{
+			"entity": "Disease, Disorder or Finding",
+			"equivalence": "disease"
+		},
+		{
+			"entity": "Disease-ncRNA Association",
+			"equivalence": "disease_rna"
 		}
 	],
 	"base" : {
-		"prefix": "disnet",
+		"prefix": "sem-disnet",
 		"URI": "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#"
 	}
 }

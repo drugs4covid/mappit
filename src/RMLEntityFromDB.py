@@ -1,6 +1,5 @@
 from Utils import Utilities
 from RMLEntity import RMLEntity
-from DatabaseManager import DatabaseManager
 
 
 class RMLEntityFromDB(object):
@@ -14,54 +13,31 @@ class RMLEntityFromDB(object):
         #Onto_properties: All the properties from the ontology that correspond to the given columns of the table
         #Join Conditions: Properties joined to another properties from another TriplesMap
 
-    def load(tables, db, ontoManager):
+    def load(tables, db, ontoManager, disMethod, equivalences):
 
         entities = []
         for x in range(0, len(tables)):
-            onto_class = RMLEntityFromDB.correspondenceClass(tables[x], ontoManager.onto_classes)
-            columns = db.get_table_columns(tables[x])
-            ID =  RMLEntityFromDB.getClassIDTerm(onto_class, columns)
-            onto_properties, joinConditions = RMLEntityFromDB.get_class_properties(ontoManager, db, columns, tables[x], ID)
+            onto_class = RMLEntityFromDB.correspondenceClass(tables[x], ontoManager.onto_classes, disMethod)
+            if(onto_class != ''):
+                columns = db.get_table_columns(tables[x])
+                ID =  Utilities.getClassIDTerm(onto_class, columns)
+                onto_properties, joinConditions = RMLEntityFromDB.get_class_properties(ontoManager, db, columns, tables[x], ID)
 
 
-            entity = RMLEntity(tables[x], onto_class, ID, joinConditions, onto_properties)
-            
-            entities.append(entity)
+                entity = RMLEntity(tables[x], onto_class, ID, joinConditions, onto_properties)
+                
+                entities.append(entity)
         return entities
-
-    #By using the LevenshteinDistance, the id of the class given all the columns is detected. 
-    def getClassIDTerm(onto_class, columns):
-        dis = 10
-        term = ""
-        for x in columns:
-            name = Utilities.replace(x)
-            try:
-                onto_name = onto_class.locale
-            except:
-                onto_name = onto_class
-            #The name of the class in the ontology is compared to the column. 'id' is added to the class name in order to get the
-            #id in the columsn more efficiently
-            auxDis = Utilities.distance(name, onto_name.split(':').pop() + 'id')
-            #The column is checked in order to see if it is actually an id and the distance is checked to be lower than 2.0, which means
-            #that only two replacements must be done in order to have both strings to be the same. This is done in order to see that the column is 
-            #actually the class id and not a reference to another table
-            if (name.endswith('id') or name.startswith('id')) and auxDis < dis and auxDis < 5.0:
-                dis = auxDis
-                term = x
-        return term
     
     #Given the ontology classes, it is checked the one whose name is the most similar to the table assigned to the entity
-    def correspondenceClass(table, oc_classes):
+    def correspondenceClass(table, oc_classes, disMethod):
         dis = 100
         term = ""
         for x in oc_classes:
             term1 = Utilities.replace(table)
-            try:
-                term2 = x.locale.split(':').pop()
-            except:
-                term2 = x.split(':').pop()
+            term2 = x.locale
             auxDis = Utilities.distance(term1, term2)
-            if auxDis < dis:
+            if auxDis < dis and auxDis < Utilities.threshold(disMethod):
                 dis = auxDis
                 term = x
         return term
@@ -69,10 +45,8 @@ class RMLEntityFromDB(object):
     def rangesToItself(prop, table):
         i = 0
         foundByRange = False
-        try:
-            ranges = prop.ranges
-        except:
-            ranges = []
+        ranges = prop.ranges
+
 
         while(foundByRange == False and i < len(ranges)):
             range = ranges[i]

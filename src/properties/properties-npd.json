@@ -1,31 +1,21 @@
 {
 	"main_ontology" : "npd_atomic_tests/ontology.ttl",
 	"distance_method" : "levehnstein",
-	"compare_system": "ontology",
+	"compare_system": "database",
 	"Data" : {
-		"format" : "dump_database",
-		"file" : "npd_atomic_tests/dump.sql",
-		"database" : "DISNET",
-		"user" : "disnet_external",
-		"password" : "ZErXcMz8Cs8G",
-		"host" : "ares.ctb.upm.es",
-		"port" : 30602
+		"format" : "database",
+		"type" : "postgres",
+		"database" : "npd",
+		"user" : "postgres",
+		"password" : "npd",
+		"port" : "5432",
+		"host" : "127.0.0.1"
 	},
 
-	"output" : "D4C.ttl",
+	"output" : "npd.ttl",
 
-	"list_prefixes": [
-		{
-			"prefix": "rr",
-			"URI": "http://www.w3.org/ns/r2rml#"
-		},
-		{
-			"prefix": "rml",
-			"URI": "http://semweb.mmlab.be/ns/rml#"
-		}
-	],
 	"base" : {
-		"prefix": "disnet",
-		"URI": "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#"
+		"prefix": "npd",
+		"URI": "http://sws.ifi.uio.no/vocab/npd-v2-merge#"
 	}
 }

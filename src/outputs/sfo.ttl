@@ -37,241 +37,231 @@
 @base <http://data.sfgov.org/ontology#> .
 <#ActivityPeriod> a rr:TriplesMap;
          rml:logicalSource [
-                 rml:source "sfo_air_traffic_landing_statistics.csv" ;
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_air_traffic_landing_statistics.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://data.sfgov.org/ontology#ActivityPeriod/{activity_period}";
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#ActivityPeriod/{activity_period}";
                  rr:termType rr:IRI;
-                 rr:class sfgov:ActivityPeriod
+                 rr:class http://data.sfgov.org/ontology#ActivityPeriod
          ].
 <#Aircraft> a rr:TriplesMap;
          rml:logicalSource [
-                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_aircraft_tail_numbers_and_models.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://data.sfgov.org/ontology#Aircraft/{aircraft_id}";
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#Aircraft/{aircraft_id}";
                  rr:termType rr:IRI;
-                 rr:class sfgov:Aircraft
-         ];
-         rr:predicateObjectMap [
-                 rr:predicate sfgov:hasAircraftId;
-                 rr:objectMap [ rr:reference "aircraft_id"; rr:datatype xsd:integer];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicate sfgov:hasCreationDate;
-                 rr:objectMap [ rr:reference "creation_date"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicate sfgov:hasModificationDate;
-                 rr:objectMap [ rr:reference "modification_date"; rr:datatype xsd:string];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicate sfgov:hasTailNumber;
-                 rr:objectMap [ rr:reference "tail_number"; rr:datatype xsd:string];
+                 rr:class http://data.sfgov.org/ontology#Aircraft
          ].
 <#AircraftBody> a rr:TriplesMap;
          rml:logicalSource [
-                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_air_traffic_landing_statistics.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://data.sfgov.org/ontology#AircraftBody/{aircraft_model}";
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#AircraftBody/{aircraft_body_type}";
                  rr:termType rr:IRI;
-                 rr:class sfgov:AircraftBody
+                 rr:class http://data.sfgov.org/ontology#AircraftBody
          ].
 <#AircraftManufacturer> a rr:TriplesMap;
          rml:logicalSource [
-                 rml:source "sfo_air_traffic_landing_statistics.csv" ;
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_air_traffic_landing_statistics.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://data.sfgov.org/ontology#AircraftManufacturer/{aircraft_manufacturer}";
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#AircraftManufacturer/{aircraft_manufacturer}";
                  rr:termType rr:IRI;
-                 rr:class sfgov:AircraftManufacturer
+                 rr:class http://data.sfgov.org/ontology#AircraftManufacturer
          ].
 <#AircraftModel> a rr:TriplesMap;
          rml:logicalSource [
-                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_aircraft_tail_numbers_and_models.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://data.sfgov.org/ontology#AircraftModel/{aircraft_model}";
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#AircraftModel/{aircraft_model}";
                  rr:termType rr:IRI;
-                 rr:class sfgov:AircraftModel
+                 rr:class http://data.sfgov.org/ontology#AircraftModel
          ].
 <#AircraftModelVersion> a rr:TriplesMap;
          rml:logicalSource [
-                 rml:source "sfo_air_traffic_landing_statistics.csv" ;
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_air_traffic_landing_statistics.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://data.sfgov.org/ontology#AircraftModelVersion/{aircraft_version}";
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#AircraftModelVersion/{aircraft_version}";
                  rr:termType rr:IRI;
-                 rr:class sfgov:AircraftModelVersion
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant sfgov:isVersionOf;
-                 ];
-                 rr:objectMap [
-                         a rr:RefObjectMap;
-                         rr:parentTriplesMap <#AircraftModel>;
-                         rr:joinCondition [
-                                 rr:child "aircraft_version";
-                                 rr:parent "aircraft_model";
-                         ];
-                 ];
+                 rr:class http://data.sfgov.org/ontology#AircraftModelVersion
          ].
 <#Airline> a rr:TriplesMap;
          rml:logicalSource [
-                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_aircraft_tail_numbers_and_models.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://data.sfgov.org/ontology#Airline/{airline}";
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#Airline/{airline}";
                  rr:termType rr:IRI;
-                 rr:class sfgov:Airline
+                 rr:class http://data.sfgov.org/ontology#Airline
          ].
 <#Airport> a rr:TriplesMap;
          rml:logicalSource [
-                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_aircraft_tail_numbers_and_models.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://data.sfgov.org/ontology#Airport/{status}";
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#Airport/{airline}";
                  rr:termType rr:IRI;
-                 rr:class sfgov:Airport
+                 rr:class http://data.sfgov.org/ontology#Airport
          ].
 <#AirportTerminal> a rr:TriplesMap;
          rml:logicalSource [
-                 rml:source "sfo_air_traffic_passenger_statistics.csv" ;
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_air_traffic_passenger_statistics.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://data.sfgov.org/ontology#AirportTerminal/{terminal}";
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#AirportTerminal/{terminal}";
                  rr:termType rr:IRI;
-                 rr:class sfgov:AirportTerminal
+                 rr:class http://data.sfgov.org/ontology#AirportTerminal
          ].
 <#BoardingArea> a rr:TriplesMap;
          rml:logicalSource [
-                 rml:source "sfo_air_traffic_passenger_statistics.csv" ;
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_air_traffic_passenger_statistics.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://data.sfgov.org/ontology#BoardingArea/{boarding_area}";
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#BoardingArea/{boarding_area}";
                  rr:termType rr:IRI;
-                 rr:class sfgov:BoardingArea
+                 rr:class http://data.sfgov.org/ontology#BoardingArea
+         ].
+<#CombiAircraft> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#CombiAircraft/{aircraft_id}";
+                 rr:termType rr:IRI;
+                 rr:class http://data.sfgov.org/ontology#CombiAircraft
          ].
 <#Company> a rr:TriplesMap;
          rml:logicalSource [
-                 rml:source "sfo_air_traffic_landing_statistics.csv" ;
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_aircraft_tail_numbers_and_models.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://data.sfgov.org/ontology#Company/{geo_summary}";
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#Company/{airline}";
                  rr:termType rr:IRI;
-                 rr:class sfgov:Company
+                 rr:class http://data.sfgov.org/ontology#Company
          ].
 <#GeoRegion> a rr:TriplesMap;
          rml:logicalSource [
-                 rml:source "sfo_air_traffic_landing_statistics.csv" ;
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_air_traffic_landing_statistics.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://data.sfgov.org/ontology#GeoRegion/{geo_region}";
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#GeoRegion/{geo_region}";
                  rr:termType rr:IRI;
-                 rr:class sfgov:GeoRegion
+                 rr:class http://data.sfgov.org/ontology#GeoRegion
          ].
 <#LandingActivity> a rr:TriplesMap;
          rml:logicalSource [
-                 rml:source "sfo_air_traffic_landing_statistics.csv" ;
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_air_traffic_landing_statistics.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://data.sfgov.org/ontology#LandingActivity/{landing_count}";
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#LandingActivity/{landing_count}";
                  rr:termType rr:IRI;
-                 rr:class sfgov:LandingActivity
+                 rr:class http://data.sfgov.org/ontology#LandingActivity
+         ].
+<#NarrowBody> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:referenceFormulation ql:CSV
          ];
-         rr:predicateObjectMap [
-                 rr:predicate sfgov:hasLandingCount;
-                 rr:objectMap [ rr:reference "landing_count"; rr:datatype xsd:integer];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicate sfgov:hasTotalLandedWeight;
-                 rr:objectMap [ rr:reference "total_landed_weight"; rr:datatype xsd:integer];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant sfgov:hasAircraftManufacturer;
-                 ];
-                 rr:objectMap [
-                         a rr:RefObjectMap;
-                         rr:parentTriplesMap <#AircraftManufacturer>;
-                         rr:joinCondition [
-                                 rr:child "aircraft_manufacturer";
-                                 rr:parent "aircraft_manufacturer";
-                         ];
-                 ];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicateMap [
-                         a rr:PredicateMap;
-                         rr:constant sfgov:hasAircraftModel;
-                 ];
-                 rr:objectMap [
-                         a rr:RefObjectMap;
-                         rr:parentTriplesMap <#AircraftModel>;
-                         rr:joinCondition [
-                                 rr:child "aircraft_model";
-                                 rr:parent "aircraft_model";
-                         ];
-                 ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#NarrowBody/{aircraft_id}";
+                 rr:termType rr:IRI;
+                 rr:class http://data.sfgov.org/ontology#NarrowBody
          ].
 <#PassengerActivity> a rr:TriplesMap;
          rml:logicalSource [
-                 rml:source "sfo_air_traffic_passenger_statistics.csv" ;
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_air_traffic_passenger_statistics.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://data.sfgov.org/ontology#PassengerActivity/{passenger_count}";
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#PassengerActivity/{passenger_count}";
                  rr:termType rr:IRI;
-                 rr:class sfgov:PassengerActivity
+                 rr:class http://data.sfgov.org/ontology#PassengerActivity
+         ].
+<#PassengerAircraft> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_air_traffic_passenger_statistics.csv" ;
+                 rml:referenceFormulation ql:CSV
          ];
-         rr:predicateObjectMap [
-                 rr:predicate sfgov:hasPassengerCount;
-                 rr:objectMap [ rr:reference "passenger_count"; rr:datatype xsd:integer];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#PassengerAircraft/{passenger_count}";
+                 rr:termType rr:IRI;
+                 rr:class http://data.sfgov.org/ontology#PassengerAircraft
+         ].
+<#PassengerDeplaned> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_air_traffic_passenger_statistics.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#PassengerDeplaned/{passenger_count}";
+                 rr:termType rr:IRI;
+                 rr:class http://data.sfgov.org/ontology#PassengerDeplaned
+         ].
+<#PassengerEnplaned> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_air_traffic_passenger_statistics.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#PassengerEnplaned/{passenger_count}";
+                 rr:termType rr:IRI;
+                 rr:class http://data.sfgov.org/ontology#PassengerEnplaned
+         ].
+<#PassengerTransit> a rr:TriplesMap;
+         rml:logicalSource [
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_air_traffic_passenger_statistics.csv" ;
+                 rml:referenceFormulation ql:CSV
+         ];
+         rr:subjectMap [
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#PassengerTransit/{passenger_count}";
+                 rr:termType rr:IRI;
+                 rr:class http://data.sfgov.org/ontology#PassengerTransit
          ].
 <#RegionalJet> a rr:TriplesMap;
          rml:logicalSource [
-                 rml:source "sfo_aircraft_tail_numbers_and_models.csv" ;
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_air_traffic_passenger_statistics.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://data.sfgov.org/ontology#RegionalJet/{creation_date}";
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#RegionalJet/{terminal}";
                  rr:termType rr:IRI;
-                 rr:class sfgov:RegionalJet
+                 rr:class http://data.sfgov.org/ontology#RegionalJet
          ].
 <#Turbo_Prop> a rr:TriplesMap;
          rml:logicalSource [
-                 rml:source "sfo_activity_period_summary.csv" ;
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_aircraft_tail_numbers_and_models.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://data.sfgov.org/ontology#Turbo_Prop/{object_uri}";
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#Turbo_Prop/{aircraft_id}";
                  rr:termType rr:IRI;
-                 rr:class sfgov:Turbo_Prop
+                 rr:class http://data.sfgov.org/ontology#Turbo_Prop
          ].
-<#AircraftBody> a rr:TriplesMap;
+<#WideBody> a rr:TriplesMap;
          rml:logicalSource [
-                 rml:source "sfo_air_traffic_landing_statistics.csv" ;
+                 rml:source "/home/pablo/Documentos/Github/mapping-generator/src/Inputs/arthur-sfo-airport-data/data/sfo_aircraft_tail_numbers_and_models.csv" ;
                  rml:referenceFormulation ql:CSV
          ];
          rr:subjectMap [
-                 rr:template "http://data.sfgov.org/ontology#AircraftBody/{aircraft_body_type}";
+                 rr:template "http://data.sfgov.org/ontology#//data.sfgov.org/ontology#WideBody/{airline}";
                  rr:termType rr:IRI;
-                 rr:class sfgov:AircraftBody
+                 rr:class http://data.sfgov.org/ontology#WideBody
          ].

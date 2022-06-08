@@ -1,0 +1,2000 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix disnet: <http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#>.
+@prefix : <http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#> .
+@prefix EVS: <http://ncicb.nci.nih.gov/xml/owl/EVS/> .
+@prefix Thesaurus: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix bio2rdf_vocabulary: <http://bio2rdf.org/bio2rdf_vocabulary:> .
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix efo: <http://www.ebi.ac.uk/efo/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix metadata: <http://data.bioontology.org/metadata/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix resource: <http://semanticscience.org/resource/> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix untitled-ontology-44: <http://www.semanticweb.org/andrea/ontologies/2022/2/untitled-ontology-44#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@base <http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#> .
+<#Organism>
+         rr:logicalTable [ rr:tableName "organism"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C14250/{organism}";
+                 rr:class EVS:Thesaurus.owl#C14250
+         ].
+<#SIO_000291>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C14250/{sio_id}";
+                 rr:class EVS:Thesaurus.owl#C14250
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000291;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#ChEMBL Target Class>;
+                         rr:joinCondition [
+                                 rr:child "sio_name";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#Gene>
+         rr:logicalTable [ rr:tableName "gene"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C16612/{gene}";
+                 rr:class EVS:Thesaurus.owl#C16612
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:geneSequence;
+                 rr:objectMap [ rr:column "gene_sequence"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:strand;
+                 rr:objectMap [ rr:column "strand"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_010078;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Protein>;
+                         rr:joinCondition [
+                                 rr:child "seq_end";
+                                 rr:parent "seq_end";
+                         ];
+                 ];
+         ].
+<#geneForGDA>
+         rr:logicalTable [ rr:tableName "gene"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C16612/{gene_id}";
+                 rr:class EVS:Thesaurus.owl#C16612
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:geneForGDA;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "gene_sequence";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:geneForGDA;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#gene-disease association>;
+                         rr:joinCondition [
+                                 rr:child "gene_sequence";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#R178>
+         rr:logicalTable [ rr:tableName "rna"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C16612/{rna_id}";
+                 rr:class EVS:Thesaurus.owl#C16612
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate EVS:Thesaurus.owl#R178;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#sequence_variant>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#R41>
+         rr:logicalTable [ rr:tableName "rna"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C16612/{rna_id}";
+                 rr:class EVS:Thesaurus.owl#C16612
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate EVS:Thesaurus.owl#R41;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Organism>;
+                         rr:joinCondition [
+                                 rr:child "rna_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000068>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C16612/{sio_id}";
+                 rr:class EVS:Thesaurus.owl#C16612
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000068;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Pathway>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000205>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C16612/{sio_id}";
+                 rr:class EVS:Thesaurus.owl#C16612
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000205;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene Symbol>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#Protein>
+         rr:logicalTable [ rr:tableName "protein"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C17021/{protein}";
+                 rr:class EVS:Thesaurus.owl#C17021
+         ].
+<#R45>
+         rr:logicalTable [ rr:tableName "rna"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C17021/{rna_id}";
+                 rr:class EVS:Thesaurus.owl#C17021
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate EVS:Thesaurus.owl#R45;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Organism>;
+                         rr:joinCondition [
+                                 rr:child "rna_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000062>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C17021/{sio_id}";
+                 rr:class EVS:Thesaurus.owl#C17021
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000062;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Protein-Protein Interaction>;
+                         rr:joinCondition [
+                                 rr:child "sio_name";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000062;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Protein-Protein Interaction>;
+                         rr:joinCondition [
+                                 rr:child "sio_name";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000291>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C17021/{sio_id}";
+                 rr:class EVS:Thesaurus.owl#C17021
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000291;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#ChEMBL Target Class>;
+                         rr:joinCondition [
+                                 rr:child "sio_name";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_010079>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C17021/{sio_id}";
+                 rr:class EVS:Thesaurus.owl#C17021
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_010079;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#Disease Marker>
+         rr:logicalTable [ rr:tableName "disease_marker"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C18329/{disease_marker}";
+                 rr:class EVS:Thesaurus.owl#C18329
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:concentration;
+                 rr:objectMap [ rr:column "concentration"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:sample;
+                 rr:objectMap [ rr:column "sample"];
+         ].
+<#isDiseaseMarkerOf>
+         rr:logicalTable [ rr:tableName "disease_marker"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C18329/{disease_id}";
+                 rr:class EVS:Thesaurus.owl#C18329
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isDiseaseMarkerOf;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Disease, Disorder or Finding>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isDiseaseMarkerOf>
+         rr:logicalTable [ rr:tableName "disease_marker"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C18329/{disease_id}";
+                 rr:class EVS:Thesaurus.owl#C18329
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isDiseaseMarkerOf;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Disease, Disorder or Finding>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#Score>
+         rr:logicalTable [ rr:tableName "code"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{code}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ].
+<#isGDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#gene-disease association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isVDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isVDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isGDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#gene-disease association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isVDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isVDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isGDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#gene-disease association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isVDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isVDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isGDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#gene-disease association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isVDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isVDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isGDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#gene-disease association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isVDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isVDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isGDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#gene-disease association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isVDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isVDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isGDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#gene-disease association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isVDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isVDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isGDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#gene-disease association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isVDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isVDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isGDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#gene-disease association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isVDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isVDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isGDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#gene-disease association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isVDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isVDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isGDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#gene-disease association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isVDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isVDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isGDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#gene-disease association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isVDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isVDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isGDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#gene-disease association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isVDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isVDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isGDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#gene-disease association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isVDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isVDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isGDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#gene-disease association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isVDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isVDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isGDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#gene-disease association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isVDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isVDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isGDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#gene-disease association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isVDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isVDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isGDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#gene-disease association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isVDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isVDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isGDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#gene-disease association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isVDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isVDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isGDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isGDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#gene-disease association>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isVDAscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{source_id}";
+                 rr:class EVS:Thesaurus.owl#C25338
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isVDAscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#textArea>
+         rr:logicalTable [ rr:tableName "encodes"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#textArea/{encodes}";
+                 rr:class EVS:Thesaurus.owl#textArea
+         ].
+<#Pathway>
+         rr:logicalTable [ rr:tableName "pathway"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{pathway_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000028>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{sio_id}";
+                 rr:class http://vocabularies.wikipathways.org/wp#Pathway
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000028;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Gene>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#geography>
+         rr:logicalTable [ rr:tableName "orpha"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Orphanet_C009/{orpha}";
+                 rr:class http://www.orpha.net/ORDO/Orphanet_C009
+         ].
+<#ProteinClass>
+         rr:logicalTable [ rr:tableName "proteinclass"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#PR_000000001/{proteinclass}";
+                 rr:class obo:PR_000000001
+         ].
+<#hasProteinMember>
+         rr:logicalTable [ rr:tableName "has_proteinclass"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#PR_000000001/{protein_id}";
+                 rr:class obo:PR_000000001
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:hasProteinMember;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Protein>;
+                         rr:joinCondition [
+                                 rr:child "protein_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#sequence_variant>
+         rr:logicalTable [ rr:tableName "gene_variant"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SO_0001060/{gene_variant}";
+                 rr:class obo:SO_0001060
+         ].
+<#DPIscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SO_0001060/{disease_id}";
+                 rr:class obo:SO_0001060
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:DPIscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#DisGeNET Pleiotropy Index>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#DSIscore>
+         rr:logicalTable [ rr:tableName "disease"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SO_0001060/{disease_id}";
+                 rr:class obo:SO_0001060
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:DSIscore;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#DisGeNET disease specificity>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#variantForVDA>
+         rr:logicalTable [ rr:tableName "variant"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SO_0001060/{variant_id}";
+                 rr:class obo:SO_0001060
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:variantForVDA;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#association>;
+                         rr:joinCondition [
+                                 rr:child "chrposition";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000061>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SO_0001060/{sio_name}";
+                 rr:class obo:SO_0001060
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000061;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#chromosome>;
+                         rr:joinCondition [
+                                 rr:child "sio_name";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SIO_000211>
+         rr:logicalTable [ rr:tableName "siogda"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SO_0001060/{sio_name}";
+                 rr:class obo:SO_0001060
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000211;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#sequence start position>;
+                         rr:joinCondition [
+                                 rr:child "sio_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#SemanticType>
+         rr:logicalTable [ rr:tableName "semantictype"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000326/{semantictype}";
+                 rr:class resource:SIO_000326
+         ].
+<#isDiseaseSemanticType>
+         rr:logicalTable [ rr:tableName "has_semantictype"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000326/{disease_id}";
+                 rr:class resource:SIO_000326
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isDiseaseSemanticType;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Disease, Disorder or Finding>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isDiseaseSemanticType>
+         rr:logicalTable [ rr:tableName "has_semantictype"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000326/{disease_id}";
+                 rr:class resource:SIO_000326
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isDiseaseSemanticType;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Disease, Disorder or Finding>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isDiseaseSemanticType>
+         rr:logicalTable [ rr:tableName "has_semantictype"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000326/{disease_id}";
+                 rr:class resource:SIO_000326
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isDiseaseSemanticType;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Disease, Disorder or Finding>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isDiseaseSemanticType>
+         rr:logicalTable [ rr:tableName "has_semantictype"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000326/{disease_id}";
+                 rr:class resource:SIO_000326
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isDiseaseSemanticType;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Disease, Disorder or Finding>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isDiseaseSemanticType>
+         rr:logicalTable [ rr:tableName "has_semantictype"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000326/{disease_id}";
+                 rr:class resource:SIO_000326
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isDiseaseSemanticType;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Disease, Disorder or Finding>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isDiseaseSemanticType>
+         rr:logicalTable [ rr:tableName "has_semantictype"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000326/{disease_id}";
+                 rr:class resource:SIO_000326
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isDiseaseSemanticType;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Disease, Disorder or Finding>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isDiseaseSemanticType>
+         rr:logicalTable [ rr:tableName "has_semantictype"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000326/{disease_id}";
+                 rr:class resource:SIO_000326
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isDiseaseSemanticType;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Disease, Disorder or Finding>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isDiseaseSemanticType>
+         rr:logicalTable [ rr:tableName "has_semantictype"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000326/{disease_id}";
+                 rr:class resource:SIO_000326
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isDiseaseSemanticType;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Disease, Disorder or Finding>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isDiseaseSemanticType>
+         rr:logicalTable [ rr:tableName "has_semantictype"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000326/{disease_id}";
+                 rr:class resource:SIO_000326
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isDiseaseSemanticType;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Disease, Disorder or Finding>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isDiseaseSemanticType>
+         rr:logicalTable [ rr:tableName "has_semantictype"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000326/{disease_id}";
+                 rr:class resource:SIO_000326
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isDiseaseSemanticType;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Disease, Disorder or Finding>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isDiseaseSemanticType>
+         rr:logicalTable [ rr:tableName "has_semantictype"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000326/{disease_id}";
+                 rr:class resource:SIO_000326
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isDiseaseSemanticType;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Disease, Disorder or Finding>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isDiseaseSemanticType>
+         rr:logicalTable [ rr:tableName "has_semantictype"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000326/{disease_id}";
+                 rr:class resource:SIO_000326
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isDiseaseSemanticType;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Disease, Disorder or Finding>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isDiseaseSemanticType>
+         rr:logicalTable [ rr:tableName "has_semantictype"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000326/{disease_id}";
+                 rr:class resource:SIO_000326
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isDiseaseSemanticType;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Disease, Disorder or Finding>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isDiseaseSemanticType>
+         rr:logicalTable [ rr:tableName "has_semantictype"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000326/{disease_id}";
+                 rr:class resource:SIO_000326
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isDiseaseSemanticType;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Disease, Disorder or Finding>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isDiseaseSemanticType>
+         rr:logicalTable [ rr:tableName "has_semantictype"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000326/{disease_id}";
+                 rr:class resource:SIO_000326
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isDiseaseSemanticType;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Disease, Disorder or Finding>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#isDiseaseSemanticType>
+         rr:logicalTable [ rr:tableName "has_semantictype"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000326/{disease_id}";
+                 rr:class resource:SIO_000326
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:isDiseaseSemanticType;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Disease, Disorder or Finding>;
+                         rr:joinCondition [
+                                 rr:child "disease_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#Phenotype>
+         rr:logicalTable [ rr:tableName "source"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Phenotype/{source}";
+                 rr:class sem-disnet:Phenotype
+         ].
+<#Prevalence>
+         rr:logicalTable [ rr:tableName "prevalence"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Prevalence/{prevalence}";
+                 rr:class sem-disnet:Prevalence
+         ].
+<#hasOrpha>
+         rr:logicalTable [ rr:tableName "orpha"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Prevalence/{orpha_code}";
+                 rr:class sem-disnet:Prevalence
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:hasOrpha;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#group of disorders>;
+                         rr:joinCondition [
+                                 rr:child "orpha_code";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#hasPrevalenceclass>
+         rr:logicalTable [ rr:tableName "prevalence_class"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Prevalence/{value}";
+                 rr:class sem-disnet:Prevalence
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:hasPrevalenceclass;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#annual incidence>;
+                         rr:joinCondition [
+                                 rr:child "class_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#hasOrpha>
+         rr:logicalTable [ rr:tableName "orpha"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Prevalence/{orpha_code}";
+                 rr:class sem-disnet:Prevalence
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:hasOrpha;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#group of disorders>;
+                         rr:joinCondition [
+                                 rr:child "orpha_code";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].
+<#hasPrevalenceclass>
+         rr:logicalTable [ rr:tableName "prevalence_class"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Prevalence/{value}";
+                 rr:class sem-disnet:Prevalence
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sem-disnet:hasPrevalenceclass;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#annual incidence>;
+                         rr:joinCondition [
+                                 rr:child "class_id";
+                                 rr:parent "";
+                         ];
+                 ];
+         ].

@@ -1,7 +1,6 @@
 import pandas as pd
 import sys
 from Utils import Utilities
-from DatabaseManager import DatabaseManager
 
 class RMLParser(object):
 
@@ -22,11 +21,15 @@ class RMLParser(object):
         return properties['base']['URI'], properties['base']['prefix']
     
 
-    def TripleMap(entity, base, prefix, format):
+    def TripleMap(entity, base, prefix, data, ROOT_DIR):
         last = (len(entity.onto_properties) == 0 and len(entity.joinConditions) == 0)
         level = 8
         print ("<#" + entity.onto_class.locale + "> a rr:TriplesMap;")
-        RMLParser.LogicalSource(entity.table, format)
+        if (data['format'] != 'database'):
+            dir =  ROOT_DIR + "/Inputs/" + data['folder']
+        else:
+            dir = ""
+        RMLParser.LogicalSource(entity.table, data['format'], dir)
         RMLParser.SubjectMap(entity.onto_class, entity.ID, base, prefix, last)
         v = 0
         for y in entity.onto_properties:
@@ -39,17 +42,17 @@ class RMLParser(object):
             RMLParser.JoinCondition(j, last, prefix)
             v += 1
         
-    def LogicalSource(table, format):
+    def LogicalSource(table, format, dir):
         level = 8
         print (" "*level, "rml:logicalSource [")
         if (format == 'database'):
             print (" "*(2*level), "rml:source " + '"' + "<#DB_source>" + '";')
             print (" "*(2*level), "rr:tableName " + '"' + table + '";')
         elif (format == 'csv'):
-             print (" "*(2*level), "rml:source " + '"' + table + '.csv" ;')
+             print (" "*(2*level), "rml:source " + '"' + dir + table + '.csv" ;')
              print (" "*(2*level), "rml:referenceFormulation ql:CSV")
         elif (format == 'json'):
-            print (" "*(2*level), "rml:source " + '"' + table + '.json" ;')
+            print (" "*(2*level), "rml:source " + '"' + dir + table + '.json" ;')
             print (" "*(2*level), "rml:referenceFormulation ql:JSONPath ;")
             print (" "*(2*level), "rml:iterator " + '"$.' + table + '[*]"')
         print (" "*level, "];")
@@ -57,12 +60,12 @@ class RMLParser(object):
     def SubjectMap(onto_class, onto_id, base, prefix, last):
         level = 8
         try:
-            name = onto_class.locale
+            name = onto_class.qname
         except: name = onto_class
         print (" "*level, "rr:subjectMap [")
         print (" "*(2*level), "rr:template " + '"' + base + name.split(':').pop() + '/{' + onto_id +'}' + '";')
         print (" "*(2*level), "rr:termType " + 'rr:IRI;')
-        print (" "*(2*level), "rr:class " + prefix + ":" + name)
+        print (" "*(2*level), "rr:class " + onto_class.qname)
         endpoint = ";"
         if (last == True):
             endpoint = "."
@@ -72,10 +75,10 @@ class RMLParser(object):
         level = 8
         print (" "*level, "rr:predicateObjectMap [")
         try:
-            print (" "*(2*level), "rr:predicate " + prefix + ":" + property.locale + ";")
+            print (" "*(2*level), "rr:predicate "  + property.qname + ";")
         except:
             print (" "*(2*level), "rr:predicate " + property + ";")
-        print (" "*(2*level), "rr:objectMap " + '[ rr:reference ' + '"' + column + '"; ' + "rr:datatype " + Utilities.infereType(values) + "];")
+        print (" "*(2*level), "rr:objectMap " + '[ rml:reference ' + '"' + column + '"; ' + "rr:datatype " + Utilities.infereType(values) + "];")
         endpoint = ";"
         if (last == True):
             endpoint = "."
@@ -86,7 +89,7 @@ class RMLParser(object):
         print (" "*level, "rr:predicateObjectMap [")
         print (" "*(2*level), "rr:predicateMap " + '[')
         print (" "*(3*level), "a rr:PredicateMap;")
-        print (" "*(3*level), "rr:constant " + prefix + ":" +joinCondition[0][0].locale + ';')
+        print (" "*(3*level), "rr:constant "  +joinCondition[0][0].qname + ';')
         print (" "*(2*level), '];')
         print (" "*(2*level), "rr:objectMap " + '[')
         print (" "*(3*level), "a rr:RefObjectMap;")
@@ -115,6 +118,6 @@ class RMLParser(object):
             RMLParser.writePrefixes(ROOT_DIR + "/outputs/" + output, data, ontology.namespaces)
             print ('@base <' + base + "> .")
             for x in rmlEntities:
-                RMLParser.TripleMap(x, base, prefix, data['Data']['format'])
+                RMLParser.TripleMap(x, base, prefix, data['Data'], ROOT_DIR)
             sys.stdout = original_stdout
             fw.close()
