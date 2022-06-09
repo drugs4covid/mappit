@@ -232,7 +232,7 @@ class Utilities:
 
     #By using the LevenshteinDistance, the id of the class given all the columns is detected. 
     def getClassIDTerm(onto_class, columns):
-        dis = 10
+        dis = 100
         term = ""
         for x in columns:
             name = Utilities.replace(x)

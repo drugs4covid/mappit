@@ -45,11 +45,11 @@ def loadEquivalences(data):
 def main():
     
     ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-    data = loadProperties(ROOT_DIR + '/properties/properties-D4C.json')
+    data = loadProperties(ROOT_DIR + '/properties/properties-cmt_structured.json')
 
     ontoManager = OntologyManager(ROOT_DIR, data['main_ontology'])
 
-    for x in ontoManager.onto_properties:
+    for x in ontoManager.onto_classes:
         print(x.bestLabel())
 
     equivalences = loadEquivalences(data)

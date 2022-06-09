@@ -25,9 +25,9 @@ class R2RMLParser(object):
         last = (len(entity.onto_properties) == 0 and len(entity.joinConditions) == 0)
         level = 8
         if (not entity.JCFromTable):
-            print ("<#" + entity.onto_class.bestLabel() + ">")
+            print ("<#" + entity.onto_class.locale + ">")
         else:
-            print ("<#" + entity.joinConditions[0][0][0].bestLabel() + ">")
+            print ("<#" + entity.joinConditions[0][0][0].locale + ">")
         R2RMLParser.LogicalTable(entity.table)
         R2RMLParser.SubjectMap(entity.onto_class, entity.ID, base, last)
         v = 0

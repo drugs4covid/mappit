@@ -21,15 +21,15 @@ class RMLEntityFromOntology(object):
             onto_class = []
             joinConditions = []
             dis = 100
-            totalDisFromProp = 100
+            totalDisFromProp = 0
             name = ""
             tableSelected = ""
             
             for x in range(0, len(tables)):
                 #Gets columns for a given table
                 columns = db.get_table_columns(tables[x])
-                name, dis, auxProperties, auxObjectProperties, totalDisProperties, changed = correspondenceClass(tables[x], columns, y, dis, name, classesDict, db, disMethod, equivalences)
-                if (changed and totalDisProperties <= totalDisFromProp):
+                name, dis, auxProperties, auxObjectProperties, totalDisProperties, changed = correspondenceClass(tables[x], columns, clasNames, dis, name, classesDict, db, disMethod, equivalences)
+                if (changed and totalDisProperties >= totalDisFromProp):
                     totalDisFromProp = totalDisProperties
                     onto_class = y
                     tableSelected = tables[x]
@@ -42,15 +42,15 @@ class RMLEntityFromOntology(object):
                 id = Utilities.getClassIDTerm(y, db.get_table_columns(tableSelected))
                 if(id == ''):
                     id = name
-                tableJoinConditions = getNotFoundJoinConditions(y, tables, joinConditions, disMethod, db, equivalences)
+                #tableJoinConditions = getNotFoundJoinConditions(y, tables, joinConditions, disMethod, db, equivalences)
                 entity = RMLEntity(tableSelected, onto_class, id, joinConditions, onto_properties)
                 #After creating the entity, it is checked if it has any joinConditions given the prooperties assigned to  the entity
                 #entity.getJoinConditions(tables, dbManager)
                 entities.append(entity)
 
-                for tjc in tableJoinConditions:
-                    entity = RMLEntity(tjc[0], tjc[1], tjc[2], tjc[3], [], True)
-                    entities.append(entity)
+                #for tjc in tableJoinConditions:
+                #    entity = RMLEntity(tjc[0], tjc[1], tjc[2], tjc[3], [], True)
+                #    entities.append(entity)
         
 
         for x in list(classesDict):
@@ -60,41 +60,46 @@ class RMLEntityFromOntology(object):
         return entities
 
     #Given the ontology classes, it is checked the one whose name is the most similar to the table assigned to the entity
-def correspondenceClass(table, columns, oc_class, lastDis, term, classesDict, db, disMethod, equivalences):
-    term1 = Utilities.replace(table)
-
-    label = oc_class.bestLabel()
-    locale = oc_class.locale
-
-    if (label in equivalences.keys()):
-        term2 = equivalences[label]
-    elif (locale in equivalences.keys()):
-        term2 = equivalences[locale]
-    else: term2 = label
-
+def correspondenceClass(table, columns, oc_classes, lastDis, term, classesDict, db, disMethod, equivalences):
 
     changed = False
-    dis1 = Utilities.distance(term1, term2)
-    bestCol = ""
-    dis2 =  100
-    
-    bestCol, dis2 = compareColumns(columns, term2, disMethod, dis2, classesDict, oc_class)
+    selectedClass = []
+    for c in oc_classes:
+        term1 = Utilities.replace(table)
 
-    prop = []
-    objProp = []
-    totalDis = 100
+        label = c.bestLabel()
+        locale = c.locale
 
-    if (dis2 < dis1 and dis2 < lastDis):
-        term = bestCol
-        lastDis = dis2
-        changed = True
-    elif (dis1 < lastDis and table not in classesDict.values()): 
-        term = table
-        lastDis = dis1
-        changed = True
+        if (label in equivalences.keys()):
+            term2 = equivalences[label]
+        elif (locale in equivalences.keys()):
+            term2 = equivalences[locale]
+        else: term2 = locale
+
+
+
+        dis1 = Utilities.distance(term1, term2)
+        bestCol = ""
+        dis2 =  100
+        
+        #bestCol, dis2 = compareColumns(columns, term2, disMethod, dis2, classesDict, oc_class)
+
+        prop = []
+        objProp = []
+        totalDis = 100
+
+        #if (dis2 < dis1 and dis2 < lastDis):
+        #    term = bestCol
+        #    lastDis = dis2
+        #    changed = True
+        if (dis1 <= lastDis): 
+            term = table
+            lastDis = dis1
+            changed = True
+            selectedClass = c
 
     if(changed):
-        prop, objProp, totalDis = getProperties(columns, oc_class, db, table, disMethod)
+        prop, objProp, totalDis = getProperties(columns, selectedClass, db, term, disMethod)
         
     return term, lastDis, prop, objProp, totalDis, changed
 
@@ -148,7 +153,7 @@ def getProperties(columns, oc_class, db, table, disMethod):
             if(correspondenceRange != []):
                 objectProperties.append(correspondenceRange)
 
-        totalDis += auxDis
+    totalDis = len(properties) + len(objectProperties)
     return properties, objectProperties, totalDis
 
 def getNotFoundJoinConditions(o_class, tables, joinconditions, disMethod, db, equivalences):

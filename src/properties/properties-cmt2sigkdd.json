@@ -1,19 +1,19 @@
 {
-	"main_ontology" : "cmtrenamed/ontology.ttl",
+	"main_ontology" : "sigkdd/ontology.ttl",
 	"distance_method" : "levehnstein",
 	"compare_system": "ontology",
 	"MapLanguage" : "R2RML",
 	"Data" : {
 		"format" : "database",
 		"type" : "postgres",
-		"database" : "cmt_renamed",
+		"database" : "sigkdd2",
 		"user" : "postgres",
 		"password" : "docker",
 		"port" : "5432",
 		"host" : "127.0.0.1"
 	},
 
-	"output" : "cmt2sigkdd.ttl",
+	"output" : "cmtsigkdd.ttl",
 
 	"list_prefixes": [
 		{
