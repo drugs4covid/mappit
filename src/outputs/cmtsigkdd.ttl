@@ -34,145 +34,211 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @base <http://sigkdd#> .
 <#Abstract>
-         rr:logicalTable [ rr:tableName "main_offices"];
+         rr:logicalTable [ rr:tableName "documents"];
          rr:subjectMap [
                  rr:template "http://sigkdd#Abstract/{id}";
                  rr:class sigkdd:Abstract
          ].
 <#Author>
-         rr:logicalTable [ rr:tableName "person_paper"];
+         rr:logicalTable [ rr:tableName "persons"];
          rr:subjectMap [
-                 rr:template "http://sigkdd#Author/{author}";
+                 rr:template "http://sigkdd#Author/{id}";
                  rr:class sigkdd:Author
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:E-mail;
+                 rr:objectMap [ rr:column "email"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Name;
+                 rr:objectMap [ rr:column "name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Nation;
+                 rr:objectMap [ rr:column "nation"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:pay;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Registration_fee>;
+                         rr:joinCondition [
+                                 rr:child "type";
+                                 rr:parent "id";
+                         ];
+                 ];
+         ].
+<#Author_of_paper>
+         rr:logicalTable [ rr:tableName "persons"];
+         rr:subjectMap [
+                 rr:template "http://sigkdd#Author_of_paper/{id}";
+                 rr:class sigkdd:Author_of_paper
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:E-mail;
+                 rr:objectMap [ rr:column "email"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Name;
+                 rr:objectMap [ rr:column "name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Nation;
+                 rr:objectMap [ rr:column "nation"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:pay;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Registration_fee>;
+                         rr:joinCondition [
+                                 rr:child "type";
+                                 rr:parent "id";
+                         ];
+                 ];
          ].
 <#Author_of_paper_student>
          rr:logicalTable [ rr:tableName "persons"];
          rr:subjectMap [
                  rr:template "http://sigkdd#Author_of_paper_student/{id}";
                  rr:class sigkdd:Author_of_paper_student
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:E-mail;
+                 rr:objectMap [ rr:column "email"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Name;
+                 rr:objectMap [ rr:column "name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Nation;
+                 rr:objectMap [ rr:column "nation"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:pay;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Registration_fee>;
+                         rr:joinCondition [
+                                 rr:child "type";
+                                 rr:parent "id";
+                         ];
+                 ];
          ].
 <#Award>
-         rr:logicalTable [ rr:tableName "best_paper_awards_committs"];
+         rr:logicalTable [ rr:tableName "papers"];
          rr:subjectMap [
                  rr:template "http://sigkdd#Award/{id}";
                  rr:class sigkdd:Award
-         ];
-         rr:predicateObjectMap [
-                 rr:predicate sigkdd:awarded_by;
-                 rr:objectMap [
-                         rr:parentTriplesMap <#Best_Paper_Awards_Committee>;
-                         rr:joinCondition [
-                                 rr:child "award";
-                                 rr:parent "id";
-                         ];
-                 ];
+         ].
+<#Best_Applications_Paper_Award>
+         rr:logicalTable [ rr:tableName "papers"];
+         rr:subjectMap [
+                 rr:template "http://sigkdd#Best_Applications_Paper_Award/{id}";
+                 rr:class sigkdd:Best_Applications_Paper_Award
          ].
 <#Best_Paper_Awards_Committee>
-         rr:logicalTable [ rr:tableName "best_paper_awards_committs"];
+         rr:logicalTable [ rr:tableName "documents"];
          rr:subjectMap [
                  rr:template "http://sigkdd#Best_Paper_Awards_Committee/{id}";
                  rr:class sigkdd:Best_Paper_Awards_Committee
-         ];
-         rr:predicateObjectMap [
-                 rr:predicate sigkdd:award;
-                 rr:objectMap [
-                         rr:parentTriplesMap <#Award>;
-                         rr:joinCondition [
-                                 rr:child "award";
-                                 rr:parent "id";
-                         ];
-                 ];
          ].
 <#Best_Research_Paper_Award>
-         rr:logicalTable [ rr:tableName "best_research_paper_awards"];
+         rr:logicalTable [ rr:tableName "papers"];
          rr:subjectMap [
                  rr:template "http://sigkdd#Best_Research_Paper_Award/{id}";
                  rr:class sigkdd:Best_Research_Paper_Award
          ].
+<#Best_Student_Paper_Award>
+         rr:logicalTable [ rr:tableName "papers"];
+         rr:subjectMap [
+                 rr:template "http://sigkdd#Best_Student_Paper_Award/{id}";
+                 rr:class sigkdd:Best_Student_Paper_Award
+         ].
+<#Best_Student_Paper_Supporter>
+         rr:logicalTable [ rr:tableName "sponzor_fees"];
+         rr:subjectMap [
+                 rr:template "http://sigkdd#Best_Student_Paper_Supporter/{id}";
+                 rr:class sigkdd:Best_Student_Paper_Supporter
+         ].
+<#Bronze_Supporter>
+         rr:logicalTable [ rr:tableName "sponzor_fees"];
+         rr:subjectMap [
+                 rr:template "http://sigkdd#Bronze_Supporter/{id}";
+                 rr:class sigkdd:Bronze_Supporter
+         ].
 <#Committee>
-         rr:logicalTable [ rr:tableName "best_paper_awards_committs"];
+         rr:logicalTable [ rr:tableName "documents"];
          rr:subjectMap [
                  rr:template "http://sigkdd#Committee/{id}";
                  rr:class sigkdd:Committee
-         ];
-         rr:predicateObjectMap [
-                 rr:predicate sigkdd:isCommitteeOf;
-                 rr:objectMap [
-                         rr:parentTriplesMap <#Conference>;
-                         rr:joinCondition [
-                                 rr:child "committee";
-                                 rr:parent "id";
-                         ];
-                 ];
-         ].
-<#hasCommittee>
-         rr:logicalTable [ rr:tableName "program_committees"];
-         rr:subjectMap [
-                 rr:template "http://sigkdd#Conference/{committee}";
-                 rr:class sigkdd:Conference
-         ];
-         rr:predicateObjectMap [
-                 rr:predicate sigkdd:hasCommittee;
-                 rr:objectMap [
-                         rr:parentTriplesMap <#Committee>;
-                         rr:joinCondition [
-                                 rr:child "committee";
-                                 rr:parent "";
-                         ];
-                 ];
          ].
 <#Conference_hall>
-         rr:logicalTable [ rr:tableName "mark_conflict_interests"];
+         rr:logicalTable [ rr:tableName "papers"];
          rr:subjectMap [
-                 rr:template "http://sigkdd#Conference_hall/{conference_member}";
+                 rr:template "http://sigkdd#Conference_hall/{id}";
                  rr:class sigkdd:Conference_hall
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate geo:lat;
+                 rr:objectMap [ rr:column "type"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate geo:long;
+                 rr:objectMap [ rr:column "type"];
          ].
 <#Deadline>
-         rr:logicalTable [ rr:tableName "document_deadline_abstract_submiss"];
+         rr:logicalTable [ rr:tableName "e_mails"];
          rr:subjectMap [
-                 rr:template "http://sigkdd#Deadline/{deadline}";
+                 rr:template "http://sigkdd#Deadline/{e_mails}";
                  rr:class sigkdd:Deadline
          ];
          rr:predicateObjectMap [
                  rr:predicate sigkdd:Date;
-                 rr:objectMap [ rr:column "document"];
+                 rr:objectMap [ rr:column "value"];
          ].
 <#Deadline_Abstract_Submission>
-         rr:logicalTable [ rr:tableName "deadline_abstract_submiss"];
-         rr:subjectMap [
-                 rr:template "http://sigkdd#Deadline_Abstract_Submission/{id}";
-                 rr:class sigkdd:Deadline_Abstract_Submission
-         ].
-<#Document>
-         rr:logicalTable [ rr:tableName "document_deadline_abstract_submiss"];
-         rr:subjectMap [
-                 rr:template "http://sigkdd#Document/{document}";
-                 rr:class sigkdd:Document
-         ].
-<#submit_until>
          rr:logicalTable [ rr:tableName "e_mails"];
          rr:subjectMap [
-                 rr:template "http://sigkdd#Document/{value}";
-                 rr:class sigkdd:Document
+                 rr:template "http://sigkdd#Deadline_Abstract_Submission/{e_mails}";
+                 rr:class sigkdd:Deadline_Abstract_Submission
          ];
          rr:predicateObjectMap [
-                 rr:predicate sigkdd:submit_until;
-                 rr:objectMap [
-                         rr:parentTriplesMap <#Deadline>;
-                         rr:joinCondition [
-                                 rr:child "value";
-                                 rr:parent "deadline";
-                         ];
-                 ];
+                 rr:predicate sigkdd:Date;
+                 rr:objectMap [ rr:column "value"];
+         ].
+<#Deadline_Author_notification>
+         rr:logicalTable [ rr:tableName "e_mails"];
+         rr:subjectMap [
+                 rr:template "http://sigkdd#Deadline_Author_notification/{e_mails}";
+                 rr:class sigkdd:Deadline_Author_notification
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Date;
+                 rr:objectMap [ rr:column "value"];
+         ].
+<#Deadline_Paper_Submission>
+         rr:logicalTable [ rr:tableName "e_mails"];
+         rr:subjectMap [
+                 rr:template "http://sigkdd#Deadline_Paper_Submission/{e_mails}";
+                 rr:class sigkdd:Deadline_Paper_Submission
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Date;
+                 rr:objectMap [ rr:column "value"];
+         ].
+<#Document>
+         rr:logicalTable [ rr:tableName "documents"];
+         rr:subjectMap [
+                 rr:template "http://sigkdd#Document/{id}";
+                 rr:class sigkdd:Document
          ].
 <#Exhibitor>
-         rr:logicalTable [ rr:tableName "program_committee_chair_review"];
+         rr:logicalTable [ rr:tableName "sponzor_fees"];
          rr:subjectMap [
-                 rr:template "http://sigkdd#Exhibitor/{pid}";
+                 rr:template "http://sigkdd#Exhibitor/{id}";
                  rr:class sigkdd:Exhibitor
          ].
 <#Fee>
-         rr:logicalTable [ rr:tableName "registration_fees"];
+         rr:logicalTable [ rr:tableName "sponzor_fees"];
          rr:subjectMap [
                  rr:template "http://sigkdd#Fee/{id}";
                  rr:class sigkdd:Fee
@@ -185,29 +251,143 @@
                  rr:predicate sigkdd:Price;
                  rr:objectMap [ rr:column "price"];
          ].
-<#Hotel>
-         rr:logicalTable [ rr:tableName "program_committee_chair_review"];
+<#General_Chair>
+         rr:logicalTable [ rr:tableName "persons"];
          rr:subjectMap [
-                 rr:template "http://sigkdd#Hotel/{pid}";
+                 rr:template "http://sigkdd#General_Chair/{id}";
+                 rr:class sigkdd:General_Chair
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:E-mail;
+                 rr:objectMap [ rr:column "email"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Name;
+                 rr:objectMap [ rr:column "name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Nation;
+                 rr:objectMap [ rr:column "nation"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:pay;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Registration_fee>;
+                         rr:joinCondition [
+                                 rr:child "type";
+                                 rr:parent "id";
+                         ];
+                 ];
+         ].
+<#Gold_Supporter>
+         rr:logicalTable [ rr:tableName "sponzor_fees"];
+         rr:subjectMap [
+                 rr:template "http://sigkdd#Gold_Supporter/{id}";
+                 rr:class sigkdd:Gold_Supporter
+         ].
+<#Hotel>
+         rr:logicalTable [ rr:tableName "papers"];
+         rr:subjectMap [
+                 rr:template "http://sigkdd#Hotel/{id}";
                  rr:class sigkdd:Hotel
+         ].
+<#Invited_Speaker>
+         rr:logicalTable [ rr:tableName "persons"];
+         rr:subjectMap [
+                 rr:template "http://sigkdd#Invited_Speaker/{id}";
+                 rr:class sigkdd:Invited_Speaker
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:E-mail;
+                 rr:objectMap [ rr:column "email"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Name;
+                 rr:objectMap [ rr:column "name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Nation;
+                 rr:objectMap [ rr:column "nation"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:pay;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Registration_fee>;
+                         rr:joinCondition [
+                                 rr:child "type";
+                                 rr:parent "id";
+                         ];
+                 ];
          ].
 <#Listener>
          rr:logicalTable [ rr:tableName "persons"];
          rr:subjectMap [
                  rr:template "http://sigkdd#Listener/{id}";
                  rr:class sigkdd:Listener
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:E-mail;
+                 rr:objectMap [ rr:column "email"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Name;
+                 rr:objectMap [ rr:column "name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Nation;
+                 rr:objectMap [ rr:column "nation"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:pay;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Registration_fee>;
+                         rr:joinCondition [
+                                 rr:child "type";
+                                 rr:parent "id";
+                         ];
+                 ];
          ].
 <#Main_office>
-         rr:logicalTable [ rr:tableName "main_offices"];
+         rr:logicalTable [ rr:tableName "e_mails"];
          rr:subjectMap [
-                 rr:template "http://sigkdd#Main_office/{id}";
+                 rr:template "http://sigkdd#Main_office/{main_offices}";
                  rr:class sigkdd:Main_office
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate geo:lat;
+                 rr:objectMap [ rr:column "person"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate geo:long;
+                 rr:objectMap [ rr:column "person"];
          ].
 <#Organizator>
          rr:logicalTable [ rr:tableName "persons"];
          rr:subjectMap [
                  rr:template "http://sigkdd#Organizator/{id}";
                  rr:class sigkdd:Organizator
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:E-mail;
+                 rr:objectMap [ rr:column "email"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Name;
+                 rr:objectMap [ rr:column "name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Nation;
+                 rr:objectMap [ rr:column "nation"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:pay;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Registration_fee>;
+                         rr:joinCondition [
+                                 rr:child "type";
+                                 rr:parent "id";
+                         ];
+                 ];
          ].
 <#Organizing_Committee>
          rr:logicalTable [ rr:tableName "organizing_committees"];
@@ -215,73 +395,219 @@
                  rr:template "http://sigkdd#Organizing_Committee/{id}";
                  rr:class sigkdd:Organizing_Committee
          ].
-<#Paper>
-         rr:logicalTable [ rr:tableName "person_paper"];
+<#Organizing_Committee_member>
+         rr:logicalTable [ rr:tableName "persons"];
          rr:subjectMap [
-                 rr:template "http://sigkdd#Paper/{paper}";
-                 rr:class sigkdd:Paper
-         ].
-<#hasReview>
-         rr:logicalTable [ rr:tableName "reviews"];
-         rr:subjectMap [
-                 rr:template "http://sigkdd#Paper/{type}";
-                 rr:class sigkdd:Paper
+                 rr:template "http://sigkdd#Organizing_Committee_member/{id}";
+                 rr:class sigkdd:Organizing_Committee_member
          ];
          rr:predicateObjectMap [
-                 rr:predicate sigkdd:hasReview;
+                 rr:predicate sigkdd:E-mail;
+                 rr:objectMap [ rr:column "email"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Name;
+                 rr:objectMap [ rr:column "name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Nation;
+                 rr:objectMap [ rr:column "nation"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:pay;
                  rr:objectMap [
-                         rr:parentTriplesMap <#Document>;
+                         rr:parentTriplesMap <#Registration_fee>;
                          rr:joinCondition [
-                                 rr:child "review";
-                                 rr:parent "document";
+                                 rr:child "type";
+                                 rr:parent "id";
+                         ];
+                 ];
+         ].
+<#Paper>
+         rr:logicalTable [ rr:tableName "papers"];
+         rr:subjectMap [
+                 rr:template "http://sigkdd#Paper/{id}";
+                 rr:class sigkdd:Paper
+         ].
+<#Person>
+         rr:logicalTable [ rr:tableName "persons"];
+         rr:subjectMap [
+                 rr:template "http://sigkdd#Person/{id}";
+                 rr:class sigkdd:Person
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:E-mail;
+                 rr:objectMap [ rr:column "email"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Name;
+                 rr:objectMap [ rr:column "name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Nation;
+                 rr:objectMap [ rr:column "nation"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:pay;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Registration_fee>;
+                         rr:joinCondition [
+                                 rr:child "type";
+                                 rr:parent "id";
                          ];
                  ];
          ].
 <#Place>
-         rr:logicalTable [ rr:tableName "main_offices"];
+         rr:logicalTable [ rr:tableName "papers"];
          rr:subjectMap [
                  rr:template "http://sigkdd#Place/{id}";
                  rr:class sigkdd:Place
          ];
          rr:predicateObjectMap [
-                 rr:predicate sigkdd:hasPostalCode;
-                 rr:objectMap [ rr:column "postal_code"];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicate sigkdd:hasStreet;
-                 rr:objectMap [ rr:column "street"];
-         ];
-         rr:predicateObjectMap [
                  rr:predicate geo:lat;
-                 rr:objectMap [ rr:column "lat"];
+                 rr:objectMap [ rr:column "type"];
          ];
          rr:predicateObjectMap [
                  rr:predicate geo:long;
-                 rr:objectMap [ rr:column "long"];
+                 rr:objectMap [ rr:column "type"];
+         ].
+<#Platinum_Supporter>
+         rr:logicalTable [ rr:tableName "sponzor_fees"];
+         rr:subjectMap [
+                 rr:template "http://sigkdd#Platinum_Supporter/{id}";
+                 rr:class sigkdd:Platinum_Supporter
          ].
 <#Program_Chair>
          rr:logicalTable [ rr:tableName "persons"];
          rr:subjectMap [
                  rr:template "http://sigkdd#Program_Chair/{id}";
                  rr:class sigkdd:Program_Chair
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:E-mail;
+                 rr:objectMap [ rr:column "email"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Name;
+                 rr:objectMap [ rr:column "name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Nation;
+                 rr:objectMap [ rr:column "nation"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:pay;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Registration_fee>;
+                         rr:joinCondition [
+                                 rr:child "type";
+                                 rr:parent "id";
+                         ];
+                 ];
          ].
 <#Program_Committee>
-         rr:logicalTable [ rr:tableName "program_committee_members"];
+         rr:logicalTable [ rr:tableName "program_committees"];
          rr:subjectMap [
-                 rr:template "http://sigkdd#Program_Committee/{program_committee}";
+                 rr:template "http://sigkdd#Program_Committee/{id}";
                  rr:class sigkdd:Program_Committee
          ].
 <#Program_Committee_member>
-         rr:logicalTable [ rr:tableName "set_max_papers"];
+         rr:logicalTable [ rr:tableName "persons"];
          rr:subjectMap [
-                 rr:template "http://sigkdd#Program_Committee_member/{program_committee_member}";
+                 rr:template "http://sigkdd#Program_Committee_member/{id}";
                  rr:class sigkdd:Program_Committee_member
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:E-mail;
+                 rr:objectMap [ rr:column "email"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Name;
+                 rr:objectMap [ rr:column "name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Nation;
+                 rr:objectMap [ rr:column "nation"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:pay;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Registration_fee>;
+                         rr:joinCondition [
+                                 rr:child "type";
+                                 rr:parent "id";
+                         ];
+                 ];
+         ].
+<#Registration_Non-Member>
+         rr:logicalTable [ rr:tableName "sponzor_fees"];
+         rr:subjectMap [
+                 rr:template "http://sigkdd#Registration_Non-Member/{id}";
+                 rr:class sigkdd:Registration_Non-Member
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Currency;
+                 rr:objectMap [ rr:column "currency"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Price;
+                 rr:objectMap [ rr:column "price"];
+         ].
+<#Registration_SIGKDD_Member>
+         rr:logicalTable [ rr:tableName "sponzor_fees"];
+         rr:subjectMap [
+                 rr:template "http://sigkdd#Registration_SIGKDD_Member/{id}";
+                 rr:class sigkdd:Registration_SIGKDD_Member
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Currency;
+                 rr:objectMap [ rr:column "currency"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Price;
+                 rr:objectMap [ rr:column "price"];
+         ].
+<#Registration_SIGMOD_Member>
+         rr:logicalTable [ rr:tableName "sponzor_fees"];
+         rr:subjectMap [
+                 rr:template "http://sigkdd#Registration_SIGMOD_Member/{id}";
+                 rr:class sigkdd:Registration_SIGMOD_Member
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Currency;
+                 rr:objectMap [ rr:column "currency"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Price;
+                 rr:objectMap [ rr:column "price"];
          ].
 <#Registration_Student>
-         rr:logicalTable [ rr:tableName "registration_fees"];
+         rr:logicalTable [ rr:tableName "sponzor_fees"];
          rr:subjectMap [
                  rr:template "http://sigkdd#Registration_Student/{id}";
                  rr:class sigkdd:Registration_Student
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Currency;
+                 rr:objectMap [ rr:column "currency"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Price;
+                 rr:objectMap [ rr:column "price"];
+         ].
+<#Registration_fee>
+         rr:logicalTable [ rr:tableName "sponzor_fees"];
+         rr:subjectMap [
+                 rr:template "http://sigkdd#Registration_fee/{id}";
+                 rr:class sigkdd:Registration_fee
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Currency;
+                 rr:objectMap [ rr:column "currency"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Price;
+                 rr:objectMap [ rr:column "price"];
          ].
 <#Review>
          rr:logicalTable [ rr:tableName "reviews"];
@@ -297,37 +623,45 @@
                  rr:predicate sigkdd:hasText;
                  rr:objectMap [ rr:column "text"];
          ].
-<#Speaker>
-         rr:logicalTable [ rr:tableName "person_paper"];
+<#Silver_Supporter>
+         rr:logicalTable [ rr:tableName "sponzor_fees"];
          rr:subjectMap [
-                 rr:template "http://sigkdd#Speaker/{paper}";
-                 rr:class sigkdd:Speaker
+                 rr:template "http://sigkdd#Silver_Supporter/{id}";
+                 rr:class sigkdd:Silver_Supporter
          ].
-<#presentation>
-         rr:logicalTable [ rr:tableName "presentation"];
+<#Speaker>
+         rr:logicalTable [ rr:tableName "persons"];
          rr:subjectMap [
-                 rr:template "http://sigkdd#Speaker/{pid}";
+                 rr:template "http://sigkdd#Speaker/{id}";
                  rr:class sigkdd:Speaker
          ];
          rr:predicateObjectMap [
-                 rr:predicate sigkdd:presentation;
+                 rr:predicate sigkdd:E-mail;
+                 rr:objectMap [ rr:column "email"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Name;
+                 rr:objectMap [ rr:column "name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Nation;
+                 rr:objectMap [ rr:column "nation"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:pay;
                  rr:objectMap [
-                         rr:parentTriplesMap <#Document>;
+                         rr:parentTriplesMap <#Registration_fee>;
                          rr:joinCondition [
-                                 rr:child "did";
-                                 rr:parent "document";
+                                 rr:child "type";
+                                 rr:parent "id";
                          ];
                  ];
          ].
 <#Sponzor>
-         rr:logicalTable [ rr:tableName "persons"];
+         rr:logicalTable [ rr:tableName "sponzor_fees"];
          rr:subjectMap [
                  rr:template "http://sigkdd#Sponzor/{id}";
                  rr:class sigkdd:Sponzor
-         ];
-         rr:predicateObjectMap [
-                 rr:predicate sigkdd:Name_of_sponsor;
-                 rr:objectMap [ rr:column "name_sponsor"];
          ].
 <#Sponzor_fee>
          rr:logicalTable [ rr:tableName "sponzor_fees"];
@@ -336,8 +670,30 @@
                  rr:class sigkdd:Sponzor_fee
          ].
 <#Webmaster>
-         rr:logicalTable [ rr:tableName "program_committee_chair_review"];
+         rr:logicalTable [ rr:tableName "persons"];
          rr:subjectMap [
-                 rr:template "http://sigkdd#Webmaster/{pid}";
+                 rr:template "http://sigkdd#Webmaster/{id}";
                  rr:class sigkdd:Webmaster
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:E-mail;
+                 rr:objectMap [ rr:column "email"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Name;
+                 rr:objectMap [ rr:column "name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:Nation;
+                 rr:objectMap [ rr:column "nation"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate sigkdd:pay;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Registration_fee>;
+                         rr:joinCondition [
+                                 rr:child "type";
+                                 rr:parent "id";
+                         ];
+                 ];
          ].

@@ -42,15 +42,15 @@ class RMLEntityFromOntology(object):
                 id = Utilities.getClassIDTerm(y, db.get_table_columns(tableSelected))
                 if(id == ''):
                     id = name
-                #tableJoinConditions = getNotFoundJoinConditions(y, tables, joinConditions, disMethod, db, equivalences)
+                tableJoinConditions = getNotFoundJoinConditions(y, tables, joinConditions, disMethod, db, equivalences)
                 entity = RMLEntity(tableSelected, onto_class, id, joinConditions, onto_properties)
                 #After creating the entity, it is checked if it has any joinConditions given the prooperties assigned to  the entity
                 #entity.getJoinConditions(tables, dbManager)
                 entities.append(entity)
 
-                #for tjc in tableJoinConditions:
-                #    entity = RMLEntity(tjc[0], tjc[1], tjc[2], tjc[3], [], True)
-                #    entities.append(entity)
+                for tjc in tableJoinConditions:
+                    entity = RMLEntity(tjc[0], tjc[1], tjc[2], tjc[3], [], True)
+                    entities.append(entity)
         
 
         for x in list(classesDict):
@@ -63,43 +63,49 @@ class RMLEntityFromOntology(object):
 def correspondenceClass(table, columns, oc_classes, lastDis, term, classesDict, db, disMethod, equivalences):
 
     changed = False
-    selectedClass = []
-    for c in oc_classes:
-        term1 = Utilities.replace(table)
+    term1 = Utilities.replace(table)
 
-        label = c.bestLabel()
-        locale = c.locale
+    label = oc_classes[-1].bestLabel()
+    locale = oc_classes[-1].locale
 
-        if (label in equivalences.keys()):
-            term2 = equivalences[label]
-        elif (locale in equivalences.keys()):
-            term2 = equivalences[locale]
-        else: term2 = locale
+    if (label in equivalences.keys()):
+        term2 = equivalences[label]
+    elif (locale in equivalences.keys()):
+        term2 = equivalences[locale]
+    else: term2 = locale
 
 
 
-        dis1 = Utilities.distance(term1, term2)
-        bestCol = ""
-        dis2 =  100
-        
-        #bestCol, dis2 = compareColumns(columns, term2, disMethod, dis2, classesDict, oc_class)
+    dis1 = Utilities.distance(term1, term2)
+    bestCol = ""
+    dis2 =  100
+    
+    #bestCol, dis2 = compareColumns(columns, term2, disMethod, dis2, classesDict, oc_class)
 
-        prop = []
-        objProp = []
-        totalDis = 100
+    prop = []
+    objProp = []
+    totalDis = 100
 
-        #if (dis2 < dis1 and dis2 < lastDis):
-        #    term = bestCol
-        #    lastDis = dis2
-        #    changed = True
-        if (dis1 <= lastDis): 
-            term = table
-            lastDis = dis1
-            changed = True
-            selectedClass = c
+    #if (dis2 < dis1 and dis2 < lastDis):
+    #    term = bestCol
+    #    lastDis = dis2
+    #    changed = True
+    if (dis1 <= lastDis): 
+        term = table
+        lastDis = dis1
+        changed = True
 
     if(changed):
-        prop, objProp, totalDis = getProperties(columns, selectedClass, db, term, disMethod)
+        objProp = []
+        prop = []
+        totalDis = 0
+        for c in oc_classes:
+            auxProp, auxObjProp, auxTotalDis = getProperties(columns, c, db, term, disMethod)
+            if(auxTotalDis > totalDis):
+                objProp = auxObjProp
+                prop = auxProp
+                totalDis = auxTotalDis
+
         
     return term, lastDis, prop, objProp, totalDis, changed
 
@@ -227,9 +233,9 @@ def getNotFoundJoinConditions(o_class, tables, joinconditions, disMethod, db, eq
 
 
 def createJoinConditions(prop, propertiesData, disMethod):
+    correspondenceRange = []
     for r in prop.ranges:
         rangeDis = 30
-        correspondenceRange = []
         for s in propertiesData:
             if (s[0].rdftype_qname == 'owl:InverseFunctionalProperty'):
                 correspondenceRange = [s, r.locale, ""]
@@ -269,7 +275,7 @@ def getParents(c):
     totalPar = []
     actPar = c._parents
     while(actPar != []):
-        totalPar.append(actPar[0])
+        totalPar.append(actPar[-1])
         actPar = actPar[0]._parents
     return totalPar
 
