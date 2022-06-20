@@ -1,0 +1,32 @@
+{
+	"main_ontology" : "cmt_mixed/ontology.ttl",
+	"distance_method" : "levehnstein",
+	"compare_system": "ontology",
+	"MapLanguage" : "R2RML",
+	"Data" : {
+		"format" : "database",
+		"type" : "postgres",
+		"database" : "mixed",
+		"user" : "postgres",
+		"password" : "docker",
+		"port" : "5432",
+		"host" : "127.0.0.1"
+	},
+
+	"output" : "cmt_mixed.ttl",
+
+	"list_prefixes": [
+		{
+			"prefix": "rr",
+			"URI": "http://www.w3.org/ns/r2rml#"
+		},
+		{
+			"prefix": "rml",
+			"URI": "http://semweb.mmlab.be/ns/rml#"
+		}
+	],
+	"base" : {
+		"prefix": "cmt",
+		"URI": "http://cmt#"
+	}
+}

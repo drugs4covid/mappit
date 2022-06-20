@@ -37,92 +37,154 @@
 @prefix xsp: <http://www.owl-ontologies.com/2005/08/07/xsp.owl#> .
 @base <http://cmt#> .
 <#Acceptance>
-         rr:logicalTable [ rr:tableName "acceptance"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "decisions";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#Acceptance/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Acceptance
          ].
 <#Administrator>
-         rr:logicalTable [ rr:tableName "Administrator"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "administrators";
+         ];
          rr:subjectMap [
-                 rr:template "http://cmt#Administrator/{ID}";
+                 rr:template "http://cmt#Administrator/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Administrator
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:acceptPaper;
+                 rr:predicate cmt:email;
+                 rr:objectMap [ rml:reference "id"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:acceptPaper;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Paper>;
                          rr:joinCondition [
-                                 rr:child "acceptPaper";
+                                 rr:child "accept_paper";
                                  rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:addProgramCommitteeMember;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:addProgramCommitteeMember;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#ProgramCommitteeMember>;
                          rr:joinCondition [
-                                 rr:child "ID";
+                                 rr:child "id";
                                  rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:rejectPaper;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:rejectPaper;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Paper>;
                          rr:joinCondition [
-                                 rr:child "ID";
-                                 rr:parent "id";
+                                 rr:child "id";
+                                 rr:parent "rejected";
                          ];
                  ];
          ].
 <#assignReviewer>
-         rr:logicalTable [ rr:tableName "assignreviewer"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "paper_reviewer";
+         ];
          rr:subjectMap [
-                 rr:template "http://cmt#Administrator/{administrator}";
+                 rr:template "http://cmt#Administrator/{pid}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Administrator
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:assignReviewer;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:assignReviewer;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#User>;
                          rr:joinCondition [
-                                 rr:child "reviewer";
+                                 rr:child "rid";
                                  rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:assignReviewer;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:assignReviewer;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Person>;
                          rr:joinCondition [
-                                 rr:child "reviewer";
-                                 rr:parent "ID";
+                                 rr:child "rid";
+                                 rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:assignReviewer;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:assignReviewer;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#Meta-Reviewer>;
+                         rr:joinCondition [
+                                 rr:child "rid";
+                                 rr:parent "id";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:assignReviewer;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Reviewer>;
                          rr:joinCondition [
-                                 rr:child "reviewer";
+                                 rr:child "rid";
                                  rr:parent "id";
                          ];
                  ];
          ].
 <#enableVirtualMeeting>
-         rr:logicalTable [ rr:tableName "enable_virtual_meeting"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "enable_virtual_meeting";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#Administrator/{aid}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Administrator
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:enableVirtualMeeting;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:enableVirtualMeeting;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Conference>;
                          rr:joinCondition [
                                  rr:child "cid";
@@ -131,14 +193,22 @@
                  ];
          ].
 <#enterReviewCriteria>
-         rr:logicalTable [ rr:tableName "enter_review_criteria"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "enter_review_criteria";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#Administrator/{aid}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Administrator
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:enterReviewCriteria;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:enterReviewCriteria;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Conference>;
                          rr:joinCondition [
                                  rr:child "cid";
@@ -147,14 +217,22 @@
                  ];
          ].
 <#finalizePaperAssignment>
-         rr:logicalTable [ rr:tableName "finalize_paper_assignment"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "finalize_paper_assignment";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#Administrator/{aid}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Administrator
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:finalizePaperAssignment;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:finalizePaperAssignment;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Conference>;
                          rr:joinCondition [
                                  rr:child "cid";
@@ -162,51 +240,65 @@
                          ];
                  ];
          ].
-<#printHardcopyMailingManifests>
-         rr:logicalTable [ rr:tableName "hardcopymailingmanifestsp"];
+<#setMaxPapers>
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "set_max_papers";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#Administrator/{administrator}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Administrator
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:printHardcopyMailingManifests;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:setMaxPapers;
+                 ];
                  rr:objectMap [
-                         rr:parentTriplesMap <#Conference>;
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#Person>;
                          rr:joinCondition [
-                                 rr:child "conference";
+                                 rr:child "program_committee_member";
                                  rr:parent "id";
                          ];
                  ];
-         ].
-<#setMaxPapers>
-         rr:logicalTable [ rr:tableName "set_max_papers"];
-         rr:subjectMap [
-                 rr:template "http://cmt#Administrator/{administrator}";
-                 rr:class cmt:Administrator
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:setMaxPapers;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:setMaxPapers;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Person>;
                          rr:joinCondition [
                                  rr:child "program_committee_member";
-                                 rr:parent "ID";
+                                 rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:setMaxPapers;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:setMaxPapers;
+                 ];
                  rr:objectMap [
-                         rr:parentTriplesMap <#Person>;
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#ProgramCommitteeChair>;
                          rr:joinCondition [
                                  rr:child "program_committee_member";
-                                 rr:parent "ID";
+                                 rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:setMaxPapers;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:setMaxPapers;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#ProgramCommitteeMember>;
                          rr:joinCondition [
                                  rr:child "program_committee_member";
@@ -214,61 +306,65 @@
                          ];
                  ];
          ].
-<#AssociatedChair>
-         rr:logicalTable [ rr:tableName "associated_chairs"];
+<#Associated Chair>
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "persons";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#AssociatedChair/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:AssociatedChair
          ];
          rr:predicateObjectMap [
                  rr:predicate cmt:email;
-                 rr:objectMap [ rr:column "id"];
+                 rr:objectMap [ rml:reference "email"; rr:datatype xsd:string];
          ].
 <#Author>
-         rr:logicalTable [ rr:tableName "authors"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "authors";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#Author/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Author
          ];
          rr:predicateObjectMap [
                  rr:predicate cmt:email;
-                 rr:objectMap [ rr:column "id"];
-         ].
-<#writePaper>
-         rr:logicalTable [ rr:tableName "cowritepaper"];
-         rr:subjectMap [
-                 rr:template "http://cmt#Author/{coauthor}";
-                 rr:class cmt:Author
+                 rr:objectMap [ rml:reference "id"; rr:datatype xsd:integer];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:writePaper;
-                 rr:objectMap [
-                         rr:parentTriplesMap <#Document>;
-                         rr:joinCondition [
-                                 rr:child "paper";
-                                 rr:parent "id";
-                         ];
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:writePaper;
                  ];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicate cmt:writePaper;
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Paper>;
                          rr:joinCondition [
-                                 rr:child "paper";
-                                 rr:parent "id";
+                                 rr:child "id";
+                                 rr:parent "author";
                          ];
                  ];
          ].
 <#submitPaper>
-         rr:logicalTable [ rr:tableName "submitpaper"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "co_write_paper";
+         ];
          rr:subjectMap [
-                 rr:template "http://cmt#Author/{author}";
+                 rr:template "http://cmt#Author/{co_author}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Author
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:submitPaper;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:submitPaper;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Document>;
                          rr:joinCondition [
                                  rr:child "paper";
@@ -277,8 +373,26 @@
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:submitPaper;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:submitPaper;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#PaperFullVersion>;
+                         rr:joinCondition [
+                                 rr:child "paper";
+                                 rr:parent "id";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:submitPaper;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Paper>;
                          rr:joinCondition [
                                  rr:child "paper";
@@ -286,73 +400,117 @@
                          ];
                  ];
          ].
-<#AuthorNotReviewer>
-         rr:logicalTable [ rr:tableName "author_not_reviewers"];
+<#Author not Reviewer>
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "authors";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#AuthorNotReviewer/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:AuthorNotReviewer
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:writePaper;
+                 rr:predicate cmt:email;
+                 rr:objectMap [ rml:reference "id"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:writePaper;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Paper>;
                          rr:joinCondition [
                                  rr:child "id";
-                                 rr:parent "id";
+                                 rr:parent "read_by_meta_reviewer";
                          ];
                  ];
          ].
 <#Bid>
-         rr:logicalTable [ rr:tableName "bid"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "bids";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#Bid/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Bid
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:adjustedBy;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:adjustedBy;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Reviewer>;
                          rr:joinCondition [
-                                 rr:child "adjustedby";
+                                 rr:child "adjusted";
                                  rr:parent "id";
                          ];
                  ];
          ].
 <#Chairman>
-         rr:logicalTable [ rr:tableName "chairmans"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "persons";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#Chairman/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Chairman
          ];
          rr:predicateObjectMap [
                  rr:predicate cmt:email;
-                 rr:objectMap [ rr:column "id"];
+                 rr:objectMap [ rml:reference "email"; rr:datatype xsd:string];
          ].
 <#Co-author>
-         rr:logicalTable [ rr:tableName "co_authors"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "authors";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#Co-author/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Co-author
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:writePaper;
+                 rr:predicate cmt:email;
+                 rr:objectMap [ rml:reference "id"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:writePaper;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Paper>;
                          rr:joinCondition [
                                  rr:child "id";
-                                 rr:parent "id";
+                                 rr:parent "author";
                          ];
                  ];
          ].
 <#co-writePaper>
-         rr:logicalTable [ rr:tableName "cowritepaper"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "co_write_paper";
+         ];
          rr:subjectMap [
-                 rr:template "http://cmt#Co-author/{coauthor}";
+                 rr:template "http://cmt#Co-author/{co_author}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Co-author
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:co-writePaper;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:co-writePaper;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Document>;
                          rr:joinCondition [
                                  rr:child "paper";
@@ -361,8 +519,26 @@
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:co-writePaper;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:co-writePaper;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#PaperFullVersion>;
+                         rr:joinCondition [
+                                 rr:child "paper";
+                                 rr:parent "id";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:co-writePaper;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Paper>;
                          rr:joinCondition [
                                  rr:child "paper";
@@ -371,194 +547,288 @@
                  ];
          ].
 <#Conference>
-         rr:logicalTable [ rr:tableName "conference"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "conferences";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#Conference/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Conference
          ];
          rr:predicateObjectMap [
                  rr:predicate cmt:acceptsHardcopySubmissions;
-                 rr:objectMap [ rr:column "acceptshardcopysubmissions"];
+                 rr:objectMap [ rml:reference "accepts_hardcopy_submissions"; rr:datatype xsd:string];
          ];
          rr:predicateObjectMap [
                  rr:predicate cmt:date;
-                 rr:objectMap [ rr:column "date"];
+                 rr:objectMap [ rml:reference "date"; rr:datatype xsd:date];
          ];
          rr:predicateObjectMap [
                  rr:predicate cmt:logoURL;
-                 rr:objectMap [ rr:column "logourl"];
+                 rr:objectMap [ rml:reference "logo_url"; rr:datatype xsd:string];
          ];
          rr:predicateObjectMap [
                  rr:predicate cmt:reviewsPerPaper;
-                 rr:objectMap [ rr:column "reviewsperpaper"];
+                 rr:objectMap [ rml:reference "reviews_per_paper"; rr:datatype xsd:integer];
          ];
          rr:predicateObjectMap [
                  rr:predicate cmt:siteURL;
-                 rr:objectMap [ rr:column "siteurl"];
+                 rr:objectMap [ rml:reference "site_url"; rr:datatype xsd:string];
          ].
 <#detailsEnteredBy>
-         rr:logicalTable [ rr:tableName "detailsenteredby"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "details_entered";
+         ];
          rr:subjectMap [
-                 rr:template "http://cmt#Conference/{conference}";
+                 rr:template "http://cmt#Conference/{cid}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Conference
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:detailsEnteredBy;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:detailsEnteredBy;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#User>;
                          rr:joinCondition [
-                                 rr:child "administrator";
+                                 rr:child "aid";
                                  rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:detailsEnteredBy;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:detailsEnteredBy;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Person>;
                          rr:joinCondition [
-                                 rr:child "administrator";
-                                 rr:parent "ID";
+                                 rr:child "aid";
+                                 rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:detailsEnteredBy;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:detailsEnteredBy;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Administrator>;
                          rr:joinCondition [
-                                 rr:child "administrator";
-                                 rr:parent "ID";
+                                 rr:child "aid";
+                                 rr:parent "id";
                          ];
                  ];
          ].
 <#hasConferenceMember>
-         rr:logicalTable [ rr:tableName "hasconferencemember"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "conference_members";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#Conference/{conference}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Conference
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:hasConferenceMember;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasConferenceMember;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Person>;
                          rr:joinCondition [
-                                 rr:child "conferencemember";
-                                 rr:parent "ID";
+                                 rr:child "conference_member";
+                                 rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:hasConferenceMember;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasConferenceMember;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#Reviewer>;
+                         rr:joinCondition [
+                                 rr:child "conference_member";
+                                 rr:parent "id";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasConferenceMember;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#ConferenceMember>;
                          rr:joinCondition [
-                                 rr:child "conferencemember";
-                                 rr:parent "conference_member";
+                                 rr:child "conference_member";
+                                 rr:parent "id";
                          ];
                  ];
          ].
 <#paperAssignmentToolsRunBy>
-         rr:logicalTable [ rr:tableName "paperassignmenttoolsrunby"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "paper_assignment_tools_run";
+         ];
          rr:subjectMap [
-                 rr:template "http://cmt#Conference/{conference}";
+                 rr:template "http://cmt#Conference/{cid}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Conference
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:paperAssignmentToolsRunBy;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:paperAssignmentToolsRunBy;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#User>;
                          rr:joinCondition [
-                                 rr:child "administrator";
+                                 rr:child "aid";
                                  rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:paperAssignmentToolsRunBy;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:paperAssignmentToolsRunBy;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Person>;
                          rr:joinCondition [
-                                 rr:child "administrator";
-                                 rr:parent "ID";
+                                 rr:child "aid";
+                                 rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:paperAssignmentToolsRunBy;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:paperAssignmentToolsRunBy;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Administrator>;
                          rr:joinCondition [
-                                 rr:child "administrator";
-                                 rr:parent "ID";
+                                 rr:child "aid";
+                                 rr:parent "id";
                          ];
                  ];
          ].
 <#reviewerBiddingStartedBy>
-         rr:logicalTable [ rr:tableName "reviewerbiddingstartedby"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "reviewer_bidding_started";
+         ];
          rr:subjectMap [
-                 rr:template "http://cmt#Conference/{conference}";
+                 rr:template "http://cmt#Conference/{cid}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Conference
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:reviewerBiddingStartedBy;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:reviewerBiddingStartedBy;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#User>;
                          rr:joinCondition [
-                                 rr:child "administrator";
+                                 rr:child "aid";
                                  rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:reviewerBiddingStartedBy;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:reviewerBiddingStartedBy;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Person>;
                          rr:joinCondition [
-                                 rr:child "administrator";
-                                 rr:parent "ID";
+                                 rr:child "aid";
+                                 rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:reviewerBiddingStartedBy;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:reviewerBiddingStartedBy;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Administrator>;
                          rr:joinCondition [
-                                 rr:child "administrator";
-                                 rr:parent "ID";
+                                 rr:child "aid";
+                                 rr:parent "id";
                          ];
                  ];
          ].
-<#ConferenceChair>
-         rr:logicalTable [ rr:tableName "conference_chairs"];
+<#Conference Chair>
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "persons";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#ConferenceChair/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:ConferenceChair
          ];
          rr:predicateObjectMap [
                  rr:predicate cmt:email;
-                 rr:objectMap [ rr:column "id"];
+                 rr:objectMap [ rml:reference "email"; rr:datatype xsd:string];
          ].
-<#ConferenceMember>
-         rr:logicalTable [ rr:tableName "conference_members"];
+<#Conference Member>
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "persons";
+         ];
          rr:subjectMap [
-                 rr:template "http://cmt#ConferenceMember/{conference_members}";
+                 rr:template "http://cmt#ConferenceMember/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:ConferenceMember
          ];
          rr:predicateObjectMap [
                  rr:predicate cmt:email;
-                 rr:objectMap [ rr:column "conference_member"];
+                 rr:objectMap [ rml:reference "email"; rr:datatype xsd:string];
          ].
 <#memberOfConference>
-         rr:logicalTable [ rr:tableName "person_conference"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "person_conference";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#ConferenceMember/{cid}";
+                 rr:termType rr:IRI;
                  rr:class cmt:ConferenceMember
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:memberOfConference;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:memberOfConference;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Conference>;
                          rr:joinCondition [
                                  rr:child "cid";
@@ -567,260 +837,408 @@
                  ];
          ].
 <#Decision>
-         rr:logicalTable [ rr:tableName "decisions"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "decisions";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#Decision/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Decision
          ].
 <#Document>
-         rr:logicalTable [ rr:tableName "document"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "documents";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#Document/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Document
          ].
-<#ExternalReviewer>
-         rr:logicalTable [ rr:tableName "external_reviewers"];
+<#External Reviewer>
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "persons";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#ExternalReviewer/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:ExternalReviewer
          ];
          rr:predicateObjectMap [
                  rr:predicate cmt:email;
-                 rr:objectMap [ rr:column "id"];
-         ].
-<#assignedByReviewer>
-         rr:logicalTable [ rr:tableName "assignreviewer"];
-         rr:subjectMap [
-                 rr:template "http://cmt#ExternalReviewer/{reviewer}";
-                 rr:class cmt:ExternalReviewer
+                 rr:objectMap [ rml:reference "email"; rr:datatype xsd:string];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:assignedByReviewer;
-                 rr:objectMap [
-                         rr:parentTriplesMap <#User>;
-                         rr:joinCondition [
-                                 rr:child "reviewer";
-                                 rr:parent "id";
-                         ];
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:assignedByReviewer;
                  ];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicate cmt:assignedByReviewer;
                  rr:objectMap [
-                         rr:parentTriplesMap <#Person>;
-                         rr:joinCondition [
-                                 rr:child "reviewer";
-                                 rr:parent "ID";
-                         ];
-                 ];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicate cmt:assignedByReviewer;
-                 rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Reviewer>;
                          rr:joinCondition [
-                                 rr:child "reviewer";
+                                 rr:child "assigned_by_reviewer";
                                  rr:parent "id";
                          ];
                  ];
          ].
 <#Meta-Review>
-         rr:logicalTable [ rr:tableName "Review"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "reviews";
+         ];
          rr:subjectMap [
-                 rr:template "http://cmt#Meta-Review/{ID}";
+                 rr:template "http://cmt#Meta-Review/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Meta-Review
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:writtenBy;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:writtenBy;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Reviewer>;
                          rr:joinCondition [
-                                 rr:child "writtenBy";
+                                 rr:child "written";
                                  rr:parent "id";
                          ];
                  ];
          ].
 <#Meta-Reviewer>
-         rr:logicalTable [ rr:tableName "meta_reviewers"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "reviewers";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#Meta-Reviewer/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Meta-Reviewer
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:adjustBid;
+                 rr:predicate cmt:email;
+                 rr:objectMap [ rml:reference "id"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:adjustBid;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Bid>;
                          rr:joinCondition [
                                  rr:child "id";
-                                 rr:parent "id";
+                                 rr:parent "adjusted";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:assignExternalReviewer;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:assignExternalReviewer;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#ExternalReviewer>;
                          rr:joinCondition [
                                  rr:child "id";
-                                 rr:parent "id";
+                                 rr:parent "reviewer";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:writeReview;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:writeReview;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Review>;
                          rr:joinCondition [
                                  rr:child "id";
-                                 rr:parent "id";
+                                 rr:parent "reviewer";
                          ];
                  ];
          ].
 <#Paper>
-         rr:logicalTable [ rr:tableName "paper"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "papers";
+         ];
          rr:subjectMap [
-                 rr:template "http://cmt#Paper/{paperid}";
+                 rr:template "http://cmt#Paper/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Paper
          ];
          rr:predicateObjectMap [
                  rr:predicate cmt:paperID;
-                 rr:objectMap [ rr:column "paperid"];
+                 rr:objectMap [ rml:reference "paper_id"; rr:datatype xsd:integer];
          ];
          rr:predicateObjectMap [
                  rr:predicate cmt:title;
-                 rr:objectMap [ rr:column "title"];
+                 rr:objectMap [ rml:reference "title"; rr:datatype xsd:string];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:acceptedBy;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:acceptedBy;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Administrator>;
                          rr:joinCondition [
-                                 rr:child "acceptedby";
-                                 rr:parent "ID";
+                                 rr:child "accepted";
+                                 rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:hasAuthor;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasAuthor;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Author>;
                          rr:joinCondition [
-                                 rr:child "hasauthor";
+                                 rr:child "author";
                                  rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:hasDecision;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasDecision;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Decision>;
                          rr:joinCondition [
-                                 rr:child "hasdecision";
+                                 rr:child "decision";
                                  rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:readByMeta-Reviewer;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:readByMeta-Reviewer;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Meta-Reviewer>;
                          rr:joinCondition [
-                                 rr:child "readbymetareviewer";
+                                 rr:child "read_by_meta_reviewer";
                                  rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:rejectedBy;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:rejectedBy;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Administrator>;
                          rr:joinCondition [
-                                 rr:child "rejectedby";
-                                 rr:parent "ID";
+                                 rr:child "rejected";
+                                 rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:hasBid;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasBid;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Bid>;
                          rr:joinCondition [
                                  rr:child "id";
-                                 rr:parent "id";
-                         ];
-                 ];
-         ];
-         rr:predicateObjectMap [
-                 rr:predicate cmt:hasCo-author;
-                 rr:objectMap [
-                         rr:parentTriplesMap <#Co-author>;
-                         rr:joinCondition [
-                                 rr:child "hasauthor";
                                  rr:parent "id";
                          ];
                  ];
          ].
 <#assignedTo>
-         rr:logicalTable [ rr:tableName "assignedto"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "bids";
+         ];
          rr:subjectMap [
-                 rr:template "http://cmt#Paper/{paper}";
+                 rr:template "http://cmt#Paper/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Paper
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:assignedTo;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:assignedTo;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#User>;
                          rr:joinCondition [
-                                 rr:child "reviewer";
+                                 rr:child "id";
                                  rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:assignedTo;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:assignedTo;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Person>;
                          rr:joinCondition [
-                                 rr:child "reviewer";
-                                 rr:parent "ID";
+                                 rr:child "id";
+                                 rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:assignedTo;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:assignedTo;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#Meta-Reviewer>;
+                         rr:joinCondition [
+                                 rr:child "id";
+                                 rr:parent "id";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:assignedTo;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Reviewer>;
                          rr:joinCondition [
-                                 rr:child "reviewer";
+                                 rr:child "id";
+                                 rr:parent "id";
+                         ];
+                 ];
+         ].
+<#hasCo-author>
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "paper_author";
+         ];
+         rr:subjectMap [
+                 rr:template "http://cmt#Paper/{aid}";
+                 rr:termType rr:IRI;
+                 rr:class cmt:Paper
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasCo-author;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#Author>;
+                         rr:joinCondition [
+                                 rr:child "aid";
+                                 rr:parent "id";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasCo-author;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#User>;
+                         rr:joinCondition [
+                                 rr:child "aid";
+                                 rr:parent "id";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasCo-author;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#Person>;
+                         rr:joinCondition [
+                                 rr:child "aid";
+                                 rr:parent "id";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasCo-author;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#Co-author>;
+                         rr:joinCondition [
+                                 rr:child "aid";
                                  rr:parent "id";
                          ];
                  ];
          ].
 <#hasSubjectArea>
-         rr:logicalTable [ rr:tableName "hassubjectarea"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "paper_subject_area";
+         ];
          rr:subjectMap [
-                 rr:template "http://cmt#Paper/{paper}";
+                 rr:template "http://cmt#Paper/{pid}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Paper
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:hasSubjectArea;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasSubjectArea;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#SubjectArea>;
                          rr:joinCondition [
-                                 rr:child "subjectarea";
+                                 rr:child "sid";
                                  rr:parent "id";
                          ];
                  ];
          ].
 <#readByReviewer>
-         rr:logicalTable [ rr:tableName "read_by_reviewer"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "read_by_reviewer";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#Paper/{paper}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Paper
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:readByReviewer;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:readByReviewer;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#User>;
                          rr:joinCondition [
                                  rr:child "reviewer";
@@ -829,18 +1247,40 @@
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:readByReviewer;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:readByReviewer;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Person>;
                          rr:joinCondition [
                                  rr:child "reviewer";
-                                 rr:parent "ID";
+                                 rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:readByReviewer;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:readByReviewer;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#Meta-Reviewer>;
+                         rr:joinCondition [
+                                 rr:child "reviewer";
+                                 rr:parent "id";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:readByReviewer;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Reviewer>;
                          rr:joinCondition [
                                  rr:child "reviewer";
@@ -848,33 +1288,45 @@
                          ];
                  ];
          ].
-<#PaperAbstract>
-         rr:logicalTable [ rr:tableName "papers"];
+<#Paper Abstract>
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "papers";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#PaperAbstract/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:PaperAbstract
          ];
          rr:predicateObjectMap [
                  rr:predicate cmt:paperID;
-                 rr:objectMap [ rr:column "paper_id"];
+                 rr:objectMap [ rml:reference "paper_id"; rr:datatype xsd:integer];
          ];
          rr:predicateObjectMap [
                  rr:predicate cmt:title;
-                 rr:objectMap [ rr:column "title"];
+                 rr:objectMap [ rml:reference "title"; rr:datatype xsd:string];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:acceptedBy;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:acceptedBy;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Administrator>;
                          rr:joinCondition [
                                  rr:child "accepted";
-                                 rr:parent "ID";
+                                 rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:hasAuthor;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasAuthor;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Author>;
                          rr:joinCondition [
                                  rr:child "author";
@@ -883,8 +1335,12 @@
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:hasDecision;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasDecision;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Decision>;
                          rr:joinCondition [
                                  rr:child "decision";
@@ -893,8 +1349,12 @@
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:readByMeta-Reviewer;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:readByMeta-Reviewer;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Meta-Reviewer>;
                          rr:joinCondition [
                                  rr:child "read_by_meta_reviewer";
@@ -903,18 +1363,26 @@
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:rejectedBy;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:rejectedBy;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Administrator>;
                          rr:joinCondition [
                                  rr:child "rejected";
-                                 rr:parent "ID";
+                                 rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:hasBid;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasBid;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Bid>;
                          rr:joinCondition [
                                  rr:child "id";
@@ -922,33 +1390,45 @@
                          ];
                  ];
          ].
-<#PaperFullVersion>
-         rr:logicalTable [ rr:tableName "papers"];
+<#Paper Full Version>
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "papers";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#PaperFullVersion/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:PaperFullVersion
          ];
          rr:predicateObjectMap [
                  rr:predicate cmt:paperID;
-                 rr:objectMap [ rr:column "paper_id"];
+                 rr:objectMap [ rml:reference "paper_id"; rr:datatype xsd:integer];
          ];
          rr:predicateObjectMap [
                  rr:predicate cmt:title;
-                 rr:objectMap [ rr:column "title"];
+                 rr:objectMap [ rml:reference "title"; rr:datatype xsd:string];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:acceptedBy;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:acceptedBy;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Administrator>;
                          rr:joinCondition [
                                  rr:child "accepted";
-                                 rr:parent "ID";
+                                 rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:hasAuthor;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasAuthor;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Author>;
                          rr:joinCondition [
                                  rr:child "author";
@@ -957,8 +1437,12 @@
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:hasDecision;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasDecision;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Decision>;
                          rr:joinCondition [
                                  rr:child "decision";
@@ -967,8 +1451,12 @@
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:readByMeta-Reviewer;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:readByMeta-Reviewer;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Meta-Reviewer>;
                          rr:joinCondition [
                                  rr:child "read_by_meta_reviewer";
@@ -977,18 +1465,26 @@
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:rejectedBy;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:rejectedBy;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Administrator>;
                          rr:joinCondition [
                                  rr:child "rejected";
-                                 rr:parent "ID";
+                                 rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:hasBid;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasBid;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Bid>;
                          rr:joinCondition [
                                  rr:child "id";
@@ -997,248 +1493,474 @@
                  ];
          ].
 <#Person>
-         rr:logicalTable [ rr:tableName "Person"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "persons";
+         ];
          rr:subjectMap [
-                 rr:template "http://cmt#Person/{ID}";
+                 rr:template "http://cmt#Person/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Person
          ];
          rr:predicateObjectMap [
                  rr:predicate cmt:email;
-                 rr:objectMap [ rr:column "email"];
+                 rr:objectMap [ rml:reference "email"; rr:datatype xsd:string];
          ].
 <#hasConflictOfInterest>
-         rr:logicalTable [ rr:tableName "hasconflictofinterest"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "mark_conflict_interests";
+         ];
          rr:subjectMap [
-                 rr:template "http://cmt#Person/{person}";
+                 rr:template "http://cmt#Person/{paper}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Person
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:hasConflictOfInterest;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasConflictOfInterest;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#Review>;
+                         rr:joinCondition [
+                                 rr:child "paper";
+                                 rr:parent "id";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasConflictOfInterest;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#PaperFullVersion>;
+                         rr:joinCondition [
+                                 rr:child "paper";
+                                 rr:parent "id";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasConflictOfInterest;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Document>;
                          rr:joinCondition [
-                                 rr:child "document";
+                                 rr:child "paper";
                                  rr:parent "id";
                          ];
                  ];
          ].
 <#Preference>
-         rr:logicalTable [ rr:tableName "preference"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "preferences";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#Preference/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Preference
          ].
-<#ProgramCommittee>
-         rr:logicalTable [ rr:tableName "programcommittee"];
+<#Program Committee>
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "program_committees";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#ProgramCommittee/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:ProgramCommittee
          ].
 <#hasProgramCommitteeMember>
-         rr:logicalTable [ rr:tableName "hasprogramcommitteemember"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "program_committee_members";
+         ];
          rr:subjectMap [
-                 rr:template "http://cmt#ProgramCommittee/{programcommittee}";
+                 rr:template "http://cmt#ProgramCommittee/{program_committee}";
+                 rr:termType rr:IRI;
                  rr:class cmt:ProgramCommittee
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:hasProgramCommitteeMember;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasProgramCommitteeMember;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Person>;
                          rr:joinCondition [
-                                 rr:child "programcommitteemember";
-                                 rr:parent "ID";
+                                 rr:child "program_committee_member";
+                                 rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:hasProgramCommitteeMember;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasProgramCommitteeMember;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Person>;
                          rr:joinCondition [
-                                 rr:child "programcommitteemember";
-                                 rr:parent "ID";
+                                 rr:child "program_committee_member";
+                                 rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:hasProgramCommitteeMember;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasProgramCommitteeMember;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#ProgramCommitteeChair>;
+                         rr:joinCondition [
+                                 rr:child "program_committee_member";
+                                 rr:parent "id";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:hasProgramCommitteeMember;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#ProgramCommitteeMember>;
                          rr:joinCondition [
-                                 rr:child "programcommitteemember";
+                                 rr:child "program_committee_member";
                                  rr:parent "id";
                          ];
                  ];
          ].
-<#ProgramCommitteeChair>
-         rr:logicalTable [ rr:tableName "programcommitteechair"];
+<#Program Committee Chair>
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "persons";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#ProgramCommitteeChair/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:ProgramCommitteeChair
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:maxPapers;
-                 rr:objectMap [ rr:column "maxpapers"];
+                 rr:predicate cmt:email;
+                 rr:objectMap [ rml:reference "email"; rr:datatype xsd:string];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:addedBy;
-                 rr:objectMap [
-                         rr:parentTriplesMap <#Administrator>;
-                         rr:joinCondition [
-                                 rr:child "addedby";
-                                 rr:parent "ID";
-                         ];
-                 ];
+                 rr:predicate cmt:email;
+                 rr:objectMap [ rml:reference "email"; rr:datatype xsd:string];
          ].
 <#endReview>
-         rr:logicalTable [ rr:tableName "endreview"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "reviews";
+         ];
          rr:subjectMap [
-                 rr:template "http://cmt#ProgramCommitteeChair/{programcommitteechair}";
+                 rr:template "http://cmt#ProgramCommitteeChair/{written}";
+                 rr:termType rr:IRI;
                  rr:class cmt:ProgramCommitteeChair
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:endReview;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:endReview;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Document>;
                          rr:joinCondition [
-                                 rr:child "review";
+                                 rr:child "id";
                                  rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:endReview;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:endReview;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#Meta-Review>;
+                         rr:joinCondition [
+                                 rr:child "id";
+                                 rr:parent "id";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:endReview;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Review>;
                          rr:joinCondition [
-                                 rr:child "review";
+                                 rr:child "id";
                                  rr:parent "id";
                          ];
                  ];
          ].
-<#ProgramCommitteeMember>
-         rr:logicalTable [ rr:tableName "programcommitteemember"];
+<#Porgram Committee Member>
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "persons";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#ProgramCommitteeMember/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:ProgramCommitteeMember
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:maxPapers;
-                 rr:objectMap [ rr:column "maxpapers"];
+                 rr:predicate cmt:email;
+                 rr:objectMap [ rml:reference "email"; rr:datatype xsd:string];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:addedBy;
+                 rr:predicate cmt:email;
+                 rr:objectMap [ rml:reference "email"; rr:datatype xsd:string];
+         ].
+<#addedBy>
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "bids";
+         ];
+         rr:subjectMap [
+                 rr:template "http://cmt#ProgramCommitteeMember/{adjusted}";
+                 rr:termType rr:IRI;
+                 rr:class cmt:ProgramCommitteeMember
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:addedBy;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#User>;
+                         rr:joinCondition [
+                                 rr:child "adjusted";
+                                 rr:parent "id";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:addedBy;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#Person>;
+                         rr:joinCondition [
+                                 rr:child "adjusted";
+                                 rr:parent "id";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:addedBy;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Administrator>;
                          rr:joinCondition [
-                                 rr:child "addedby";
-                                 rr:parent "ID";
+                                 rr:child "adjusted";
+                                 rr:parent "id";
                          ];
                  ];
          ].
 <#Rejection>
-         rr:logicalTable [ rr:tableName "rejections"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "decisions";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#Rejection/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Rejection
          ].
 <#Review>
-         rr:logicalTable [ rr:tableName "review"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "reviews";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#Review/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Review
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:writtenBy;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:writtenBy;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Reviewer>;
                          rr:joinCondition [
-                                 rr:child "writtenby";
+                                 rr:child "written";
                                  rr:parent "id";
                          ];
                  ];
          ].
 <#Reviewer>
-         rr:logicalTable [ rr:tableName "reviewers"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "reviewers";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#Reviewer/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Reviewer
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:adjustBid;
+                 rr:predicate cmt:email;
+                 rr:objectMap [ rml:reference "id"; rr:datatype xsd:integer];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:adjustBid;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Bid>;
                          rr:joinCondition [
                                  rr:child "id";
-                                 rr:parent "id";
+                                 rr:parent "adjusted";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:assignExternalReviewer;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:assignExternalReviewer;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#ExternalReviewer>;
                          rr:joinCondition [
                                  rr:child "id";
-                                 rr:parent "id";
+                                 rr:parent "reviewer";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:writeReview;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:writeReview;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Review>;
                          rr:joinCondition [
                                  rr:child "id";
-                                 rr:parent "id";
+                                 rr:parent "reviewer";
                          ];
                  ];
          ].
 <#readPaper>
-         rr:logicalTable [ rr:tableName "paper"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "papers";
+         ];
          rr:subjectMap [
-                 rr:template "http://cmt#Reviewer/{title}";
+                 rr:template "http://cmt#Reviewer/{rejected}";
+                 rr:termType rr:IRI;
                  rr:class cmt:Reviewer
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:readPaper;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:readPaper;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Document>;
                          rr:joinCondition [
-                                 rr:child "paperid";
+                                 rr:child "paper_id";
                                  rr:parent "id";
                          ];
                  ];
          ];
          rr:predicateObjectMap [
-                 rr:predicate cmt:readPaper;
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:readPaper;
+                 ];
                  rr:objectMap [
+                         a rr:RefObjectMap;
+                         rr:parentTriplesMap <#PaperFullVersion>;
+                         rr:joinCondition [
+                                 rr:child "paper_id";
+                                 rr:parent "id";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicateMap [
+                         a rr:PredicateMap;
+                         rr:constant cmt:readPaper;
+                 ];
+                 rr:objectMap [
+                         a rr:RefObjectMap;
                          rr:parentTriplesMap <#Paper>;
                          rr:joinCondition [
-                                 rr:child "paperid";
+                                 rr:child "paper_id";
                                  rr:parent "id";
                          ];
                  ];
          ].
-<#SubjectArea>
-         rr:logicalTable [ rr:tableName "subjectarea"];
+<#Subject Area>
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "subject_areas";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#SubjectArea/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:SubjectArea
          ].
 <#User>
-         rr:logicalTable [ rr:tableName "users"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "persons";
+         ];
          rr:subjectMap [
                  rr:template "http://cmt#User/{id}";
+                 rr:termType rr:IRI;
                  rr:class cmt:User
          ];
          rr:predicateObjectMap [
                  rr:predicate cmt:email;
-                 rr:objectMap [ rr:column "id"];
+                 rr:objectMap [ rml:reference "email"; rr:datatype xsd:string];
          ].
 <#Review>
-         rr:logicalTable [ rr:tableName "review"];
+         rml:logicalSource [
+                 rml:source "<#DB_source>";
+                 rr:tableName "persons";
+         ];
          rr:subjectMap [
-                 rr:template "http://cmt#Review/{id}";
+                 rr:template "http://cmt#//conference#Review/{id}";
+                 rr:termType rr:IRI;
                  rr:class http://conference#Review
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate cmt:review;
+                 rr:objectMap [ rml:reference "reviewer"; rr:datatype xsd:string];
          ].

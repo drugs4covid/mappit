@@ -21,7 +21,7 @@ class R2RMLParser(object):
         return properties['base']['URI'], properties['base']['prefix']
     
 
-    def TripleMap(entity, base):
+    def TripleMap(entity, base, prefix):
         last = (len(entity.onto_properties) == 0 and len(entity.joinConditions) == 0)
         level = 8
         if (not entity.JCFromTable):
@@ -29,50 +29,50 @@ class R2RMLParser(object):
         else:
             print ("<#" + entity.joinConditions[0][0][0].locale + ">")
         R2RMLParser.LogicalTable(entity.table)
-        R2RMLParser.SubjectMap(entity.onto_class, entity.ID, base, last)
+        R2RMLParser.SubjectMap(entity.onto_class, entity.ID, base, last, prefix)
         v = 0
         for y in entity.onto_properties:
             last = (v == len(entity.onto_properties) - 1 and len(entity.joinConditions) == 0)
-            R2RMLParser.PredicateObjectMap(y[0], y[1], last)
+            R2RMLParser.PredicateObjectMap(y[0], y[1], last, prefix)
             v += 1
         v = 0
         for j in entity.joinConditions:
             last = (v == len(entity.joinConditions) - 1)
-            R2RMLParser.JoinCondition(j, last)
+            R2RMLParser.JoinCondition(j, last, prefix)
             v += 1
         
     def LogicalTable(table):
         level = 8
         print (" "*level, "rr:logicalTable [ " + "rr:tableName " + '"' + table + '"' + "];")
         
-    def SubjectMap(onto_class, onto_id, base, last):
+    def SubjectMap(onto_class, onto_id, base, last, prefix):
         level = 8
         try:
             name = onto_class.locale
         except: name = onto_class
         print (" "*level, "rr:subjectMap [")
         print (" "*(2*level), "rr:template " + '"' + base + name.split(':').pop() + '/{' + onto_id + '}' + '";')
-        print (" "*(2*level), "rr:class " + onto_class.qname)
+        print (" "*(2*level), "rr:class " + prefix + ":" + onto_class.locale)
         endpoint = ";"
         if (last == True):
             endpoint = "."
         print (" "*level, "]" + endpoint)
 
-    def PredicateObjectMap(property, column, last):
+    def PredicateObjectMap(property, column, last, prefix):
         level = 8
         print (" "*level, "rr:predicateObjectMap [")
-        print (" "*(2*level), "rr:predicate "  + property.qname + ";")
+        print (" "*(2*level), "rr:predicate "  + prefix + ":" + property.locale + ";")
         print (" "*(2*level), "rr:objectMap " + '[ rr:column ' + '"' + column + '"' + "];")
         endpoint = ";"
         if (last == True):
             endpoint = "."
         print (" "*level, "]" + endpoint)
 
-    def JoinCondition(joinCondition, last):
+    def JoinCondition(joinCondition, last, prefix):
         try:
             level = 8
             print (" "*level, "rr:predicateObjectMap [")
-            print (" "*(2*level), "rr:predicate " + joinCondition[0][0].qname + ';')
+            print (" "*(2*level), "rr:predicate " + prefix + ":" + joinCondition[0][0].locale + ';')
             print (" "*(2*level), "rr:objectMap " + '[')
             print (" "*(3*level), "rr:parentTriplesMap " + "<#" + joinCondition[1] + ">;")
             print (" "*(3*level), "rr:joinCondition " + '[')
@@ -100,6 +100,6 @@ class R2RMLParser(object):
             R2RMLParser.writePrefixes(ROOT_DIR + "/outputs/" + output, data, ontology.namespaces)
             print ('@base <' + base + "> .")
             for x in rmlEntities:
-                R2RMLParser.TripleMap(x, base)
+                R2RMLParser.TripleMap(x, base, prefix)
             sys.stdout = original_stdout
             fw.close()

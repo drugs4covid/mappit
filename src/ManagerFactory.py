@@ -80,6 +80,7 @@ def _serialize_to_DB(data):
             print("Connected to PostgreSQL Server version ", db_Info)
             cursor = connection.cursor()
             print("You're connected to database: ", data['database'])
+            cursor.execute("SET search_path TO cmt_renamed, public;")
             cursor.execute("""select relname from pg_class where relkind='r' and relname !~ '^(pg_|sql_)';""")
 
             tables = cursor.fetchall()

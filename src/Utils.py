@@ -224,7 +224,7 @@ class Utilities:
         try:
             return Utilities.switchType(column)
         except:
-            return "xsd:string"
+            return "xsd:bool"
 
     def getKeyByValue(dict, value):
         # one-liner
@@ -234,6 +234,7 @@ class Utilities:
     def getClassIDTerm(onto_class, columns):
         dis = 100
         term = ""
+        auxTerm = ""
         for x in columns:
             name = Utilities.replace(x)
             try:
@@ -246,8 +247,12 @@ class Utilities:
             #The column is checked in order to see if it is actually an id and the distance is checked to be lower than 2.0, which means
             #that only two replacements must be done in order to have both strings to be the same. This is done in order to see that the column is 
             #actually the class id and not a reference to another table
-            if (name.lower() == 'id' or (name.endswith('id') or name.startswith('id')) and auxDis < dis and auxDis < 5.0):
-                dis = auxDis
+            if (name.lower() == 'id' or (name.endswith('id') or name.startswith('id'))):
                 term = x
+            if (auxDis < dis):
+                dis = auxDis
+                auxTerm = x
+        if (term == ""):
+            term = auxTerm
         return term
         

@@ -1,0 +1,1426 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix conference: <http://conference#>.
+@prefix : <http://conference#> .
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@base <http://conference#> .
+<#Abstract>
+         rr:logicalTable [ rr:tableName '"Abstract"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Abstract/{'ID'}";
+                 rr:class conference:Abstract
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:is_submitted_at;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Conference_volume>;
+                         rr:joinCondition [
+                                 rr:child "is_submitted_at";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#Accepted_contribution>
+         rr:logicalTable [ rr:tableName '"Conference_document"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Accepted_contribution/{'ID'}";
+                 rr:class conference:Accepted_contribution
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_review;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Review>;
+                         rr:joinCondition [
+                                 rr:child "ID";
+                                 rr:parent "reviews";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_review_expertise;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Review_expertise>;
+                         rr:joinCondition [
+                                 rr:child "ID";
+                                 rr:parent "has_a_submitted_contribut";
+                         ];
+                 ];
+         ].
+<#Active_conference_participant>
+         rr:logicalTable [ rr:tableName '"Person"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Active_conference_participant/{'ID'}";
+                 rr:class conference:Active_conference_participant
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_gender;
+                 rr:objectMap [ rr:column "has_gender"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_first_name;
+                 rr:objectMap [ rr:column "has_the_first_name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_last_name;
+                 rr:objectMap [ rr:column "has_the_last_name"];
+         ].
+<#Call_for_paper>
+         rr:logicalTable [ rr:tableName '"Conference_document"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Call_for_paper/{'ID'}";
+                 rr:class conference:Call_for_paper
+         ].
+<#Call_for_participation>
+         rr:logicalTable [ rr:tableName '"Conference_document"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Call_for_participation/{'ID'}";
+                 rr:class conference:Call_for_participation
+         ].
+<#Camera_ready_contribution>
+         rr:logicalTable [ rr:tableName '"Conference_document"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Camera_ready_contribution/{'ID'}";
+                 rr:class conference:Camera_ready_contribution
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_review;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Review>;
+                         rr:joinCondition [
+                                 rr:child "ID";
+                                 rr:parent "reviews";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_review_expertise;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Review_expertise>;
+                         rr:joinCondition [
+                                 rr:child "ID";
+                                 rr:parent "has_a_submitted_contribut";
+                         ];
+                 ];
+         ].
+<#Chair>
+         rr:logicalTable [ rr:tableName '"Person"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Chair/{'ID'}";
+                 rr:class conference:Chair
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_gender;
+                 rr:objectMap [ rr:column "has_gender"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_first_name;
+                 rr:objectMap [ rr:column "has_the_first_name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_last_name;
+                 rr:objectMap [ rr:column "has_the_last_name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:was_a_committee_chair_of;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Committee>;
+                         rr:joinCondition [
+                                 rr:child "ID";
+                                 rr:parent "was_a_steering_committee_";
+                         ];
+                 ];
+         ].
+<#Co-chair>
+         rr:logicalTable [ rr:tableName '"Person"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Co-chair/{'ID'}";
+                 rr:class conference:Co-chair
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_gender;
+                 rr:objectMap [ rr:column "has_gender"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_first_name;
+                 rr:objectMap [ rr:column "has_the_first_name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_last_name;
+                 rr:objectMap [ rr:column "has_the_last_name"];
+         ].
+<#was_a_committe_co-chair_of>
+         rr:logicalTable [ rr:tableName '"has_a_committee_co-chair"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Co-chair/{'Co-chair'}";
+                 rr:class conference:Co-chair
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:was_a_committe_co-chair_of;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Steering_committee>;
+                         rr:joinCondition [
+                                 rr:child "Committee";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:was_a_committe_co-chair_of;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Committee>;
+                         rr:joinCondition [
+                                 rr:child "Committee";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#Committee>
+         rr:logicalTable [ rr:tableName '"Steering_committee"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Committee/{'ID'}";
+                 rr:class conference:Committee
+         ].
+<#has_a_committee_chair>
+         rr:logicalTable [ rr:tableName '"has_a_committee_co-chair"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Committee/{'Committee'}";
+                 rr:class conference:Committee
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_committee_chair;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Committee_member>;
+                         rr:joinCondition [
+                                 rr:child "Co-chair";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_committee_chair;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Person>;
+                         rr:joinCondition [
+                                 rr:child "Co-chair";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_committee_chair;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Chair>;
+                         rr:joinCondition [
+                                 rr:child "Co-chair";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#has_a_committee_co-chair>
+         rr:logicalTable [ rr:tableName '"has_a_committee_co-chair"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Committee/{'Committee'}";
+                 rr:class conference:Committee
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_committee_co-chair;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Committee_member>;
+                         rr:joinCondition [
+                                 rr:child "Co-chair";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_committee_co-chair;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Person>;
+                         rr:joinCondition [
+                                 rr:child "Co-chair";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_committee_co-chair;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Co-chair>;
+                         rr:joinCondition [
+                                 rr:child "Co-chair";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#has_members>
+         rr:logicalTable [ rr:tableName "has_members"];
+         rr:subjectMap [
+                 rr:template "http://conference#Committee/{'Committee'}";
+                 rr:class conference:Committee
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_members;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Person>;
+                         rr:joinCondition [
+                                 rr:child "Committee_member";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_members;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Co-chair>;
+                         rr:joinCondition [
+                                 rr:child "Committee_member";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_members;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Committee_member>;
+                         rr:joinCondition [
+                                 rr:child "Committee_member";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#was_a_committee_of>
+         rr:logicalTable [ rr:tableName '"Committee"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Committee/{'TYPE'}";
+                 rr:class conference:Committee
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:was_a_committee_of;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Conference>;
+                         rr:joinCondition [
+                                 rr:child "has_a_name";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:was_a_committee_of;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Conference_volume>;
+                         rr:joinCondition [
+                                 rr:child "has_a_name";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#Committee_member>
+         rr:logicalTable [ rr:tableName '"Person"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Committee_member/{'ID'}";
+                 rr:class conference:Committee_member
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_gender;
+                 rr:objectMap [ rr:column "has_gender"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_first_name;
+                 rr:objectMap [ rr:column "has_the_first_name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_last_name;
+                 rr:objectMap [ rr:column "has_the_last_name"];
+         ].
+<#was_a_member_of>
+         rr:logicalTable [ rr:tableName "has_members"];
+         rr:subjectMap [
+                 rr:template "http://conference#Committee_member/{'Committee_member'}";
+                 rr:class conference:Committee_member
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:was_a_member_of;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Steering_committee>;
+                         rr:joinCondition [
+                                 rr:child "Committee";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:was_a_member_of;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Committee>;
+                         rr:joinCondition [
+                                 rr:child "Committee";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#Conference>
+         rr:logicalTable [ rr:tableName '"Conference_fees"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Conference/{'ID'}";
+                 rr:class conference:Conference
+         ].
+<#Conference_announcement>
+         rr:logicalTable [ rr:tableName '"Conference_document"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Conference_announcement/{'ID'}";
+                 rr:class conference:Conference_announcement
+         ].
+<#Conference_applicant>
+         rr:logicalTable [ rr:tableName '"Person"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Conference_applicant/{'ID'}";
+                 rr:class conference:Conference_applicant
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_gender;
+                 rr:objectMap [ rr:column "has_gender"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_first_name;
+                 rr:objectMap [ rr:column "has_the_first_name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_last_name;
+                 rr:objectMap [ rr:column "has_the_last_name"];
+         ].
+<#Conference_contribution>
+         rr:logicalTable [ rr:tableName '"Conference_document"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Conference_contribution/{'ID'}";
+                 rr:class conference:Conference_contribution
+         ].
+<#is_submitted_at>
+         rr:logicalTable [ rr:tableName '"Committee"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Conference_contribution/{'was_a_program_committee_of'}";
+                 rr:class conference:Conference_contribution
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:is_submitted_at;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Conference>;
+                         rr:joinCondition [
+                                 rr:child "has_a_name";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:is_submitted_at;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Conference_volume>;
+                         rr:joinCondition [
+                                 rr:child "has_a_name";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#Conference_contributor>
+         rr:logicalTable [ rr:tableName '"Person"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Conference_contributor/{'ID'}";
+                 rr:class conference:Conference_contributor
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_gender;
+                 rr:objectMap [ rr:column "has_gender"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_first_name;
+                 rr:objectMap [ rr:column "has_the_first_name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_last_name;
+                 rr:objectMap [ rr:column "has_the_last_name"];
+         ].
+<#Conference_document>
+         rr:logicalTable [ rr:tableName '"Conference_document"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Conference_document/{'ID'}";
+                 rr:class conference:Conference_document
+         ].
+<#has_authors>
+         rr:logicalTable [ rr:tableName '"Poster"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Conference_document/{'is_submitted_at'}";
+                 rr:class conference:Conference_document
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_authors;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Track-workshop_chair>;
+                         rr:joinCondition [
+                                 rr:child "ID";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_authors;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Co-chair>;
+                         rr:joinCondition [
+                                 rr:child "ID";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_authors;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Person>;
+                         rr:joinCondition [
+                                 rr:child "ID";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#Conference_fees>
+         rr:logicalTable [ rr:tableName '"Conference_fees"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Conference_fees/{'ID'}";
+                 rr:class conference:Conference_fees
+         ].
+<#Conference_participant>
+         rr:logicalTable [ rr:tableName '"Person"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Conference_participant/{'ID'}";
+                 rr:class conference:Conference_participant
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_gender;
+                 rr:objectMap [ rr:column "has_gender"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_first_name;
+                 rr:objectMap [ rr:column "has_the_first_name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_last_name;
+                 rr:objectMap [ rr:column "has_the_last_name"];
+         ].
+<#Conference_proceedings>
+         rr:logicalTable [ rr:tableName '"Conference_proceedings"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Conference_proceedings/{'ID'}";
+                 rr:class conference:Conference_proceedings
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_volume;
+                 rr:objectMap [ rr:column "has_a_volume"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_an_ISBN;
+                 rr:objectMap [ rr:column "has_an_ISBN"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_publisher;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Publisher>;
+                         rr:joinCondition [
+                                 rr:child "has_a_publisher";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#Conference_volume>
+         rr:logicalTable [ rr:tableName '"Conference_volume"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Conference_volume/{'ID'}";
+                 rr:class conference:Conference_volume
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_location;
+                 rr:objectMap [ rr:column "has_a_location"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_program_committee;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Program_committee>;
+                         rr:joinCondition [
+                                 rr:child "has_a_program_committee";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_steering_committee;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Steering_committee>;
+                         rr:joinCondition [
+                                 rr:child "has_a_steering_committee";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_an_organizing_committee;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Organizing_committee>;
+                         rr:joinCondition [
+                                 rr:child "has_an_organizing_committ";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_important_dates;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Important_dates>;
+                         rr:joinCondition [
+                                 rr:child "has_important_dates";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#has_a_commtitee>
+         rr:logicalTable [ rr:tableName '"Committee"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Conference_volume/{'has_a_name'}";
+                 rr:class conference:Conference_volume
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_commtitee;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Steering_committee>;
+                         rr:joinCondition [
+                                 rr:child "TYPE";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_commtitee;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Committee>;
+                         rr:joinCondition [
+                                 rr:child "TYPE";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#has_contributions>
+         rr:logicalTable [ rr:tableName "contributes"];
+         rr:subjectMap [
+                 rr:template "http://conference#Conference_volume/{'Conference_document'}";
+                 rr:class conference:Conference_volume
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_contributions;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Conference_document>;
+                         rr:joinCondition [
+                                 rr:child "Conference_document";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_contributions;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Written_contribution>;
+                         rr:joinCondition [
+                                 rr:child "Conference_document";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_contributions;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Conference_contribution>;
+                         rr:joinCondition [
+                                 rr:child "Conference_document";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#has_tracks>
+         rr:logicalTable [ rr:tableName '"Abstract"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Conference_volume/{'is_the_1th_part_of'}";
+                 rr:class conference:Conference_volume
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_tracks;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Track>;
+                         rr:joinCondition [
+                                 rr:child "ID";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#has_tutorials>
+         rr:logicalTable [ rr:tableName '"Tutorial"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Conference_volume/{'is_part_of_conference_vol'}";
+                 rr:class conference:Conference_volume
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_tutorials;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Tutorial>;
+                         rr:joinCondition [
+                                 rr:child "ID";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#has_workshops>
+         rr:logicalTable [ rr:tableName '"Workshop"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Conference_volume/{'is_part_of_conference_vol'}";
+                 rr:class conference:Conference_volume
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_workshops;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Workshop>;
+                         rr:joinCondition [
+                                 rr:child "has_workshops_Inv";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#Conference_www>
+         rr:logicalTable [ rr:tableName '"Conference_document"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Conference_www/{'ID'}";
+                 rr:class conference:Conference_www
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_URL;
+                 rr:objectMap [ rr:column "has_a_URL"];
+         ].
+<#Contribution_1th-author>
+         rr:logicalTable [ rr:tableName '"Person"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Contribution_1th-author/{'ID'}";
+                 rr:class conference:Contribution_1th-author
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_gender;
+                 rr:objectMap [ rr:column "has_gender"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_first_name;
+                 rr:objectMap [ rr:column "has_the_first_name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_last_name;
+                 rr:objectMap [ rr:column "has_the_last_name"];
+         ].
+<#Contribution_co-author>
+         rr:logicalTable [ rr:tableName '"Person"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Contribution_co-author/{'ID'}";
+                 rr:class conference:Contribution_co-author
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_gender;
+                 rr:objectMap [ rr:column "has_gender"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_first_name;
+                 rr:objectMap [ rr:column "has_the_first_name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_last_name;
+                 rr:objectMap [ rr:column "has_the_last_name"];
+         ].
+<#Early_paid_applicant>
+         rr:logicalTable [ rr:tableName '"Person"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Early_paid_applicant/{'ID'}";
+                 rr:class conference:Early_paid_applicant
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_gender;
+                 rr:objectMap [ rr:column "has_gender"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_first_name;
+                 rr:objectMap [ rr:column "has_the_first_name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_last_name;
+                 rr:objectMap [ rr:column "has_the_last_name"];
+         ].
+<#Extended_abstract>
+         rr:logicalTable [ rr:tableName '"Conference_document"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Extended_abstract/{'ID'}";
+                 rr:class conference:Extended_abstract
+         ].
+<#Important_dates>
+         rr:logicalTable [ rr:tableName '"Important_dates"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Important_dates/{'ID'}";
+                 rr:class conference:Important_dates
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:is_a_starting_date;
+                 rr:objectMap [ rr:column "is_a_starting_date"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:is_an_ending_date;
+                 rr:objectMap [ rr:column "is_an_ending_date"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:belong_to_a_conference_volume;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Conference_volume>;
+                         rr:joinCondition [
+                                 rr:child "ID";
+                                 rr:parent "has_important_dates";
+                         ];
+                 ];
+         ].
+<#Information_for_participants>
+         rr:logicalTable [ rr:tableName '"Conference_document"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Information_for_participants/{'ID'}";
+                 rr:class conference:Information_for_participants
+         ].
+<#Invited_speaker>
+         rr:logicalTable [ rr:tableName '"Person"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Invited_speaker/{'ID'}";
+                 rr:class conference:Invited_speaker
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_gender;
+                 rr:objectMap [ rr:column "has_gender"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_first_name;
+                 rr:objectMap [ rr:column "has_the_first_name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_last_name;
+                 rr:objectMap [ rr:column "has_the_last_name"];
+         ].
+<#Invited_talk>
+         rr:logicalTable [ rr:tableName '"Invited_talk"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Invited_talk/{'ID'}";
+                 rr:class conference:Invited_talk
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:is_given_by;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Active_conference_participant>;
+                         rr:joinCondition [
+                                 rr:child "is_given_by";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:is_submitted_at;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Conference_volume>;
+                         rr:joinCondition [
+                                 rr:child "is_submitted_at";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#Late_paid_applicant>
+         rr:logicalTable [ rr:tableName '"Person"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Late_paid_applicant/{'ID'}";
+                 rr:class conference:Late_paid_applicant
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_gender;
+                 rr:objectMap [ rr:column "has_gender"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_first_name;
+                 rr:objectMap [ rr:column "has_the_first_name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_last_name;
+                 rr:objectMap [ rr:column "has_the_last_name"];
+         ].
+<#Organization>
+         rr:logicalTable [ rr:tableName '"Organization"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Organization/{'ID'}";
+                 rr:class conference:Organization
+         ].
+<#Organizer>
+         rr:logicalTable [ rr:tableName '"Organizer"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Organizer/{'ID'}";
+                 rr:class conference:Organizer
+         ].
+<#Organizing_committee>
+         rr:logicalTable [ rr:tableName '"Organizing_committee"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Organizing_committee/{'ID'}";
+                 rr:class conference:Organizing_committee
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:was_an_organizing_committee_of;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Conference_volume>;
+                         rr:joinCondition [
+                                 rr:child "ID";
+                                 rr:parent "has_an_organizing_committ";
+                         ];
+                 ];
+         ].
+<#Paid_applicant>
+         rr:logicalTable [ rr:tableName '"Person"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Paid_applicant/{'ID'}";
+                 rr:class conference:Paid_applicant
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_gender;
+                 rr:objectMap [ rr:column "has_gender"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_first_name;
+                 rr:objectMap [ rr:column "has_the_first_name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_last_name;
+                 rr:objectMap [ rr:column "has_the_last_name"];
+         ].
+<#Paper>
+         rr:logicalTable [ rr:tableName '"Conference_document"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Paper/{'ID'}";
+                 rr:class conference:Paper
+         ].
+<#Passive_conference_participant>
+         rr:logicalTable [ rr:tableName '"Person"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Passive_conference_participant/{'ID'}";
+                 rr:class conference:Passive_conference_participant
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_gender;
+                 rr:objectMap [ rr:column "has_gender"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_first_name;
+                 rr:objectMap [ rr:column "has_the_first_name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_last_name;
+                 rr:objectMap [ rr:column "has_the_last_name"];
+         ].
+<#Person>
+         rr:logicalTable [ rr:tableName '"Person"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Person/{'ID'}";
+                 rr:class conference:Person
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_gender;
+                 rr:objectMap [ rr:column "has_gender"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_first_name;
+                 rr:objectMap [ rr:column "has_the_first_name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_last_name;
+                 rr:objectMap [ rr:column "has_the_last_name"];
+         ].
+<#contributes>
+         rr:logicalTable [ rr:tableName "contributes"];
+         rr:subjectMap [
+                 rr:template "http://conference#Person/{'Person'}";
+                 rr:class conference:Person
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:contributes;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Review>;
+                         rr:joinCondition [
+                                 rr:child "Conference_document";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:contributes;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Conference_document>;
+                         rr:joinCondition [
+                                 rr:child "Conference_document";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#Poster>
+         rr:logicalTable [ rr:tableName '"Poster"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Poster/{'ID'}";
+                 rr:class conference:Poster
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:is_submitted_at;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Conference_volume>;
+                         rr:joinCondition [
+                                 rr:child "is_submitted_at";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#Presentation>
+         rr:logicalTable [ rr:tableName '"Conference_document"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Presentation/{'ID'}";
+                 rr:class conference:Presentation
+         ].
+<#is_given_by>
+         rr:logicalTable [ rr:tableName "invited_by"];
+         rr:subjectMap [
+                 rr:template "http://conference#Presentation/{'Reviewer1'}";
+                 rr:class conference:Presentation
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:is_given_by;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Conference_participant>;
+                         rr:joinCondition [
+                                 rr:child "Reviewer1";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:is_given_by;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Person>;
+                         rr:joinCondition [
+                                 rr:child "Reviewer1";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:is_given_by;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Active_conference_participant>;
+                         rr:joinCondition [
+                                 rr:child "Reviewer1";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#Program_committee>
+         rr:logicalTable [ rr:tableName '"Steering_committee"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Program_committee/{'ID'}";
+                 rr:class conference:Program_committee
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:was_a_program_committee_of;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Conference_volume>;
+                         rr:joinCondition [
+                                 rr:child "ID";
+                                 rr:parent "has_a_program_committee";
+                         ];
+                 ];
+         ].
+<#Publisher>
+         rr:logicalTable [ rr:tableName '"Publisher"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Publisher/{'ID'}";
+                 rr:class conference:Publisher
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:issues;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Conference_proceedings>;
+                         rr:joinCondition [
+                                 rr:child "ID";
+                                 rr:parent "has_a_publisher";
+                         ];
+                 ];
+         ].
+<#Registeered_applicant>
+         rr:logicalTable [ rr:tableName '"Person"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Registeered_applicant/{'ID'}";
+                 rr:class conference:Registeered_applicant
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_gender;
+                 rr:objectMap [ rr:column "has_gender"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_first_name;
+                 rr:objectMap [ rr:column "has_the_first_name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_last_name;
+                 rr:objectMap [ rr:column "has_the_last_name"];
+         ].
+<#Regular_author>
+         rr:logicalTable [ rr:tableName '"Person"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Regular_author/{'ID'}";
+                 rr:class conference:Regular_author
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_gender;
+                 rr:objectMap [ rr:column "has_gender"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_first_name;
+                 rr:objectMap [ rr:column "has_the_first_name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_last_name;
+                 rr:objectMap [ rr:column "has_the_last_name"];
+         ].
+<#Regular_contribution>
+         rr:logicalTable [ rr:tableName '"Conference_document"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Regular_contribution/{'ID'}";
+                 rr:class conference:Regular_contribution
+         ].
+<#Rejected_contribution>
+         rr:logicalTable [ rr:tableName '"Conference_document"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Rejected_contribution/{'ID'}";
+                 rr:class conference:Rejected_contribution
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_review;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Review>;
+                         rr:joinCondition [
+                                 rr:child "ID";
+                                 rr:parent "reviews";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_review_expertise;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Review_expertise>;
+                         rr:joinCondition [
+                                 rr:child "ID";
+                                 rr:parent "has_a_submitted_contribut";
+                         ];
+                 ];
+         ].
+<#Review>
+         rr:logicalTable [ rr:tableName '"Review"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Review/{'ID'}";
+                 rr:class conference:Review
+         ].
+<#reviews>
+         rr:logicalTable [ rr:tableName '"Review"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Review/{'reviews'}";
+                 rr:class conference:Review
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:reviews;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Submitted_contribution>;
+                         rr:joinCondition [
+                                 rr:child "reviews";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:reviews;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Written_contribution>;
+                         rr:joinCondition [
+                                 rr:child "reviews";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:reviews;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Conference_contribution>;
+                         rr:joinCondition [
+                                 rr:child "reviews";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:reviews;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Conference_document>;
+                         rr:joinCondition [
+                                 rr:child "reviews";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:reviews;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Rejected_contribution>;
+                         rr:joinCondition [
+                                 rr:child "reviews";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:reviews;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Camera_ready_contribution>;
+                         rr:joinCondition [
+                                 rr:child "reviews";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:reviews;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Reviewed_contribution>;
+                         rr:joinCondition [
+                                 rr:child "reviews";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#Review_expertise>
+         rr:logicalTable [ rr:tableName '"Review_expertise"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Review_expertise/{'ID'}";
+                 rr:class conference:Review_expertise
+         ].
+<#Review_preference>
+         rr:logicalTable [ rr:tableName '"Review_preference"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Review_preference/{'ID'}";
+                 rr:class conference:Review_preference
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_degree;
+                 rr:objectMap [ rr:column "has_a_degree"];
+         ].
+<#Reviewed_contribution>
+         rr:logicalTable [ rr:tableName '"Conference_document"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Reviewed_contribution/{'ID'}";
+                 rr:class conference:Reviewed_contribution
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_review_expertise;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Review_expertise>;
+                         rr:joinCondition [
+                                 rr:child "ID";
+                                 rr:parent "has_a_submitted_contribut";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_review;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Review>;
+                         rr:joinCondition [
+                                 rr:child "ID";
+                                 rr:parent "reviews";
+                         ];
+                 ];
+         ].
+<#Reviewer>
+         rr:logicalTable [ rr:tableName '"Person"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Reviewer/{'ID'}";
+                 rr:class conference:Reviewer
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_gender;
+                 rr:objectMap [ rr:column "has_gender"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_first_name;
+                 rr:objectMap [ rr:column "has_the_first_name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_last_name;
+                 rr:objectMap [ rr:column "has_the_last_name"];
+         ].
+<#invited_by>
+         rr:logicalTable [ rr:tableName "invited_by"];
+         rr:subjectMap [
+                 rr:template "http://conference#Reviewer/{'Reviewer1'}";
+                 rr:class conference:Reviewer
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:invited_by;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Person>;
+                         rr:joinCondition [
+                                 rr:child "Reviewer1";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:invited_by;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Reviewer>;
+                         rr:joinCondition [
+                                 rr:child "Reviewer1";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#Steering_committee>
+         rr:logicalTable [ rr:tableName '"Steering_committee"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Steering_committee/{'ID'}";
+                 rr:class conference:Steering_committee
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:was_a_steering_committee_of;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Conference_volume>;
+                         rr:joinCondition [
+                                 rr:child "ID";
+                                 rr:parent "has_a_steering_committee";
+                         ];
+                 ];
+         ].
+<#Submitted_contribution>
+         rr:logicalTable [ rr:tableName '"Conference_document"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Submitted_contribution/{'ID'}";
+                 rr:class conference:Submitted_contribution
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_a_review_expertise;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Review_expertise>;
+                         rr:joinCondition [
+                                 rr:child "ID";
+                                 rr:parent "has_a_submitted_contribut";
+                         ];
+                 ];
+         ].
+<#Topic>
+         rr:logicalTable [ rr:tableName '"Topic"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Topic/{'ID'}";
+                 rr:class conference:Topic
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:belongs_to_a_review_reference;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Review_preference>;
+                         rr:joinCondition [
+                                 rr:child "ID";
+                                 rr:parent "belongs_to_a_review_refer";
+                         ];
+                 ];
+         ].
+<#is_a_topis_of_conference_parts>
+         rr:logicalTable [ rr:tableName '"Topic"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Topic/{'ID'}";
+                 rr:class conference:Topic
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:is_a_topis_of_conference_parts;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#Workshop>;
+                         rr:joinCondition [
+                                 rr:child "has_a_name";
+                                 rr:parent "ID";
+                         ];
+                 ];
+         ].
+<#Track>
+         rr:logicalTable [ rr:tableName '"Track"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Track/{'ID'}";
+                 rr:class conference:Track
+         ].
+<#Track-workshop_chair>
+         rr:logicalTable [ rr:tableName '"Person"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Track-workshop_chair/{'ID'}";
+                 rr:class conference:Track-workshop_chair
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_gender;
+                 rr:objectMap [ rr:column "has_gender"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_first_name;
+                 rr:objectMap [ rr:column "has_the_first_name"];
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate conference:has_the_last_name;
+                 rr:objectMap [ rr:column "has_the_last_name"];
+         ].
+<#Tutorial>
+         rr:logicalTable [ rr:tableName '"Tutorial"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Tutorial/{'ID'}";
+                 rr:class conference:Tutorial
+         ].
+<#Workshop>
+         rr:logicalTable [ rr:tableName '"Workshop"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Workshop/{'ID'}";
+                 rr:class conference:Workshop
+         ].
+<#Written_contribution>
+         rr:logicalTable [ rr:tableName '"Conference_document"'];
+         rr:subjectMap [
+                 rr:template "http://conference#Written_contribution/{'ID'}";
+                 rr:class conference:Written_contribution
+         ].

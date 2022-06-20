@@ -25,32 +25,33 @@ class RMLEntityFromOntology(object):
             name = ""
             tableSelected = ""
             
-            for x in range(0, len(tables)):
-                #Gets columns for a given table
-                columns = db.get_table_columns(tables[x])
-                name, dis, auxProperties, auxObjectProperties, totalDisProperties, changed = correspondenceClass(tables[x], columns, clasNames, dis, name, classesDict, db, disMethod, equivalences)
-                if (changed and totalDisProperties >= totalDisFromProp):
-                    totalDisFromProp = totalDisProperties
-                    onto_class = y
-                    tableSelected = tables[x]
-                    onto_properties = auxProperties
-                    joinConditions = auxObjectProperties
+            if (y not in tableAuxDict.keys()):
+                for x in range(0, len(tables)):
+                    #Gets columns for a given table
+                    columns = db.get_table_columns(tables[x])
+                    name, dis, auxProperties, auxObjectProperties, totalDisProperties, changed = correspondenceClass(tables[x], columns, clasNames, dis, name, classesDict, db, disMethod, equivalences)
+                    if (changed and totalDisProperties >= totalDisFromProp):
+                        totalDisFromProp = totalDisProperties
+                        onto_class = y
+                        tableSelected = tables[x]
+                        onto_properties = auxProperties
+                        joinConditions = auxObjectProperties
 
-            if (dis < Utilities.threshold(disMethod)):
-                classesDict.update({y : name})
-                tableAuxDict.update({y.locale : tableSelected})
-                id = Utilities.getClassIDTerm(y, db.get_table_columns(tableSelected))
-                if(id == ''):
-                    id = name
-                tableJoinConditions = getNotFoundJoinConditions(y, tables, joinConditions, disMethod, db, equivalences)
-                entity = RMLEntity(tableSelected, onto_class, id, joinConditions, onto_properties)
-                #After creating the entity, it is checked if it has any joinConditions given the prooperties assigned to  the entity
-                #entity.getJoinConditions(tables, dbManager)
-                entities.append(entity)
-
-                for tjc in tableJoinConditions:
-                    entity = RMLEntity(tjc[0], tjc[1], tjc[2], tjc[3], [], True)
+                if (dis < Utilities.threshold(disMethod)):
+                    classesDict.update({y : name})
+                    tableAuxDict.update({y.locale : tableSelected})
+                    id = Utilities.getClassIDTerm(y, db.get_table_columns(tableSelected))
+                    if(id == ''):
+                        id = name
+                    tableJoinConditions = getNotFoundJoinConditions(y, tables, joinConditions, disMethod, db, equivalences)
+                    entity = RMLEntity(tableSelected, onto_class, id, joinConditions, onto_properties)
+                    #After creating the entity, it is checked if it has any joinConditions given the prooperties assigned to  the entity
+                    #entity.getJoinConditions(tables, dbManager)
                     entities.append(entity)
+
+                    for tjc in tableJoinConditions:
+                        entity = RMLEntity(tjc[0], tjc[1], tjc[2], tjc[3], [], True)
+                        entities.append(entity)
         
 
         for x in list(classesDict):
@@ -63,51 +64,51 @@ class RMLEntityFromOntology(object):
 def correspondenceClass(table, columns, oc_classes, lastDis, term, classesDict, db, disMethod, equivalences):
 
     changed = False
+    
     term1 = Utilities.replace(table)
 
-    label = oc_classes[-1].bestLabel()
-    locale = oc_classes[-1].locale
-
-    if (label in equivalences.keys()):
-        term2 = equivalences[label]
-    elif (locale in equivalences.keys()):
-        term2 = equivalences[locale]
-    else: term2 = locale
-
-
-
-    dis1 = Utilities.distance(term1, term2)
-    bestCol = ""
-    dis2 =  100
-    
-    #bestCol, dis2 = compareColumns(columns, term2, disMethod, dis2, classesDict, oc_class)
-
+    dis1 = 100
+    propCount = 0
     prop = []
     objProp = []
-    totalDis = 100
+    for c in oc_classes:
+        label = c.bestLabel()
+        locale = c.locale
 
-    #if (dis2 < dis1 and dis2 < lastDis):
-    #    term = bestCol
-    #    lastDis = dis2
-    #    changed = True
-    if (dis1 <= lastDis): 
-        term = table
-        lastDis = dis1
-        changed = True
+        if (label in equivalences.keys()):
+            term2 = equivalences[label]
+        elif (locale in equivalences.keys()):
+            term2 = equivalences[locale]
+        else: term2 = label.lower()
 
-    if(changed):
-        objProp = []
-        prop = []
-        totalDis = 0
-        for c in oc_classes:
-            auxProp, auxObjProp, auxTotalDis = getProperties(columns, c, db, term, disMethod)
-            if(auxTotalDis > totalDis):
-                objProp = auxObjProp
-                prop = auxProp
-                totalDis = auxTotalDis
+
+        auxDis1 = Utilities.distance(term1, term2)
+        bestCol = ""
+        dis2 =  100
+        
+        #bestCol, dis2 = compareColumns(columns, term2, disMethod, dis2, classesDict, oc_classes[-1])
+
+        #if (dis2 + 2 < dis1 and dis2 < lastDis):
+        #    term = bestCol
+        #    lastDis = dis2
+        #    changed = True
+
+        auxProp, auxObjProp, auxTotalDis = getProperties(columns, c, db, table, disMethod)
+        for x in auxProp:
+            prop.append(x)
+        for x in auxObjProp:
+            objProp.append(x)
+    
+
+        if (auxDis1 <= lastDis and auxDis1 < Utilities.threshold(disMethod) and auxTotalDis >= propCount): 
+            term = table
+            dis1 = auxDis1
+            lastDis = dis1
+            changed = True
+            propCount = auxTotalDis
 
         
-    return term, lastDis, prop, objProp, totalDis, changed
+    return term, lastDis, prop, objProp, propCount, changed
 
 def compareColumns(columns, term, disMethod, dis, classesDict, o_class):
     bestCol = ''
@@ -149,8 +150,16 @@ def getProperties(columns, oc_class, db, table, disMethod):
 
         if(x.rdftype_qname == 'owl:InverseFunctionalProperty'):
             id = Utilities.getClassIDTerm(x, columns)
-            propObjData.append([x, id])
-
+            if(id != ''):
+                propObjData.append([x, id])
+            else:
+                for c in columns:
+                    dis = 100
+                    auxDis = Utilities.distance(c, x.bestLabel(), 'lcs')
+                    if (auxDis < dis):
+                        id = c
+                        dis = auxDis
+                propObjData.append([x, id])
         if (propData != []):
             properties.append(propData)
 
@@ -218,8 +227,12 @@ def getNotFoundJoinConditions(o_class, tables, joinconditions, disMethod, db, eq
                 if(parentColumn != '' and childColumn != ''):
                     for r in possibleJCTables.ranges:
                         rangeParentClasses = getParents(r)
+                        rangeChildrenClasses = getChildren(r)
+
                         rangeclasses = []
                         for x in rangeParentClasses:
+                            rangeclasses.append(x)
+                        for x in rangeChildrenClasses:
                             rangeclasses.append(x)
                         rangeclasses.append(r)
 
@@ -250,20 +263,38 @@ def createJoinConditions(prop, propertiesData, disMethod):
 
 def updateJoinConditions(entities, tableDict, db, disMethod):
     for e in entities:
-        try:
             for jc in e.joinConditions:
-                dis = 100
-                columns = db.get_table_columns(tableDict[jc[1]])
-                for c in columns:
-                    auxDis1 = Utilities.distance(c, jc[1], disMethod)
-                    if(auxDis1 < dis):
-                        dis = auxDis1
-                        id = Utilities.getClassIDTerm(jc[0][0], columns)
-                        if (id != ''):
+                try:
+                    dis = 100
+                    if(jc[0][0].rdftype_qname != 'owl:InverseFunctionalProperty'):
+                        columns = db.get_table_columns(tableDict[jc[1]])
+                        for c in columns:
+                            auxDis1 = Utilities.distance(c, jc[1], disMethod)
+                            if(auxDis1 < dis):
+                                dis = auxDis1
+                                id = Utilities.getClassIDTerm(jc[0][0], columns)
+                                if (id != ''):
+                                    jc[2] = id
+                                else:
+                                    jc[2] = c
+                    else:
+                        columns = db.get_table_columns(tableDict[jc[1]])
+                        for c in columns:
+                            auxDis1 = Utilities.distance(c, jc[0][0].locale, 'lcs')
+                            auxDis2 = Utilities.distance(c, e.onto_class.locale, 'lcs')
+                            if(auxDis1 < dis and auxDis1 < Utilities.threshold('lcs')):
+                                dis = auxDis1
+                                jc[2] = c
+                            if(auxDis2 < dis and auxDis2 < Utilities.threshold('lcs')):
+                                dis = auxDis2
+                                jc[2] = c
+
+                        id = Utilities.getClassIDTerm(jc[1], columns)
+                        if (id != '' and jc[2] == ''):
                             jc[2] = id
-                        else:
-                            jc[2] = c
-        except: entities.remove(e)
+
+
+                except: e.joinConditions.remove(jc)
 
 def getKeyByValue(dict, value):
     key_list = list(dict.keys())
@@ -278,6 +309,14 @@ def getParents(c):
         totalPar.append(actPar[-1])
         actPar = actPar[0]._parents
     return totalPar
+
+def getChildren(c):
+    totalChildren = []
+    actPar = c._children
+    while(actPar != []):
+        totalChildren.append(actPar[-1])
+        actPar = actPar[0]._children
+    return totalChildren
 
 def getSuperParent(c):
     try:

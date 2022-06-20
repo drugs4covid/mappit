@@ -48,7 +48,7 @@
                  rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C14250/{organism}";
                  rr:class EVS:Thesaurus.owl#C14250
          ].
-<#has target>
+<#SIO_000291>
          rr:logicalTable [ rr:tableName "disease"];
          rr:subjectMap [
                  rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C14250/{ddf_type}";
@@ -60,7 +60,7 @@
                          rr:parentTriplesMap <#Target>;
                          rr:joinCondition [
                                  rr:child "source_id";
-                                 rr:parent "strand";
+                                 rr:parent "taxonomy_id";
                          ];
                  ];
          ].
@@ -88,7 +88,7 @@
                          ];
                  ];
          ].
-<#is part of>
+<#SIO_000068>
          rr:logicalTable [ rr:tableName "disease"];
          rr:subjectMap [
                  rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C16612/{ddf_type}";
@@ -110,7 +110,7 @@
                  rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C17021/{protein}";
                  rr:class EVS:Thesaurus.owl#C17021
          ].
-<#has target>
+<#SIO_000291>
          rr:logicalTable [ rr:tableName "disease"];
          rr:subjectMap [
                  rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C17021/{ddf_type}";
@@ -122,11 +122,11 @@
                          rr:parentTriplesMap <#Target>;
                          rr:joinCondition [
                                  rr:child "source_id";
-                                 rr:parent "strand";
+                                 rr:parent "taxonomy_id";
                          ];
                  ];
          ].
-<#is encoded by>
+<#SIO_010079>
          rr:logicalTable [ rr:tableName "encodes"];
          rr:subjectMap [
                  rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C17021/{gene_id}";
@@ -162,7 +162,7 @@
                  rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{score}";
                  rr:class EVS:Thesaurus.owl#C25338
          ].
-<#is VDA score>
+<#isVDAscore>
          rr:logicalTable [ rr:tableName "disease"];
          rr:subjectMap [
                  rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C25338/{ddf_type}";
@@ -184,7 +184,7 @@
                  rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C43568/{gene_symbol}";
                  rr:class EVS:Thesaurus.owl#C43568
          ].
-<#represents>
+<#SIO_000210>
          rr:logicalTable [ rr:tableName "encodes"];
          rr:subjectMap [
                  rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#C43568/{gene_id}";
@@ -209,13 +209,13 @@
 <#def-source-enum>
          rr:logicalTable [ rr:tableName "source"];
          rr:subjectMap [
-                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#def-source-enum/{source_name}";
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#def-source-enum/{source}";
                  rr:class EVS:Thesaurus.owl#def-source-enum
          ].
 <#go-source-enum>
          rr:logicalTable [ rr:tableName "source"];
          rr:subjectMap [
-                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#go-source-enum/{source_name}";
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#go-source-enum/{source}";
                  rr:class EVS:Thesaurus.owl#go-source-enum
          ].
 <#term-source-enum>
@@ -225,9 +225,9 @@
                  rr:class EVS:Thesaurus.owl#term-source-enum
          ].
 <#textArea>
-         rr:logicalTable [ rr:tableName "disease"];
+         rr:logicalTable [ rr:tableName "rna"];
          rr:subjectMap [
-                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#textArea/{ddf_type}";
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#textArea/{rna}";
                  rr:class EVS:Thesaurus.owl#textArea
          ].
 <#user-system>
@@ -236,35 +236,13 @@
                  rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#user-system/{disease}";
                  rr:class EVS:Thesaurus.owl#user-system
          ].
-<#xref-source-enum>
-         rr:logicalTable [ rr:tableName "source"];
-         rr:subjectMap [
-                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#xref-source-enum/{source_name}";
-                 rr:class EVS:Thesaurus.owl#xref-source-enum
-         ].
 <#ChEMBL Target Class>
-         rr:logicalTable [ rr:tableName "gene"];
+         rr:logicalTable [ rr:tableName "organism"];
          rr:subjectMap [
-                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Target/{organism_id}";
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Target/{organism}";
                  rr:class http://rdf.ebi.ac.uk/terms/chembl#Target
          ].
-<#is target in>
-         rr:logicalTable [ rr:tableName "protein"];
-         rr:subjectMap [
-                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Target/{source_id}";
-                 rr:class http://rdf.ebi.ac.uk/terms/chembl#Target
-         ];
-         rr:predicateObjectMap [
-                 rr:predicate resource:SIO_000292;
-                 rr:objectMap [
-                         rr:parentTriplesMap <#C17021>;
-                         rr:joinCondition [
-                                 rr:child "source_id";
-                                 rr:parent "source_id";
-                         ];
-                 ];
-         ].
-<#is target in>
+<#SIO_000292>
          rr:logicalTable [ rr:tableName "protein"];
          rr:subjectMap [
                  rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Target/{source_id}";
@@ -280,13 +258,29 @@
                          ];
                  ];
          ].
+<#SIO_000292>
+         rr:logicalTable [ rr:tableName "protein"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Target/{source_id}";
+                 rr:class http://rdf.ebi.ac.uk/terms/chembl#Target
+         ];
+         rr:predicateObjectMap [
+                 rr:predicate resource:SIO_000292;
+                 rr:objectMap [
+                         rr:parentTriplesMap <#C17021>;
+                         rr:joinCondition [
+                                 rr:child "source_id";
+                                 rr:parent "source_id";
+                         ];
+                 ];
+         ].
 <#Pathway>
          rr:logicalTable [ rr:tableName "pathway"];
          rr:subjectMap [
                  rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{pathway_id}";
                  rr:class http://vocabularies.wikipathways.org/wp#Pathway
          ].
-<#has part>
+<#SIO_000028>
          rr:logicalTable [ rr:tableName "variant"];
          rr:subjectMap [
                  rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#Pathway/{DSI}";
@@ -314,7 +308,7 @@
                  rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#PR_000000001/{proteinclass}";
                  rr:class obo:PR_000000001
          ].
-<#Has Protein Member>
+<#hasProteinMember>
          rr:logicalTable [ rr:tableName "has_proteinclass"];
          rr:subjectMap [
                  rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#PR_000000001/{protein_id}";
@@ -336,10 +330,10 @@
                  rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SO_0001060/{gene_variant}";
                  rr:class obo:SO_0001060
          ].
-<#has DSI score>
+<#DSIscore>
          rr:logicalTable [ rr:tableName "disease"];
          rr:subjectMap [
-                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SO_0001060/{source_id}";
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SO_0001060/{ddf_type}";
                  rr:class obo:SO_0001060
          ];
          rr:predicateObjectMap [
@@ -352,7 +346,7 @@
                          ];
                  ];
          ].
-<#is located in>
+<#SIO_000061>
          rr:logicalTable [ rr:tableName "protein"];
          rr:subjectMap [
                  rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SO_0001060/{source_id}";
@@ -369,9 +363,9 @@
                  ];
          ].
 <#SemanticType>
-         rr:logicalTable [ rr:tableName "has_semantictype"];
+         rr:logicalTable [ rr:tableName "semantictype"];
          rr:subjectMap [
-                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000326/{has_semantictype}";
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000326/{semantictype}";
                  rr:class resource:SIO_000326
          ].
 <#association>
@@ -380,7 +374,7 @@
                  rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000897/{abbreviation}";
                  rr:class resource:SIO_000897
          ].
-<#has VDA score>
+<#VDAscore>
          rr:logicalTable [ rr:tableName "disease"];
          rr:subjectMap [
                  rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000897/{source_id}";
@@ -401,6 +395,12 @@
          rr:subjectMap [
                  rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#SIO_000899/{chromosome}";
                  rr:class resource:SIO_000899
+         ].
+<#Drug Disease Marker>
+         rr:logicalTable [ rr:tableName "disease_marker"];
+         rr:subjectMap [
+                 rr:template "http://medal.ctb.upm.es/projects/DISNET/ontologies/sem-disnet#DrugDiseaseMarker/{disease_marker}";
+                 rr:class sem-disnet:DrugDiseaseMarker
          ].
 <#Phenotype>
          rr:logicalTable [ rr:tableName "disease"];

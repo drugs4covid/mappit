@@ -2,7 +2,7 @@
 	"main_ontology" : "cmtrenamed/ontology.ttl",
 	"distance_method" : "levehnstein",
 	"compare_system": "ontology",
-	"MapLanguage" : "R2RML",
+	"MapLanguage" : "RML",
 	"Data" : {
 		"format" : "database",
 		"type" : "postgres",

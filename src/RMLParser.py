@@ -24,7 +24,10 @@ class RMLParser(object):
     def TripleMap(entity, base, prefix, data, ROOT_DIR):
         last = (len(entity.onto_properties) == 0 and len(entity.joinConditions) == 0)
         level = 8
-        print ("<#" + entity.onto_class.locale + "> a rr:TriplesMap;")
+        if (not entity.JCFromTable):
+            print ("<#" + entity.onto_class.bestLabel() + ">")
+        else:
+            print ("<#" + entity.joinConditions[0][0][0].locale + ">")
         if (data['format'] != 'database'):
             dir =  ROOT_DIR + "/Inputs/" + data['folder']
         else:

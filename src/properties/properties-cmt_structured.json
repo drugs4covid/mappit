@@ -6,7 +6,7 @@
 	"Data" : {
 		"format" : "database",
 		"type" : "postgres",
-		"database" : "cmt_structured2",
+		"database" : "cmt_structured",
 		"user" : "postgres",
 		"password" : "docker",
 		"port" : "5432",
