@@ -15,11 +15,11 @@ class RMLParser(object):
         #    print("@prefix " + x['prefix'] + ": <" + x['URI'] + "> .")
         for x in properties:
             print("@prefix " + x[0] + ": <" + x[1] + "> .")
-    
+
     # Returns tha base uri declared in the json data file
     def getBase(properties):
         return properties['base']['URI'], properties['base']['prefix']
-    
+
 
     def TripleMap(entity, base, prefix, data, ROOT_DIR):
         last = (len(entity.onto_properties) == 0 and len(entity.joinConditions) == 0)
@@ -29,7 +29,7 @@ class RMLParser(object):
         else:
             print ("<#" + entity.joinConditions[0][0][0].locale + ">")
         if (data['format'] != 'database'):
-            dir =  ROOT_DIR + "/Inputs/" + data['folder']
+            dir =  ROOT_DIR + "/inputs/" + data['folder']
         else:
             dir = ""
         RMLParser.LogicalSource(entity.table, data['format'], dir)
@@ -44,7 +44,7 @@ class RMLParser(object):
             last = (v == len(entity.joinConditions) - 1)
             RMLParser.JoinCondition(j, last, prefix)
             v += 1
-        
+
     def LogicalSource(table, format, dir):
         level = 8
         print (" "*level, "rml:logicalSource [")
@@ -59,7 +59,7 @@ class RMLParser(object):
             print (" "*(2*level), "rml:referenceFormulation ql:JSONPath ;")
             print (" "*(2*level), "rml:iterator " + '"$.' + table + '[*]"')
         print (" "*level, "];")
-        
+
     def SubjectMap(onto_class, onto_id, base, prefix, last):
         level = 8
         try:

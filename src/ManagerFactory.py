@@ -36,10 +36,10 @@ def _serialize_to_DB(data):
                                     charset='utf8')
         elif (data['type'] == 'postgres'):
                 connection = psycopg2.connect(
-                                        database=data['database'], 
-                                        user=data['user'], 
-                                        password=data['password'], 
-                                        host=data['host'], 
+                                        database=data['database'],
+                                        user=data['user'],
+                                        password=data['password'],
+                                        host=data['host'],
                                         port=data['port']
                                         )
 
@@ -96,21 +96,21 @@ def _serialize_to_DB(data):
                 # from the column. In case that there isn't any values in the column, the sample value assigned is a string: ["term"]
                 for c in columnNames:
                     columnDict.update({c[0] : c[1]})
-                        
+
                 tables_dict.update({t[0] : columnDict})
 
 
             cursor.close()
             connection.close()
         return tables_dict
-            
+
     except mysql.connector.Error as err:
             print("Something went wrong: {}".format(err))
 
 def _serialize_to_CSV(data):
-    ROOT_DIR = os.path.dirname(os.path.abspath(__file__)) 
+    ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
     try:
-        files = glob.glob(ROOT_DIR + "/Inputs/" + data['folder'] + "/*.csv")
+        files = glob.glob(ROOT_DIR + "/inputs/" + data['folder'] + "/*.csv")
     except:
         try:
             files = glob.glob(data['folder'] + "/*.csv")
@@ -119,9 +119,9 @@ def _serialize_to_CSV(data):
     return loadDF(files, data)
 
 def _serialize_to_XLS(data):
-    ROOT_DIR = os.path.dirname(os.path.abspath(__file__)) 
+    ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
     try:
-        files = glob.glob(ROOT_DIR + "/Inputs/" + data['folder'] + "/*.xls")
+        files = glob.glob(ROOT_DIR + "/inputs/" + data['folder'] + "/*.xls")
     except:
         try:
             files = glob.glob(data['folder'] + "/*.csv")
@@ -130,9 +130,9 @@ def _serialize_to_XLS(data):
     return loadDF(files, data)
 
 def _serialize_to_JSON(data):
-    ROOT_DIR = os.path.dirname(os.path.abspath(__file__)) 
+    ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
     try:
-        files = glob.glob(ROOT_DIR + "/Inputs/" + data['folder'] + "/*.json")
+        files = glob.glob(ROOT_DIR + "/inputs/" + data['folder'] + "/*.json")
     except:
         try:
             files = glob.glob(data['folder'] + "/*.json")

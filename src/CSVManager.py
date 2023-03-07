@@ -9,8 +9,8 @@ class CSVManager(DataManagement):
         self.tables = dict()
 
         ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-        
-        files = glob.glob(ROOT_DIR + "/Inputs/" + self.folder + "/*.csv")
+
+        files = glob.glob(ROOT_DIR + "/inputs/" + self.folder + "/*.csv")
         for f in files:
             fileName = os.path.basename(f)
             fileName = fileName.split('.')[0].lower()

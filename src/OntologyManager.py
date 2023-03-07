@@ -9,7 +9,7 @@ class OntologyManager(object):
         if UriOrFile.startswith('http'):
             return ontospy.Ontospy(UriOrFile, verbose=True, hide_implicit_preds=True, hide_implicit_types=True)
         else:
-            return ontospy.Ontospy(dir + "/Inputs/" + UriOrFile, verbose=True, hide_implicit_preds=True, hide_implicit_types=True)
+            return ontospy.Ontospy(dir + "/inputs/" + UriOrFile, verbose=True, hide_implicit_preds=True, hide_implicit_types=True)
 
     #Returns all the classes loaded by ontospy for a given ontology
     def get_onto_classes(ontology):
@@ -17,7 +17,7 @@ class OntologyManager(object):
         for x in ontology.all_classes:
             classes.append(x)
         return classes
-    
+
     #For a given class, given all properties of the ontology, it checks for only those that refer to this class in their range or domain.
     #Actually this method is not used because it doesn't retrieve all the properties for a given class
     def get_class_properties(ontology, o_class):
@@ -32,7 +32,7 @@ class OntologyManager(object):
                     properties.append(x)
         total_prop.append([o_class, properties])
         return properties
-    
+
      #For a given class, given all properties of the ontology, it checks for only those that refer to this class in their range or domain.
     #Actually this method is not used because it doesn't retrieve all the properties for a given class
     def get_onto_properties(ontology):

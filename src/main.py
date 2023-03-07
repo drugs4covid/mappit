@@ -49,9 +49,10 @@ def main():
     parser.add_argument(dest="prop", help="Properties file")
     args = parser.parse_args()
 
-    ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+    #ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
     #data = loadProperties(ROOT_DIR + '/properties/properties-cmt_structured.json')
     #data = loadProperties(os.path.join(ROOT_DIR, args.prop))
+    ROOT_DIR = os.getcwd()
     data = loadProperties(args.prop)
 
     ontoManager = OntologyManager(ROOT_DIR, data['main_ontology'])
