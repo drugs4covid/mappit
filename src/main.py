@@ -3,6 +3,7 @@ from DataManager import DataManager
 import RMLEntityManager
 import json
 import os
+import argparse
 
 #Loads the properties file
 def loadProperties(propertiesFile):
@@ -43,9 +44,15 @@ def loadEquivalences(data):
 #The properties, ontology and database are loaded. Then, all the information is given to the RMLEntityManager to create the entities
 # and parse the data into the document.
 def main():
-    
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument(dest="prop", help="Properties file")
+    args = parser.parse_args()
+
     ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-    data = loadProperties(ROOT_DIR + '/properties/properties-cmt_structured.json')
+    #data = loadProperties(ROOT_DIR + '/properties/properties-cmt_structured.json')
+    #data = loadProperties(os.path.join(ROOT_DIR, args.prop))
+    data = loadProperties(args.prop)
 
     ontoManager = OntologyManager(ROOT_DIR, data['main_ontology'])
 

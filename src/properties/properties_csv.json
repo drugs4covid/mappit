@@ -2,6 +2,7 @@
 	"main_ontology" : "http://vocab.gtfs.org/terms#",
 	"distance_method" : "levehnstein",
 	"compare_system": "database",
+	"MapLanguage" : "RML",
 	"Data" : {
 		"format" : "csv",
 		"folder" : "gtfs_csv",
